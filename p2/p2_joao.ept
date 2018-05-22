@@ -1,0 +1,76 @@
+(*
+    until => executa o estado em que está e transiciona para outro estado
+    unless => transiciona para outro estado e executa o novo estado
+*)
+
+node washingmachine(e,s,c:bool) returns (p,i:int)
+let
+    automaton
+    state Off do
+      p = 0;
+      i = 0;
+    unless s then Waterfill
+    state Waterfill do
+      p = 15;
+      i = 1;
+    unless e & not c then Standby
+      | e & c then Washing
+    state Washing do
+      p = 250;
+      i = 2;
+    unless e then Rinse
+    state Rinse do
+      p = 200;
+      i = 3;
+    unless e then Spin
+    state Spin do
+      p = 800;
+      i = 4;
+    unless e then Off
+    state Standby do
+      p = 0;
+      i = 5;
+    unless c then Washing
+    end
+tel
+
+node oven(f,s,c,tok,cold:bool) returns (p,i:int)
+let
+    automaton
+    state Off do
+      p = 0;
+      i = 0;
+    unless s & c then Heat 
+      | s & not c then Standby
+    state Heat do
+      p = 1500;
+      i = 1;
+    unless tok then Maintain
+      | f  then Off
+    state Maintain do
+      p = 300;
+      i = 2;
+    unless cold & c then Reheat
+      | f then Off
+    state Reheat do
+      p = 1000;
+      i = 3;
+    unless tok then Maintain
+       | f then Off
+    state Standby do
+      p = 0;
+      i = 4;
+    unless c then Heat
+    end
+tel
+
+node contrato(ews,sws,fo,so,tok,cold: bool) returns (pws,po,iws,io:int)
+    contract
+     enforce (pws + po <= 1750)
+     with (cws,co:bool)
+let
+    (pws, iws) = inlined washingmachine(ews,sws,cws);
+    (po, io) = inlined oven(fo,so,co,tok,cold)
+tel
+
+

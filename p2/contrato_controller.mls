@@ -1,0 +1,181 @@
+node contrato_controller_contrato_co(contrato_ews : bool;
+                                      contrato_sws : bool;
+                                      contrato_fo : bool; contrato_so : bool;
+                                      contrato_tok : bool;
+                                      contrato_cold : bool;
+                                      contrato_v_241 : bool;
+                                      contrato_v_240 : bool;
+                                      contrato_v_239 : bool;
+                                      contrato_pnr_1 : bool;
+                                      contrato_v_182 : bool;
+                                      contrato_v_181 : bool;
+                                      contrato_v_180 : bool;
+                                      contrato_pnr : bool;
+                                      p_contrato_co : bool;
+                                      p_contrato_cws : bool;
+                                      contrato_cws : bool)
+returns (contrato_co : bool)
+var v_11 : bool; v_10 : bool; v_9 : bool; v_8 : bool; v_7 : bool; v_6 : bool;
+    v_5 : bool; v_4 : bool; v_3 : bool; v_2 : bool; v_1 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+    sub_26 : bool; sub_27 : bool; sub_28 : bool; sub_29 : bool;
+    sub_30 : bool; sub_31 : bool; sub_32 : bool; sub_33 : bool;
+    sub_34 : bool; sub_35 : bool; sub_36 : bool; sub_37 : bool;
+    sub_38 : bool; sub_39 : bool; sub_40 : bool; sub_41 : bool;
+    sub_42 : bool; sub_43 : bool; sub_44 : bool; sub_45 : bool;
+    sub_46 : bool; sub_47 : bool; sub_48 : bool; sub_49 : bool;
+    sub_50 : bool; sub_51 : bool; sub_52 : bool; sub_53 : bool;
+    sub_54 : bool;
+let
+  contrato_co = sub_0;
+  sub_54 = if contrato_cold then sub_27 else sub_52;
+  sub_53 = sub_54;
+  sub_52 = sub_40;
+  sub_51 = if contrato_so then sub_26 else sub_52;
+  sub_50 = if contrato_v_182 then sub_46 else sub_51;
+  sub_49 = sub_41;
+  sub_48 = sub_49;
+  sub_47 = sub_48;
+  sub_46 = sub_47;
+  sub_45 = if contrato_cws then false else sub_34;
+  sub_44 = if contrato_v_239 then sub_35 else sub_45;
+  v = if contrato_v_239 then false else sub_35;
+  sub_43 = if contrato_ews then sub_44 else v;
+  sub_42 = if contrato_v_241 then sub_36 else sub_43;
+  v_1 = if contrato_v_241 then sub_44 else false;
+  sub_41 = if contrato_v_240 then v_1 else sub_42;
+  sub_40 = sub_36;
+  v_2 = if contrato_fo then sub_36 else sub_41;
+  sub_39 = if contrato_tok then sub_40 else v_2;
+  sub_38 = sub_39;
+  sub_37 = sub_38;
+  sub_36 = sub_35;
+  sub_35 = sub_34;
+  sub_34 = true;
+  sub_33 = if contrato_cws then sub_10 else sub_34;
+  sub_32 = if contrato_v_239 then sub_35 else sub_33;
+  v_3 = if contrato_v_239 then sub_9 else sub_35;
+  sub_31 = if contrato_ews then sub_32 else v_3;
+  sub_30 = if contrato_v_241 then sub_36 else sub_31;
+  v_4 = if contrato_v_241 then sub_32 else sub_8;
+  sub_29 = if contrato_v_240 then v_4 else sub_30;
+  sub_28 = sub_29;
+  sub_27 = sub_28;
+  sub_26 = sub_27;
+  sub_25 = sub_26;
+  sub_24 = if contrato_v_182 then sub_37 else sub_25;
+  sub_23 = if contrato_v_181 then sub_46 else sub_24;
+  sub_22 = if contrato_v_182 then sub_18 else sub_4;
+  sub_21 = sub_13;
+  sub_20 = sub_21;
+  sub_19 = sub_20;
+  sub_18 = sub_19;
+  sub_17 = if contrato_cws then false else sub_10;
+  sub_16 = if contrato_v_239 then sub_9 else sub_17;
+  v_5 = if contrato_v_239 then false else sub_9;
+  sub_15 = if contrato_ews then sub_16 else v_5;
+  sub_14 = if contrato_v_241 then sub_8 else sub_15;
+  v_6 = if contrato_v_241 then sub_16 else false;
+  sub_13 = if contrato_v_240 then v_6 else sub_14;
+  v_7 = if contrato_fo then sub_8 else sub_13;
+  sub_12 = if contrato_tok then sub_7 else v_7;
+  sub_11 = sub_12;
+  sub_10 = false;
+  sub_9 = sub_10;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = if contrato_v_182 then sub_11 else sub_4;
+  sub_2 = if contrato_v_181 then sub_18 else sub_3;
+  v_8 = if contrato_v_181 then sub_3 else sub_22;
+  sub_1 = if contrato_v_180 then v_8 else sub_2;
+  v_9 = if contrato_v_182 then sub_37 else sub_53;
+  v_10 = if contrato_v_181 then v_9 else sub_50;
+  v_11 = if contrato_v_180 then v_10 else sub_23;
+  sub_0 = if p_contrato_co then v_11 else sub_1
+tel
+
+node contrato_controller_contrato_cws(contrato_ews : bool;
+                                       contrato_sws : bool;
+                                       contrato_fo : bool;
+                                       contrato_so : bool;
+                                       contrato_tok : bool;
+                                       contrato_cold : bool;
+                                       contrato_v_241 : bool;
+                                       contrato_v_240 : bool;
+                                       contrato_v_239 : bool;
+                                       contrato_pnr_1 : bool;
+                                       contrato_v_182 : bool;
+                                       contrato_v_181 : bool;
+                                       contrato_v_180 : bool;
+                                       contrato_pnr : bool;
+                                       p_contrato_co : bool;
+                                       p_contrato_cws : bool)
+returns (contrato_cws : bool)
+var v_14 : bool; v_13 : bool; v_12 : bool; v : bool; sub_0 : bool;
+    sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool;
+    sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool;
+    sub_11 : bool; sub_12 : bool; sub_13 : bool; sub_14 : bool;
+    sub_15 : bool; sub_16 : bool; sub_17 : bool; sub_18 : bool;
+    sub_19 : bool; sub_20 : bool; sub_21 : bool;
+let
+  contrato_cws = sub_0;
+  sub_21 = if contrato_v_182 then sub_17 else sub_3;
+  sub_20 = sub_12;
+  sub_19 = sub_20;
+  sub_18 = sub_19;
+  sub_17 = sub_18;
+  sub_16 = false;
+  sub_15 = if contrato_v_239 then sub_8 else sub_16;
+  v = if contrato_v_239 then false else sub_8;
+  sub_14 = if contrato_ews then sub_15 else v;
+  sub_13 = if contrato_v_241 then sub_7 else sub_14;
+  v_12 = if contrato_v_241 then sub_15 else false;
+  sub_12 = if contrato_v_240 then v_12 else sub_13;
+  v_13 = if contrato_fo then sub_7 else sub_12;
+  sub_11 = if contrato_tok then sub_6 else v_13;
+  sub_10 = sub_11;
+  sub_9 = p_contrato_cws;
+  sub_8 = sub_9;
+  sub_7 = sub_8;
+  sub_6 = sub_7;
+  sub_5 = sub_6;
+  sub_4 = sub_5;
+  sub_3 = sub_4;
+  sub_2 = if contrato_v_182 then sub_10 else sub_3;
+  sub_1 = if contrato_v_181 then sub_17 else sub_2;
+  v_14 = if contrato_v_181 then sub_2 else sub_21;
+  sub_0 = if contrato_v_180 then v_14 else sub_1
+tel
+
+node contrato_controller(contrato_ews : bool; contrato_sws : bool;
+                          contrato_fo : bool; contrato_so : bool;
+                          contrato_tok : bool; contrato_cold : bool;
+                          contrato_v_241 : bool; contrato_v_240 : bool;
+                          contrato_v_239 : bool; contrato_pnr_1 : bool;
+                          contrato_v_182 : bool; contrato_v_181 : bool;
+                          contrato_v_180 : bool; contrato_pnr : bool;
+                          p_contrato_co : bool; p_contrato_cws : bool)
+returns (contrato_co : bool; contrato_cws : bool)
+let
+  contrato_cws =
+    contrato_controller_contrato_cws
+    (contrato_ews, contrato_sws, contrato_fo, contrato_so, contrato_tok,
+      contrato_cold, contrato_v_241, contrato_v_240, contrato_v_239,
+      contrato_pnr_1, contrato_v_182, contrato_v_181, contrato_v_180,
+      contrato_pnr, p_contrato_co, p_contrato_cws);
+  contrato_co =
+    contrato_controller_contrato_co
+    (contrato_ews, contrato_sws, contrato_fo, contrato_so, contrato_tok,
+      contrato_cold, contrato_v_241, contrato_v_240, contrato_v_239,
+      contrato_pnr_1, contrato_v_182, contrato_v_181, contrato_v_180,
+      contrato_pnr, p_contrato_co, p_contrato_cws, contrato_cws)
+tel
+

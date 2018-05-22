@@ -1,0 +1,179 @@
+(*
+    until => executa o estado em que está e transiciona para outro estado
+    unless => transiciona para outro estado e executa o novo estado
+*)
+
+node washingmachine(e,s,c:bool) returns (p,i:int)
+let
+    automaton
+    state Off do
+      p = 0;
+      i = 0;
+    unless s then Waterfill
+    state Waterfill do
+      p = 15;
+      i = 1;
+    unless e & not c then Standby
+      | e & c then Washing
+    state Washing do
+      p = 250;
+      i = 2;
+    unless e then Rinse
+    state Rinse do
+      p = 200;
+      i = 3;
+    unless e then Spin
+    state Spin do
+      p = 800;
+      i = 4;
+    unless e then Off
+    state Standby do
+      p = 0;
+      i = 5;
+    unless c then Washing
+    end
+tel
+
+node oven(f,s,c,tok,cold:bool) returns (p,i:int)
+let
+    automaton
+    state Off do
+      p = 0;
+      i = 0;
+    unless s & c then Heat 
+      | s & not c then Standby
+    state Heat do
+      p = 1500;
+      i = 1;
+    unless tok then Maintain
+      | f  then Off
+    state Maintain do
+      p = 300;
+      i = 2;
+    unless cold & c then Reheat
+      | f then Off
+    state Reheat do
+      p = 1000;
+      i = 3;
+    unless tok then Maintain
+       | f then Off
+    state Standby do
+      p = 0;
+      i = 4;
+    unless c then Heat
+    end
+tel
+
+node rad(up1,down1,up2,down2,c1,c2:bool) returns (p,i:int)
+let
+    automaton
+    state Off do
+      p = 0;
+      i = 0;
+    unless up1 or not c1 then Frostprotection
+    state Frostprotection do
+      p = 300;
+      i = 1;
+    unless up1 & c1 then Eco
+      | up2 & c2 then High
+      | down1 or not c1 then Off
+    state Eco do
+      p = 1500;
+      i = 2;
+    unless down1 or not c1 then Frostprotection
+      | up2 & c2 then High
+    state High do
+      p = 2000;
+      i = 3;
+    unless down1 or not c1 then Eco
+       | down2 or not c2 then Frostprotection
+    end
+tel
+
+node door(push,c_door:bool) returns (door_open:bool)
+let
+    automaton
+    state Closed do
+      door_open = false;
+    unless push & c_door then Open
+    state Open do
+      door_open = true;
+    unless push or not c_door then Closed
+    end
+tel
+
+node room(presence:bool) returns (room_oc:bool)
+let
+    automaton
+    state Empty do
+      room_oc = false;
+    unless presence then Ocupied
+    state Ocupied do
+      room_oc = true;
+    unless not presence then Empty
+    end
+tel
+
+node light_source(botao,c1,c2:bool) returns (s:bool)
+let
+    automaton
+    state Desligado do
+      s = false;
+    unless (botao & not c2) or c1 then Ligado
+    state Ligado do
+      s = true;
+    unless (botao & not c1) or c2 then Desligado
+    end
+tel
+
+node management_policy(eco_input,comfort_input:bool) returns (eco,comfort:bool;pl:int)
+let
+    automaton
+    state Minimal_safety do
+      pl = 3000;
+      eco = false;
+      comfort = false;
+    unless eco_input then Eco
+      | comfort_input then Comfort
+    state Eco do
+      pl = 5000;
+      eco = true;
+      comfort = false;
+    unless not eco_input then Minimal_safety
+      | comfort_input then Comfort
+    state Comfort do
+      pl = 7000;
+      eco = false;
+      comfort = true;
+    unless eco_input then Eco
+      | not comfort_input then Minimal_safety
+    end
+tel
+
+node contrato(cj,cp,pporta,pjanela,rup1,rdown1,rup2,rdown2,presenca,bl,bt:bool) returns (porta,janela,lamp,tv,ocupado:bool;rad_pot,rad_state:int)
+    contract
+var r1, r3, r4, off_frost : bool;
+
+let
+     off_frost = rad_state <= 1;
+     r1 = ( not ocupado or tv or lamp );
+     r3 = not ( porta or janela ) or ( off_frost );
+     r4 = ocupado or (not(lamp or tv) & (off_frost));
+tel
+     enforce r1 & r3 & r4
+     with (rc1,rc2,cl1,cl2,ct1,ct2:bool)
+let
+    (rad_pot, rad_state) = inlined rad(rup1,rdown1,rup2,rdown2,rc1,rc2);
+    porta = inlined door(pporta, cp);
+    janela = inlined door(pjanela, cj);
+    lamp = inlined light_source(bl,cl1,cl2); 
+    tv = inlined light_source(bt,ct1,ct2);
+    ocupado = inlined room(presenca);
+
+(*    (pws, iws) = inlined washingmachine(ews,sws,cws);
+    (po, io) = inlined oven(fo,so,co,tok,cold)
+    (po, io) = inlined oven(fo,so,co,tok,cold)
+    (po, io) = inlined oven(fo,so,co,tok,cold) *)
+tel
+
+

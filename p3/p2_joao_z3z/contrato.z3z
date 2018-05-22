@@ -1,0 +1,412 @@
+% --- Generated the 21/5/2018 at 10:53 --- %
+% --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- %
+% --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p2_joao.ept --- %
+
+set_reorder(2);read("Property.lib");read("Synthesis.lib");read("Verif_Determ.lib");read("Simul.lib");read("Synthesis_Partial_order.lib");read("Orbite.lib");
+% -- dependencies --- %
+
+% ---------- process contrato ---------- %
+
+declare(contrato_cj, contrato_cp, contrato_pporta, contrato_pjanela,
+        contrato_rup1, contrato_rdown1, contrato_rup2, contrato_rdown2,
+        contrato_presenca, contrato_bl, contrato_bt, contrato_ct2,
+        contrato_ct1, contrato_cl2, contrato_cl1, contrato_rc2, contrato_rc1,
+        contrato_v_263, contrato_v_262, contrato_pnr_5, contrato_ck_9_1,
+        contrato_pnr_4, contrato_ck_11_1, contrato_pnr_3, contrato_ck_13_1,
+        contrato_pnr_2, contrato_ck_15_1, contrato_pnr_1, contrato_ck_17_1,
+        contrato_pnr, contrato_error_state);
+conditions : [contrato_cj, contrato_cp, contrato_pporta, contrato_pjanela,
+              contrato_rup1, contrato_rdown1, contrato_rup2, contrato_rdown2,
+              contrato_presenca, contrato_bl, contrato_bt, contrato_ct2,
+              contrato_ct1, contrato_cl2, contrato_cl1, contrato_rc2,
+              contrato_rc1];
+states : [contrato_v_263, contrato_v_262, contrato_pnr_5, contrato_ck_9_1,
+          contrato_pnr_4, contrato_ck_11_1, contrato_pnr_3, contrato_ck_13_1,
+          contrato_pnr_2, contrato_ck_15_1, contrato_pnr_1, contrato_ck_17_1,
+          contrato_pnr, contrato_error_state];
+controllables : [contrato_ct2, contrato_ct1, contrato_cl2, contrato_cl1,
+                 contrato_rc2, contrato_rc1];
+evolutions : [];
+initialisations : [];
+contrato_ck_2 : contrato_v_263;
+contrato_ck_1 : contrato_v_262;
+contrato_c2 : contrato_rc2;
+contrato_c1 : contrato_rc1;
+contrato_down2 : contrato_rdown2;
+contrato_up2 : contrato_rup2;
+contrato_down1 : contrato_rdown1;
+contrato_up1 : contrato_rup1;
+contrato_c_door : contrato_cp;
+contrato_push : contrato_pporta;
+contrato_c_door_1 : contrato_cj;
+contrato_push_1 : contrato_pjanela;
+contrato_c2_1 : contrato_cl2;
+contrato_c1_1 : contrato_cl1;
+contrato_botao : contrato_bl;
+contrato_c2_2 : contrato_ct2;
+contrato_c1_2 : contrato_ct1;
+contrato_botao_1 : contrato_bt;
+contrato_presence : contrato_presenca;
+contrato_ck_2_0 : contrato_ck_2;
+contrato_ck_2_1 : contrato_ck_2;
+contrato_v_58 : (not contrato_c1);
+contrato_v_59 : (contrato_down1 or contrato_v_58);
+contrato_v_60 : (not contrato_c2);
+contrato_v_61 : (contrato_down2 or contrato_v_60);
+contrato_v_62_2 : ((-1 when contrato_v_61) default 1);
+contrato_v_62_1 : ((1 when contrato_v_61) default -1);
+contrato_v_63 : ((1 when contrato_v_61) default contrato_pnr_5);
+contrato_s_10_St_12_High_2 : ((1 when contrato_v_59)
+  default contrato_v_62_2);
+contrato_s_10_St_12_High_1 : ((1 when contrato_v_59)
+  default contrato_v_62_1);
+contrato_r_5_St_12_High : ((1 when contrato_v_59) default contrato_v_63);
+contrato_v_77 : (not contrato_c1);
+contrato_v_78 : (contrato_up1 or contrato_v_77);
+contrato_s_10_St_12_Off_2 : ((-1 when contrato_v_78) default -1);
+contrato_v_267 : ((contrato_s_10_St_12_High_2 when contrato_ck_2_0)
+  default contrato_s_10_St_12_Off_2);
+contrato_s_10_St_12_Off_1 : ((1 when contrato_v_78) default -1);
+contrato_v_266 : ((contrato_s_10_St_12_High_1 when contrato_ck_2_0)
+  default contrato_s_10_St_12_Off_1);
+contrato_r_5_St_12_Off : ((1 when contrato_v_78) default contrato_pnr_5);
+contrato_v_269 : ((contrato_r_5_St_12_High when contrato_ck_2_0)
+  default contrato_r_5_St_12_Off);
+contrato_s_10_St_12_High_2_0 : contrato_s_10_St_12_High_2;
+contrato_s_10_St_12_High_2_1 : contrato_s_10_St_12_High_2;
+contrato_s_10_St_12_Off_2_0 : contrato_s_10_St_12_Off_2;
+contrato_s_10_St_12_Off_2_1 : contrato_s_10_St_12_Off_2;
+contrato_v_62_2_0 : contrato_v_62_2;
+contrato_v_62_2_1 : contrato_v_62_2;
+contrato_v_64 : (not contrato_c1);
+contrato_v_65 : (contrato_down1 or contrato_v_64);
+contrato_v_66 : (contrato_up2 and contrato_c2);
+contrato_v_67_2 : ((1 when contrato_v_66) default 1);
+contrato_v_67_1 : ((-1 when contrato_v_66) default 1);
+contrato_v_68 : ((1 when contrato_v_66) default contrato_pnr_5);
+contrato_s_10_St_12_Eco_2 : ((-1 when contrato_v_65)
+  default contrato_v_67_2);
+contrato_s_10_St_12_Eco_1 : ((1 when contrato_v_65) default contrato_v_67_1);
+contrato_r_5_St_12_Eco : ((1 when contrato_v_65) default contrato_v_68);
+contrato_v_69 : (contrato_up1 and contrato_c1);
+contrato_v_70 : (contrato_up2 and contrato_c2);
+contrato_v_71 : (not contrato_c1);
+contrato_v_72 : (contrato_down1 or contrato_v_71);
+contrato_v_73_2 : ((-1 when contrato_v_72) default -1);
+contrato_v_73_1 : ((-1 when contrato_v_72) default 1);
+contrato_v_74 : ((1 when contrato_v_72) default contrato_pnr_5);
+contrato_v_75_2 : ((1 when contrato_v_70) default contrato_v_73_2);
+contrato_v_75_1 : ((-1 when contrato_v_70) default contrato_v_73_1);
+contrato_v_76 : ((1 when contrato_v_70) default contrato_v_74);
+contrato_s_10_St_12_Frostprotection_2 : ((1 when contrato_v_69)
+  default contrato_v_75_2);
+contrato_v_265 : ((contrato_s_10_St_12_Eco_2 when contrato_ck_2_1)
+  default contrato_s_10_St_12_Frostprotection_2);
+contrato_s_10_St_12_Frostprotection_1 : ((1 when contrato_v_69)
+  default contrato_v_75_1);
+contrato_v_264 : ((contrato_s_10_St_12_Eco_1 when contrato_ck_2_1)
+  default contrato_s_10_St_12_Frostprotection_1);
+contrato_r_5_St_12_Frostprotection : ((1 when contrato_v_69)
+  default contrato_v_76);
+contrato_v_268 : ((contrato_r_5_St_12_Eco when contrato_ck_2_1)
+  default contrato_r_5_St_12_Frostprotection);
+contrato_s_10_St_12_Eco_2_0 : contrato_s_10_St_12_Eco_2;
+contrato_s_10_St_12_Eco_2_1 : contrato_s_10_St_12_Eco_2;
+contrato_s_10_St_12_Frostprotection_2_0 : contrato_s_10_St_12_Frostprotection_2;
+contrato_s_10_St_12_Frostprotection_2_1 : contrato_s_10_St_12_Frostprotection_2;
+contrato_r_5 : ((contrato_v_268 when contrato_ck_1) default contrato_v_269);
+contrato_s_10_2 : ((contrato_v_265 when contrato_ck_1)
+  default contrato_v_267);
+contrato_s_10_1 : ((contrato_v_264 when contrato_ck_1)
+  default contrato_v_266);
+contrato_s_10_2_0 : contrato_s_10_2;
+contrato_s_10_2_1 : contrato_s_10_2;
+contrato_v_67_2_0 : contrato_v_67_2;
+contrato_v_67_2_1 : contrato_v_67_2;
+contrato_v_75_2_0 : contrato_v_75_2;
+contrato_v_75_2_1 : contrato_v_75_2;
+contrato_v_73_2_0 : contrato_v_73_2;
+contrato_v_73_2_1 : contrato_v_73_2;
+contrato_ck_8_2 : contrato_s_10_2;
+contrato_ck_8_1 : contrato_s_10_1;
+contrato_ck_8_2_0 : contrato_ck_8_2;
+contrato_ck_8_2_1 : contrato_ck_8_2;
+contrato_ns_5_St_12_High_2 : 1;
+contrato_ns_5_St_12_High_1 : -1;
+contrato_nr_5_St_12_High : -1;
+contrato_i_St_12_High : a_const(3);
+contrato_p_St_12_High : a_const(2000);
+contrato_ns_5_St_12_Off_2 : -1;
+contrato_v_259 : ((contrato_ns_5_St_12_High_2 when contrato_ck_8_2_0)
+  default contrato_ns_5_St_12_Off_2);
+contrato_ns_5_St_12_Off_1 : -1;
+contrato_v_258 : ((contrato_ns_5_St_12_High_1 when contrato_ck_8_2_0)
+  default contrato_ns_5_St_12_Off_1);
+contrato_nr_5_St_12_Off : -1;
+contrato_v_261 : ((contrato_nr_5_St_12_High when contrato_ck_8_2_0)
+  default contrato_nr_5_St_12_Off);
+contrato_i_St_12_Off : a_const(0);
+contrato_v_255 : a_part(contrato_ck_8_2_0, a_const(0), contrato_i_St_12_High,
+                        contrato_i_St_12_Off);
+contrato_p_St_12_Off : a_const(0);
+contrato_v_253 : a_part(contrato_ck_8_2_0, a_const(0), contrato_p_St_12_High,
+                        contrato_p_St_12_Off);
+contrato_ns_5_St_12_High_2_0 : contrato_ns_5_St_12_High_2;
+contrato_ns_5_St_12_High_2_1 : contrato_ns_5_St_12_High_2;
+contrato_ns_5_St_12_Off_2_0 : contrato_ns_5_St_12_Off_2;
+contrato_ns_5_St_12_Off_2_1 : contrato_ns_5_St_12_Off_2;
+contrato_ns_5_St_12_Eco_2 : 1;
+contrato_ns_5_St_12_Eco_1 : 1;
+contrato_nr_5_St_12_Eco : -1;
+contrato_i_St_12_Eco : a_const(2);
+contrato_p_St_12_Eco : a_const(1500);
+contrato_ns_5_St_12_Frostprotection_2 : -1;
+contrato_v_257 : ((contrato_ns_5_St_12_Eco_2 when contrato_ck_8_2_1)
+  default contrato_ns_5_St_12_Frostprotection_2);
+contrato_ns_5_St_12_Frostprotection_1 : 1;
+contrato_v_256 : ((contrato_ns_5_St_12_Eco_1 when contrato_ck_8_2_1)
+  default contrato_ns_5_St_12_Frostprotection_1);
+contrato_nr_5_St_12_Frostprotection : -1;
+contrato_v_260 : ((contrato_nr_5_St_12_Eco when contrato_ck_8_2_1)
+  default contrato_nr_5_St_12_Frostprotection);
+contrato_i_St_12_Frostprotection : a_const(1);
+contrato_v_254 : a_part(contrato_ck_8_2_1, a_const(0), contrato_i_St_12_Eco,
+                        contrato_i_St_12_Frostprotection);
+contrato_p_St_12_Frostprotection : a_const(300);
+contrato_v_252 : a_part(contrato_ck_8_2_1, a_const(0), contrato_p_St_12_Eco,
+                        contrato_p_St_12_Frostprotection);
+contrato_ns_5_St_12_Eco_2_0 : contrato_ns_5_St_12_Eco_2;
+contrato_ns_5_St_12_Eco_2_1 : contrato_ns_5_St_12_Eco_2;
+contrato_ns_5_St_12_Frostprotection_2_0 : contrato_ns_5_St_12_Frostprotection_2;
+contrato_ns_5_St_12_Frostprotection_2_1 : contrato_ns_5_St_12_Frostprotection_2;
+contrato_nr_5 : ((contrato_v_260 when contrato_ck_8_1)
+  default contrato_v_261);
+contrato_ns_5_2 : ((contrato_v_257 when contrato_ck_8_1)
+  default contrato_v_259);
+contrato_ns_5_1 : ((contrato_v_256 when contrato_ck_8_1)
+  default contrato_v_258);
+contrato_i : a_part(contrato_ck_8_1, a_const(0), contrato_v_254,
+                    contrato_v_255);
+contrato_p : a_part(contrato_ck_8_1, a_const(0), contrato_v_252,
+                    contrato_v_253);
+contrato_ns_5_2_0 : contrato_ns_5_2;
+contrato_ns_5_2_1 : contrato_ns_5_2;
+contrato_rad_pot : contrato_p;
+contrato_rad_state : contrato_i;
+contrato_v_79 : (not contrato_c_door);
+contrato_v_80 : (contrato_push or contrato_v_79);
+contrato_s_9_St_11_Open_1 : ((1 when contrato_v_80) default -1);
+contrato_r_4_St_11_Open : ((1 when contrato_v_80) default contrato_pnr_4);
+contrato_v_81 : (contrato_push and contrato_c_door);
+contrato_s_9_St_11_Closed_1 : ((-1 when contrato_v_81) default 1);
+contrato_s_9_1 : ((contrato_s_9_St_11_Closed_1 when contrato_ck_9_1)
+  default contrato_s_9_St_11_Open_1);
+contrato_r_4_St_11_Closed : ((1 when contrato_v_81) default contrato_pnr_4);
+contrato_r_4 : ((contrato_r_4_St_11_Closed when contrato_ck_9_1)
+  default contrato_r_4_St_11_Open);
+contrato_ck_10_1 : contrato_s_9_1;
+contrato_ns_4_St_11_Open_1 : -1;
+contrato_nr_4_St_11_Open : -1;
+contrato_door_open_St_11_Open : 1;
+contrato_ns_4_St_11_Closed_1 : 1;
+contrato_ns_4_1 : ((contrato_ns_4_St_11_Closed_1 when contrato_ck_10_1)
+  default contrato_ns_4_St_11_Open_1);
+contrato_nr_4_St_11_Closed : -1;
+contrato_nr_4 : ((contrato_nr_4_St_11_Closed when contrato_ck_10_1)
+  default contrato_nr_4_St_11_Open);
+contrato_door_open_St_11_Closed : -1;
+contrato_door_open : ((contrato_door_open_St_11_Closed when contrato_ck_10_1)
+  default contrato_door_open_St_11_Open);
+contrato_porta : contrato_door_open;
+contrato_v_82 : (not contrato_c_door_1);
+contrato_v_83 : (contrato_push_1 or contrato_v_82);
+contrato_s_8_St_10_Open_1 : ((1 when contrato_v_83) default -1);
+contrato_r_3_St_10_Open : ((1 when contrato_v_83) default contrato_pnr_3);
+contrato_v_84 : (contrato_push_1 and contrato_c_door_1);
+contrato_s_8_St_10_Closed_1 : ((-1 when contrato_v_84) default 1);
+contrato_s_8_1 : ((contrato_s_8_St_10_Closed_1 when contrato_ck_11_1)
+  default contrato_s_8_St_10_Open_1);
+contrato_r_3_St_10_Closed : ((1 when contrato_v_84) default contrato_pnr_3);
+contrato_r_3 : ((contrato_r_3_St_10_Closed when contrato_ck_11_1)
+  default contrato_r_3_St_10_Open);
+contrato_ck_12_1 : contrato_s_8_1;
+contrato_ns_3_St_10_Open_1 : -1;
+contrato_nr_3_St_10_Open : -1;
+contrato_door_open_1_St_10_Open : 1;
+contrato_ns_3_St_10_Closed_1 : 1;
+contrato_ns_3_1 : ((contrato_ns_3_St_10_Closed_1 when contrato_ck_12_1)
+  default contrato_ns_3_St_10_Open_1);
+contrato_nr_3_St_10_Closed : -1;
+contrato_nr_3 : ((contrato_nr_3_St_10_Closed when contrato_ck_12_1)
+  default contrato_nr_3_St_10_Open);
+contrato_door_open_1_St_10_Closed : -1;
+contrato_door_open_1 : ((contrato_door_open_1_St_10_Closed
+  when contrato_ck_12_1) default contrato_door_open_1_St_10_Open);
+contrato_janela : contrato_door_open_1;
+contrato_v_85 : (not contrato_c1_1);
+contrato_v_86 : (contrato_botao and contrato_v_85);
+contrato_v_87 : (contrato_v_86 or contrato_c2_1);
+contrato_s_7_St_9_Ligado_1 : ((1 when contrato_v_87) default -1);
+contrato_r_2_St_9_Ligado : ((1 when contrato_v_87) default contrato_pnr_2);
+contrato_v_88 : (not contrato_c2_1);
+contrato_v_89 : (contrato_botao and contrato_v_88);
+contrato_v_90 : (contrato_v_89 or contrato_c1_1);
+contrato_s_7_St_9_Desligado_1 : ((-1 when contrato_v_90) default 1);
+contrato_s_7_1 : ((contrato_s_7_St_9_Desligado_1 when contrato_ck_13_1)
+  default contrato_s_7_St_9_Ligado_1);
+contrato_r_2_St_9_Desligado : ((1 when contrato_v_90)
+  default contrato_pnr_2);
+contrato_r_2 : ((contrato_r_2_St_9_Desligado when contrato_ck_13_1)
+  default contrato_r_2_St_9_Ligado);
+contrato_ck_14_1 : contrato_s_7_1;
+contrato_ns_2_St_9_Ligado_1 : -1;
+contrato_nr_2_St_9_Ligado : -1;
+contrato_s_St_9_Ligado : 1;
+contrato_ns_2_St_9_Desligado_1 : 1;
+contrato_ns_2_1 : ((contrato_ns_2_St_9_Desligado_1 when contrato_ck_14_1)
+  default contrato_ns_2_St_9_Ligado_1);
+contrato_nr_2_St_9_Desligado : -1;
+contrato_nr_2 : ((contrato_nr_2_St_9_Desligado when contrato_ck_14_1)
+  default contrato_nr_2_St_9_Ligado);
+contrato_s_St_9_Desligado : -1;
+contrato_s : ((contrato_s_St_9_Desligado when contrato_ck_14_1)
+  default contrato_s_St_9_Ligado);
+contrato_lamp : contrato_s;
+contrato_v_91 : (not contrato_c1_2);
+contrato_v_92 : (contrato_botao_1 and contrato_v_91);
+contrato_v_93 : (contrato_v_92 or contrato_c2_2);
+contrato_s_6_St_8_Ligado_1 : ((1 when contrato_v_93) default -1);
+contrato_r_1_St_8_Ligado : ((1 when contrato_v_93) default contrato_pnr_1);
+contrato_v_94 : (not contrato_c2_2);
+contrato_v_95 : (contrato_botao_1 and contrato_v_94);
+contrato_v_96 : (contrato_v_95 or contrato_c1_2);
+contrato_s_6_St_8_Desligado_1 : ((-1 when contrato_v_96) default 1);
+contrato_s_6_1 : ((contrato_s_6_St_8_Desligado_1 when contrato_ck_15_1)
+  default contrato_s_6_St_8_Ligado_1);
+contrato_r_1_St_8_Desligado : ((1 when contrato_v_96)
+  default contrato_pnr_1);
+contrato_r_1 : ((contrato_r_1_St_8_Desligado when contrato_ck_15_1)
+  default contrato_r_1_St_8_Ligado);
+contrato_ck_16_1 : contrato_s_6_1;
+contrato_ns_1_St_8_Ligado_1 : -1;
+contrato_nr_1_St_8_Ligado : -1;
+contrato_s_1_St_8_Ligado : 1;
+contrato_ns_1_St_8_Desligado_1 : 1;
+contrato_ns_1_1 : ((contrato_ns_1_St_8_Desligado_1 when contrato_ck_16_1)
+  default contrato_ns_1_St_8_Ligado_1);
+contrato_nr_1_St_8_Desligado : -1;
+contrato_nr_1 : ((contrato_nr_1_St_8_Desligado when contrato_ck_16_1)
+  default contrato_nr_1_St_8_Ligado);
+contrato_s_1_St_8_Desligado : -1;
+contrato_s_1 : ((contrato_s_1_St_8_Desligado when contrato_ck_16_1)
+  default contrato_s_1_St_8_Ligado);
+contrato_tv : contrato_s_1;
+contrato_v_97 : (not contrato_presence);
+contrato_s_5_St_7_Ocupied_1 : ((1 when contrato_v_97) default -1);
+contrato_r_St_7_Ocupied : ((1 when contrato_v_97) default contrato_pnr);
+contrato_s_5_St_7_Empty_1 : ((-1 when contrato_presence) default 1);
+contrato_s_5_1 : ((contrato_s_5_St_7_Empty_1 when contrato_ck_17_1)
+  default contrato_s_5_St_7_Ocupied_1);
+contrato_r_St_7_Empty : ((1 when contrato_presence) default contrato_pnr);
+contrato_r : ((contrato_r_St_7_Empty when contrato_ck_17_1)
+  default contrato_r_St_7_Ocupied);
+contrato_ck_18_1 : contrato_s_5_1;
+contrato_ns_St_7_Ocupied_1 : -1;
+contrato_nr_St_7_Ocupied : -1;
+contrato_room_oc_St_7_Ocupied : 1;
+contrato_ns_St_7_Empty_1 : 1;
+contrato_ns_1_2 : ((contrato_ns_St_7_Empty_1 when contrato_ck_18_1)
+  default contrato_ns_St_7_Ocupied_1);
+contrato_nr_St_7_Empty : -1;
+contrato_nr : ((contrato_nr_St_7_Empty when contrato_ck_18_1)
+  default contrato_nr_St_7_Ocupied);
+contrato_room_oc_St_7_Empty : -1;
+contrato_room_oc : ((contrato_room_oc_St_7_Empty when contrato_ck_18_1)
+  default contrato_room_oc_St_7_Ocupied);
+contrato_ocupado : contrato_room_oc;
+initialisations : concat(initialisations, [(contrato_v_263 = -1)]);
+evolutions : concat(evolutions, [(contrato_ns_5_2 default contrato_v_263)]);
+initialisations : concat(initialisations, [(contrato_v_262 = -1)]);
+evolutions : concat(evolutions, [(contrato_ns_5_1 default contrato_v_262)]);
+initialisations : concat(initialisations, [(contrato_pnr_5 = -1)]);
+evolutions : concat(evolutions, [(contrato_nr_5 default contrato_pnr_5)]);
+initialisations : concat(initialisations, [(contrato_ck_9_1 = 1)]);
+evolutions : concat(evolutions, [(contrato_ns_4_1 default contrato_ck_9_1)]);
+initialisations : concat(initialisations, [(contrato_pnr_4 = -1)]);
+evolutions : concat(evolutions, [(contrato_nr_4 default contrato_pnr_4)]);
+initialisations : concat(initialisations, [(contrato_ck_11_1 = 1)]);
+evolutions : concat(evolutions, [(contrato_ns_3_1 default contrato_ck_11_1)]);
+initialisations : concat(initialisations, [(contrato_pnr_3 = -1)]);
+evolutions : concat(evolutions, [(contrato_nr_3 default contrato_pnr_3)]);
+initialisations : concat(initialisations, [(contrato_ck_13_1 = 1)]);
+evolutions : concat(evolutions, [(contrato_ns_2_1 default contrato_ck_13_1)]);
+initialisations : concat(initialisations, [(contrato_pnr_2 = -1)]);
+evolutions : concat(evolutions, [(contrato_nr_2 default contrato_pnr_2)]);
+initialisations : concat(initialisations, [(contrato_ck_15_1 = 1)]);
+evolutions : concat(evolutions, [(contrato_ns_1_1 default contrato_ck_15_1)]);
+initialisations : concat(initialisations, [(contrato_pnr_1 = -1)]);
+evolutions : concat(evolutions, [(contrato_nr_1 default contrato_pnr_1)]);
+initialisations : concat(initialisations, [(contrato_ck_17_1 = 1)]);
+evolutions : concat(evolutions, [(contrato_ns_1_2 default contrato_ck_17_1)]);
+initialisations : concat(initialisations, [(contrato_pnr = -1)]);
+evolutions : concat(evolutions, [(contrato_nr default contrato_pnr)]);
+contrato_off_frost : (a_inf(contrato_rad_state, 1) + 1);
+contrato_v_54 : (not contrato_ocupado);
+contrato_v_55 : (contrato_v_54 or contrato_tv);
+contrato_r1 : (contrato_v_55 or contrato_lamp);
+contrato_v_52 : (contrato_porta or contrato_janela);
+contrato_v_53 : (not contrato_v_52);
+contrato_r3 : (contrato_v_53 or contrato_off_frost);
+contrato_v_56 : (contrato_r1 and contrato_r3);
+contrato_v : (contrato_lamp or contrato_tv);
+contrato_v_50 : (not contrato_v);
+contrato_v_51 : (contrato_v_50 and contrato_off_frost);
+contrato_r4 : (contrato_ocupado or contrato_v_51);
+contrato_v_57 : (contrato_v_56 and contrato_r4);
+contrato_assume : 1;
+contrato_guarantee : contrato_v_57;
+initialisations : concat(initialisations, [(contrato_error_state = 1)]);
+evolutions : concat(evolutions, [contrato_guarantee]);
+constraints : [((contrato_cj^2) = 1), ((contrato_cp^2) = 1),
+               ((contrato_pporta^2) = 1), ((contrato_pjanela^2) = 1),
+               ((contrato_rup1^2) = 1), ((contrato_rdown1^2) = 1),
+               ((contrato_rup2^2) = 1), ((contrato_rdown2^2) = 1),
+               ((contrato_presenca^2) = 1), ((contrato_bl^2) = 1),
+               ((contrato_bt^2) = 1), ((contrato_ct2^2) = 1),
+               ((contrato_ct1^2) = 1), ((contrato_cl2^2) = 1),
+               ((contrato_cl1^2) = 1), ((contrato_rc2^2) = 1),
+               ((contrato_rc1^2) = 1), (contrato_assume = 1)];
+
+% --- outputs : [contrato_porta, contrato_janela, contrato_lamp, contrato_tv,
+                 contrato_ocupado, contrato_rad_pot, contrato_rad_state] --- %
+contrato : processus(conditions, states, evolutions, initialisations,
+                     [gen(constraints)], controllables);
+contrato_init : initial(contrato);
+contrato : S_Security(contrato,B_True(contrato,contrato_error_state));
+dcs_result : equal(contrato_init,initial(contrato));
+if dcs_result then
+    print("contrato: synthesis succeeded.")
+else
+    print("contrato: synthesis failed.");
+
+if dcs_result then
+    print("Triangulation and controller generation...")
+else
+    quit(1);
+declare(p_contrato_ct2, p_contrato_ct1, p_contrato_cl2, p_contrato_cl1,
+        p_contrato_rc2, p_contrato_rc1);
+phantom_vars : [p_contrato_ct2, p_contrato_ct1, p_contrato_cl2,
+                p_contrato_cl1, p_contrato_rc2, p_contrato_rc1];
+contrato_triang : Triang(constraint(contrato),controllables,phantom_vars);
+controller_inputs : [contrato_cj, contrato_cp, contrato_pporta,
+                     contrato_pjanela, contrato_rup1, contrato_rdown1,
+                     contrato_rup2, contrato_rdown2, contrato_presenca,
+                     contrato_bl, contrato_bt, contrato_v_263,
+                     contrato_v_262, contrato_pnr_5, contrato_ck_9_1,
+                     contrato_pnr_4, contrato_ck_11_1, contrato_pnr_3,
+                     contrato_ck_13_1, contrato_pnr_2, contrato_ck_15_1,
+                     contrato_pnr_1, contrato_ck_17_1, contrato_pnr,
+                     p_contrato_ct2, p_contrato_ct1, p_contrato_cl2,
+                     p_contrato_cl1, p_contrato_rc2, p_contrato_rc1];
+heptagon_controller("contrato_controller.ept","contrato",controller_inputs,controllables,contrato_triang);
+
