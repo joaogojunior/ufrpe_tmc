@@ -150,30 +150,33 @@ let
     end
 tel
 
-node contrato(cj,cp,pporta,pjanela,rup1,rdown1,rup2,rdown2,presenca,bl,bt:bool) returns (porta,janela,lamp,tv,ocupado:bool;rad_pot,rad_state:int)
+node contrato(ecoi,comfi,ews,sws,fo,so,tok,cold,pporta,pjanela,rup1,rdown1,rup2,rdown2,presenca,bl,bt:bool)
+ returns (eco,comfort,porta,janela,lamp,tv,ocupado:bool;plm,pws,iws,po,io,rad_pot,rad_state:int)
     contract
-var r1, r3, r4, off_frost : bool;
+var r1, r2, r3, r4, r5, off_frost : bool; totalpower: int;
 
 let
+     totalpower = pws + po + rad_pot;
      off_frost = rad_state <= 1;
      r1 = ( not ocupado or tv or lamp );
+     r2 = ocupado or not ( porta or janela );
      r3 = not ( porta or janela ) or ( off_frost );
      r4 = ocupado or (not(lamp or tv) & (off_frost));
+(*     r5 = totalpower <= plm; *)
+     r5 = totalpower <= 3000; 
 tel
-     enforce r1 & r3 & r4
-     with (rc1,rc2,cl1,cl2,ct1,ct2:bool)
+     enforce r1 & r2 & r3 & r4 & r5
+     with (cj,cp,cws,co,rc1,rc2,cl1,cl2,ct1,ct2:bool)
 let
+    (eco, comfort, plm) = inlined management_policy(ecoi,comfi);
     (rad_pot, rad_state) = inlined rad(rup1,rdown1,rup2,rdown2,rc1,rc2);
     porta = inlined door(pporta, cp);
     janela = inlined door(pjanela, cj);
     lamp = inlined light_source(bl,cl1,cl2); 
     tv = inlined light_source(bt,ct1,ct2);
     ocupado = inlined room(presenca);
-
-(*    (pws, iws) = inlined washingmachine(ews,sws,cws);
+    (pws, iws) = inlined washingmachine(ews,sws,cws);
     (po, io) = inlined oven(fo,so,co,tok,cold)
-    (po, io) = inlined oven(fo,so,co,tok,cold)
-    (po, io) = inlined oven(fo,so,co,tok,cold) *)
 tel
 
 

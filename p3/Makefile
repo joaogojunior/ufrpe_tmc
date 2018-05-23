@@ -1,5 +1,5 @@
 
-SIM_PROG=p2_joao
+SIM_PROG=p3_joao
 # same as SIM_PROG, capitalized
 SIM_MOD=Contrato
 SIM_NODE=contrato
