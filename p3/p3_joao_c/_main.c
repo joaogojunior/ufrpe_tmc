@@ -1,4 +1,4 @@
-/* --- Generated the 23/5/2018 at 5:25 --- */
+/* --- Generated the 3/6/2018 at 13:56 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -11,23 +11,23 @@ P3_joao__contrato_mem mem;
 int main(int argc, char** argv) {
   int step_c;
   int step_max;
-  int ecoi;
-  int comfi;
-  int ews;
-  int sws;
-  int fo;
-  int so;
+  int eco_input;
+  int comfort_input;
+  int end_wash;
+  int start_wash;
+  int finish_oven;
+  int start_oven;
   int tok;
   int cold;
-  int pporta;
-  int pjanela;
-  int rup1;
-  int rdown1;
-  int rup2;
-  int rdown2;
+  int push_porta;
+  int push_janela;
+  int rad_up1;
+  int rad_down1;
+  int rad_up2;
+  int rad_down2;
   int presenca;
-  int bl;
-  int bt;
+  int botao_lamp;
+  int botao_tv;
   P3_joao__contrato_out _res;
   step_c = 0;
   step_max = 0;
@@ -38,23 +38,23 @@ int main(int argc, char** argv) {
   while ((!(step_max)||(step_c<step_max))) {
     step_c = (step_c+1);
     
-    printf("ecoi ? ");
-    scanf("%d", &ecoi);;
+    printf("eco_input ? ");
+    scanf("%d", &eco_input);;
     
-    printf("comfi ? ");
-    scanf("%d", &comfi);;
+    printf("comfort_input ? ");
+    scanf("%d", &comfort_input);;
     
-    printf("ews ? ");
-    scanf("%d", &ews);;
+    printf("end_wash ? ");
+    scanf("%d", &end_wash);;
     
-    printf("sws ? ");
-    scanf("%d", &sws);;
+    printf("start_wash ? ");
+    scanf("%d", &start_wash);;
     
-    printf("fo ? ");
-    scanf("%d", &fo);;
+    printf("finish_oven ? ");
+    scanf("%d", &finish_oven);;
     
-    printf("so ? ");
-    scanf("%d", &so);;
+    printf("start_oven ? ");
+    scanf("%d", &start_oven);;
     
     printf("tok ? ");
     scanf("%d", &tok);;
@@ -62,35 +62,37 @@ int main(int argc, char** argv) {
     printf("cold ? ");
     scanf("%d", &cold);;
     
-    printf("pporta ? ");
-    scanf("%d", &pporta);;
+    printf("push_porta ? ");
+    scanf("%d", &push_porta);;
     
-    printf("pjanela ? ");
-    scanf("%d", &pjanela);;
+    printf("push_janela ? ");
+    scanf("%d", &push_janela);;
     
-    printf("rup1 ? ");
-    scanf("%d", &rup1);;
+    printf("rad_up1 ? ");
+    scanf("%d", &rad_up1);;
     
-    printf("rdown1 ? ");
-    scanf("%d", &rdown1);;
+    printf("rad_down1 ? ");
+    scanf("%d", &rad_down1);;
     
-    printf("rup2 ? ");
-    scanf("%d", &rup2);;
+    printf("rad_up2 ? ");
+    scanf("%d", &rad_up2);;
     
-    printf("rdown2 ? ");
-    scanf("%d", &rdown2);;
+    printf("rad_down2 ? ");
+    scanf("%d", &rad_down2);;
     
     printf("presenca ? ");
     scanf("%d", &presenca);;
     
-    printf("bl ? ");
-    scanf("%d", &bl);;
+    printf("botao_lamp ? ");
+    scanf("%d", &botao_lamp);;
     
-    printf("bt ? ");
-    scanf("%d", &bt);;
-    P3_joao__contrato_step(ecoi, comfi, ews, sws, fo, so, tok, cold, pporta,
-                           pjanela, rup1, rdown1, rup2, rdown2, presenca, bl,
-                           bt, &_res, &mem);
+    printf("botao_tv ? ");
+    scanf("%d", &botao_tv);;
+    P3_joao__contrato_step(eco_input, comfort_input, end_wash, start_wash,
+                           finish_oven, start_oven, tok, cold, push_porta,
+                           push_janela, rad_up1, rad_down1, rad_up2,
+                           rad_down2, presenca, botao_lamp, botao_tv, &_res,
+                           &mem);
     printf("=> ");
     printf("%d ", _res.eco);
     printf("=> ");
@@ -106,19 +108,23 @@ int main(int argc, char** argv) {
     printf("=> ");
     printf("%d ", _res.ocupado);
     printf("=> ");
-    printf("%d ", _res.plm);
+    printf("%d ", _res.r5);
     printf("=> ");
-    printf("%d ", _res.pws);
+    printf("%d ", _res.p_wash);
     printf("=> ");
     printf("%d ", _res.iws);
     printf("=> ");
-    printf("%d ", _res.po);
+    printf("%d ", _res.p_oven);
     printf("=> ");
     printf("%d ", _res.io);
     printf("=> ");
     printf("%d ", _res.rad_pot);
     printf("=> ");
     printf("%d ", _res.rad_state);
+    printf("=> ");
+    printf("%d ", _res.pol_lim);
+    printf("=> ");
+    printf("%d ", _res.total);
     puts("");
     fflush(stdout);
   };

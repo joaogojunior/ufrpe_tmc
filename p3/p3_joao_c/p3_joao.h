@@ -1,4 +1,4 @@
-/* --- Generated the 23/5/2018 at 5:25 --- */
+/* --- Generated the 3/6/2018 at 13:56 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -8,9 +8,9 @@
 #include "p3_joao_types.h"
 #include "contrato_controller.h"
 typedef struct P3_joao__washingmachine_mem {
-  int v_166;
   int v_165;
   int v_164;
+  int v_163;
   int pnr;
 } P3_joao__washingmachine_mem;
 
@@ -26,9 +26,9 @@ void P3_joao__washingmachine_step(int e, int s, int c,
                                   P3_joao__washingmachine_mem* self);
 
 typedef struct P3_joao__oven_mem {
-  int v_223;
   int v_222;
   int v_221;
+  int v_220;
   int pnr;
 } P3_joao__oven_mem;
 
@@ -43,8 +43,8 @@ void P3_joao__oven_step(int f, int s, int c, int tok, int cold,
                         P3_joao__oven_out* _out, P3_joao__oven_mem* self);
 
 typedef struct P3_joao__rad_mem {
-  int v_255;
   int v_254;
+  int v_253;
   int pnr;
 } P3_joao__rad_mem;
 
@@ -102,8 +102,8 @@ void P3_joao__light_source_step(int botao, int c1, int c2,
                                 P3_joao__light_source_mem* self);
 
 typedef struct P3_joao__management_policy_mem {
-  int v_275;
   int v_274;
+  int v_273;
   int pnr;
 } P3_joao__management_policy_mem;
 
@@ -120,21 +120,21 @@ void P3_joao__management_policy_step(int eco_input, int comfort_input,
                                      P3_joao__management_policy_mem* self);
 
 typedef struct P3_joao__contrato_mem {
-  int v_314;
-  int v_313;
-  int v_312;
-  int v_373;
-  int v_372;
-  int v_371;
-  int ck_19_1;
+  int v_294;
+  int v_293;
+  int v_333;
+  int v_332;
+  int v_331;
+  int v_392;
+  int v_391;
+  int v_390;
   int ck_17_1;
   int ck_15_1;
   int ck_13_1;
   int ck_11_1;
-  int v_409;
-  int v_408;
-  int v_429;
+  int ck_9_1;
   int v_428;
+  int v_427;
   int pnr_8;
   int pnr_7;
   int pnr_6;
@@ -154,21 +154,25 @@ typedef struct P3_joao__contrato_out {
   int lamp;
   int tv;
   int ocupado;
-  int plm;
-  int pws;
+  int r5;
+  int p_wash;
   int iws;
-  int po;
+  int p_oven;
   int io;
   int rad_pot;
   int rad_state;
+  int pol_lim;
+  int total;
 } P3_joao__contrato_out;
 
 void P3_joao__contrato_reset(P3_joao__contrato_mem* self);
 
-void P3_joao__contrato_step(int ecoi, int comfi, int ews, int sws, int fo,
-                            int so, int tok, int cold, int pporta,
-                            int pjanela, int rup1, int rdown1, int rup2,
-                            int rdown2, int presenca, int bl, int bt,
+void P3_joao__contrato_step(int eco_input, int comfort_input, int end_wash,
+                            int start_wash, int finish_oven, int start_oven,
+                            int tok, int cold, int push_porta,
+                            int push_janela, int rad_up1, int rad_down1,
+                            int rad_up2, int rad_down2, int presenca,
+                            int botao_lamp, int botao_tv,
                             P3_joao__contrato_out* _out,
                             P3_joao__contrato_mem* self);
 

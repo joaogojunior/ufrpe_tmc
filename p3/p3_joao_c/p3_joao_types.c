@@ -1,4 +1,4 @@
-/* --- Generated the 23/5/2018 at 5:25 --- */
+/* --- Generated the 3/6/2018 at 13:56 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -8,27 +8,33 @@
 #include "p3_joao_types.h"
 
 P3_joao__st_15 P3_joao__st_15_of_string(char* s) {
-  if ((strcmp(s, "St_15_Minimal_safety")==0)) {
-    return P3_joao__St_15_Minimal_safety;
+  if ((strcmp(s, "St_15_Off")==0)) {
+    return P3_joao__St_15_Off;
+  };
+  if ((strcmp(s, "St_15_High")==0)) {
+    return P3_joao__St_15_High;
+  };
+  if ((strcmp(s, "St_15_Frostprotection")==0)) {
+    return P3_joao__St_15_Frostprotection;
   };
   if ((strcmp(s, "St_15_Eco")==0)) {
     return P3_joao__St_15_Eco;
-  };
-  if ((strcmp(s, "St_15_Comfort")==0)) {
-    return P3_joao__St_15_Comfort;
   };
 }
 
 char* string_of_P3_joao__st_15(P3_joao__st_15 x, char* buf) {
   switch (x) {
-    case P3_joao__St_15_Minimal_safety:
-      strcpy(buf, "St_15_Minimal_safety");
+    case P3_joao__St_15_Off:
+      strcpy(buf, "St_15_Off");
+      break;
+    case P3_joao__St_15_High:
+      strcpy(buf, "St_15_High");
+      break;
+    case P3_joao__St_15_Frostprotection:
+      strcpy(buf, "St_15_Frostprotection");
       break;
     case P3_joao__St_15_Eco:
       strcpy(buf, "St_15_Eco");
-      break;
-    case P3_joao__St_15_Comfort:
-      strcpy(buf, "St_15_Comfort");
       break;
     default:
       break;
@@ -37,33 +43,21 @@ char* string_of_P3_joao__st_15(P3_joao__st_15 x, char* buf) {
 }
 
 P3_joao__st_14 P3_joao__st_14_of_string(char* s) {
-  if ((strcmp(s, "St_14_Off")==0)) {
-    return P3_joao__St_14_Off;
+  if ((strcmp(s, "St_14_Open")==0)) {
+    return P3_joao__St_14_Open;
   };
-  if ((strcmp(s, "St_14_High")==0)) {
-    return P3_joao__St_14_High;
-  };
-  if ((strcmp(s, "St_14_Frostprotection")==0)) {
-    return P3_joao__St_14_Frostprotection;
-  };
-  if ((strcmp(s, "St_14_Eco")==0)) {
-    return P3_joao__St_14_Eco;
+  if ((strcmp(s, "St_14_Closed")==0)) {
+    return P3_joao__St_14_Closed;
   };
 }
 
 char* string_of_P3_joao__st_14(P3_joao__st_14 x, char* buf) {
   switch (x) {
-    case P3_joao__St_14_Off:
-      strcpy(buf, "St_14_Off");
+    case P3_joao__St_14_Open:
+      strcpy(buf, "St_14_Open");
       break;
-    case P3_joao__St_14_High:
-      strcpy(buf, "St_14_High");
-      break;
-    case P3_joao__St_14_Frostprotection:
-      strcpy(buf, "St_14_Frostprotection");
-      break;
-    case P3_joao__St_14_Eco:
-      strcpy(buf, "St_14_Eco");
+    case P3_joao__St_14_Closed:
+      strcpy(buf, "St_14_Closed");
       break;
     default:
       break;
@@ -95,21 +89,21 @@ char* string_of_P3_joao__st_13(P3_joao__st_13 x, char* buf) {
 }
 
 P3_joao__st_12 P3_joao__st_12_of_string(char* s) {
-  if ((strcmp(s, "St_12_Open")==0)) {
-    return P3_joao__St_12_Open;
+  if ((strcmp(s, "St_12_Ligado")==0)) {
+    return P3_joao__St_12_Ligado;
   };
-  if ((strcmp(s, "St_12_Closed")==0)) {
-    return P3_joao__St_12_Closed;
+  if ((strcmp(s, "St_12_Desligado")==0)) {
+    return P3_joao__St_12_Desligado;
   };
 }
 
 char* string_of_P3_joao__st_12(P3_joao__st_12 x, char* buf) {
   switch (x) {
-    case P3_joao__St_12_Open:
-      strcpy(buf, "St_12_Open");
+    case P3_joao__St_12_Ligado:
+      strcpy(buf, "St_12_Ligado");
       break;
-    case P3_joao__St_12_Closed:
-      strcpy(buf, "St_12_Closed");
+    case P3_joao__St_12_Desligado:
+      strcpy(buf, "St_12_Desligado");
       break;
     default:
       break;
@@ -141,21 +135,21 @@ char* string_of_P3_joao__st_11(P3_joao__st_11 x, char* buf) {
 }
 
 P3_joao__st_10 P3_joao__st_10_of_string(char* s) {
-  if ((strcmp(s, "St_10_Ligado")==0)) {
-    return P3_joao__St_10_Ligado;
+  if ((strcmp(s, "St_10_Ocupied")==0)) {
+    return P3_joao__St_10_Ocupied;
   };
-  if ((strcmp(s, "St_10_Desligado")==0)) {
-    return P3_joao__St_10_Desligado;
+  if ((strcmp(s, "St_10_Empty")==0)) {
+    return P3_joao__St_10_Empty;
   };
 }
 
 char* string_of_P3_joao__st_10(P3_joao__st_10 x, char* buf) {
   switch (x) {
-    case P3_joao__St_10_Ligado:
-      strcpy(buf, "St_10_Ligado");
+    case P3_joao__St_10_Ocupied:
+      strcpy(buf, "St_10_Ocupied");
       break;
-    case P3_joao__St_10_Desligado:
-      strcpy(buf, "St_10_Desligado");
+    case P3_joao__St_10_Empty:
+      strcpy(buf, "St_10_Empty");
       break;
     default:
       break;
@@ -164,21 +158,45 @@ char* string_of_P3_joao__st_10(P3_joao__st_10 x, char* buf) {
 }
 
 P3_joao__st_9 P3_joao__st_9_of_string(char* s) {
-  if ((strcmp(s, "St_9_Ocupied")==0)) {
-    return P3_joao__St_9_Ocupied;
+  if ((strcmp(s, "St_9_Waterfill")==0)) {
+    return P3_joao__St_9_Waterfill;
   };
-  if ((strcmp(s, "St_9_Empty")==0)) {
-    return P3_joao__St_9_Empty;
+  if ((strcmp(s, "St_9_Washing")==0)) {
+    return P3_joao__St_9_Washing;
+  };
+  if ((strcmp(s, "St_9_Standby")==0)) {
+    return P3_joao__St_9_Standby;
+  };
+  if ((strcmp(s, "St_9_Spin")==0)) {
+    return P3_joao__St_9_Spin;
+  };
+  if ((strcmp(s, "St_9_Rinse")==0)) {
+    return P3_joao__St_9_Rinse;
+  };
+  if ((strcmp(s, "St_9_Off")==0)) {
+    return P3_joao__St_9_Off;
   };
 }
 
 char* string_of_P3_joao__st_9(P3_joao__st_9 x, char* buf) {
   switch (x) {
-    case P3_joao__St_9_Ocupied:
-      strcpy(buf, "St_9_Ocupied");
+    case P3_joao__St_9_Waterfill:
+      strcpy(buf, "St_9_Waterfill");
       break;
-    case P3_joao__St_9_Empty:
-      strcpy(buf, "St_9_Empty");
+    case P3_joao__St_9_Washing:
+      strcpy(buf, "St_9_Washing");
+      break;
+    case P3_joao__St_9_Standby:
+      strcpy(buf, "St_9_Standby");
+      break;
+    case P3_joao__St_9_Spin:
+      strcpy(buf, "St_9_Spin");
+      break;
+    case P3_joao__St_9_Rinse:
+      strcpy(buf, "St_9_Rinse");
+      break;
+    case P3_joao__St_9_Off:
+      strcpy(buf, "St_9_Off");
       break;
     default:
       break;
@@ -187,45 +205,39 @@ char* string_of_P3_joao__st_9(P3_joao__st_9 x, char* buf) {
 }
 
 P3_joao__st_8 P3_joao__st_8_of_string(char* s) {
-  if ((strcmp(s, "St_8_Waterfill")==0)) {
-    return P3_joao__St_8_Waterfill;
-  };
-  if ((strcmp(s, "St_8_Washing")==0)) {
-    return P3_joao__St_8_Washing;
-  };
   if ((strcmp(s, "St_8_Standby")==0)) {
     return P3_joao__St_8_Standby;
   };
-  if ((strcmp(s, "St_8_Spin")==0)) {
-    return P3_joao__St_8_Spin;
-  };
-  if ((strcmp(s, "St_8_Rinse")==0)) {
-    return P3_joao__St_8_Rinse;
+  if ((strcmp(s, "St_8_Reheat")==0)) {
+    return P3_joao__St_8_Reheat;
   };
   if ((strcmp(s, "St_8_Off")==0)) {
     return P3_joao__St_8_Off;
+  };
+  if ((strcmp(s, "St_8_Maintain")==0)) {
+    return P3_joao__St_8_Maintain;
+  };
+  if ((strcmp(s, "St_8_Heat")==0)) {
+    return P3_joao__St_8_Heat;
   };
 }
 
 char* string_of_P3_joao__st_8(P3_joao__st_8 x, char* buf) {
   switch (x) {
-    case P3_joao__St_8_Waterfill:
-      strcpy(buf, "St_8_Waterfill");
-      break;
-    case P3_joao__St_8_Washing:
-      strcpy(buf, "St_8_Washing");
-      break;
     case P3_joao__St_8_Standby:
       strcpy(buf, "St_8_Standby");
       break;
-    case P3_joao__St_8_Spin:
-      strcpy(buf, "St_8_Spin");
-      break;
-    case P3_joao__St_8_Rinse:
-      strcpy(buf, "St_8_Rinse");
+    case P3_joao__St_8_Reheat:
+      strcpy(buf, "St_8_Reheat");
       break;
     case P3_joao__St_8_Off:
       strcpy(buf, "St_8_Off");
+      break;
+    case P3_joao__St_8_Maintain:
+      strcpy(buf, "St_8_Maintain");
+      break;
+    case P3_joao__St_8_Heat:
+      strcpy(buf, "St_8_Heat");
       break;
     default:
       break;
@@ -234,39 +246,27 @@ char* string_of_P3_joao__st_8(P3_joao__st_8 x, char* buf) {
 }
 
 P3_joao__st_7 P3_joao__st_7_of_string(char* s) {
-  if ((strcmp(s, "St_7_Standby")==0)) {
-    return P3_joao__St_7_Standby;
+  if ((strcmp(s, "St_7_Minimal_safety")==0)) {
+    return P3_joao__St_7_Minimal_safety;
   };
-  if ((strcmp(s, "St_7_Reheat")==0)) {
-    return P3_joao__St_7_Reheat;
+  if ((strcmp(s, "St_7_Eco")==0)) {
+    return P3_joao__St_7_Eco;
   };
-  if ((strcmp(s, "St_7_Off")==0)) {
-    return P3_joao__St_7_Off;
-  };
-  if ((strcmp(s, "St_7_Maintain")==0)) {
-    return P3_joao__St_7_Maintain;
-  };
-  if ((strcmp(s, "St_7_Heat")==0)) {
-    return P3_joao__St_7_Heat;
+  if ((strcmp(s, "St_7_Comfort")==0)) {
+    return P3_joao__St_7_Comfort;
   };
 }
 
 char* string_of_P3_joao__st_7(P3_joao__st_7 x, char* buf) {
   switch (x) {
-    case P3_joao__St_7_Standby:
-      strcpy(buf, "St_7_Standby");
+    case P3_joao__St_7_Minimal_safety:
+      strcpy(buf, "St_7_Minimal_safety");
       break;
-    case P3_joao__St_7_Reheat:
-      strcpy(buf, "St_7_Reheat");
+    case P3_joao__St_7_Eco:
+      strcpy(buf, "St_7_Eco");
       break;
-    case P3_joao__St_7_Off:
-      strcpy(buf, "St_7_Off");
-      break;
-    case P3_joao__St_7_Maintain:
-      strcpy(buf, "St_7_Maintain");
-      break;
-    case P3_joao__St_7_Heat:
-      strcpy(buf, "St_7_Heat");
+    case P3_joao__St_7_Comfort:
+      strcpy(buf, "St_7_Comfort");
       break;
     default:
       break;
