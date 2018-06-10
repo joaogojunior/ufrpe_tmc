@@ -147,21 +147,29 @@ tel
 
 node contrato(eco_input, comfort_input, end_wash, start_wash, finish_oven,start_oven,tok,cold,push_porta,push_janela,
 rad_up1, rad_down1, rad_up2, rad_down2, presenca, botao_lamp, botao_tv:bool)
- returns (porta, janela, lamp, tv, ocupado, r5: bool; p_wash, iws, p_oven, io, rad_pot, rad_state, total:int; pol_lim: pol_states;)
+ returns (porta, janela, lamp, tv, ocupado: bool; p_wash, iws, p_oven, io, rad_pot, rad_state:int;)
     contract
-var  r1, r2, r3, r4, off_frost: bool;
+var  r1, r2, r3, r4, r5, off_frost: bool; total: int;  pol_lim: pol_states;
 
 let
+(* politicas *)
      off_frost = rad_state <= 1;
+     total = p_wash + p_oven + rad_pot; 
+     pol_lim = inlined management_policy(eco_input, comfort_input);
      r1 = ( not ocupado or tv or lamp );
      r2 = ocupado or not ( porta or janela );
      r3 = not ( porta or janela ) or ( off_frost );
      r4 = ocupado or (not(lamp or tv) & (off_frost));
-
+     switch pol_lim
+     | MIN do r5 = (total <= 3000);
+     | ECO do r5 = (total <= 5000);
+     | COM do r5 = (total <= 7000);
+     end
 tel
      enforce r1 & r2 & r3 & r4 & r5
      with (cj,cp,cws,co,rc1,rc2,cl1,cl2,ct1,ct2:bool)
 let
+(* planta *)
     (rad_pot, rad_state) = inlined rad(rad_up1,rad_down1,rad_up2,rad_down2,rc1,rc2);
     porta = inlined door(push_porta, cp);
     janela = inlined door(push_janela, cj);
@@ -170,13 +178,4 @@ let
     ocupado = inlined room(presenca);
     (p_wash, iws) = inlined washingmachine(end_wash,start_wash,cws);
     (p_oven, io) = inlined oven(finish_oven,start_oven,co,tok,cold);
-    pol_lim = inlined management_policy(eco_input, comfort_input);
-    total = p_wash + p_oven + rad_pot; 
-    switch pol_lim
-    | MIN do r5 = (total <= 3000);
-    | ECO do r5 = (total <= 5000);
-    | COM do r5 = (total <= 7000);
-    end
-tel  
-
-
+tel

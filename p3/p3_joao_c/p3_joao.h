@@ -1,4 +1,4 @@
-/* --- Generated the 10/6/2018 at 8:23 --- */
+/* --- Generated the 10/6/2018 at 9:2 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -119,21 +119,19 @@ void P3_joao__management_policy_step(int eco_input, int comfort_input,
                                      P3_joao__management_policy_mem* self);
 
 typedef struct P3_joao__contrato_mem {
-  int v_291;
-  int v_290;
+  int v_332;
+  int v_331;
   int v_330;
-  int v_329;
-  int v_328;
+  int v_391;
+  int v_390;
   int v_389;
-  int v_388;
-  int v_387;
+  int ck_20_1;
   int ck_18_1;
   int ck_16_1;
   int ck_14_1;
   int ck_12_1;
-  int ck_10_1;
-  int v_425;
-  int v_424;
+  int v_427;
+  int v_426;
   int pnr_8;
   int pnr_7;
   int pnr_6;
@@ -142,6 +140,8 @@ typedef struct P3_joao__contrato_mem {
   int pnr_3;
   int pnr_2;
   int pnr_1;
+  int v_289;
+  int v_288;
   int pnr;
 } P3_joao__contrato_mem;
 
@@ -151,16 +151,12 @@ typedef struct P3_joao__contrato_out {
   int lamp;
   int tv;
   int ocupado;
-  int r5;
   int p_wash;
   int iws;
   int p_oven;
   int io;
   int rad_pot;
   int rad_state;
-  int total;
-  int pol_lim_2;
-  int pol_lim_1;
 } P3_joao__contrato_out;
 
 void P3_joao__contrato_reset(P3_joao__contrato_mem* self);
