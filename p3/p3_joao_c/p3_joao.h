@@ -1,4 +1,4 @@
-/* --- Generated the 3/6/2018 at 13:56 --- */
+/* --- Generated the 10/6/2018 at 8:23 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -8,9 +8,9 @@
 #include "p3_joao_types.h"
 #include "contrato_controller.h"
 typedef struct P3_joao__washingmachine_mem {
+  int v_166;
   int v_165;
   int v_164;
-  int v_163;
   int pnr;
 } P3_joao__washingmachine_mem;
 
@@ -26,9 +26,9 @@ void P3_joao__washingmachine_step(int e, int s, int c,
                                   P3_joao__washingmachine_mem* self);
 
 typedef struct P3_joao__oven_mem {
+  int v_223;
   int v_222;
   int v_221;
-  int v_220;
   int pnr;
 } P3_joao__oven_mem;
 
@@ -43,8 +43,8 @@ void P3_joao__oven_step(int f, int s, int c, int tok, int cold,
                         P3_joao__oven_out* _out, P3_joao__oven_mem* self);
 
 typedef struct P3_joao__rad_mem {
+  int v_255;
   int v_254;
-  int v_253;
   int pnr;
 } P3_joao__rad_mem;
 
@@ -102,15 +102,14 @@ void P3_joao__light_source_step(int botao, int c1, int c2,
                                 P3_joao__light_source_mem* self);
 
 typedef struct P3_joao__management_policy_mem {
-  int v_274;
   int v_273;
+  int v_272;
   int pnr;
 } P3_joao__management_policy_mem;
 
 typedef struct P3_joao__management_policy_out {
-  int eco;
-  int comfort;
-  int pl;
+  int pl_state_2;
+  int pl_state_1;
 } P3_joao__management_policy_out;
 
 void P3_joao__management_policy_reset(P3_joao__management_policy_mem* self);
@@ -120,21 +119,21 @@ void P3_joao__management_policy_step(int eco_input, int comfort_input,
                                      P3_joao__management_policy_mem* self);
 
 typedef struct P3_joao__contrato_mem {
-  int v_294;
-  int v_293;
-  int v_333;
-  int v_332;
-  int v_331;
-  int v_392;
-  int v_391;
-  int v_390;
-  int ck_17_1;
-  int ck_15_1;
-  int ck_13_1;
-  int ck_11_1;
-  int ck_9_1;
-  int v_428;
-  int v_427;
+  int v_291;
+  int v_290;
+  int v_330;
+  int v_329;
+  int v_328;
+  int v_389;
+  int v_388;
+  int v_387;
+  int ck_18_1;
+  int ck_16_1;
+  int ck_14_1;
+  int ck_12_1;
+  int ck_10_1;
+  int v_425;
+  int v_424;
   int pnr_8;
   int pnr_7;
   int pnr_6;
@@ -147,8 +146,6 @@ typedef struct P3_joao__contrato_mem {
 } P3_joao__contrato_mem;
 
 typedef struct P3_joao__contrato_out {
-  int eco;
-  int comfort;
   int porta;
   int janela;
   int lamp;
@@ -161,8 +158,9 @@ typedef struct P3_joao__contrato_out {
   int io;
   int rad_pot;
   int rad_state;
-  int pol_lim;
   int total;
+  int pol_lim_2;
+  int pol_lim_1;
 } P3_joao__contrato_out;
 
 void P3_joao__contrato_reset(P3_joao__contrato_mem* self);

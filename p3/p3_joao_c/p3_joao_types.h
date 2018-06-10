@@ -1,4 +1,4 @@
-/* --- Generated the 3/6/2018 at 13:56 --- */
+/* --- Generated the 10/6/2018 at 8:23 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -172,5 +172,15 @@ typedef enum {
 P3_joao__st P3_joao__st_of_string(char* s);
 
 char* string_of_P3_joao__st(P3_joao__st x, char* buf);
+
+typedef enum {
+  P3_joao__MIN,
+  P3_joao__ECO,
+  P3_joao__COM
+} P3_joao__pol_states;
+
+P3_joao__pol_states P3_joao__pol_states_of_string(char* s);
+
+char* string_of_P3_joao__pol_states(P3_joao__pol_states x, char* buf);
 
 #endif // P3_JOAO_TYPES_H

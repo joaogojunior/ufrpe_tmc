@@ -1,4 +1,4 @@
-/* --- Generated the 3/6/2018 at 13:56 --- */
+/* --- Generated the 10/6/2018 at 8:23 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -488,6 +488,35 @@ char* string_of_P3_joao__st(P3_joao__st x, char* buf) {
       break;
     case P3_joao__St_Off:
       strcpy(buf, "St_Off");
+      break;
+    default:
+      break;
+  };
+  return buf;
+}
+
+P3_joao__pol_states P3_joao__pol_states_of_string(char* s) {
+  if ((strcmp(s, "MIN")==0)) {
+    return P3_joao__MIN;
+  };
+  if ((strcmp(s, "ECO")==0)) {
+    return P3_joao__ECO;
+  };
+  if ((strcmp(s, "COM")==0)) {
+    return P3_joao__COM;
+  };
+}
+
+char* string_of_P3_joao__pol_states(P3_joao__pol_states x, char* buf) {
+  switch (x) {
+    case P3_joao__MIN:
+      strcpy(buf, "MIN");
+      break;
+    case P3_joao__ECO:
+      strcpy(buf, "ECO");
+      break;
+    case P3_joao__COM:
+      strcpy(buf, "COM");
       break;
     default:
       break;

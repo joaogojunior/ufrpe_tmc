@@ -1,4 +1,4 @@
-/* --- Generated the 3/6/2018 at 13:56 --- */
+/* --- Generated the 10/6/2018 at 8:23 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato p3_joao.ept --- */
 
@@ -94,10 +94,6 @@ int main(int argc, char** argv) {
                            rad_down2, presenca, botao_lamp, botao_tv, &_res,
                            &mem);
     printf("=> ");
-    printf("%d ", _res.eco);
-    printf("=> ");
-    printf("%d ", _res.comfort);
-    printf("=> ");
     printf("%d ", _res.porta);
     printf("=> ");
     printf("%d ", _res.janela);
@@ -122,9 +118,11 @@ int main(int argc, char** argv) {
     printf("=> ");
     printf("%d ", _res.rad_state);
     printf("=> ");
-    printf("%d ", _res.pol_lim);
-    printf("=> ");
     printf("%d ", _res.total);
+    printf("=> ");
+    printf("%d ", _res.pol_lim_2);
+    printf("=> ");
+    printf("%d ", _res.pol_lim_1);
     puts("");
     fflush(stdout);
   };
