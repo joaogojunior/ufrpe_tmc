@@ -1,0 +1,141 @@
+(*
+    until => executa o estado em que está e transiciona para outro estado
+    unless => transiciona para outro estado e executa o novo estado
+*)
+
+type pc_states = OFF | R1 | R3 | R4
+node computador(sw_atx, c_atx, rup, rdown,c:bool) returns (estado_pc:pc_states)
+let
+    automaton
+    state off do
+      estado_pc = OFF;
+    unless sw_atx or c_atx then r4
+    state r4 do
+      estado_pc = R4;
+    unless c_atx then off
+      | rdown then r3
+    state r3 do
+      estado_pc = R3;
+    unless rup then R4
+      | c_atx then off
+      | rdown then r1
+    state r1 do
+      estado_pc = R1;
+    unless c_atx or rdown then off
+      | rup then r4
+    end
+tel
+
+type bat_states = B100 | B75 | B50 | B25 | BERR
+node bateria(c, l1, l2, v:bool) returns (estado_bat:bat_states)
+var t1, t2, t3, t4: bool;
+let
+   t1 = !c & l1 & l2 & v;
+   t2 = c & l1 & l2 & v;
+   t3 = !c & !l1 & l2 & v;
+   t4 = !c & !l1 & !l2 & v;
+tel
+
+let
+    automaton
+    state erro do
+      estado_bat = BERR;
+    unless t2 then carregado
+      | t1 then limiar1
+      | t3 then limiar2
+      | t4 then descarregado
+    state carregado do
+      estado_bat = B100;
+    unless t1 then limiar1
+    state limiar1 do
+      estado_bat = B75;
+    unless t2 carregado
+      | t3 then limiar2
+    state limiar2 do
+      estado_bat = B50;
+    unless t1 then limiar1
+       | t4 then descarregado
+    state descarregado do
+      estado_bat = B25;
+    unless t3 then limiar2
+    end
+tel
+
+node atuador_sw(ca:bool) returns (estado:bool)
+let
+    automaton
+    state Des do
+      estado = false;
+    unless ca then Lig
+    state Lig do
+      estado = true;
+    unless ca then Des
+    end
+tel
+
+type day_states = DIA | NOITE
+node periodo_dia(cr:bool) returns (periodo:day_states)
+let
+    automaton
+    state Dia do
+      periodo = DIA;
+    unless cr then Noite
+    state Noite do
+      periodo = NOITE;
+    unless cr then Dia
+    end
+tel
+
+type pol_states = MIN | ECO | COM
+node management_policy(eco_input,comfort_input:bool) returns (pl_state:pol_states)
+let
+    automaton
+    state Minimal_safety do
+      pl_state = MIN;
+    unless eco_input then Eco
+      | comfort_input then Comfort
+    state Eco do
+      pl_state = ECO;
+    unless not eco_input then Minimal_safety
+      | comfort_input then Comfort
+    state Comfort do
+      pl_state = COM;
+    unless eco_input then Eco
+      | not comfort_input then Minimal_safety
+    end
+tel
+
+node contrato(eco_input, comfort_input, end_wash, start_wash, finish_oven,start_oven,tok,cold,push_porta,push_janela,
+rad_up1, rad_down1, rad_up2, rad_down2, presenca, botao_lamp, botao_tv:bool)
+ returns (porta, janela, lamp, tv, ocupado: bool; p_wash, iws, p_oven, io, rad_pot, rad_state:int;)
+    contract
+var  r1, r2, r3, r4, r5, off_frost: bool; total: int;  pol_lim: pol_states;
+
+let
+(* politicas *)
+     off_frost = rad_state <= 1;
+     total = p_wash + p_oven + rad_pot; 
+     pol_lim = inlined management_policy(eco_input, comfort_input);
+     r1 = ( not ocupado or tv or lamp );
+     r2 = ocupado or not ( porta or janela );
+     r3 = not ( porta or janela ) or ( off_frost );
+     r4 = ocupado or (not(lamp or tv) & (off_frost));
+     switch pol_lim
+     | MIN do r5 = (total <= 3000);
+     | ECO do r5 = (total <= 5000);
+     | COM do r5 = (total <= 7000);
+     end
+tel
+     enforce r1 & r2 & r3 & r4 & r5
+     with (cj,cp,cws,co,rc1,rc2,cl1,cl2,ct1,ct2:bool)
+let
+(* planta *)
+    (rad_pot, rad_state) = inlined rad(rad_up1,rad_down1,rad_up2,rad_down2,rc1,rc2);
+    porta = inlined door(push_porta, cp);
+    janela = inlined door(push_janela, cj);
+    lamp = inlined light_source(botao_lamp,cl1,cl2); 
+    tv = inlined light_source(botao_tv,ct1,ct2);
+    ocupado = inlined room(presenca);
+    (p_wash, iws) = inlined washingmachine(end_wash,start_wash,cws);
+    (p_oven, io) = inlined oven(finish_oven,start_oven,co,tok,cold);
+tel
