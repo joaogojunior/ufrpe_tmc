@@ -1,0 +1,154 @@
+node twotasks_controller_twotasks_c2(twotasks_r1 : bool; twotasks_e1 : bool;
+                                      twotasks_r2 : bool; twotasks_e2 : bool;
+                                      twotasks_v_57 : bool;
+                                      twotasks_v_56 : bool;
+                                      twotasks_pnr_1 : bool;
+                                      twotasks_v_41 : bool;
+                                      twotasks_v_40 : bool;
+                                      twotasks_pnr : bool;
+                                      p_twotasks_c2 : bool;
+                                      p_twotasks_c1 : bool;
+                                      twotasks_c1 : bool)
+returns (twotasks_c2 : bool)
+var v_37 : bool; v_36 : bool; v_35 : bool; v_34 : bool; v_33 : bool;
+    v_32 : bool; v_31 : bool; v_30 : bool; v_29 : bool; v_28 : bool;
+    v_27 : bool; v_26 : bool; v_25 : bool; v_24 : bool; v_23 : bool;
+    v_22 : bool; v_21 : bool; v_20 : bool; v_19 : bool; v_18 : bool;
+    v_17 : bool; v_16 : bool; v_15 : bool; v_14 : bool; v_13 : bool;
+    v_12 : bool; v_11 : bool; v_10 : bool; v_9 : bool; v_8 : bool;
+    v_7 : bool; v_6 : bool; v_5 : bool; v_4 : bool; v_3 : bool; v_2 : bool;
+    v_1 : bool; v : bool; sub_0 : bool; sub_1 : bool; sub_2 : bool;
+    sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool; sub_7 : bool;
+    sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool; sub_12 : bool;
+    sub_13 : bool; sub_14 : bool; sub_15 : bool; sub_16 : bool;
+    sub_17 : bool; sub_18 : bool; sub_19 : bool;
+let
+  twotasks_c2 = sub_0;
+  sub_19 = if twotasks_v_57 then sub_13 else sub_3;
+  sub_18 = if twotasks_v_57 then sub_9 else sub_3;
+  sub_17 = if twotasks_v_57 then sub_6 else sub_3;
+  sub_16 = if twotasks_v_57 then sub_1 else sub_3;
+  sub_15 = if twotasks_v_57 then sub_14 else sub_3;
+  sub_14 = if twotasks_v_56 then sub_3 else sub_13;
+  sub_13 = if twotasks_v_41 then false else sub_10;
+  sub_12 = if twotasks_v_57 then sub_11 else sub_3;
+  sub_11 = if twotasks_v_56 then sub_3 else sub_9;
+  sub_10 = (twotasks_v_40 & sub_3);
+  sub_9 = if twotasks_v_41 then sub_2 else sub_10;
+  sub_8 = if twotasks_v_57 then sub_7 else sub_3;
+  sub_7 = if twotasks_v_56 then sub_3 else sub_6;
+  sub_6 = (twotasks_v_41 & false);
+  sub_5 = if twotasks_v_57 then sub_4 else sub_3;
+  sub_4 = if twotasks_v_56 then sub_3 else sub_1;
+  sub_3 = p_twotasks_c2;
+  sub_2 = if twotasks_v_40 then sub_3 else false;
+  sub_1 = (twotasks_v_41 & sub_2);
+  v = if twotasks_v_57 then sub_4 else sub_1;
+  v_1 = if twotasks_c1 then v else sub_5;
+  v_2 = if twotasks_v_57 then sub_7 else sub_6;
+  v_3 = if twotasks_c1 then v_2 else sub_8;
+  v_4 = if twotasks_e2 then v_1 else v_3;
+  v_5 = if twotasks_v_57 then sub_11 else sub_9;
+  v_6 = if twotasks_c1 then v_5 else sub_12;
+  v_7 = if twotasks_v_57 then sub_14 else sub_13;
+  v_8 = if twotasks_c1 then v_7 else sub_15;
+  v_9 = if twotasks_e2 then v_6 else v_8;
+  v_10 = if twotasks_r2 then v_4 else v_9;
+  v_11 = if twotasks_c1 then sub_1 else sub_16;
+  v_12 = if twotasks_c1 then sub_6 else sub_17;
+  v_13 = if twotasks_e2 then v_11 else v_12;
+  v_14 = if twotasks_c1 then sub_9 else sub_18;
+  v_15 = if twotasks_c1 then sub_13 else sub_19;
+  v_16 = if twotasks_e2 then v_14 else v_15;
+  v_17 = if twotasks_r2 then v_13 else v_16;
+  v_18 = if twotasks_e1 then v_10 else v_17;
+  v_19 = if twotasks_c1 then sub_4 else sub_5;
+  v_20 = if twotasks_c1 then sub_7 else sub_8;
+  v_21 = if twotasks_e2 then v_19 else v_20;
+  v_22 = if twotasks_c1 then sub_11 else sub_12;
+  v_23 = if twotasks_c1 then sub_14 else sub_15;
+  v_24 = if twotasks_e2 then v_22 else v_23;
+  v_25 = if twotasks_r2 then v_21 else v_24;
+  v_26 = if twotasks_v_57 then sub_1 else sub_4;
+  v_27 = if twotasks_c1 then v_26 else sub_16;
+  v_28 = if twotasks_v_57 then sub_6 else sub_7;
+  v_29 = if twotasks_c1 then v_28 else sub_17;
+  v_30 = if twotasks_e2 then v_27 else v_29;
+  v_31 = if twotasks_v_57 then sub_9 else sub_11;
+  v_32 = if twotasks_c1 then v_31 else sub_18;
+  v_33 = if twotasks_v_57 then sub_13 else sub_14;
+  v_34 = if twotasks_c1 then v_33 else sub_19;
+  v_35 = if twotasks_e2 then v_32 else v_34;
+  v_36 = if twotasks_r2 then v_30 else v_35;
+  v_37 = if twotasks_e1 then v_25 else v_36;
+  sub_0 = if twotasks_r1 then v_18 else v_37
+tel
+
+node twotasks_controller_twotasks_c1(twotasks_r1 : bool; twotasks_e1 : bool;
+                                      twotasks_r2 : bool; twotasks_e2 : bool;
+                                      twotasks_v_57 : bool;
+                                      twotasks_v_56 : bool;
+                                      twotasks_pnr_1 : bool;
+                                      twotasks_v_41 : bool;
+                                      twotasks_v_40 : bool;
+                                      twotasks_pnr : bool;
+                                      p_twotasks_c2 : bool;
+                                      p_twotasks_c1 : bool)
+returns (twotasks_c1 : bool)
+var v_49 : bool; v_48 : bool; v_47 : bool; v_46 : bool; v_45 : bool;
+    v_44 : bool; v_43 : bool; v_42 : bool; v_41 : bool; v_40 : bool;
+    v_39 : bool; v_38 : bool; v : bool; sub_0 : bool; sub_1 : bool;
+    sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool;
+    sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool;
+    sub_12 : bool; sub_13 : bool;
+let
+  twotasks_c1 = sub_0;
+  v = if twotasks_v_57 then sub_5 else sub_11;
+  v_38 = if twotasks_v_57 then sub_8 else sub_12;
+  sub_13 = if twotasks_e2 then v else v_38;
+  sub_12 = if twotasks_v_56 then sub_3 else sub_6;
+  sub_11 = if twotasks_v_56 then sub_3 else sub_2;
+  v_39 = if twotasks_v_57 then sub_4 else sub_11;
+  v_40 = if twotasks_v_57 then sub_7 else sub_12;
+  sub_10 = if twotasks_e2 then v_39 else v_40;
+  v_41 = if twotasks_v_57 then sub_5 else sub_2;
+  v_42 = if twotasks_v_57 then sub_8 else sub_6;
+  sub_9 = if twotasks_e2 then v_41 else v_42;
+  sub_8 = if twotasks_v_41 then false else sub_3;
+  sub_7 = if twotasks_v_56 then sub_3 else sub_8;
+  v_43 = not(twotasks_v_41);
+  sub_6 = (v_43 & sub_3);
+  v_44 = if twotasks_v_40 then sub_3 else false;
+  sub_5 = if twotasks_v_41 then v_44 else sub_3;
+  sub_4 = if twotasks_v_56 then sub_3 else sub_5;
+  sub_3 = p_twotasks_c1;
+  v_45 = (twotasks_v_40 & sub_3);
+  sub_2 = if twotasks_v_41 then v_45 else sub_3;
+  v_46 = if twotasks_v_57 then sub_4 else sub_2;
+  v_47 = if twotasks_v_57 then sub_7 else sub_6;
+  sub_1 = if twotasks_e2 then v_46 else v_47;
+  v_48 = if twotasks_e1 then sub_1 else sub_9;
+  v_49 = if twotasks_e1 then sub_10 else sub_13;
+  sub_0 = if twotasks_r1 then v_48 else v_49
+tel
+
+node twotasks_controller(twotasks_r1 : bool; twotasks_e1 : bool;
+                          twotasks_r2 : bool; twotasks_e2 : bool;
+                          twotasks_v_57 : bool; twotasks_v_56 : bool;
+                          twotasks_pnr_1 : bool; twotasks_v_41 : bool;
+                          twotasks_v_40 : bool; twotasks_pnr : bool;
+                          p_twotasks_c2 : bool; p_twotasks_c1 : bool)
+returns (twotasks_c2 : bool; twotasks_c1 : bool)
+let
+  twotasks_c1 =
+    twotasks_controller_twotasks_c1
+    (twotasks_r1, twotasks_e1, twotasks_r2, twotasks_e2, twotasks_v_57,
+      twotasks_v_56, twotasks_pnr_1, twotasks_v_41, twotasks_v_40,
+      twotasks_pnr, p_twotasks_c2, p_twotasks_c1);
+  twotasks_c2 =
+    twotasks_controller_twotasks_c2
+    (twotasks_r1, twotasks_e1, twotasks_r2, twotasks_e2, twotasks_v_57,
+      twotasks_v_56, twotasks_pnr_1, twotasks_v_41, twotasks_v_40,
+      twotasks_pnr, p_twotasks_c2, p_twotasks_c1, twotasks_c1)
+tel
+

@@ -1,0 +1,243 @@
+% --- Generated the 9/5/2018 at 10:27 --- %
+% --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- %
+% --- Command line: /usr/local/bin/heptc -target c -target z3z -s twotasks ex1.ept --- %
+
+set_reorder(2);read("Property.lib");read("Synthesis.lib");read("Verif_Determ.lib");read("Simul.lib");read("Synthesis_Partial_order.lib");read("Orbite.lib");
+% -- dependencies --- %
+
+% ---------- process twotasks ---------- %
+
+declare(twotasks_r1, twotasks_e1, twotasks_r2, twotasks_e2, twotasks_c2,
+        twotasks_c1, twotasks_v_57, twotasks_v_56, twotasks_pnr_1,
+        twotasks_v_41, twotasks_v_40, twotasks_pnr, twotasks_error_state);
+conditions : [twotasks_r1, twotasks_e1, twotasks_r2, twotasks_e2,
+              twotasks_c2, twotasks_c1];
+states : [twotasks_v_57, twotasks_v_56, twotasks_pnr_1, twotasks_v_41,
+          twotasks_v_40, twotasks_pnr, twotasks_error_state];
+controllables : [twotasks_c2, twotasks_c1];
+evolutions : [];
+initialisations : [];
+twotasks_ck_2_3 : twotasks_v_57;
+twotasks_ck_1 : twotasks_v_56;
+twotasks_e : twotasks_e1;
+twotasks_c : twotasks_c1;
+twotasks_r : twotasks_r1;
+twotasks_ck_3_2 : twotasks_v_41;
+twotasks_ck_3_1 : twotasks_v_40;
+twotasks_e_1 : twotasks_e2;
+twotasks_c_1 : twotasks_c2;
+twotasks_r_1 : twotasks_r2;
+twotasks_ck_2_3_0 : twotasks_ck_2_3;
+twotasks_ck_2_3_1 : twotasks_ck_2_3;
+twotasks_s_1_St_2_Active_2 : ((-1 when twotasks_e) default 1);
+twotasks_s_1_St_2_Active_1 : ((1 when twotasks_e) default 1);
+twotasks_r_4_St_2_Active : ((1 when twotasks_e) default twotasks_pnr_1);
+twotasks_v_6 : (twotasks_r and twotasks_c);
+twotasks_v_7 : (not twotasks_c);
+twotasks_v_8 : (twotasks_r and twotasks_v_7);
+twotasks_v_9_2 : ((-1 when twotasks_v_8) default -1);
+twotasks_v_9_1 : ((-1 when twotasks_v_8) default 1);
+twotasks_v_10 : ((1 when twotasks_v_8) default twotasks_pnr_1);
+twotasks_s_1_St_2_Idle_2 : ((1 when twotasks_v_6) default twotasks_v_9_2);
+twotasks_v_59 : ((twotasks_s_1_St_2_Active_2 when twotasks_ck_2_3_1)
+  default twotasks_s_1_St_2_Idle_2);
+twotasks_s_1_St_2_Idle_1 : ((1 when twotasks_v_6) default twotasks_v_9_1);
+twotasks_v_58 : ((twotasks_s_1_St_2_Active_1 when twotasks_ck_2_3_1)
+  default twotasks_s_1_St_2_Idle_1);
+twotasks_r_4_St_2_Idle : ((1 when twotasks_v_6) default twotasks_v_10);
+twotasks_v_62 : ((twotasks_r_4_St_2_Active when twotasks_ck_2_3_1)
+  default twotasks_r_4_St_2_Idle);
+twotasks_s_1_St_2_Active_2_0 : twotasks_s_1_St_2_Active_2;
+twotasks_s_1_St_2_Active_2_1 : twotasks_s_1_St_2_Active_2;
+twotasks_s_1_St_2_Idle_2_0 : twotasks_s_1_St_2_Idle_2;
+twotasks_s_1_St_2_Idle_2_1 : twotasks_s_1_St_2_Idle_2;
+twotasks_s_1_St_2_Wait_2 : ((1 when twotasks_c) default -1);
+twotasks_v_61 : ((1 when twotasks_ck_2_3_0)
+  default twotasks_s_1_St_2_Wait_2);
+twotasks_s_1_St_2_Wait_1 : ((1 when twotasks_c) default -1);
+twotasks_v_60 : ((1 when twotasks_ck_2_3_0)
+  default twotasks_s_1_St_2_Wait_1);
+twotasks_r_4_St_2_Wait : ((1 when twotasks_c) default twotasks_pnr_1);
+twotasks_v_63 : ((1 when twotasks_ck_2_3_0) default twotasks_r_4_St_2_Wait);
+twotasks_s_1_St_2_Wait_2_0 : twotasks_s_1_St_2_Wait_2;
+twotasks_s_1_St_2_Wait_2_1 : twotasks_s_1_St_2_Wait_2;
+twotasks_r_4 : ((twotasks_v_62 when twotasks_ck_1) default twotasks_v_63);
+twotasks_s_1_2 : ((twotasks_v_59 when twotasks_ck_1) default twotasks_v_61);
+twotasks_s_1_1 : ((twotasks_v_58 when twotasks_ck_1) default twotasks_v_60);
+twotasks_s_1_2_0 : twotasks_s_1_2;
+twotasks_s_1_2_1 : twotasks_s_1_2;
+twotasks_v_9_2_0 : twotasks_v_9_2;
+twotasks_v_9_2_1 : twotasks_v_9_2;
+twotasks_ck_2_2 : twotasks_s_1_2;
+twotasks_ck_2_1 : twotasks_s_1_1;
+twotasks_ck_2_2_0 : twotasks_ck_2_2;
+twotasks_ck_2_2_1 : twotasks_ck_2_2;
+twotasks_ns_1_St_2_Active_2 : 1;
+twotasks_ns_1_St_2_Active_1 : 1;
+twotasks_nr_1_St_2_Active : -1;
+twotasks_a_St_2_Active : 1;
+twotasks_ns_1_St_2_Idle_2 : -1;
+twotasks_v_51 : ((twotasks_ns_1_St_2_Active_2 when twotasks_ck_2_2_1)
+  default twotasks_ns_1_St_2_Idle_2);
+twotasks_ns_1_St_2_Idle_1 : 1;
+twotasks_v_50 : ((twotasks_ns_1_St_2_Active_1 when twotasks_ck_2_2_1)
+  default twotasks_ns_1_St_2_Idle_1);
+twotasks_nr_1_St_2_Idle : -1;
+twotasks_v_54 : ((twotasks_nr_1_St_2_Active when twotasks_ck_2_2_1)
+  default twotasks_nr_1_St_2_Idle);
+twotasks_a_St_2_Idle : -1;
+twotasks_v_48 : ((twotasks_a_St_2_Active when twotasks_ck_2_2_1)
+  default twotasks_a_St_2_Idle);
+twotasks_ns_1_St_2_Active_2_0 : twotasks_ns_1_St_2_Active_2;
+twotasks_ns_1_St_2_Active_2_1 : twotasks_ns_1_St_2_Active_2;
+twotasks_ns_1_St_2_Idle_2_0 : twotasks_ns_1_St_2_Idle_2;
+twotasks_ns_1_St_2_Idle_2_1 : twotasks_ns_1_St_2_Idle_2;
+twotasks_ns_1_St_2_Wait_2 : -1;
+twotasks_v_53 : ((1 when twotasks_ck_2_2_0)
+  default twotasks_ns_1_St_2_Wait_2);
+twotasks_ns_1_St_2_Wait_1 : -1;
+twotasks_v_52 : ((1 when twotasks_ck_2_2_0)
+  default twotasks_ns_1_St_2_Wait_1);
+twotasks_nr_1_St_2_Wait : -1;
+twotasks_v_55 : ((1 when twotasks_ck_2_2_0) default twotasks_nr_1_St_2_Wait);
+twotasks_a_St_2_Wait : -1;
+twotasks_v_49 : ((1 when twotasks_ck_2_2_0) default twotasks_a_St_2_Wait);
+twotasks_ns_1_St_2_Wait_2_0 : twotasks_ns_1_St_2_Wait_2;
+twotasks_ns_1_St_2_Wait_2_1 : twotasks_ns_1_St_2_Wait_2;
+twotasks_nr_1 : ((twotasks_v_54 when twotasks_ck_2_1) default twotasks_v_55);
+twotasks_ns_1_2 : ((twotasks_v_51 when twotasks_ck_2_1)
+  default twotasks_v_53);
+twotasks_ns_1_1 : ((twotasks_v_50 when twotasks_ck_2_1)
+  default twotasks_v_52);
+twotasks_a : ((twotasks_v_48 when twotasks_ck_2_1) default twotasks_v_49);
+twotasks_ns_1_2_0 : twotasks_ns_1_2;
+twotasks_ns_1_2_1 : twotasks_ns_1_2;
+twotasks_a1 : twotasks_a;
+twotasks_ck_3_2_0 : twotasks_ck_3_2;
+twotasks_ck_3_2_1 : twotasks_ck_3_2;
+twotasks_s_St_1_Active_2 : ((-1 when twotasks_e_1) default 1);
+twotasks_s_St_1_Active_1 : ((1 when twotasks_e_1) default 1);
+twotasks_r_3_St_1_Active : ((1 when twotasks_e_1) default twotasks_pnr);
+twotasks_v_11 : (twotasks_r_1 and twotasks_c_1);
+twotasks_v_12 : (not twotasks_c_1);
+twotasks_v_13 : (twotasks_r_1 and twotasks_v_12);
+twotasks_v_14_2 : ((-1 when twotasks_v_13) default -1);
+twotasks_v_14_1 : ((-1 when twotasks_v_13) default 1);
+twotasks_v_15 : ((1 when twotasks_v_13) default twotasks_pnr);
+twotasks_s_St_1_Idle_2 : ((1 when twotasks_v_11) default twotasks_v_14_2);
+twotasks_v_43 : ((twotasks_s_St_1_Active_2 when twotasks_ck_3_2_1)
+  default twotasks_s_St_1_Idle_2);
+twotasks_s_St_1_Idle_1 : ((1 when twotasks_v_11) default twotasks_v_14_1);
+twotasks_v_42 : ((twotasks_s_St_1_Active_1 when twotasks_ck_3_2_1)
+  default twotasks_s_St_1_Idle_1);
+twotasks_r_3_St_1_Idle : ((1 when twotasks_v_11) default twotasks_v_15);
+twotasks_v_46 : ((twotasks_r_3_St_1_Active when twotasks_ck_3_2_1)
+  default twotasks_r_3_St_1_Idle);
+twotasks_s_St_1_Active_2_0 : twotasks_s_St_1_Active_2;
+twotasks_s_St_1_Active_2_1 : twotasks_s_St_1_Active_2;
+twotasks_s_St_1_Idle_2_0 : twotasks_s_St_1_Idle_2;
+twotasks_s_St_1_Idle_2_1 : twotasks_s_St_1_Idle_2;
+twotasks_s_St_1_Wait_2 : ((1 when twotasks_c_1) default -1);
+twotasks_v_45 : ((1 when twotasks_ck_3_2_0) default twotasks_s_St_1_Wait_2);
+twotasks_s_St_1_Wait_1 : ((1 when twotasks_c_1) default -1);
+twotasks_v_44 : ((1 when twotasks_ck_3_2_0) default twotasks_s_St_1_Wait_1);
+twotasks_r_3_St_1_Wait : ((1 when twotasks_c_1) default twotasks_pnr);
+twotasks_v_47 : ((1 when twotasks_ck_3_2_0) default twotasks_r_3_St_1_Wait);
+twotasks_s_St_1_Wait_2_0 : twotasks_s_St_1_Wait_2;
+twotasks_s_St_1_Wait_2_1 : twotasks_s_St_1_Wait_2;
+twotasks_r_3 : ((twotasks_v_46 when twotasks_ck_3_1) default twotasks_v_47);
+twotasks_s_2 : ((twotasks_v_43 when twotasks_ck_3_1) default twotasks_v_45);
+twotasks_s_1_3 : ((twotasks_v_42 when twotasks_ck_3_1)
+  default twotasks_v_44);
+twotasks_s_2_0 : twotasks_s_2;
+twotasks_s_2_1 : twotasks_s_2;
+twotasks_v_14_2_0 : twotasks_v_14_2;
+twotasks_v_14_2_1 : twotasks_v_14_2;
+twotasks_ck_4_2 : twotasks_s_2;
+twotasks_ck_4_1 : twotasks_s_1_3;
+twotasks_ck_4_2_0 : twotasks_ck_4_2;
+twotasks_ck_4_2_1 : twotasks_ck_4_2;
+twotasks_ns_St_1_Active_2 : 1;
+twotasks_ns_St_1_Active_1 : 1;
+twotasks_nr_St_1_Active : -1;
+twotasks_a_1_St_1_Active : 1;
+twotasks_ns_St_1_Idle_2 : -1;
+twotasks_v_35 : ((twotasks_ns_St_1_Active_2 when twotasks_ck_4_2_1)
+  default twotasks_ns_St_1_Idle_2);
+twotasks_ns_St_1_Idle_1 : 1;
+twotasks_v_34 : ((twotasks_ns_St_1_Active_1 when twotasks_ck_4_2_1)
+  default twotasks_ns_St_1_Idle_1);
+twotasks_nr_St_1_Idle : -1;
+twotasks_v_38 : ((twotasks_nr_St_1_Active when twotasks_ck_4_2_1)
+  default twotasks_nr_St_1_Idle);
+twotasks_a_1_St_1_Idle : -1;
+twotasks_v_32 : ((twotasks_a_1_St_1_Active when twotasks_ck_4_2_1)
+  default twotasks_a_1_St_1_Idle);
+twotasks_ns_St_1_Active_2_0 : twotasks_ns_St_1_Active_2;
+twotasks_ns_St_1_Active_2_1 : twotasks_ns_St_1_Active_2;
+twotasks_ns_St_1_Idle_2_0 : twotasks_ns_St_1_Idle_2;
+twotasks_ns_St_1_Idle_2_1 : twotasks_ns_St_1_Idle_2;
+twotasks_ns_St_1_Wait_2 : -1;
+twotasks_v_37 : ((1 when twotasks_ck_4_2_0) default twotasks_ns_St_1_Wait_2);
+twotasks_ns_St_1_Wait_1 : -1;
+twotasks_v_36 : ((1 when twotasks_ck_4_2_0) default twotasks_ns_St_1_Wait_1);
+twotasks_nr_St_1_Wait : -1;
+twotasks_v_39 : ((1 when twotasks_ck_4_2_0) default twotasks_nr_St_1_Wait);
+twotasks_a_1_St_1_Wait : -1;
+twotasks_v_33 : ((1 when twotasks_ck_4_2_0) default twotasks_a_1_St_1_Wait);
+twotasks_ns_St_1_Wait_2_0 : twotasks_ns_St_1_Wait_2;
+twotasks_ns_St_1_Wait_2_1 : twotasks_ns_St_1_Wait_2;
+twotasks_nr : ((twotasks_v_38 when twotasks_ck_4_1) default twotasks_v_39);
+twotasks_ns_2 : ((twotasks_v_35 when twotasks_ck_4_1) default twotasks_v_37);
+twotasks_ns_1_3 : ((twotasks_v_34 when twotasks_ck_4_1)
+  default twotasks_v_36);
+twotasks_a_1 : ((twotasks_v_32 when twotasks_ck_4_1) default twotasks_v_33);
+twotasks_ns_2_0 : twotasks_ns_2;
+twotasks_ns_2_1 : twotasks_ns_2;
+twotasks_a2 : twotasks_a_1;
+initialisations : concat(initialisations, [(twotasks_v_57 = -1)]);
+evolutions : concat(evolutions, [(twotasks_ns_1_2 default twotasks_v_57)]);
+initialisations : concat(initialisations, [(twotasks_v_56 = 1)]);
+evolutions : concat(evolutions, [(twotasks_ns_1_1 default twotasks_v_56)]);
+initialisations : concat(initialisations, [(twotasks_pnr_1 = -1)]);
+evolutions : concat(evolutions, [(twotasks_nr_1 default twotasks_pnr_1)]);
+initialisations : concat(initialisations, [(twotasks_v_41 = -1)]);
+evolutions : concat(evolutions, [(twotasks_ns_2 default twotasks_v_41)]);
+initialisations : concat(initialisations, [(twotasks_v_40 = 1)]);
+evolutions : concat(evolutions, [(twotasks_ns_1_3 default twotasks_v_40)]);
+initialisations : concat(initialisations, [(twotasks_pnr = -1)]);
+evolutions : concat(evolutions, [(twotasks_nr default twotasks_pnr)]);
+twotasks_v : (twotasks_a1 and twotasks_a2);
+twotasks_v_5 : (not twotasks_v);
+twotasks_assume : 1;
+twotasks_guarantee : twotasks_v_5;
+initialisations : concat(initialisations, [(twotasks_error_state = 1)]);
+evolutions : concat(evolutions, [twotasks_guarantee]);
+constraints : [((twotasks_r1^2) = 1), ((twotasks_e1^2) = 1), ((twotasks_r2^2)
+               = 1), ((twotasks_e2^2) = 1), ((twotasks_c2^2) = 1),
+               ((twotasks_c1^2) = 1), (twotasks_assume = 1)];
+
+% --- outputs : [twotasks_a1, twotasks_a2] --- %
+twotasks : processus(conditions, states, evolutions, initialisations,
+                     [gen(constraints)], controllables);
+twotasks_init : initial(twotasks);
+twotasks : S_Security(twotasks,B_True(twotasks,twotasks_error_state));
+dcs_result : equal(twotasks_init,initial(twotasks));
+if dcs_result then
+    print("twotasks: synthesis succeeded.")
+else
+    print("twotasks: synthesis failed.");
+
+if dcs_result then
+    print("Triangulation and controller generation...")
+else
+    quit(1);
+declare(p_twotasks_c2, p_twotasks_c1);
+phantom_vars : [p_twotasks_c2, p_twotasks_c1];
+twotasks_triang : Triang(constraint(twotasks),controllables,phantom_vars);
+controller_inputs : [twotasks_r1, twotasks_e1, twotasks_r2, twotasks_e2,
+                     twotasks_v_57, twotasks_v_56, twotasks_pnr_1,
+                     twotasks_v_41, twotasks_v_40, twotasks_pnr,
+                     p_twotasks_c2, p_twotasks_c1];
+heptagon_controller("twotasks_controller.ept","twotasks",controller_inputs,controllables,twotasks_triang);
+

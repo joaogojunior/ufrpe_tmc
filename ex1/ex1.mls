@@ -1,0 +1,444 @@
+type st_2 = St_2_Wait|St_2_Idle|St_2_Active
+type st_1 = St_1_Wait|St_1_Idle|St_1_Active
+type st = St_Wait|St_Idle|St_Active
+node delayable(r : bool; c : bool; e : bool) returns (a : bool)
+var v_23 : bool; v_22 : bool; v_21 : bool; v_20 : bool; v_19 : bool;
+    v_18 : bool; v_17 : bool; v_16 : bool; ns_St_Active_2_0 : bool;
+    ns_St_Active_2_1 : bool; ns_St_Wait_2_0 : bool; ns_St_Wait_2_1 : bool;
+    ns_St_Idle_2_0 : bool; ns_St_Idle_2_1 : bool; ck_1_2_0 : bool;
+    ck_1_2_1 : bool; nr_St_Active : bool; ns_St_Active_2 : bool;
+    ns_St_Active_1 : bool; a_St_Active : bool; nr_St_Wait : bool;
+    ns_St_Wait_2 : bool; ns_St_Wait_1 : bool; a_St_Wait : bool;
+    nr_St_Idle : bool; ns_St_Idle_2 : bool; ns_St_Idle_1 : bool;
+    a_St_Idle : bool; ck_1_2 : bool; ck_1_1 : bool; v_3_2_0 : bool;
+    v_3_2_1 : bool; v_4 : bool; v_3_2 : bool; v_3_1 : bool; v_2 : bool;
+    v_1 : bool; v : bool; v_31 : bool; v_30 : bool; v_29 : bool; v_28 : bool;
+    v_27 : bool; v_26 : bool; v_25 : bool; v_24 : bool;
+    s_St_Active_2_0 : bool; s_St_Active_2_1 : bool; s_St_Wait_2_0 : bool;
+    s_St_Wait_2_1 : bool; s_St_Idle_2_0 : bool; s_St_Idle_2_1 : bool;
+    ck_2_0 : bool; ck_2_1 : bool; r_2_St_Active : bool; s_St_Active_2 : bool;
+    s_St_Active_1 : bool; r_2_St_Wait : bool; s_St_Wait_2 : bool;
+    s_St_Wait_1 : bool; r_2_St_Idle : bool; s_St_Idle_2 : bool;
+    s_St_Idle_1 : bool; ck_2 : bool; ck_1_3 : bool; s_2_0 : bool;
+    s_2_1 : bool; ns_2_0 : bool; ns_2_1 : bool; s_2 : bool; s_1 : bool;
+    ns_2 : bool; ns_1 : bool; r_2 : bool; nr : bool; pnr : bool;
+let
+  pnr = false fby nr;
+  ck_1_1 = s_1;
+  ck_1_2 = s_2;
+  a_St_Idle = false;
+  nr_St_Idle = false;
+  ns_St_Idle_1 = true;
+  ns_St_Idle_2 = false;
+  a_St_Wait = false;
+  nr_St_Wait = false;
+  ns_St_Wait_1 = false;
+  ns_St_Wait_2 = false;
+  a_St_Active = true;
+  nr_St_Active = false;
+  ns_St_Active_1 = true;
+  ns_St_Active_2 = true;
+  v_16 = merge ck_1_2_1 (true -> a_St_Active)(false -> a_St_Idle);
+  v_17 =
+    merge ck_1_2_0
+      (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
+      (false -> a_St_Wait);
+  a = merge ck_1_1 (true -> v_16)(false -> v_17);
+  v_18 = merge ck_1_2_1 (true -> ns_St_Active_1)(false -> ns_St_Idle_1);
+  v_19 = merge ck_1_2_1 (true -> ns_St_Active_2)(false -> ns_St_Idle_2);
+  v_20 =
+    merge ck_1_2_0
+      (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
+      (false -> ns_St_Wait_1);
+  v_21 =
+    merge ck_1_2_0
+      (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
+      (false -> ns_St_Wait_2);
+  ns_1 = merge ck_1_1 (true -> v_18)(false -> v_20);
+  ns_2 = merge ck_1_1 (true -> v_19)(false -> v_21);
+  v_22 = merge ck_1_2_1 (true -> nr_St_Active)(false -> nr_St_Idle);
+  v_23 =
+    merge ck_1_2_0
+      (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
+      (false -> nr_St_Wait);
+  nr = merge ck_1_1 (true -> v_22)(false -> v_23);
+  ck_1_2_1 = (ck_1_2 when true(ck_1_1));
+  ck_1_2_0 = (ck_1_2 when false(ck_1_1));
+  ns_St_Idle_2_1 = (ns_St_Idle_2 when true(ns_St_Idle_1));
+  ns_St_Idle_2_0 = (ns_St_Idle_2 when false(ns_St_Idle_1));
+  ns_St_Wait_2_1 = (ns_St_Wait_2 when true(ns_St_Wait_1));
+  ns_St_Wait_2_0 = (ns_St_Wait_2 when false(ns_St_Wait_1));
+  ns_St_Active_2_1 = (ns_St_Active_2 when true(ns_St_Active_1));
+  ns_St_Active_2_0 = (ns_St_Active_2 when false(ns_St_Active_1));
+  v_24 = true fby ns_1;
+  v_25 = false fby ns_2;
+  ck_1_3 = v_24;
+  ck_2 = v_25;
+  r_2_St_Idle = if v then true else v_4;
+  s_St_Idle_1 = if v then true else v_3_1;
+  s_St_Idle_2 = if v then true else v_3_2;
+  v_4 = if v_2 then true else ((pnr when true(ck_1_3)) when false(ck_2_1));
+  v_3_1 = if v_2 then false else true;
+  v_3_2 = if v_2 then false else false;
+  v_2 = (((r when true(ck_1_3)) when false(ck_2_1)) & v_1);
+  v_1 = not(((c when true(ck_1_3)) when false(ck_2_1)));
+  v =
+    (((r when true(ck_1_3)) when false(ck_2_1)) &
+     ((c when true(ck_1_3)) when false(ck_2_1)));
+  v_3_2_1 = (v_3_2 when true(v_3_1));
+  v_3_2_0 = (v_3_2 when false(v_3_1));
+  r_2_St_Wait =
+    if ((c when false(ck_1_3)) when false(ck_2_0))
+    then true
+    else ((pnr when false(ck_1_3)) when false(ck_2_0));
+  s_St_Wait_1 =
+    if ((c when false(ck_1_3)) when false(ck_2_0)) then true else false;
+  s_St_Wait_2 =
+    if ((c when false(ck_1_3)) when false(ck_2_0)) then true else false;
+  r_2_St_Active =
+    if ((e when true(ck_1_3)) when true(ck_2_1))
+    then true
+    else ((pnr when true(ck_1_3)) when true(ck_2_1));
+  s_St_Active_1 =
+    if ((e when true(ck_1_3)) when true(ck_2_1)) then true else true;
+  s_St_Active_2 =
+    if ((e when true(ck_1_3)) when true(ck_2_1)) then false else true;
+  v_26 = merge ck_2_1 (true -> s_St_Active_1)(false -> s_St_Idle_1);
+  v_27 = merge ck_2_1 (true -> s_St_Active_2)(false -> s_St_Idle_2);
+  v_28 =
+    merge ck_2_0
+      (true -> ((true when false(ck_1_3)) when true(ck_2_0)))
+      (false -> s_St_Wait_1);
+  v_29 =
+    merge ck_2_0
+      (true -> ((true when false(ck_1_3)) when true(ck_2_0)))
+      (false -> s_St_Wait_2);
+  s_1 = merge ck_1_3 (true -> v_26)(false -> v_28);
+  s_2 = merge ck_1_3 (true -> v_27)(false -> v_29);
+  v_30 = merge ck_2_1 (true -> r_2_St_Active)(false -> r_2_St_Idle);
+  v_31 =
+    merge ck_2_0
+      (true -> ((true when false(ck_1_3)) when true(ck_2_0)))
+      (false -> r_2_St_Wait);
+  r_2 = merge ck_1_3 (true -> v_30)(false -> v_31);
+  ck_2_1 = (ck_2 when true(ck_1_3));
+  ck_2_0 = (ck_2 when false(ck_1_3));
+  s_St_Idle_2_1 = (s_St_Idle_2 when true(s_St_Idle_1));
+  s_St_Idle_2_0 = (s_St_Idle_2 when false(s_St_Idle_1));
+  s_St_Wait_2_1 = (s_St_Wait_2 when true(s_St_Wait_1));
+  s_St_Wait_2_0 = (s_St_Wait_2 when false(s_St_Wait_1));
+  s_St_Active_2_1 = (s_St_Active_2 when true(s_St_Active_1));
+  s_St_Active_2_0 = (s_St_Active_2 when false(s_St_Active_1));
+  ns_2_1 = (ns_2 when true(ns_1));
+  ns_2_0 = (ns_2 when false(ns_1));
+  s_2_1 = (s_2 when true(s_1));
+  s_2_0 = (s_2 when false(s_1))
+tel
+
+node twotasks(r1 : bool; e1 : bool; r2 : bool; e2 : bool)
+returns (a1 : bool; a2 : bool)
+contract
+  var v : bool; v_5 : bool;
+  let
+    v = (a1 & a2);
+    v_5 = not(v)
+  tel
+  assume true@ enforce v_5] with (c2 : bool; c1 : bool)
+                 var v_39 : bool; v_38 : bool; v_37 : bool; v_36 : bool;
+                     v_35 : bool; v_34 : bool; v_33 : bool; v_32 : bool;
+                     ns_St_1_Active_2_0 : bool; ns_St_1_Active_2_1 : bool;
+                     ns_St_1_Wait_2_0 : bool; ns_St_1_Wait_2_1 : bool;
+                     ns_St_1_Idle_2_0 : bool; ns_St_1_Idle_2_1 : bool;
+                     ck_4_2_0 : bool; ck_4_2_1 : bool; nr_St_1_Active : bool;
+                     ns_St_1_Active_2 : bool; ns_St_1_Active_1 : bool;
+                     a_1_St_1_Active : bool; nr_St_1_Wait : bool;
+                     ns_St_1_Wait_2 : bool; ns_St_1_Wait_1 : bool;
+                     a_1_St_1_Wait : bool; nr_St_1_Idle : bool;
+                     ns_St_1_Idle_2 : bool; ns_St_1_Idle_1 : bool;
+                     a_1_St_1_Idle : bool; ck_4_2 : bool; ck_4_1 : bool;
+                     v_14_2_0 : bool; v_14_2_1 : bool; v_15 : bool;
+                     v_14_2 : bool; v_14_1 : bool; v_13 : bool; v_12 : bool;
+                     v_11 : bool; v_47 : bool; v_46 : bool; v_45 : bool;
+                     v_44 : bool; v_43 : bool; v_42 : bool; v_41 : bool;
+                     v_40 : bool; s_St_1_Active_2_0 : bool;
+                     s_St_1_Active_2_1 : bool; s_St_1_Wait_2_0 : bool;
+                     s_St_1_Wait_2_1 : bool; s_St_1_Idle_2_0 : bool;
+                     s_St_1_Idle_2_1 : bool; ck_3_2_0 : bool;
+                     ck_3_2_1 : bool; r_3_St_1_Active : bool;
+                     s_St_1_Active_2 : bool; s_St_1_Active_1 : bool;
+                     r_3_St_1_Wait : bool; s_St_1_Wait_2 : bool;
+                     s_St_1_Wait_1 : bool; r_3_St_1_Idle : bool;
+                     s_St_1_Idle_2 : bool; s_St_1_Idle_1 : bool;
+                     ck_3_2 : bool; ck_3_1 : bool; v_55 : bool; v_54 : bool;
+                     v_53 : bool; v_52 : bool; v_51 : bool; v_50 : bool;
+                     v_49 : bool; v_48 : bool; ns_1_St_2_Active_2_0 : bool;
+                     ns_1_St_2_Active_2_1 : bool; ns_1_St_2_Wait_2_0 : bool;
+                     ns_1_St_2_Wait_2_1 : bool; ns_1_St_2_Idle_2_0 : bool;
+                     ns_1_St_2_Idle_2_1 : bool; ck_2_2_0 : bool;
+                     ck_2_2_1 : bool; nr_1_St_2_Active : bool;
+                     ns_1_St_2_Active_2 : bool; ns_1_St_2_Active_1 : bool;
+                     a_St_2_Active : bool; nr_1_St_2_Wait : bool;
+                     ns_1_St_2_Wait_2 : bool; ns_1_St_2_Wait_1 : bool;
+                     a_St_2_Wait : bool; nr_1_St_2_Idle : bool;
+                     ns_1_St_2_Idle_2 : bool; ns_1_St_2_Idle_1 : bool;
+                     a_St_2_Idle : bool; ck_2_2 : bool; ck_2_1 : bool;
+                     v_9_2_0 : bool; v_9_2_1 : bool; v_10 : bool;
+                     v_9_2 : bool; v_9_1 : bool; v_8 : bool; v_7 : bool;
+                     v_6 : bool; v_63 : bool; v_62 : bool; v_61 : bool;
+                     v_60 : bool; v_59 : bool; v_58 : bool; v_57 : bool;
+                     v_56 : bool; s_1_St_2_Active_2_0 : bool;
+                     s_1_St_2_Active_2_1 : bool; s_1_St_2_Wait_2_0 : bool;
+                     s_1_St_2_Wait_2_1 : bool; s_1_St_2_Idle_2_0 : bool;
+                     s_1_St_2_Idle_2_1 : bool; ck_2_3_0 : bool;
+                     ck_2_3_1 : bool; r_4_St_2_Active : bool;
+                     s_1_St_2_Active_2 : bool; s_1_St_2_Active_1 : bool;
+                     r_4_St_2_Wait : bool; s_1_St_2_Wait_2 : bool;
+                     s_1_St_2_Wait_1 : bool; r_4_St_2_Idle : bool;
+                     s_1_St_2_Idle_2 : bool; s_1_St_2_Idle_1 : bool;
+                     ck_2_3 : bool; ck_1 : bool; s_1_2_0 : bool;
+                     s_1_2_1 : bool; ns_1_2_0 : bool; ns_1_2_1 : bool;
+                     s_2_0 : bool; s_2_1 : bool; ns_2_0 : bool;
+                     ns_2_1 : bool; s_1_2 : bool; s_1_1 : bool;
+                     ns_1_2 : bool; ns_1_1 : bool; r_4 : bool; nr_1 : bool;
+                     pnr_1 : bool; s_2 : bool; s_1_3 : bool; ns_2 : bool;
+                     ns_1_3 : bool; r_3 : bool; nr : bool; pnr : bool;
+                     r_1 : bool; c_1 : bool; e_1 : bool; a_1 : bool;
+                     r : bool; c : bool; e : bool; a : bool;
+  let
+    r_1 = r2;
+    c_1 = c2;
+    e_1 = e2;
+    pnr = false fby nr;
+    ck_4_1 = s_1_3;
+    ck_4_2 = s_2;
+    a_1_St_1_Idle = false;
+    nr_St_1_Idle = false;
+    ns_St_1_Idle_1 = true;
+    ns_St_1_Idle_2 = false;
+    a_1_St_1_Wait = false;
+    nr_St_1_Wait = false;
+    ns_St_1_Wait_1 = false;
+    ns_St_1_Wait_2 = false;
+    a_1_St_1_Active = true;
+    nr_St_1_Active = false;
+    ns_St_1_Active_1 = true;
+    ns_St_1_Active_2 = true;
+    v_32 = merge ck_4_2_1 (true -> a_1_St_1_Active)(false -> a_1_St_1_Idle);
+    v_33 =
+      merge ck_4_2_0
+        (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
+        (false -> a_1_St_1_Wait);
+    a_1 = merge ck_4_1 (true -> v_32)(false -> v_33);
+    v_34 = merge ck_4_2_1 (true -> ns_St_1_Active_1)(false -> ns_St_1_Idle_1);
+    v_35 = merge ck_4_2_1 (true -> ns_St_1_Active_2)(false -> ns_St_1_Idle_2);
+    v_36 =
+      merge ck_4_2_0
+        (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
+        (false -> ns_St_1_Wait_1);
+    v_37 =
+      merge ck_4_2_0
+        (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
+        (false -> ns_St_1_Wait_2);
+    ns_1_3 = merge ck_4_1 (true -> v_34)(false -> v_36);
+    ns_2 = merge ck_4_1 (true -> v_35)(false -> v_37);
+    v_38 = merge ck_4_2_1 (true -> nr_St_1_Active)(false -> nr_St_1_Idle);
+    v_39 =
+      merge ck_4_2_0
+        (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
+        (false -> nr_St_1_Wait);
+    nr = merge ck_4_1 (true -> v_38)(false -> v_39);
+    ck_4_2_1 = (ck_4_2 when true(ck_4_1));
+    ck_4_2_0 = (ck_4_2 when false(ck_4_1));
+    ns_St_1_Idle_2_1 = (ns_St_1_Idle_2 when true(ns_St_1_Idle_1));
+    ns_St_1_Idle_2_0 = (ns_St_1_Idle_2 when false(ns_St_1_Idle_1));
+    ns_St_1_Wait_2_1 = (ns_St_1_Wait_2 when true(ns_St_1_Wait_1));
+    ns_St_1_Wait_2_0 = (ns_St_1_Wait_2 when false(ns_St_1_Wait_1));
+    ns_St_1_Active_2_1 = (ns_St_1_Active_2 when true(ns_St_1_Active_1));
+    ns_St_1_Active_2_0 = (ns_St_1_Active_2 when false(ns_St_1_Active_1));
+    v_40 = true fby ns_1_3;
+    v_41 = false fby ns_2;
+    ck_3_1 = v_40;
+    ck_3_2 = v_41;
+    r_3_St_1_Idle = if v_11 then true else v_15;
+    s_St_1_Idle_1 = if v_11 then true else v_14_1;
+    s_St_1_Idle_2 = if v_11 then true else v_14_2;
+    v_15 =
+      if v_13 then true else ((pnr when true(ck_3_1)) when false(ck_3_2_1));
+    v_14_1 = if v_13 then false else true;
+    v_14_2 = if v_13 then false else false;
+    v_13 = (((r_1 when true(ck_3_1)) when false(ck_3_2_1)) & v_12);
+    v_12 = not(((c_1 when true(ck_3_1)) when false(ck_3_2_1)));
+    v_11 =
+      (((r_1 when true(ck_3_1)) when false(ck_3_2_1)) &
+       ((c_1 when true(ck_3_1)) when false(ck_3_2_1)));
+    v_14_2_1 = (v_14_2 when true(v_14_1));
+    v_14_2_0 = (v_14_2 when false(v_14_1));
+    r_3_St_1_Wait =
+      if ((c_1 when false(ck_3_1)) when false(ck_3_2_0))
+      then true
+      else ((pnr when false(ck_3_1)) when false(ck_3_2_0));
+    s_St_1_Wait_1 =
+      if ((c_1 when false(ck_3_1)) when false(ck_3_2_0)) then true else false;
+    s_St_1_Wait_2 =
+      if ((c_1 when false(ck_3_1)) when false(ck_3_2_0)) then true else false;
+    r_3_St_1_Active =
+      if ((e_1 when true(ck_3_1)) when true(ck_3_2_1))
+      then true
+      else ((pnr when true(ck_3_1)) when true(ck_3_2_1));
+    s_St_1_Active_1 =
+      if ((e_1 when true(ck_3_1)) when true(ck_3_2_1)) then true else true;
+    s_St_1_Active_2 =
+      if ((e_1 when true(ck_3_1)) when true(ck_3_2_1)) then false else true;
+    v_42 = merge ck_3_2_1 (true -> s_St_1_Active_1)(false -> s_St_1_Idle_1);
+    v_43 = merge ck_3_2_1 (true -> s_St_1_Active_2)(false -> s_St_1_Idle_2);
+    v_44 =
+      merge ck_3_2_0
+        (true -> ((true when false(ck_3_1)) when true(ck_3_2_0)))
+        (false -> s_St_1_Wait_1);
+    v_45 =
+      merge ck_3_2_0
+        (true -> ((true when false(ck_3_1)) when true(ck_3_2_0)))
+        (false -> s_St_1_Wait_2);
+    s_1_3 = merge ck_3_1 (true -> v_42)(false -> v_44);
+    s_2 = merge ck_3_1 (true -> v_43)(false -> v_45);
+    v_46 = merge ck_3_2_1 (true -> r_3_St_1_Active)(false -> r_3_St_1_Idle);
+    v_47 =
+      merge ck_3_2_0
+        (true -> ((true when false(ck_3_1)) when true(ck_3_2_0)))
+        (false -> r_3_St_1_Wait);
+    r_3 = merge ck_3_1 (true -> v_46)(false -> v_47);
+    ck_3_2_1 = (ck_3_2 when true(ck_3_1));
+    ck_3_2_0 = (ck_3_2 when false(ck_3_1));
+    s_St_1_Idle_2_1 = (s_St_1_Idle_2 when true(s_St_1_Idle_1));
+    s_St_1_Idle_2_0 = (s_St_1_Idle_2 when false(s_St_1_Idle_1));
+    s_St_1_Wait_2_1 = (s_St_1_Wait_2 when true(s_St_1_Wait_1));
+    s_St_1_Wait_2_0 = (s_St_1_Wait_2 when false(s_St_1_Wait_1));
+    s_St_1_Active_2_1 = (s_St_1_Active_2 when true(s_St_1_Active_1));
+    s_St_1_Active_2_0 = (s_St_1_Active_2 when false(s_St_1_Active_1));
+    r = r1;
+    c = c1;
+    e = e1;
+    pnr_1 = false fby nr_1;
+    ck_2_1 = s_1_1;
+    ck_2_2 = s_1_2;
+    a_St_2_Idle = false;
+    nr_1_St_2_Idle = false;
+    ns_1_St_2_Idle_1 = true;
+    ns_1_St_2_Idle_2 = false;
+    a_St_2_Wait = false;
+    nr_1_St_2_Wait = false;
+    ns_1_St_2_Wait_1 = false;
+    ns_1_St_2_Wait_2 = false;
+    a_St_2_Active = true;
+    nr_1_St_2_Active = false;
+    ns_1_St_2_Active_1 = true;
+    ns_1_St_2_Active_2 = true;
+    v_48 = merge ck_2_2_1 (true -> a_St_2_Active)(false -> a_St_2_Idle);
+    v_49 =
+      merge ck_2_2_0
+        (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
+        (false -> a_St_2_Wait);
+    a = merge ck_2_1 (true -> v_48)(false -> v_49);
+    v_50 =
+      merge ck_2_2_1 (true -> ns_1_St_2_Active_1)(false -> ns_1_St_2_Idle_1);
+    v_51 =
+      merge ck_2_2_1 (true -> ns_1_St_2_Active_2)(false -> ns_1_St_2_Idle_2);
+    v_52 =
+      merge ck_2_2_0
+        (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
+        (false -> ns_1_St_2_Wait_1);
+    v_53 =
+      merge ck_2_2_0
+        (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
+        (false -> ns_1_St_2_Wait_2);
+    ns_1_1 = merge ck_2_1 (true -> v_50)(false -> v_52);
+    ns_1_2 = merge ck_2_1 (true -> v_51)(false -> v_53);
+    v_54 = merge ck_2_2_1 (true -> nr_1_St_2_Active)(false -> nr_1_St_2_Idle);
+    v_55 =
+      merge ck_2_2_0
+        (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
+        (false -> nr_1_St_2_Wait);
+    nr_1 = merge ck_2_1 (true -> v_54)(false -> v_55);
+    ck_2_2_1 = (ck_2_2 when true(ck_2_1));
+    ck_2_2_0 = (ck_2_2 when false(ck_2_1));
+    ns_1_St_2_Idle_2_1 = (ns_1_St_2_Idle_2 when true(ns_1_St_2_Idle_1));
+    ns_1_St_2_Idle_2_0 = (ns_1_St_2_Idle_2 when false(ns_1_St_2_Idle_1));
+    ns_1_St_2_Wait_2_1 = (ns_1_St_2_Wait_2 when true(ns_1_St_2_Wait_1));
+    ns_1_St_2_Wait_2_0 = (ns_1_St_2_Wait_2 when false(ns_1_St_2_Wait_1));
+    ns_1_St_2_Active_2_1 = (ns_1_St_2_Active_2 when true(ns_1_St_2_Active_1));
+    ns_1_St_2_Active_2_0 =
+      (ns_1_St_2_Active_2 when false(ns_1_St_2_Active_1));
+    v_56 = true fby ns_1_1;
+    v_57 = false fby ns_1_2;
+    ck_1 = v_56;
+    ck_2_3 = v_57;
+    r_4_St_2_Idle = if v_6 then true else v_10;
+    s_1_St_2_Idle_1 = if v_6 then true else v_9_1;
+    s_1_St_2_Idle_2 = if v_6 then true else v_9_2;
+    v_10 =
+      if v_8 then true else ((pnr_1 when true(ck_1)) when false(ck_2_3_1));
+    v_9_1 = if v_8 then false else true;
+    v_9_2 = if v_8 then false else false;
+    v_8 = (((r when true(ck_1)) when false(ck_2_3_1)) & v_7);
+    v_7 = not(((c when true(ck_1)) when false(ck_2_3_1)));
+    v_6 =
+      (((r when true(ck_1)) when false(ck_2_3_1)) &
+       ((c when true(ck_1)) when false(ck_2_3_1)));
+    v_9_2_1 = (v_9_2 when true(v_9_1));
+    v_9_2_0 = (v_9_2 when false(v_9_1));
+    r_4_St_2_Wait =
+      if ((c when false(ck_1)) when false(ck_2_3_0))
+      then true
+      else ((pnr_1 when false(ck_1)) when false(ck_2_3_0));
+    s_1_St_2_Wait_1 =
+      if ((c when false(ck_1)) when false(ck_2_3_0)) then true else false;
+    s_1_St_2_Wait_2 =
+      if ((c when false(ck_1)) when false(ck_2_3_0)) then true else false;
+    r_4_St_2_Active =
+      if ((e when true(ck_1)) when true(ck_2_3_1))
+      then true
+      else ((pnr_1 when true(ck_1)) when true(ck_2_3_1));
+    s_1_St_2_Active_1 =
+      if ((e when true(ck_1)) when true(ck_2_3_1)) then true else true;
+    s_1_St_2_Active_2 =
+      if ((e when true(ck_1)) when true(ck_2_3_1)) then false else true;
+    v_58 =
+      merge ck_2_3_1 (true -> s_1_St_2_Active_1)(false -> s_1_St_2_Idle_1);
+    v_59 =
+      merge ck_2_3_1 (true -> s_1_St_2_Active_2)(false -> s_1_St_2_Idle_2);
+    v_60 =
+      merge ck_2_3_0
+        (true -> ((true when false(ck_1)) when true(ck_2_3_0)))
+        (false -> s_1_St_2_Wait_1);
+    v_61 =
+      merge ck_2_3_0
+        (true -> ((true when false(ck_1)) when true(ck_2_3_0)))
+        (false -> s_1_St_2_Wait_2);
+    s_1_1 = merge ck_1 (true -> v_58)(false -> v_60);
+    s_1_2 = merge ck_1 (true -> v_59)(false -> v_61);
+    v_62 = merge ck_2_3_1 (true -> r_4_St_2_Active)(false -> r_4_St_2_Idle);
+    v_63 =
+      merge ck_2_3_0
+        (true -> ((true when false(ck_1)) when true(ck_2_3_0)))
+        (false -> r_4_St_2_Wait);
+    r_4 = merge ck_1 (true -> v_62)(false -> v_63);
+    ck_2_3_1 = (ck_2_3 when true(ck_1));
+    ck_2_3_0 = (ck_2_3 when false(ck_1));
+    s_1_St_2_Idle_2_1 = (s_1_St_2_Idle_2 when true(s_1_St_2_Idle_1));
+    s_1_St_2_Idle_2_0 = (s_1_St_2_Idle_2 when false(s_1_St_2_Idle_1));
+    s_1_St_2_Wait_2_1 = (s_1_St_2_Wait_2 when true(s_1_St_2_Wait_1));
+    s_1_St_2_Wait_2_0 = (s_1_St_2_Wait_2 when false(s_1_St_2_Wait_1));
+    s_1_St_2_Active_2_1 = (s_1_St_2_Active_2 when true(s_1_St_2_Active_1));
+    s_1_St_2_Active_2_0 = (s_1_St_2_Active_2 when false(s_1_St_2_Active_1));
+    a1 = a;
+    a2 = a_1;
+    ns_2_1 = (ns_2 when true(ns_1_3));
+    ns_2_0 = (ns_2 when false(ns_1_3));
+    s_2_1 = (s_2 when true(s_1_3));
+    s_2_0 = (s_2 when false(s_1_3));
+    ns_1_2_1 = (ns_1_2 when true(ns_1_1));
+    ns_1_2_0 = (ns_1_2 when false(ns_1_1));
+    s_1_2_1 = (s_1_2 when true(s_1_1));
+    s_1_2_0 = (s_1_2 when false(s_1_1))
+  tel
+
