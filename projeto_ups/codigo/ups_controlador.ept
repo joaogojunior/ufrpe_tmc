@@ -5,59 +5,66 @@
 
 type pc_states = OFF | R1 | R3 | R4
 node computador(sw_atx, c_atx, rup, rup_nc, rdown, rdown_nc :bool) returns (estado_pc:pc_states)
+var a, d, u, o: bool;
 let
+   a = sw_atx or c_atx;
+   d = rdown or rdown_nc;
+   u = rup or rup_nc;
+   o = a or d;
     automaton
-    state r4 do
+    state Rl4 do
       estado_pc = R4;
-    unless c_atx then off
-      | rdown then r3
-    state off do
+    unless a then Off
+      | d then Rl3
+    state Off do
       estado_pc = OFF;
-    unless sw_atx or c_atx then r4
-    state r3 do
+    unless a then Rl4
+    state Rl3 do
       estado_pc = R3;
-    unless rup then R4
-      | c_atx then off
-      | rdown then r1
-    state r1 do
+    unless u then Rl4
+      | a then Off
+      | d then Rl1
+    state Rl1 do
       estado_pc = R1;
-    unless c_atx or rdown then off
-      | rup then r4
+    unless o then Off
+      | u then Rl4
     end
 tel
 
-type bat_states = B100 | B75 | B50 | B25 | BERR
-node bateria(c, l1, l2, v:bool) returns (estado_bat:bat_states)
-var t1, t2, t3, t4: bool;
+type bat_states =  BERR | B100 | B75 | B50 | B25
+node bateria(cp, l1, l2, v:bool) returns (estado_bat:bat_states)
+var a, b, c, d, e: bool;
 let
-   t1 = !c & l1 & l2 & v;
-   t2 = c & l1 & l2 & v;
-   t3 = !c & !l1 & l2 & v;
-   t4 = !c & !l1 & !l2 & v;
-tel
-
-let
+   a = not cp & l1 & l2 & v;
+   b = cp & l1 & l2 & v;
+   c = not cp & not l1 & l2 & v;
+   d = not cp & not l1 & not l2 & v;
+   e = not a & not b & not c & not d;
     automaton
-    state erro do
+    state Erro do
       estado_bat = BERR;
-    unless t2 then carregado
-      | t1 then limiar1
-      | t3 then limiar2
-      | t4 then descarregado
-    state carregado do
+    unless b then Carregado
+      | a then Limiar1
+      | c then Limiar2
+      | d then Descarregado
+    state Carregado do
       estado_bat = B100;
-    unless t1 then limiar1
-    state limiar1 do
+    unless a then Limiar1
+      | e then Erro
+    state Limiar1 do
       estado_bat = B75;
-    unless t2 carregado
-      | t3 then limiar2
-    state limiar2 do
+    unless b then Carregado
+      | c then Limiar2
+      | e then Erro
+    state Limiar2 do
       estado_bat = B50;
-    unless t1 then limiar1
-       | t4 then descarregado
-    state descarregado do
+    unless a then Limiar1
+       | d then Descarregado
+       | e then Erro
+    state Descarregado do
       estado_bat = B25;
-    unless t3 then limiar2
+    unless c then Limiar2
+       | e then Erro
     end
 tel
 
@@ -87,38 +94,96 @@ let
 tel
 
 type modem_states = OFF | BOOT | TEST | SLEEP | ON
-node modem_adsl(cm, t, online, test_fail :bool) returns (estado:modem_states)
+node modem_adsl(c, t, o :bool) returns (estado:modem_states)
 let
     automaton
     state Off do
       estado = OFF;
-    unless cr then Noite
-    state Noite do
-      periodo = NOITE;
-    unless cr then Dia
+    unless c then Wait
+    state Wait do
+      estado = BOOT;
+    unless t then Teste
+       | c then Off
+    state Teste do
+       estado = TEST
+     unless o then Online
+       | !o then Sleep
+       | c then Off
+     state Online do
+       estado = ON
+     unless t then Teste
+       | c then Off
+     state Sleep do
+       estado  = SLEEP
+     unless t then Wait
+       | c then Off
     end
 tel
 
-node contrato(botao, ca, rup1, rdown1: bool)
- returns ( modem, pabx: bool; servidor: pc_states)
+node contrato(cb,l1b,l2b,vb,cm,tm,om: bool)
+ returns ( pabx, modem_atuador: bool; modem: modem_states)
     contract
-var  r1: bool; total: int;  bat12v: pol_states;
+var erro, pb, pm: bool;  bat12v: bat_states;
 
 let
 (* politicas *)
      bat12v = inlined bateria(cb, l1b, l2b, vb);
      switch bat12v
-     | BERR do r1 = false;
-     | B25 do r1 = true;
-     | B50 do r1 = true;
-     | B100 do r1 = true;
+     | BERR do 
+        erro = true;
+     | B25 do
+        erro = false;
+        pb = ! pabx;
+        pm = false;
+        switch modem
+        | OFF do
+           pm = true;
+        end
+     | B50 do
+        erro = false;
+        pb = pabx;
+        pm = true;
+        switch modem
+        | OFF do
+           pm = false;
+        end
+       (* pm = !modem == OFF;*)
+     | B75 do
+        erro = false;
+        pb = pabx;
+      (*  pm = !modem == OFF; *)
+        pm = true;
+        switch modem
+        | OFF do
+           pm = false;
+        end
+     | B100 do
+        erro = false;
+        pb = pabx;
+(*        pm = !modem == OFF;*)
+        pm = true;
+        switch modem
+        | OFF do
+           pm = false;
+        end
      end
 tel
-     enforce r1
-     with (ca,cm,cp:bool)
+     enforce pb & pm
+     with (cp, cm:bool)
 let
 (* planta *)
-    servidor = inlined computador(botao, ca, rup1, rdown1);
-    modem = inlined atuador_sw(cm);
     pabx = inlined atuador_sw(cp);
+    modem = inlined modem_adsl(cm,tm,om);
+    switch modem
+    | OFF do
+       modem_atuador = false;
+    | BOOT do
+       modem_atuador = true;
+    | TEST do
+       modem_atuador = true;
+    | SLEEP do
+       modem_atuador = false;
+    | ON do
+       modem_atuador = true;
+    end
 tel
