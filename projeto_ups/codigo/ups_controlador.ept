@@ -4,16 +4,16 @@
 *)
 
 type pc_states = OFF | R1 | R3 | R4
-node computador(sw_atx, c_atx, rup, rdown,c:bool) returns (estado_pc:pc_states)
+node computador(sw_atx, c_atx, rup, rup_nc, rdown, rdown_nc :bool) returns (estado_pc:pc_states)
 let
     automaton
-    state off do
-      estado_pc = OFF;
-    unless sw_atx or c_atx then r4
     state r4 do
       estado_pc = R4;
     unless c_atx then off
       | rdown then r3
+    state off do
+      estado_pc = OFF;
+    unless sw_atx or c_atx then r4
     state r3 do
       estado_pc = R3;
     unless rup then R4
@@ -79,6 +79,19 @@ let
     automaton
     state Dia do
       periodo = DIA;
+    unless cr then Noite
+    state Noite do
+      periodo = NOITE;
+    unless cr then Dia
+    end
+tel
+
+type modem_states = OFF | BOOT | TEST | SLEEP | ON
+node modem_adsl(cm, t, online, test_fail :bool) returns (estado:modem_states)
+let
+    automaton
+    state Off do
+      estado = OFF;
     unless cr then Noite
     state Noite do
       periodo = NOITE;

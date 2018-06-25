@@ -1,0 +1,4 @@
+a: SW_ATX || C_ATX
+d: R_DOWN || RDOWN_NC
+u: R_UP ||  RUP_NC
+o: a || d
