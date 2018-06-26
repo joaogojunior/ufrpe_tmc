@@ -80,110 +80,108 @@ let
     end
 tel
 
-type day_states = DIA | NOITE
-node periodo_dia(cr:bool) returns (periodo:day_states)
+node periodo_dia(t:bool) returns (isday: bool)
 let
     automaton
     state Dia do
-      periodo = DIA;
-    unless cr then Noite
+      isday = true;
+    unless t then Noite
     state Noite do
-      periodo = NOITE;
-    unless cr then Dia
+      isday = false;
+    unless t then Dia
     end
 tel
 
-type modem_states = OFF | BOOT | TEST | SLEEP | ON
-node modem_adsl(c, t, o :bool) returns (estado:modem_states)
+node modem_adsl(c, t, o :bool) returns (estado:int)
 let
     automaton
     state Off do
-      estado = OFF;
+      estado = 1;
     unless c then Wait
     state Wait do
-      estado = BOOT;
+      estado = 3;
     unless t then Teste
        | c then Off
     state Teste do
-       estado = TEST
+       estado = 4;
      unless o then Online
-       | !o then Sleep
+       | not o then Sleep
        | c then Off
      state Online do
-       estado = ON
+       estado = 5;
      unless t then Teste
        | c then Off
      state Sleep do
-       estado  = SLEEP
+       estado = 2;
      unless t then Wait
        | c then Off
     end
 tel
 
-node contrato(cb,l1b,l2b,vb,cm,tm,om: bool)
- returns ( pabx, modem_atuador: bool; modem: modem_states)
+node contrato(cb,l1b,l2b,vb,td: bool)
+ returns ( erro, relogio, pb, pm, pabx, modem_atuador: bool; bat12v: bat_states)
     contract
-var erro, pb, pm: bool;  bat12v: bat_states;
+ (*var relogio : bool;*)
 
 let
 (* politicas *)
-     bat12v = inlined bateria(cb, l1b, l2b, vb);
-     switch bat12v
-     | BERR do 
-        erro = true;
-     | B25 do
-        erro = false;
-        pb = ! pabx;
-        pm = false;
-        switch modem
-        | OFF do
-           pm = true;
-        end
-     | B50 do
-        erro = false;
-        pb = pabx;
-        pm = true;
-        switch modem
-        | OFF do
-           pm = false;
-        end
-       (* pm = !modem == OFF;*)
-     | B75 do
-        erro = false;
-        pb = pabx;
-      (*  pm = !modem == OFF; *)
-        pm = true;
-        switch modem
-        | OFF do
-           pm = false;
-        end
-     | B100 do
-        erro = false;
-        pb = pabx;
-(*        pm = !modem == OFF;*)
-        pm = true;
-        switch modem
-        | OFF do
-           pm = false;
-        end
-     end
 tel
-     enforce pb & pm
+     enforce (pb & pm)
      with (cp, cm:bool)
 let
 (* planta *)
+    relogio = inlined periodo_dia(td);
+    bat12v = inlined bateria(cb, l1b, l2b, vb);
     pabx = inlined atuador_sw(cp);
-    modem = inlined modem_adsl(cm,tm,om);
-    switch modem
-    | OFF do
-       modem_atuador = false;
-    | BOOT do
-       modem_atuador = true;
-    | TEST do
-       modem_atuador = true;
-    | SLEEP do
-       modem_atuador = false;
-    | ON do
-       modem_atuador = true;
+    modem_atuador = inlined atuador_sw(cm);
+     switch bat12v
+     | BERR do
+          erro = true;
+          pb = true;
+          pm = true;
+     | B25 do
+        switch relogio
+          | true do (* dia *)
+          erro = false;
+          pb = not pabx;
+          pm = not modem_atuador;
+          | false do (* noite *)
+          erro = false;
+          pb = not pabx;
+          pm = not modem_atuador;
+        end
+     | B50 do
+        switch relogio
+          | true do  (* dia *)
+          erro = false;
+          pb = pabx;
+          pm = modem_atuador;
+          | false do (* noite *)
+          erro = false;
+          pb = not pabx;
+          pm = modem_atuador;
+        end
+     | B75 do
+        switch relogio
+        | true do (* dia *)
+        erro = false;
+        pb = pabx;
+        pm = modem_atuador;
+        | false do (* false *)
+        erro = false;
+        pb = not pabx;
+        pm = modem_atuador;
+      end
+     | B100 do
+       switch relogio
+       | true do (* dia *)
+       erro = false;
+       pb = pabx;
+       pm = modem_atuador;
+       | false do (* noite *)
+       erro = false;
+       pb = pabx;
+       pm = modem_atuador;
     end
+  end
 tel

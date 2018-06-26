@@ -1,0 +1,176 @@
+node contrato_controller_contrato_cm(contrato_cb : bool; contrato_l1b : bool;
+                                      contrato_l2b : bool;
+                                      contrato_vb : bool; contrato_td : bool;
+                                      contrato_ck_10_1 : bool;
+                                      contrato_pnr_3 : bool;
+                                      contrato_v_256 : bool;
+                                      contrato_v_255 : bool;
+                                      contrato_v_254 : bool;
+                                      contrato_pnr_2 : bool;
+                                      contrato_ck_14_1 : bool;
+                                      contrato_pnr_1 : bool;
+                                      contrato_ck_16_1 : bool;
+                                      contrato_pnr : bool;
+                                      p_contrato_cm : bool;
+                                      p_contrato_cp : bool;
+                                      contrato_cp : bool)
+returns (contrato_cm : bool)
+var v_14 : bool; v_13 : bool; v_12 : bool; v_11 : bool; v_10 : bool;
+    v_9 : bool; v_8 : bool; v_7 : bool; v_6 : bool; v_5 : bool; v_4 : bool;
+    v_3 : bool; v_2 : bool; v_1 : bool; v : bool; sub_0 : bool; sub_1 : bool;
+    sub_2 : bool; sub_3 : bool; sub_4 : bool; sub_5 : bool; sub_6 : bool;
+    sub_7 : bool; sub_8 : bool; sub_9 : bool; sub_10 : bool; sub_11 : bool;
+    sub_12 : bool; sub_13 : bool; sub_14 : bool; sub_15 : bool;
+    sub_16 : bool; sub_17 : bool; sub_18 : bool; sub_19 : bool;
+    sub_20 : bool; sub_21 : bool; sub_22 : bool; sub_23 : bool;
+    sub_24 : bool; sub_25 : bool; sub_26 : bool; sub_27 : bool;
+    sub_28 : bool; sub_29 : bool; sub_30 : bool; sub_31 : bool;
+    sub_32 : bool; sub_33 : bool; sub_34 : bool; sub_35 : bool;
+    sub_36 : bool; sub_37 : bool;
+let
+  contrato_cm = sub_0;
+  sub_37 = if contrato_l2b then sub_24 else sub_21;
+  sub_36 = if contrato_l1b then sub_37 else sub_22;
+  sub_35 = if contrato_l1b then sub_26 else sub_22;
+  sub_34 = if contrato_v_256 then sub_30 else sub_35;
+  sub_33 = sub_28;
+  sub_32 = sub_33;
+  sub_31 = sub_32;
+  sub_30 = sub_31;
+  sub_29 = sub_8;
+  sub_28 = if contrato_ck_16_1 then sub_13 else sub_29;
+  sub_27 = if contrato_vb then sub_28 else sub_17;
+  v = if contrato_l2b then sub_27 else sub_21;
+  sub_26 = if contrato_cb then v else sub_4;
+  sub_25 = sub_16;
+  v_1 = if contrato_ck_16_1 then sub_11 else sub_25;
+  sub_24 = if contrato_vb then v_1 else sub_17;
+  sub_23 = sub_21;
+  v_2 = if contrato_l2b then sub_5 else sub_24;
+  sub_22 = if contrato_cb then sub_23 else v_2;
+  sub_21 = sub_17;
+  sub_20 = true;
+  sub_19 = false;
+  sub_18 = sub_19;
+  sub_17 = if p_contrato_cm then sub_20 else sub_18;
+  sub_16 = if contrato_cp then sub_15 else sub_14;
+  v_3 = not(contrato_ck_14_1);
+  sub_15 = (v_3 or false);
+  sub_14 = (contrato_ck_14_1 or false);
+  sub_13 = if contrato_cp then sub_14 else sub_15;
+  sub_12 = if contrato_td then sub_13 else sub_16;
+  sub_11 = if contrato_cp then sub_10 else sub_9;
+  sub_10 = (contrato_ck_14_1 & false);
+  v_4 = not(contrato_ck_14_1);
+  sub_9 = (v_4 & false);
+  sub_8 = if contrato_cp then sub_9 else sub_10;
+  sub_7 = if contrato_td then sub_8 else sub_11;
+  v_5 = if contrato_td then sub_11 else sub_8;
+  sub_6 = if contrato_ck_10_1 then v_5 else sub_7;
+  v_6 = if contrato_td then sub_16 else sub_13;
+  v_7 = if contrato_ck_10_1 then v_6 else sub_12;
+  v_8 = if contrato_ck_16_1 then v_7 else sub_6;
+  sub_5 = if contrato_vb then v_8 else sub_17;
+  sub_4 = if contrato_l2b then sub_5 else sub_21;
+  sub_3 = if contrato_l1b then sub_4 else sub_22;
+  v_9 = if contrato_cb then sub_23 else sub_5;
+  v_10 = if contrato_l1b then sub_26 else v_9;
+  sub_2 = if contrato_v_256 then v_10 else sub_3;
+  sub_1 = if contrato_v_255 then sub_30 else sub_2;
+  v_11 = if contrato_cb then sub_23 else sub_27;
+  v_12 = if contrato_l1b then sub_26 else v_11;
+  v_13 = if contrato_v_256 then v_12 else sub_36;
+  v_14 = if contrato_v_255 then v_13 else sub_34;
+  sub_0 = if contrato_v_254 then v_14 else sub_1
+tel
+
+node contrato_controller_contrato_cp(contrato_cb : bool; contrato_l1b : bool;
+                                      contrato_l2b : bool;
+                                      contrato_vb : bool; contrato_td : bool;
+                                      contrato_ck_10_1 : bool;
+                                      contrato_pnr_3 : bool;
+                                      contrato_v_256 : bool;
+                                      contrato_v_255 : bool;
+                                      contrato_v_254 : bool;
+                                      contrato_pnr_2 : bool;
+                                      contrato_ck_14_1 : bool;
+                                      contrato_pnr_1 : bool;
+                                      contrato_ck_16_1 : bool;
+                                      contrato_pnr : bool;
+                                      p_contrato_cm : bool;
+                                      p_contrato_cp : bool)
+returns (contrato_cp : bool)
+var v_23 : bool; v_22 : bool; v_21 : bool; v_20 : bool; v_19 : bool;
+    v_18 : bool; v_17 : bool; v_16 : bool; v_15 : bool; v : bool;
+    sub_0 : bool; sub_1 : bool; sub_2 : bool; sub_3 : bool; sub_4 : bool;
+    sub_5 : bool; sub_6 : bool; sub_7 : bool; sub_8 : bool; sub_9 : bool;
+    sub_10 : bool; sub_11 : bool; sub_12 : bool; sub_13 : bool;
+    sub_14 : bool; sub_15 : bool; sub_16 : bool; sub_17 : bool;
+    sub_18 : bool; sub_19 : bool; sub_20 : bool; sub_21 : bool;
+    sub_22 : bool; sub_23 : bool; sub_24 : bool; sub_25 : bool;
+let
+  contrato_cp = sub_0;
+  sub_25 = if contrato_l2b then sub_14 else sub_11;
+  sub_24 = if contrato_l1b then sub_25 else sub_12;
+  sub_23 = if contrato_l1b then sub_15 else sub_12;
+  sub_22 = if contrato_v_256 then sub_18 else sub_23;
+  sub_21 = sub_17;
+  sub_20 = sub_21;
+  sub_19 = sub_20;
+  sub_18 = sub_19;
+  sub_17 = sub_7;
+  sub_16 = if contrato_vb then sub_17 else sub_9;
+  v = if contrato_l2b then sub_16 else sub_11;
+  sub_15 = if contrato_cb then v else sub_4;
+  sub_14 = if contrato_vb then sub_8 else sub_9;
+  sub_13 = sub_11;
+  v_15 = if contrato_l2b then sub_5 else sub_14;
+  sub_12 = if contrato_cb then sub_13 else v_15;
+  sub_11 = sub_9;
+  sub_10 = p_contrato_cp;
+  sub_9 = sub_10;
+  sub_8 = not(contrato_ck_14_1);
+  sub_7 = contrato_ck_14_1;
+  sub_6 = if contrato_td then sub_7 else sub_8;
+  v_16 = if contrato_td then sub_8 else sub_7;
+  v_17 = if contrato_ck_10_1 then v_16 else sub_6;
+  sub_5 = if contrato_vb then v_17 else sub_9;
+  sub_4 = if contrato_l2b then sub_5 else sub_11;
+  sub_3 = if contrato_l1b then sub_4 else sub_12;
+  v_18 = if contrato_cb then sub_13 else sub_5;
+  v_19 = if contrato_l1b then sub_15 else v_18;
+  sub_2 = if contrato_v_256 then v_19 else sub_3;
+  sub_1 = if contrato_v_255 then sub_18 else sub_2;
+  v_20 = if contrato_cb then sub_13 else sub_16;
+  v_21 = if contrato_l1b then sub_15 else v_20;
+  v_22 = if contrato_v_256 then v_21 else sub_24;
+  v_23 = if contrato_v_255 then v_22 else sub_22;
+  sub_0 = if contrato_v_254 then v_23 else sub_1
+tel
+
+node contrato_controller(contrato_cb : bool; contrato_l1b : bool;
+                          contrato_l2b : bool; contrato_vb : bool;
+                          contrato_td : bool; contrato_ck_10_1 : bool;
+                          contrato_pnr_3 : bool; contrato_v_256 : bool;
+                          contrato_v_255 : bool; contrato_v_254 : bool;
+                          contrato_pnr_2 : bool; contrato_ck_14_1 : bool;
+                          contrato_pnr_1 : bool; contrato_ck_16_1 : bool;
+                          contrato_pnr : bool; p_contrato_cm : bool;
+                          p_contrato_cp : bool)
+returns (contrato_cm : bool; contrato_cp : bool)
+let
+  contrato_cp =
+    contrato_controller_contrato_cp
+    (contrato_cb, contrato_l1b, contrato_l2b, contrato_vb, contrato_td,
+      contrato_ck_10_1, contrato_pnr_3, contrato_v_256, contrato_v_255,
+      contrato_v_254, contrato_pnr_2, contrato_ck_14_1, contrato_pnr_1,
+      contrato_ck_16_1, contrato_pnr, p_contrato_cm, p_contrato_cp);
+  contrato_cm =
+    contrato_controller_contrato_cm
+    (contrato_cb, contrato_l1b, contrato_l2b, contrato_vb, contrato_td,
+      contrato_ck_10_1, contrato_pnr_3, contrato_v_256, contrato_v_255,
+      contrato_v_254, contrato_pnr_2, contrato_ck_14_1, contrato_pnr_1,
+      contrato_ck_16_1, contrato_pnr, p_contrato_cm, p_contrato_cp,
+      contrato_cp)
+tel
+
