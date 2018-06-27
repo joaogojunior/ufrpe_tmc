@@ -1,4 +1,4 @@
-/* --- Generated the 25/6/2018 at 20:9 --- */
+/* --- Generated the 27/6/2018 at 7:26 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -10,8 +10,17 @@
 #include "pervasives.h"
 #include "contrato_controller.h"
 typedef enum {
-  Ups_controlador__St_8_Noite,
-  Ups_controlador__St_8_Dia
+  Ups_controlador__St_9_Lig,
+  Ups_controlador__St_9_Des
+} Ups_controlador__st_9;
+
+Ups_controlador__st_9 Ups_controlador__st_9_of_string(char* s);
+
+char* string_of_Ups_controlador__st_9(Ups_controlador__st_9 x, char* buf);
+
+typedef enum {
+  Ups_controlador__St_8_Lig,
+  Ups_controlador__St_8_Des
 } Ups_controlador__st_8;
 
 Ups_controlador__st_8 Ups_controlador__st_8_of_string(char* s);
@@ -19,11 +28,9 @@ Ups_controlador__st_8 Ups_controlador__st_8_of_string(char* s);
 char* string_of_Ups_controlador__st_8(Ups_controlador__st_8 x, char* buf);
 
 typedef enum {
-  Ups_controlador__St_7_Limiar2,
-  Ups_controlador__St_7_Limiar1,
-  Ups_controlador__St_7_Erro,
-  Ups_controlador__St_7_Descarregado,
-  Ups_controlador__St_7_Carregado
+  Ups_controlador__St_7_Rlevel4,
+  Ups_controlador__St_7_Off,
+  Ups_controlador__St_7_Boot
 } Ups_controlador__st_7;
 
 Ups_controlador__st_7 Ups_controlador__st_7_of_string(char* s);
@@ -31,8 +38,8 @@ Ups_controlador__st_7 Ups_controlador__st_7_of_string(char* s);
 char* string_of_Ups_controlador__st_7(Ups_controlador__st_7 x, char* buf);
 
 typedef enum {
-  Ups_controlador__St_6_Lig,
-  Ups_controlador__St_6_Des
+  Ups_controlador__St_6_Noite,
+  Ups_controlador__St_6_Dia
 } Ups_controlador__st_6;
 
 Ups_controlador__st_6 Ups_controlador__st_6_of_string(char* s);
@@ -40,8 +47,11 @@ Ups_controlador__st_6 Ups_controlador__st_6_of_string(char* s);
 char* string_of_Ups_controlador__st_6(Ups_controlador__st_6 x, char* buf);
 
 typedef enum {
-  Ups_controlador__St_5_Lig,
-  Ups_controlador__St_5_Des
+  Ups_controlador__St_5_Limiar2,
+  Ups_controlador__St_5_Limiar1,
+  Ups_controlador__St_5_Erro,
+  Ups_controlador__St_5_Descarregado,
+  Ups_controlador__St_5_Carregado
 } Ups_controlador__st_5;
 
 Ups_controlador__st_5 Ups_controlador__st_5_of_string(char* s);
@@ -91,27 +101,14 @@ Ups_controlador__st_1 Ups_controlador__st_1_of_string(char* s);
 char* string_of_Ups_controlador__st_1(Ups_controlador__st_1 x, char* buf);
 
 typedef enum {
-  Ups_controlador__St_Rl4,
-  Ups_controlador__St_Rl3,
-  Ups_controlador__St_Rl1,
-  Ups_controlador__St_Off
+  Ups_controlador__St_Rlevel4,
+  Ups_controlador__St_Off,
+  Ups_controlador__St_Boot
 } Ups_controlador__st;
 
 Ups_controlador__st Ups_controlador__st_of_string(char* s);
 
 char* string_of_Ups_controlador__st(Ups_controlador__st x, char* buf);
-
-typedef enum {
-  Ups_controlador__OFF,
-  Ups_controlador__R1,
-  Ups_controlador__R3,
-  Ups_controlador__R4
-} Ups_controlador__pc_states;
-
-Ups_controlador__pc_states Ups_controlador__pc_states_of_string(char* s);
-
-char* string_of_Ups_controlador__pc_states(Ups_controlador__pc_states x,
-                                           char* buf);
 
 typedef enum {
   Ups_controlador__BERR,

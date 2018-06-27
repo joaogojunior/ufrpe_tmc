@@ -1,4 +1,4 @@
-/* --- Generated the 25/6/2018 at 20:9 --- */
+/* --- Generated the 27/6/2018 at 7:26 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -8,27 +8,26 @@
 #include "ups_controlador_types.h"
 #include "contrato_controller.h"
 typedef struct Ups_controlador__computador_mem {
-  int v_106;
-  int v_105;
+  int v_103;
+  int v_102;
   int pnr;
 } Ups_controlador__computador_mem;
 
 typedef struct Ups_controlador__computador_out {
-  int estado_pc_2;
-  int estado_pc_1;
+  int atuador;
+  int estado;
 } Ups_controlador__computador_out;
 
 void Ups_controlador__computador_reset(Ups_controlador__computador_mem* self);
 
-void Ups_controlador__computador_step(int sw_atx, int c_atx, int rup,
-                                      int rup_nc, int rdown, int rdown_nc,
+void Ups_controlador__computador_step(int c_atx, int off_atx, int t,
                                       Ups_controlador__computador_out* _out,
                                       Ups_controlador__computador_mem* self);
 
 typedef struct Ups_controlador__bateria_mem {
-  int v_150;
-  int v_149;
-  int v_148;
+  int v_147;
+  int v_146;
+  int v_145;
   int pnr;
 } Ups_controlador__bateria_mem;
 
@@ -75,13 +74,15 @@ void Ups_controlador__periodo_dia_step(int t,
                                        Ups_controlador__periodo_dia_mem* self);
 
 typedef struct Ups_controlador__modem_adsl_mem {
-  int v_198;
-  int v_197;
-  int v_196;
+  int v_205;
+  int v_204;
+  int v_203;
   int pnr;
 } Ups_controlador__modem_adsl_mem;
 
 typedef struct Ups_controlador__modem_adsl_out {
+  int desligado;
+  int atuador;
   int estado;
 } Ups_controlador__modem_adsl_out;
 
@@ -92,12 +93,15 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
                                       Ups_controlador__modem_adsl_mem* self);
 
 typedef struct Ups_controlador__contrato_mem {
+  int v_263;
+  int v_262;
+  int v_261;
   int ck_16_1;
-  int ck_14_1;
-  int v_256;
-  int v_255;
-  int v_254;
+  int v_295;
+  int v_294;
+  int ck_12_1;
   int ck_10_1;
+  int pnr_4;
   int pnr_3;
   int pnr_2;
   int pnr_1;
@@ -109,8 +113,11 @@ typedef struct Ups_controlador__contrato_out {
   int relogio;
   int pb;
   int pm;
+  int ps;
   int pabx;
   int modem_atuador;
+  int serv_atuador;
+  int serv_estado;
   int bat12v_3;
   int bat12v_2;
   int bat12v_1;
@@ -119,6 +126,7 @@ typedef struct Ups_controlador__contrato_out {
 void Ups_controlador__contrato_reset(Ups_controlador__contrato_mem* self);
 
 void Ups_controlador__contrato_step(int cb, int l1b, int l2b, int vb, int td,
+                                    int tm, int om,
                                     Ups_controlador__contrato_out* _out,
                                     Ups_controlador__contrato_mem* self);
 

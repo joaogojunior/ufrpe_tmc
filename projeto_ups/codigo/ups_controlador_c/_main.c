@@ -1,4 +1,4 @@
-/* --- Generated the 25/6/2018 at 20:9 --- */
+/* --- Generated the 27/6/2018 at 7:26 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -16,6 +16,8 @@ int main(int argc, char** argv) {
   int l2b;
   int vb;
   int td;
+  int tm;
+  int om;
   Ups_controlador__contrato_out _res;
   step_c = 0;
   step_max = 0;
@@ -40,7 +42,13 @@ int main(int argc, char** argv) {
     
     printf("td ? ");
     scanf("%d", &td);;
-    Ups_controlador__contrato_step(cb, l1b, l2b, vb, td, &_res, &mem);
+    
+    printf("tm ? ");
+    scanf("%d", &tm);;
+    
+    printf("om ? ");
+    scanf("%d", &om);;
+    Ups_controlador__contrato_step(cb, l1b, l2b, vb, td, tm, om, &_res, &mem);
     printf("=> ");
     printf("%d ", _res.erro);
     printf("=> ");
@@ -50,9 +58,15 @@ int main(int argc, char** argv) {
     printf("=> ");
     printf("%d ", _res.pm);
     printf("=> ");
+    printf("%d ", _res.ps);
+    printf("=> ");
     printf("%d ", _res.pabx);
     printf("=> ");
     printf("%d ", _res.modem_atuador);
+    printf("=> ");
+    printf("%d ", _res.serv_atuador);
+    printf("=> ");
+    printf("%d ", _res.serv_estado);
     printf("=> ");
     printf("%d ", _res.bat12v_3);
     printf("=> ");
