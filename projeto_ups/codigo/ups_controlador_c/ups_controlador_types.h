@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 7:13 --- */
+/* --- Generated the 4/7/2018 at 13:2 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -64,8 +64,9 @@ typedef enum {
   Ups_controlador__St_6_Limiar2,
   Ups_controlador__St_6_Limiar1,
   Ups_controlador__St_6_Erro,
-  Ups_controlador__St_6_Descarregado,
-  Ups_controlador__St_6_Carregado
+  Ups_controlador__St_6_Cheio,
+  Ups_controlador__St_6_Carregando,
+  Ups_controlador__St_6_Baixo
 } Ups_controlador__st_6;
 
 Ups_controlador__st_6 Ups_controlador__st_6_of_string(char* s);
@@ -115,8 +116,9 @@ typedef enum {
   Ups_controlador__St_1_Limiar2,
   Ups_controlador__St_1_Limiar1,
   Ups_controlador__St_1_Erro,
-  Ups_controlador__St_1_Descarregado,
-  Ups_controlador__St_1_Carregado
+  Ups_controlador__St_1_Cheio,
+  Ups_controlador__St_1_Carregando,
+  Ups_controlador__St_1_Baixo
 } Ups_controlador__st_1;
 
 Ups_controlador__st_1 Ups_controlador__st_1_of_string(char* s);
@@ -140,7 +142,8 @@ typedef enum {
   Ups_controlador__B100,
   Ups_controlador__B75,
   Ups_controlador__B50,
-  Ups_controlador__B25
+  Ups_controlador__B25,
+  Ups_controlador__BCHR
 } Ups_controlador__bat_states;
 
 Ups_controlador__bat_states Ups_controlador__bat_states_of_string(char* s);

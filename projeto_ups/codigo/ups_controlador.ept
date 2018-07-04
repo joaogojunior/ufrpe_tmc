@@ -6,10 +6,10 @@
 node computador(c_atx, off_atx, ts, cr1, cr3, cr4, ba, b1, b3, b4, s_atx, s1, s3, s4:bool) returns (atuador:bool; estado: int;)
 var a, r1, r3, r4: bool;
 let
-a = (ba & s_atx) or c_atx;
-r1 = (b1 & s1) or cr1;
-r3 = (b3 & s3) or cr3;
-r4 = (b4 & s4) or cr4;
+a = (ba & s_atx) or not c_atx;
+r1 = (b1 & s1) or not cr1;
+r3 = (b3 & s3) or not cr3;
+r4 = (b4 & s4) or not cr4;
     automaton
     state Off do
       estado = 0;
@@ -41,8 +41,8 @@ r4 = (b4 & s4) or cr4;
     end
 tel
 
-type bat_states =  BERR | B100 | B75 | B50 | B25
-node bateria(cp, l1, l2, v:bool) returns (estado_bat:bat_states)
+type bat_states =  BERR | B100 | B75 | B50 | B25 | BCHR
+node bateria(ac, cp, l1, l2, v:bool) returns (estado_bat:bat_states)
 var a, b, c, d, e: bool;
 let
    a = not cp & l1 & l2 & v;
@@ -53,28 +53,39 @@ let
     automaton
     state Erro do
       estado_bat = BERR;
-    unless b then Carregado
+    unless ac then Carregando
+      | b then Cheio
       | a then Limiar1
       | c then Limiar2
-      | d then Descarregado
-    state Carregado do
+      | d then Baixo
+    state Cheio do
       estado_bat = B100;
-    unless a then Limiar1
+    unless ac then Carregando
+      | a then Limiar1
       | e or c or d then Erro
     state Limiar1 do
       estado_bat = B75;
-    unless b then Carregado
+    unless ac then Carregando
+      | b then Cheio
       | c then Limiar2
       | e or d then Erro
     state Limiar2 do
       estado_bat = B50;
-    unless a then Limiar1
-       | d then Descarregado
+    unless ac then Carregando
+       | a then Limiar1
+       | d then Baixo
        | e or b then Erro
-    state Descarregado do
+    state Baixo do
       estado_bat = B25;
-    unless c then Limiar2
+    unless ac then Carregando
+       | c then Limiar2
        | e or a or b then Erro
+    state Carregando do
+      estado_bat = BCHR;
+    unless not ac & b then Cheio
+      | not ac & a then Limiar1
+      | not ac & c then Limiar2
+      | not ac & d then Baixo
     end
 tel
 
@@ -145,10 +156,10 @@ let
     end
 tel
 
-node contrato( cb, l1b, l2b, vb, td, tm, om, ts, swa, swr1, swr3, swr4: bool )
- returns ( erro, led_erro, dia, r_dia, r_noite, pabx_atuador, modem_atuador, serv_atuador: bool;  modem_estado, serv_estado: int; bat12v: bat_states)
+node contrato( ac, cb, l1b, l2b, vb, td, tm, om, ts, swa, swr1, swr3, swr4: bool )
+ returns ( erro, led_erro,  dia, r_dia, r_noite, pabx_atuador, modem_atuador, serv_atuador: bool;  modem_estado, serv_estado: int; bat12v: bat_states)
     contract
- (*var dia : bool;*)
+(*var dia, r_dia, r_noite : bool;*)
 
 let
 (* politicas *)
@@ -163,13 +174,17 @@ let
     led_erro = inlined led(erro);
 
     dia = inlined periodo_dia(td);
-    bat12v = inlined bateria(cb, l1b, l2b, vb);
+    bat12v = inlined bateria(ac, cb, l1b, l2b, vb);
 
      switch bat12v
      | BERR do
           erro = true;
           r_dia = dia & not pabx_atuador & not modem_atuador & not serv_atuador;
           r_noite = not dia & not pabx_atuador & not modem_atuador & not serv_atuador;
+     | BCHR do
+          erro = false;
+          r_dia =  dia & pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0 );   
+          r_noite = not dia & pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0);
      | B25 do
           erro = false;
           r_dia = dia & not pabx_atuador & not modem_atuador & not serv_atuador;

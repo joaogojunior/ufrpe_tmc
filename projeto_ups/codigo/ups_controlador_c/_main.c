@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 7:13 --- */
+/* --- Generated the 4/7/2018 at 13:2 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -11,6 +11,7 @@ Ups_controlador__contrato_mem mem;
 int main(int argc, char** argv) {
   int step_c;
   int step_max;
+  int ac;
   int cb;
   int l1b;
   int l2b;
@@ -32,6 +33,9 @@ int main(int argc, char** argv) {
   Ups_controlador__contrato_reset(&mem);
   while ((!(step_max)||(step_c<step_max))) {
     step_c = (step_c+1);
+    
+    printf("ac ? ");
+    scanf("%d", &ac);;
     
     printf("cb ? ");
     scanf("%d", &cb);;
@@ -68,7 +72,7 @@ int main(int argc, char** argv) {
     
     printf("swr4 ? ");
     scanf("%d", &swr4);;
-    Ups_controlador__contrato_step(cb, l1b, l2b, vb, td, tm, om, ts, swa,
+    Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
                                    swr1, swr3, swr4, &_res, &mem);
     printf("=> ");
     printf("%d ", _res.erro);

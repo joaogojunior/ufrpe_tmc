@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 7:13 --- */
+/* --- Generated the 4/7/2018 at 13:2 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -168,11 +168,14 @@ Ups_controlador__st_6 Ups_controlador__st_6_of_string(char* s) {
   if ((strcmp(s, "St_6_Erro")==0)) {
     return Ups_controlador__St_6_Erro;
   };
-  if ((strcmp(s, "St_6_Descarregado")==0)) {
-    return Ups_controlador__St_6_Descarregado;
+  if ((strcmp(s, "St_6_Cheio")==0)) {
+    return Ups_controlador__St_6_Cheio;
   };
-  if ((strcmp(s, "St_6_Carregado")==0)) {
-    return Ups_controlador__St_6_Carregado;
+  if ((strcmp(s, "St_6_Carregando")==0)) {
+    return Ups_controlador__St_6_Carregando;
+  };
+  if ((strcmp(s, "St_6_Baixo")==0)) {
+    return Ups_controlador__St_6_Baixo;
   };
 }
 
@@ -187,11 +190,14 @@ char* string_of_Ups_controlador__st_6(Ups_controlador__st_6 x, char* buf) {
     case Ups_controlador__St_6_Erro:
       strcpy(buf, "St_6_Erro");
       break;
-    case Ups_controlador__St_6_Descarregado:
-      strcpy(buf, "St_6_Descarregado");
+    case Ups_controlador__St_6_Cheio:
+      strcpy(buf, "St_6_Cheio");
       break;
-    case Ups_controlador__St_6_Carregado:
-      strcpy(buf, "St_6_Carregado");
+    case Ups_controlador__St_6_Carregando:
+      strcpy(buf, "St_6_Carregando");
+      break;
+    case Ups_controlador__St_6_Baixo:
+      strcpy(buf, "St_6_Baixo");
       break;
     default:
       break;
@@ -319,11 +325,14 @@ Ups_controlador__st_1 Ups_controlador__st_1_of_string(char* s) {
   if ((strcmp(s, "St_1_Erro")==0)) {
     return Ups_controlador__St_1_Erro;
   };
-  if ((strcmp(s, "St_1_Descarregado")==0)) {
-    return Ups_controlador__St_1_Descarregado;
+  if ((strcmp(s, "St_1_Cheio")==0)) {
+    return Ups_controlador__St_1_Cheio;
   };
-  if ((strcmp(s, "St_1_Carregado")==0)) {
-    return Ups_controlador__St_1_Carregado;
+  if ((strcmp(s, "St_1_Carregando")==0)) {
+    return Ups_controlador__St_1_Carregando;
+  };
+  if ((strcmp(s, "St_1_Baixo")==0)) {
+    return Ups_controlador__St_1_Baixo;
   };
 }
 
@@ -338,11 +347,14 @@ char* string_of_Ups_controlador__st_1(Ups_controlador__st_1 x, char* buf) {
     case Ups_controlador__St_1_Erro:
       strcpy(buf, "St_1_Erro");
       break;
-    case Ups_controlador__St_1_Descarregado:
-      strcpy(buf, "St_1_Descarregado");
+    case Ups_controlador__St_1_Cheio:
+      strcpy(buf, "St_1_Cheio");
       break;
-    case Ups_controlador__St_1_Carregado:
-      strcpy(buf, "St_1_Carregado");
+    case Ups_controlador__St_1_Carregando:
+      strcpy(buf, "St_1_Carregando");
+      break;
+    case Ups_controlador__St_1_Baixo:
+      strcpy(buf, "St_1_Baixo");
       break;
     default:
       break;
@@ -407,6 +419,9 @@ Ups_controlador__bat_states Ups_controlador__bat_states_of_string(char* s) {
   if ((strcmp(s, "B25")==0)) {
     return Ups_controlador__B25;
   };
+  if ((strcmp(s, "BCHR")==0)) {
+    return Ups_controlador__BCHR;
+  };
 }
 
 char* string_of_Ups_controlador__bat_states(Ups_controlador__bat_states x,
@@ -426,6 +441,9 @@ char* string_of_Ups_controlador__bat_states(Ups_controlador__bat_states x,
       break;
     case Ups_controlador__B25:
       strcpy(buf, "B25");
+      break;
+    case Ups_controlador__BCHR:
+      strcpy(buf, "BCHR");
       break;
     default:
       break;
