@@ -176,7 +176,7 @@ let
           r_noite = not dia & not pabx_atuador & not modem_atuador & not serv_atuador;
      | B50 do
           erro = false;
-          r_dia =  dia & not pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0 & serv_estado < 3) ;   
+          r_dia =  dia & not pabx_atuador & (modem_estado > 0 ) & (serv_estado < 3) ;   
           r_noite = not dia & not pabx_atuador & (modem_estado > 0 ) & not serv_atuador;
      | B75 do
           erro = false;
