@@ -1,4 +1,4 @@
-a: SW_ATX || C_ATX
-d: R_DOWN || RDOWN_NC
-u: R_UP ||  RUP_NC
+a: (BA &  SW_ATX) || C_ATX
+d: (BD & RDOWN_SW) || C_RDOWN
+u: (BU & RUP_SW) ||  C_RUP
 o: a || d

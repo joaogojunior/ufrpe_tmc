@@ -1,4 +1,4 @@
-/* --- Generated the 27/6/2018 at 7:26 --- */
+/* --- Generated the 4/7/2018 at 6:9 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -18,6 +18,11 @@ int main(int argc, char** argv) {
   int td;
   int tm;
   int om;
+  int ts;
+  int swa;
+  int swr1;
+  int swr3;
+  int swr4;
   Ups_controlador__contrato_out _res;
   step_c = 0;
   step_max = 0;
@@ -48,23 +53,41 @@ int main(int argc, char** argv) {
     
     printf("om ? ");
     scanf("%d", &om);;
-    Ups_controlador__contrato_step(cb, l1b, l2b, vb, td, tm, om, &_res, &mem);
+    
+    printf("ts ? ");
+    scanf("%d", &ts);;
+    
+    printf("swa ? ");
+    scanf("%d", &swa);;
+    
+    printf("swr1 ? ");
+    scanf("%d", &swr1);;
+    
+    printf("swr3 ? ");
+    scanf("%d", &swr3);;
+    
+    printf("swr4 ? ");
+    scanf("%d", &swr4);;
+    Ups_controlador__contrato_step(cb, l1b, l2b, vb, td, tm, om, ts, swa,
+                                   swr1, swr3, swr4, &_res, &mem);
     printf("=> ");
     printf("%d ", _res.erro);
     printf("=> ");
-    printf("%d ", _res.relogio);
+    printf("%d ", _res.led_erro);
     printf("=> ");
-    printf("%d ", _res.pb);
+    printf("%d ", _res.dia);
     printf("=> ");
-    printf("%d ", _res.pm);
+    printf("%d ", _res.r_dia);
     printf("=> ");
-    printf("%d ", _res.ps);
+    printf("%d ", _res.r_noite);
     printf("=> ");
-    printf("%d ", _res.pabx);
+    printf("%d ", _res.pabx_atuador);
     printf("=> ");
     printf("%d ", _res.modem_atuador);
     printf("=> ");
     printf("%d ", _res.serv_atuador);
+    printf("=> ");
+    printf("%d ", _res.modem_estado);
     printf("=> ");
     printf("%d ", _res.serv_estado);
     printf("=> ");

@@ -3,63 +3,41 @@
     unless => transiciona para outro estado e executa o novo estado
 *)
 
-(*type pc_states = OFF | R1 | R3 | R4
-node computador(sw_atx, c_atx, rup, rup_nc, rdown, rdown_nc :bool) returns (atuador, r1, r3, r4: bool;)
-var a, d, u, o: bool;
+node computador(c_atx, off_atx, ts, cr1, cr3, cr4, ba, b1, b3, b4, s_atx, s1, s3, s4:bool) returns (atuador:bool; estado: int;)
+var a, r1, r3, r4: bool;
 let
-   a = (*sw_atx or *)c_atx;
-   d = rdown (*or rdown_nc*);
-   u = rup (*or rup_nc*);
-   o = a or d;
+a = (ba & s_atx) or c_atx;
+r1 = (b1 & s1) or cr1;
+r3 = (b3 & s3) or cr3;
+r4 = (b4 & s4) or cr4;
     automaton
-    state Rlevel4 do
-      r1 = false;
-      r3 = false;
-      r4 = true;
-      atuador = true;
-    unless a then Off
-      | d then Rlevel3
-    state Off do
-      r1 = false;
-      r3 = false;
-      r4 = false;
-      atuador = false;
-    unless a then Rlevel4
-    state Rlevel3 do
-      r1 = false;
-      r3 = true;
-      r4 = false;
-      atuador = true;
-    unless u then Rlevel4
-      | a then Off
-      | d then Rlevel1
-    state Rlevel1 do
-      r1 = true;
-      r3 = false;
-      r4 = false;
-      atuador = true;
-    unless o then Off
-      | u then Rlevel4
-    end
-tel
- *)
-
-node computador(c_atx, off_atx, t :bool) returns (atuador:bool; estado: int;)
-let
-    automaton
-    state Rlevel4 do
-      estado = 2;
-      atuador = true;
-    unless c_atx then Off
     state Off do
       estado = 0;
       atuador = false;
-    unless c_atx then Boot
+    unless a then Boot
     state Boot do
       estado = 1;
       atuador = true;
-    unless t then Rlevel4
-      | off_atx then Off
+    unless off_atx then Off
+      | ts then Rlevel1
+    state Rlevel1 do
+      estado = 2;
+      atuador = true;
+    unless a then Off
+      | r3  then Rlevel3
+      | r4  then Rlevel4
+    state Rlevel3 do
+      estado = 3;
+      atuador = true;
+    unless a then Off
+      | r1 then Rlevel1
+      | r4 then Rlevel4
+    state Rlevel4 do
+      estado = 4;
+      atuador = true;
+    unless a then Off
+      | r1 then Rlevel1
+      | r3 then Rlevel3
     end
 tel
 
@@ -82,21 +60,21 @@ let
     state Carregado do
       estado_bat = B100;
     unless a then Limiar1
-      | e then Erro
+      | e or b or c or d then Erro
     state Limiar1 do
       estado_bat = B75;
     unless b then Carregado
       | c then Limiar2
-      | e then Erro
+      | e or a or d then Erro
     state Limiar2 do
       estado_bat = B50;
     unless a then Limiar1
        | d then Descarregado
-       | e then Erro
+       | e or b or c then Erro
     state Descarregado do
       estado_bat = B25;
     unless c then Limiar2
-       | e then Erro
+       | e or a or b or d then Erro
     end
 tel
 
@@ -124,120 +102,89 @@ let
     end
 tel
 
-(*type modem_states = OFF | SLEEP | BOOT | TEST | ON*)
-node modem_adsl(c, t, o :bool) returns (desligado, atuador: bool; estado:int)
+node led(s:bool) returns (enabled: bool)
+let
+    automaton
+    state Off do
+      enabled = false;
+    unless s then On
+    state On do
+      enabled = true;
+    unless not s then Off
+    end
+tel
+
+node modem_adsl(c, t, o :bool) returns (atuador: bool; estado:int)
 let
     automaton
     state Off do
       estado = 0;
-      desligado = true;
       atuador = false;
-    unless c then Wait
-    state Wait do
+    unless c then Boot
+    state Boot do
       estado = 2;
-      desligado = false;
       atuador = true;
-    unless t then Teste
-       | c then Off
+    unless c then Off
+       | t then Teste
     state Teste do
        estado = 3;
-       desligado = false;
        atuador = true;
-     unless o then Online
+     unless c then Off
        | not o then Sleep
-       | c then Off
+       | o then Online
      state Online do
        estado = 4;
-       desligado = false;
        atuador = true;
-     unless t then Teste
-       | c then Off
+     unless c then Off
+       | t then Teste
      state Sleep do
        estado = 1;
-       desligado = false;
        atuador = false
-     unless t then Wait
-       | c then Off
+     unless c then Off
+       | t then Boot
     end
 tel
 
-node contrato(cb,l1b,l2b,vb,td, tm, om: bool)
- returns ( erro, relogio, pb, pm, ps, pabx, modem_atuador, serv_atuador: bool;  serv_estado: int; bat12v: bat_states)
+node contrato( cb, l1b, l2b, vb, td, tm, om, ts, swa, swr1, swr3, swr4: bool )
+ returns ( erro, led_erro, dia, r_dia, r_noite, pabx_atuador, modem_atuador, serv_atuador: bool;  modem_estado, serv_estado: int; bat12v: bat_states)
     contract
- (*var relogio : bool;*)
+ (*var dia : bool;*)
 
 let
 (* politicas *)
 tel
-     enforce (pb & pm & ps)
-     with (cp, cm, ca, co, ts:bool)
+     enforce (r_dia or r_noite)
+     with (cp, cm, ca, co,  cr1, cr3, cr4, ba, br1, br3, br4:bool)
 let
 (* planta *)
-    pabx = inlined atuador_sw(cp);
-    modem_atuador = inlined atuador_sw(cm); 
-(*    (modem_desligado, modem_atuador, modem_estado) = inlined modem_adsl(cm, tm, om); *)
-    (serv_atuador, serv_estado) = inlined computador(ca,co,ts );
+    pabx_atuador = inlined atuador_sw(cp);
+    (modem_atuador, modem_estado) = inlined modem_adsl(cm, tm, om);
+    (serv_atuador, serv_estado) = inlined computador(ca, co, ts, cr1, cr3, cr4, ba, br1, br3, br4, swa, swr1, swr3, swr4);
+    led_erro = inlined led(erro);
 
-    relogio = inlined periodo_dia(td);
+    dia = inlined periodo_dia(td);
     bat12v = inlined bateria(cb, l1b, l2b, vb);
 
      switch bat12v
      | BERR do
           erro = true;
-          pb = true;
-          pm = true;
-          ps = true;
+          r_dia = dia & not pabx_atuador & not modem_atuador & not serv_atuador;
+          r_noite = not dia & not pabx_atuador & not modem_atuador & not serv_atuador;
      | B25 do
-        switch relogio
-          | true do (* dia *)
           erro = false;
-          pb = not pabx;
-          pm = not modem_atuador(* true*);
-          ps = not serv_atuador;
-          | false do (* noite *)
-          erro = false;
-          pb = not pabx;
-          pm = not modem_atuador(* true*);
-          ps = not serv_atuador;
-        end
+          r_dia = dia & not pabx_atuador & not modem_atuador & not serv_atuador;
+          r_noite = not dia & not pabx_atuador & not modem_atuador & not serv_atuador;
      | B50 do
-        switch relogio
-          | true do  (* dia *)
           erro = false;
-          pb = pabx;
-          pm = modem_atuador (*modem_estado > 0*);
-          ps =  serv_estado > 0;
-          | false do (* noite *)
-          erro = false;
-          pb = not pabx;
-          pm = modem_atuador (*modem_estado > 0*);
-          ps = not serv_atuador;
-        end
+          r_dia =  dia & not pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0 & serv_estado < 3) ;   
+          r_noite = not dia & not pabx_atuador & (modem_estado > 0 ) & not serv_atuador;
      | B75 do
-        switch relogio
-          | true do (* dia *)
           erro = false;
-          pb = pabx;
-          pm = modem_atuador(* modem_estado > 0*);
-          ps =  serv_estado > 0;
-          | false do (* false *)
-          erro = false;
-          pb = not pabx;
-          pm = modem_atuador (*modem_estado > 0*);
-          ps = not serv_atuador;
-        end
+          r_dia =  dia & pabx_atuador & (modem_estado > 0 ) & ( serv_estado > 0 & serv_estado < 4 );
+          r_noite = not dia & not pabx_atuador & (modem_estado > 0 ) & not serv_atuador;
      | B100 do
-       switch relogio
-          | true do (* dia *)
           erro = false;
-          pb = pabx;
-          pm = modem_atuador (* modem_estado > 0*);
-          ps =  serv_estado > 0;
-          | false do (* noite *)
-          erro = false;
-          pb = pabx;
-          pm = modem_atuador (* modem_estado > 0*);
-          ps =  serv_estado > 0;
-      end
+          r_dia =  dia & pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0 );   
+          r_noite = not dia & pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0);
   end
 tel
