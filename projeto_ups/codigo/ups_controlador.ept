@@ -60,21 +60,21 @@ let
     state Carregado do
       estado_bat = B100;
     unless a then Limiar1
-      | e or b or c or d then Erro
+      | e or c or d then Erro
     state Limiar1 do
       estado_bat = B75;
     unless b then Carregado
       | c then Limiar2
-      | e or a or d then Erro
+      | e or d then Erro
     state Limiar2 do
       estado_bat = B50;
     unless a then Limiar1
        | d then Descarregado
-       | e or b or c then Erro
+       | e or b then Erro
     state Descarregado do
       estado_bat = B25;
     unless c then Limiar2
-       | e or a or b or d then Erro
+       | e or a or b then Erro
     end
 tel
 

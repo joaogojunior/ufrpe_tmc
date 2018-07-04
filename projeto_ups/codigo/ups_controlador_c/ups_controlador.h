@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 6:9 --- */
+/* --- Generated the 4/7/2018 at 7:13 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -8,9 +8,9 @@
 #include "ups_controlador_types.h"
 #include "contrato_controller.h"
 typedef struct Ups_controlador__computador_mem {
-  int v_243;
-  int v_242;
-  int v_241;
+  int v_233;
+  int v_232;
+  int v_231;
   int pnr;
 } Ups_controlador__computador_mem;
 
@@ -29,9 +29,9 @@ void Ups_controlador__computador_step(int c_atx, int off_atx, int ts,
                                       Ups_controlador__computador_mem* self);
 
 typedef struct Ups_controlador__bateria_mem {
-  int v_301;
-  int v_300;
-  int v_299;
+  int v_291;
+  int v_290;
+  int v_289;
   int pnr;
 } Ups_controlador__bateria_mem;
 
@@ -92,9 +92,9 @@ void Ups_controlador__led_step(int s, Ups_controlador__led_out* _out,
                                Ups_controlador__led_mem* self);
 
 typedef struct Ups_controlador__modem_adsl_mem {
-  int v_354;
-  int v_353;
-  int v_352;
+  int v_344;
+  int v_343;
+  int v_342;
   int pnr;
 } Ups_controlador__modem_adsl_mem;
 
@@ -110,17 +110,17 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
                                       Ups_controlador__modem_adsl_mem* self);
 
 typedef struct Ups_controlador__contrato_mem {
-  int v_412;
-  int v_411;
-  int v_410;
+  int v_402;
+  int v_401;
+  int v_400;
   int ck_15_1;
   int ck_13_1;
-  int v_465;
-  int v_464;
-  int v_463;
-  int v_518;
-  int v_517;
-  int v_516;
+  int v_455;
+  int v_454;
+  int v_453;
+  int v_508;
+  int v_507;
+  int v_506;
   int ck_7_1;
   int pnr_5;
   int pnr_4;
