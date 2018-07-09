@@ -1,0 +1,10 @@
+   a = not cp & l1 & l2 & v;
+   b = cp & l1 & l2 & v;
+   c = not cp & not l1 & l2 & v;
+   d = not cp & not l1 & not l2 & v;
+   e = not a & not b & not c & not d;
+   f = ac
+   z = not f & a
+   x = not f & b
+   y = not f & c
+   w = not f & d
