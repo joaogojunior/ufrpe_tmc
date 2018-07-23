@@ -190,7 +190,7 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   sprintf(aux, "%d", _res.bat12v_1);
   strcat(json, aux);
   
-  rtrcat(json, "}");
+  strcat(json, "}");
   
   printf("%s\n",json);
   
