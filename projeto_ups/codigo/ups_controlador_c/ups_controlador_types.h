@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 13:2 --- */
+/* --- Generated the 23/7/2018 at 5:47 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -10,20 +10,8 @@
 #include "pervasives.h"
 #include "contrato_controller.h"
 typedef enum {
-  Ups_controlador__St_11_Lig,
-  Ups_controlador__St_11_Des
-} Ups_controlador__st_11;
-
-Ups_controlador__st_11 Ups_controlador__st_11_of_string(char* s);
-
-char* string_of_Ups_controlador__st_11(Ups_controlador__st_11 x, char* buf);
-
-typedef enum {
-  Ups_controlador__St_10_Teste,
-  Ups_controlador__St_10_Sleep,
-  Ups_controlador__St_10_Online,
-  Ups_controlador__St_10_Off,
-  Ups_controlador__St_10_Boot
+  Ups_controlador__St_10_Lig,
+  Ups_controlador__St_10_Des
 } Ups_controlador__st_10;
 
 Ups_controlador__st_10 Ups_controlador__st_10_of_string(char* s);
@@ -31,9 +19,9 @@ Ups_controlador__st_10 Ups_controlador__st_10_of_string(char* s);
 char* string_of_Ups_controlador__st_10(Ups_controlador__st_10 x, char* buf);
 
 typedef enum {
-  Ups_controlador__St_9_Rlevel4,
-  Ups_controlador__St_9_Rlevel3,
-  Ups_controlador__St_9_Rlevel1,
+  Ups_controlador__St_9_Teste,
+  Ups_controlador__St_9_Sleep,
+  Ups_controlador__St_9_Online,
   Ups_controlador__St_9_Off,
   Ups_controlador__St_9_Boot
 } Ups_controlador__st_9;
@@ -43,8 +31,11 @@ Ups_controlador__st_9 Ups_controlador__st_9_of_string(char* s);
 char* string_of_Ups_controlador__st_9(Ups_controlador__st_9 x, char* buf);
 
 typedef enum {
-  Ups_controlador__St_8_On,
-  Ups_controlador__St_8_Off
+  Ups_controlador__St_8_Rlevel4,
+  Ups_controlador__St_8_Rlevel3,
+  Ups_controlador__St_8_Rlevel1,
+  Ups_controlador__St_8_Off,
+  Ups_controlador__St_8_Boot
 } Ups_controlador__st_8;
 
 Ups_controlador__st_8 Ups_controlador__st_8_of_string(char* s);

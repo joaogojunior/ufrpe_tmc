@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 13:2 --- */
+/* --- Generated the 23/7/2018 at 5:47 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -76,8 +76,6 @@ int main(int argc, char** argv) {
                                    swr1, swr3, swr4, &_res, &mem);
     printf("=> ");
     printf("%d ", _res.erro);
-    printf("=> ");
-    printf("%d ", _res.led_erro);
     printf("=> ");
     printf("%d ", _res.dia);
     printf("=> ");

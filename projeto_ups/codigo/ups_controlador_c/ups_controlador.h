@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 13:2 --- */
+/* --- Generated the 23/7/2018 at 5:47 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -8,9 +8,9 @@
 #include "ups_controlador_types.h"
 #include "contrato_controller.h"
 typedef struct Ups_controlador__computador_mem {
-  int v_298;
   int v_297;
   int v_296;
+  int v_295;
   int pnr;
 } Ups_controlador__computador_mem;
 
@@ -29,9 +29,9 @@ void Ups_controlador__computador_step(int c_atx, int off_atx, int ts,
                                       Ups_controlador__computador_mem* self);
 
 typedef struct Ups_controlador__bateria_mem {
-  int v_363;
   int v_362;
   int v_361;
+  int v_360;
   int pnr;
 } Ups_controlador__bateria_mem;
 
@@ -92,9 +92,9 @@ void Ups_controlador__led_step(int s, Ups_controlador__led_out* _out,
                                Ups_controlador__led_mem* self);
 
 typedef struct Ups_controlador__modem_adsl_mem {
-  int v_420;
   int v_419;
   int v_418;
+  int v_417;
   int pnr;
 } Ups_controlador__modem_adsl_mem;
 
@@ -110,19 +110,17 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
                                       Ups_controlador__modem_adsl_mem* self);
 
 typedef struct Ups_controlador__contrato_mem {
-  int v_485;
   int v_484;
   int v_483;
-  int ck_15_1;
+  int v_482;
   int ck_13_1;
-  int v_542;
   int v_541;
   int v_540;
-  int v_595;
+  int v_539;
   int v_594;
   int v_593;
+  int v_592;
   int ck_7_1;
-  int pnr_5;
   int pnr_4;
   int pnr_3;
   int pnr_2;
@@ -132,7 +130,6 @@ typedef struct Ups_controlador__contrato_mem {
 
 typedef struct Ups_controlador__contrato_out {
   int erro;
-  int led_erro;
   int dia;
   int r_dia;
   int r_noite;

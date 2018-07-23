@@ -1,4 +1,4 @@
-/* --- Generated the 4/7/2018 at 13:2 --- */
+/* --- Generated the 23/7/2018 at 5:47 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -7,63 +7,22 @@
 #include <stdlib.h>
 #include "ups_controlador_types.h"
 
-Ups_controlador__st_11 Ups_controlador__st_11_of_string(char* s) {
-  if ((strcmp(s, "St_11_Lig")==0)) {
-    return Ups_controlador__St_11_Lig;
-  };
-  if ((strcmp(s, "St_11_Des")==0)) {
-    return Ups_controlador__St_11_Des;
-  };
-}
-
-char* string_of_Ups_controlador__st_11(Ups_controlador__st_11 x, char* buf) {
-  switch (x) {
-    case Ups_controlador__St_11_Lig:
-      strcpy(buf, "St_11_Lig");
-      break;
-    case Ups_controlador__St_11_Des:
-      strcpy(buf, "St_11_Des");
-      break;
-    default:
-      break;
-  };
-  return buf;
-}
-
 Ups_controlador__st_10 Ups_controlador__st_10_of_string(char* s) {
-  if ((strcmp(s, "St_10_Teste")==0)) {
-    return Ups_controlador__St_10_Teste;
+  if ((strcmp(s, "St_10_Lig")==0)) {
+    return Ups_controlador__St_10_Lig;
   };
-  if ((strcmp(s, "St_10_Sleep")==0)) {
-    return Ups_controlador__St_10_Sleep;
-  };
-  if ((strcmp(s, "St_10_Online")==0)) {
-    return Ups_controlador__St_10_Online;
-  };
-  if ((strcmp(s, "St_10_Off")==0)) {
-    return Ups_controlador__St_10_Off;
-  };
-  if ((strcmp(s, "St_10_Boot")==0)) {
-    return Ups_controlador__St_10_Boot;
+  if ((strcmp(s, "St_10_Des")==0)) {
+    return Ups_controlador__St_10_Des;
   };
 }
 
 char* string_of_Ups_controlador__st_10(Ups_controlador__st_10 x, char* buf) {
   switch (x) {
-    case Ups_controlador__St_10_Teste:
-      strcpy(buf, "St_10_Teste");
+    case Ups_controlador__St_10_Lig:
+      strcpy(buf, "St_10_Lig");
       break;
-    case Ups_controlador__St_10_Sleep:
-      strcpy(buf, "St_10_Sleep");
-      break;
-    case Ups_controlador__St_10_Online:
-      strcpy(buf, "St_10_Online");
-      break;
-    case Ups_controlador__St_10_Off:
-      strcpy(buf, "St_10_Off");
-      break;
-    case Ups_controlador__St_10_Boot:
-      strcpy(buf, "St_10_Boot");
+    case Ups_controlador__St_10_Des:
+      strcpy(buf, "St_10_Des");
       break;
     default:
       break;
@@ -72,14 +31,14 @@ char* string_of_Ups_controlador__st_10(Ups_controlador__st_10 x, char* buf) {
 }
 
 Ups_controlador__st_9 Ups_controlador__st_9_of_string(char* s) {
-  if ((strcmp(s, "St_9_Rlevel4")==0)) {
-    return Ups_controlador__St_9_Rlevel4;
+  if ((strcmp(s, "St_9_Teste")==0)) {
+    return Ups_controlador__St_9_Teste;
   };
-  if ((strcmp(s, "St_9_Rlevel3")==0)) {
-    return Ups_controlador__St_9_Rlevel3;
+  if ((strcmp(s, "St_9_Sleep")==0)) {
+    return Ups_controlador__St_9_Sleep;
   };
-  if ((strcmp(s, "St_9_Rlevel1")==0)) {
-    return Ups_controlador__St_9_Rlevel1;
+  if ((strcmp(s, "St_9_Online")==0)) {
+    return Ups_controlador__St_9_Online;
   };
   if ((strcmp(s, "St_9_Off")==0)) {
     return Ups_controlador__St_9_Off;
@@ -91,14 +50,14 @@ Ups_controlador__st_9 Ups_controlador__st_9_of_string(char* s) {
 
 char* string_of_Ups_controlador__st_9(Ups_controlador__st_9 x, char* buf) {
   switch (x) {
-    case Ups_controlador__St_9_Rlevel4:
-      strcpy(buf, "St_9_Rlevel4");
+    case Ups_controlador__St_9_Teste:
+      strcpy(buf, "St_9_Teste");
       break;
-    case Ups_controlador__St_9_Rlevel3:
-      strcpy(buf, "St_9_Rlevel3");
+    case Ups_controlador__St_9_Sleep:
+      strcpy(buf, "St_9_Sleep");
       break;
-    case Ups_controlador__St_9_Rlevel1:
-      strcpy(buf, "St_9_Rlevel1");
+    case Ups_controlador__St_9_Online:
+      strcpy(buf, "St_9_Online");
       break;
     case Ups_controlador__St_9_Off:
       strcpy(buf, "St_9_Off");
@@ -113,21 +72,39 @@ char* string_of_Ups_controlador__st_9(Ups_controlador__st_9 x, char* buf) {
 }
 
 Ups_controlador__st_8 Ups_controlador__st_8_of_string(char* s) {
-  if ((strcmp(s, "St_8_On")==0)) {
-    return Ups_controlador__St_8_On;
+  if ((strcmp(s, "St_8_Rlevel4")==0)) {
+    return Ups_controlador__St_8_Rlevel4;
+  };
+  if ((strcmp(s, "St_8_Rlevel3")==0)) {
+    return Ups_controlador__St_8_Rlevel3;
+  };
+  if ((strcmp(s, "St_8_Rlevel1")==0)) {
+    return Ups_controlador__St_8_Rlevel1;
   };
   if ((strcmp(s, "St_8_Off")==0)) {
     return Ups_controlador__St_8_Off;
+  };
+  if ((strcmp(s, "St_8_Boot")==0)) {
+    return Ups_controlador__St_8_Boot;
   };
 }
 
 char* string_of_Ups_controlador__st_8(Ups_controlador__st_8 x, char* buf) {
   switch (x) {
-    case Ups_controlador__St_8_On:
-      strcpy(buf, "St_8_On");
+    case Ups_controlador__St_8_Rlevel4:
+      strcpy(buf, "St_8_Rlevel4");
+      break;
+    case Ups_controlador__St_8_Rlevel3:
+      strcpy(buf, "St_8_Rlevel3");
+      break;
+    case Ups_controlador__St_8_Rlevel1:
+      strcpy(buf, "St_8_Rlevel1");
       break;
     case Ups_controlador__St_8_Off:
       strcpy(buf, "St_8_Off");
+      break;
+    case Ups_controlador__St_8_Boot:
+      strcpy(buf, "St_8_Boot");
       break;
     default:
       break;
