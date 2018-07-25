@@ -14,13 +14,12 @@ type st = St_Rlevel4|St_Rlevel3|St_Rlevel1|St_Off|St_Boot
 node computador(c_atx : bool; off_atx : bool; ts : bool; cr1 : bool;
                  cr3 : bool; cr4 : bool; ba : bool; b1 : bool; b3 : bool;
                  b4 : bool; s_atx : bool; s1 : bool; s3 : bool; s4 : bool)
-returns (atuador : bool; estado : int)
-var v_294 : bool; v_293 : bool; v_292 : bool; v_291 : bool; v_290 : bool;
-    v_289 : bool; v_288 : bool; v_287 : bool; v_286 : bool; v_285 : bool;
+returns (out_atx : bool; out_off : bool; estado : int)
+var v_289 : bool; v_288 : bool; v_287 : bool; v_286 : bool; v_285 : bool;
     v_284 : bool; v_283 : bool; v_282 : bool; v_281 : bool; v_280 : bool;
     v_279 : bool; v_278 : bool; v_277 : bool; v_276 : bool; v_275 : bool;
-    v_274 : int; v_273 : int; v_272 : int; v_271 : int; v_270 : int;
-    v_269 : bool; v_268 : bool; v_267 : bool; v_266 : bool; v_265 : bool;
+    v_274 : bool; v_273 : bool; v_272 : bool; v_271 : bool; v_270 : bool;
+    v_269 : int; v_268 : int; v_267 : int; v_266 : int; v_265 : int;
     ns_St_Rlevel4_2_0 : bool; ns_St_Rlevel4_3_0_0 : bool;
     ns_St_Rlevel4_3_0_1 : bool; ns_St_Rlevel4_2_1 : bool;
     ns_St_Rlevel4_3_1_0 : bool; ns_St_Rlevel4_3_1_1 : bool;
@@ -37,51 +36,50 @@ var v_294 : bool; v_293 : bool; v_292 : bool; v_291 : bool; v_290 : bool;
     ck_1_2_0 : bool; ck_1_3_0_0 : bool; ck_1_3_0_1 : bool; ck_1_2_1 : bool;
     ck_1_3_1_0 : bool; ck_1_3_1_1 : bool; nr_St_Rlevel4 : bool;
     ns_St_Rlevel4_3 : bool; ns_St_Rlevel4_2 : bool; ns_St_Rlevel4_1 : bool;
-    estado_St_Rlevel4 : int; atuador_St_Rlevel4 : bool; nr_St_Rlevel3 : bool;
-    ns_St_Rlevel3_3 : bool; ns_St_Rlevel3_2 : bool; ns_St_Rlevel3_1 : bool;
-    estado_St_Rlevel3 : int; atuador_St_Rlevel3 : bool; nr_St_Rlevel1 : bool;
-    ns_St_Rlevel1_3 : bool; ns_St_Rlevel1_2 : bool; ns_St_Rlevel1_1 : bool;
-    estado_St_Rlevel1 : int; atuador_St_Rlevel1 : bool; nr_St_Boot : bool;
+    estado_St_Rlevel4 : int; nr_St_Rlevel3 : bool; ns_St_Rlevel3_3 : bool;
+    ns_St_Rlevel3_2 : bool; ns_St_Rlevel3_1 : bool; estado_St_Rlevel3 : int;
+    nr_St_Rlevel1 : bool; ns_St_Rlevel1_3 : bool; ns_St_Rlevel1_2 : bool;
+    ns_St_Rlevel1_1 : bool; estado_St_Rlevel1 : int; nr_St_Boot : bool;
     ns_St_Boot_3 : bool; ns_St_Boot_2 : bool; ns_St_Boot_1 : bool;
-    estado_St_Boot : int; atuador_St_Boot : bool; nr_St_Off : bool;
-    ns_St_Off_3 : bool; ns_St_Off_2 : bool; ns_St_Off_1 : bool;
-    estado_St_Off : int; atuador_St_Off : bool; ck_1_3 : bool; ck_1_2 : bool;
-    ck_1_1 : bool; v_12_2_0 : bool; v_12_3_0_0 : bool; v_12_3_0_1 : bool;
-    v_12_2_1 : bool; v_12_3_1_0 : bool; v_12_3_1_1 : bool; v_13 : bool;
-    v_12_3 : bool; v_12_2 : bool; v_12_1 : bool; v_10_2_0 : bool;
-    v_10_3_0_0 : bool; v_10_3_0_1 : bool; v_10_2_1 : bool; v_10_3_1_0 : bool;
-    v_10_3_1_1 : bool; v_8_2_0 : bool; v_8_3_0_0 : bool; v_8_3_0_1 : bool;
-    v_8_2_1 : bool; v_8_3_1_0 : bool; v_8_3_1_1 : bool; v_11 : bool;
-    v_10_3 : bool; v_10_2 : bool; v_10_1 : bool; v_9 : bool; v_8_3 : bool;
-    v_8_2 : bool; v_8_1 : bool; v_6_2_0 : bool; v_6_3_0_0 : bool;
-    v_6_3_0_1 : bool; v_6_2_1 : bool; v_6_3_1_0 : bool; v_6_3_1_1 : bool;
-    v_4_2_0 : bool; v_4_3_0_0 : bool; v_4_3_0_1 : bool; v_4_2_1 : bool;
-    v_4_3_1_0 : bool; v_4_3_1_1 : bool; v_7 : bool; v_6_3 : bool;
-    v_6_2 : bool; v_6_1 : bool; v_5 : bool; v_4_3 : bool; v_4_2 : bool;
-    v_4_1 : bool; v_2_2_0 : bool; v_2_3_0_0 : bool; v_2_3_0_1 : bool;
-    v_2_2_1 : bool; v_2_3_1_0 : bool; v_2_3_1_1 : bool; v_2_4_0 : bool;
-    v_3_1_0_0 : bool; v_3_1_0_1 : bool; v_2_4_1 : bool; v_3_1_1_0 : bool;
-    v_3_1_1_1 : bool; v_3 : bool; v_2_3 : bool; v_2_2 : bool; v_2_1 : bool;
-    v_1 : bool; v_3_1 : bool; v_2_4 : bool; v_1_1 : bool; v_317 : bool;
-    v_316 : bool; v_315 : bool; v_314 : bool; v_313 : bool; v_312 : bool;
-    v_311 : bool; v_310 : bool; v_309 : bool; v_308 : bool; v_307 : bool;
-    v_306 : bool; v_305 : bool; v_304 : bool; v_303 : bool; v_302 : bool;
-    v_301 : bool; v_300 : bool; v_299 : bool; v_298 : bool; v_297 : bool;
-    v_296 : bool; v_295 : bool; s_St_Rlevel4_2_0 : bool;
-    s_St_Rlevel4_3_0_0 : bool; s_St_Rlevel4_3_0_1 : bool;
-    s_St_Rlevel4_2_1 : bool; s_St_Rlevel4_3_1_0 : bool;
-    s_St_Rlevel4_3_1_1 : bool; s_St_Rlevel3_2_0 : bool;
-    s_St_Rlevel3_3_0_0 : bool; s_St_Rlevel3_3_0_1 : bool;
-    s_St_Rlevel3_2_1 : bool; s_St_Rlevel3_3_1_0 : bool;
-    s_St_Rlevel3_3_1_1 : bool; s_St_Rlevel1_2_0 : bool;
-    s_St_Rlevel1_3_0_0 : bool; s_St_Rlevel1_3_0_1 : bool;
-    s_St_Rlevel1_2_1 : bool; s_St_Rlevel1_3_1_0 : bool;
-    s_St_Rlevel1_3_1_1 : bool; s_St_Boot_2_0 : bool; s_St_Boot_3_0_0 : bool;
-    s_St_Boot_3_0_1 : bool; s_St_Boot_2_1 : bool; s_St_Boot_3_1_0 : bool;
-    s_St_Boot_3_1_1 : bool; s_St_Off_2_0 : bool; s_St_Off_3_0_0 : bool;
-    s_St_Off_3_0_1 : bool; s_St_Off_2_1 : bool; s_St_Off_3_1_0 : bool;
-    s_St_Off_3_1_1 : bool; ck_2_0 : bool; ck_3_0_0 : bool; ck_3_0_1 : bool;
-    ck_2_1 : bool; ck_3_1_0 : bool; ck_3_1_1 : bool; r_St_Rlevel4 : bool;
+    estado_St_Boot : int; nr_St_Off : bool; ns_St_Off_3 : bool;
+    ns_St_Off_2 : bool; ns_St_Off_1 : bool; estado_St_Off : int;
+    ck_1_3 : bool; ck_1_2 : bool; ck_1_1 : bool; v_12_2_0 : bool;
+    v_12_3_0_0 : bool; v_12_3_0_1 : bool; v_12_2_1 : bool; v_12_3_1_0 : bool;
+    v_12_3_1_1 : bool; v_13 : bool; v_12_3 : bool; v_12_2 : bool;
+    v_12_1 : bool; v_10_2_0 : bool; v_10_3_0_0 : bool; v_10_3_0_1 : bool;
+    v_10_2_1 : bool; v_10_3_1_0 : bool; v_10_3_1_1 : bool; v_8_2_0 : bool;
+    v_8_3_0_0 : bool; v_8_3_0_1 : bool; v_8_2_1 : bool; v_8_3_1_0 : bool;
+    v_8_3_1_1 : bool; v_11 : bool; v_10_3 : bool; v_10_2 : bool;
+    v_10_1 : bool; v_9 : bool; v_8_3 : bool; v_8_2 : bool; v_8_1 : bool;
+    v_6_2_0 : bool; v_6_3_0_0 : bool; v_6_3_0_1 : bool; v_6_2_1 : bool;
+    v_6_3_1_0 : bool; v_6_3_1_1 : bool; v_4_2_0 : bool; v_4_3_0_0 : bool;
+    v_4_3_0_1 : bool; v_4_2_1 : bool; v_4_3_1_0 : bool; v_4_3_1_1 : bool;
+    v_7 : bool; v_6_3 : bool; v_6_2 : bool; v_6_1 : bool; v_5 : bool;
+    v_4_3 : bool; v_4_2 : bool; v_4_1 : bool; v_2_2_0 : bool;
+    v_2_3_0_0 : bool; v_2_3_0_1 : bool; v_2_2_1 : bool; v_2_3_1_0 : bool;
+    v_2_3_1_1 : bool; v_2_4_0 : bool; v_3_1_0_0 : bool; v_3_1_0_1 : bool;
+    v_2_4_1 : bool; v_3_1_1_0 : bool; v_3_1_1_1 : bool; v_3 : bool;
+    v_2_3 : bool; v_2_2 : bool; v_2_1 : bool; v_1 : bool; v_3_1 : bool;
+    v_2_4 : bool; v_1_1 : bool; v_312 : bool; v_311 : bool; v_310 : bool;
+    v_309 : bool; v_308 : bool; v_307 : bool; v_306 : bool; v_305 : bool;
+    v_304 : bool; v_303 : bool; v_302 : bool; v_301 : bool; v_300 : bool;
+    v_299 : bool; v_298 : bool; v_297 : bool; v_296 : bool; v_295 : bool;
+    v_294 : bool; v_293 : bool; v_292 : bool; v_291 : bool; v_290 : bool;
+    s_St_Rlevel4_2_0 : bool; s_St_Rlevel4_3_0_0 : bool;
+    s_St_Rlevel4_3_0_1 : bool; s_St_Rlevel4_2_1 : bool;
+    s_St_Rlevel4_3_1_0 : bool; s_St_Rlevel4_3_1_1 : bool;
+    s_St_Rlevel3_2_0 : bool; s_St_Rlevel3_3_0_0 : bool;
+    s_St_Rlevel3_3_0_1 : bool; s_St_Rlevel3_2_1 : bool;
+    s_St_Rlevel3_3_1_0 : bool; s_St_Rlevel3_3_1_1 : bool;
+    s_St_Rlevel1_2_0 : bool; s_St_Rlevel1_3_0_0 : bool;
+    s_St_Rlevel1_3_0_1 : bool; s_St_Rlevel1_2_1 : bool;
+    s_St_Rlevel1_3_1_0 : bool; s_St_Rlevel1_3_1_1 : bool;
+    s_St_Boot_2_0 : bool; s_St_Boot_3_0_0 : bool; s_St_Boot_3_0_1 : bool;
+    s_St_Boot_2_1 : bool; s_St_Boot_3_1_0 : bool; s_St_Boot_3_1_1 : bool;
+    s_St_Off_2_0 : bool; s_St_Off_3_0_0 : bool; s_St_Off_3_0_1 : bool;
+    s_St_Off_2_1 : bool; s_St_Off_3_1_0 : bool; s_St_Off_3_1_1 : bool;
+    ck_2_0 : bool; ck_3_0_0 : bool; ck_3_0_1 : bool; ck_2_1 : bool;
+    ck_3_1_0 : bool; ck_3_1_1 : bool; r_St_Rlevel4 : bool;
     s_St_Rlevel4_3 : bool; s_St_Rlevel4_2 : bool; s_St_Rlevel4_1 : bool;
     r_St_Rlevel3 : bool; s_St_Rlevel3_3 : bool; s_St_Rlevel3_2 : bool;
     s_St_Rlevel3_1 : bool; r_St_Rlevel1 : bool; s_St_Rlevel1_3 : bool;
@@ -97,6 +95,8 @@ var v_294 : bool; v_293 : bool; v_292 : bool; v_291 : bool; v_290 : bool;
     ns_1 : bool; r : bool; nr : bool; pnr : bool; a : bool; r1 : bool;
     r3 : bool; r4 : bool;
 let
+  out_atx = c_atx;
+  out_off = off_atx;
   a = (v_20 or v_21);
   v_21 = not(c_atx);
   v_20 = (ba & s_atx);
@@ -114,123 +114,102 @@ let
   ck_1_2 = s_2;
   ck_1_3 = s_3;
   estado_St_Off = 0;
-  atuador_St_Off = false;
   nr_St_Off = false;
   ns_St_Off_1 = true;
   ns_St_Off_2 = true;
   ns_St_Off_3 = false;
   estado_St_Boot = 1;
-  atuador_St_Boot = true;
   nr_St_Boot = false;
   ns_St_Boot_1 = true;
   ns_St_Boot_2 = true;
   ns_St_Boot_3 = true;
   estado_St_Rlevel1 = 2;
-  atuador_St_Rlevel1 = true;
   nr_St_Rlevel1 = false;
   ns_St_Rlevel1_1 = true;
   ns_St_Rlevel1_2 = false;
   ns_St_Rlevel1_3 = false;
   estado_St_Rlevel3 = 3;
-  atuador_St_Rlevel3 = true;
   nr_St_Rlevel3 = false;
   ns_St_Rlevel3_1 = false;
   ns_St_Rlevel3_2 = false;
   ns_St_Rlevel3_3 = true;
   estado_St_Rlevel4 = 4;
-  atuador_St_Rlevel4 = true;
   nr_St_Rlevel4 = false;
   ns_St_Rlevel4_1 = false;
   ns_St_Rlevel4_2 = false;
   ns_St_Rlevel4_3 = false;
-  v_265 = merge ck_1_3_1_1 (true -> atuador_St_Boot)(false -> atuador_St_Off);
+  v_265 = merge ck_1_3_1_1 (true -> estado_St_Boot)(false -> estado_St_Off);
   v_266 =
-    merge ck_1_3_1_0
-      (true -> 
-        (((true when true(ck_1_1)) when false(ck_1_2_1))
-          when true(ck_1_3_1_0)))
-      (false -> atuador_St_Rlevel1);
-  v_267 = merge ck_1_2_1 (true -> v_265)(false -> v_266);
-  v_268 =
-    merge ck_1_3_0_0
-      (true -> atuador_St_Rlevel3)(false -> atuador_St_Rlevel4);
-  v_269 =
-    merge ck_1_2_0
-      (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
-      (false -> v_268);
-  atuador = merge ck_1_1 (true -> v_267)(false -> v_269);
-  v_270 = merge ck_1_3_1_1 (true -> estado_St_Boot)(false -> estado_St_Off);
-  v_271 =
     merge ck_1_3_1_0
       (true -> 
         (((0 when true(ck_1_1)) when false(ck_1_2_1)) when true(ck_1_3_1_0)))
       (false -> estado_St_Rlevel1);
-  v_272 = merge ck_1_2_1 (true -> v_270)(false -> v_271);
-  v_273 =
+  v_267 = merge ck_1_2_1 (true -> v_265)(false -> v_266);
+  v_268 =
     merge ck_1_3_0_0 (true -> estado_St_Rlevel3)(false -> estado_St_Rlevel4);
-  v_274 =
+  v_269 =
     merge ck_1_2_0
-      (true -> ((0 when false(ck_1_1)) when true(ck_1_2_0)))(false -> v_273);
-  estado = merge ck_1_1 (true -> v_272)(false -> v_274);
-  v_275 = merge ck_1_3_1_1 (true -> ns_St_Boot_1)(false -> ns_St_Off_1);
-  v_276 = merge ck_1_3_1_1 (true -> ns_St_Boot_2)(false -> ns_St_Off_2);
-  v_277 = merge ck_1_3_1_1 (true -> ns_St_Boot_3)(false -> ns_St_Off_3);
-  v_278 =
+      (true -> ((0 when false(ck_1_1)) when true(ck_1_2_0)))(false -> v_268);
+  estado = merge ck_1_1 (true -> v_267)(false -> v_269);
+  v_270 = merge ck_1_3_1_1 (true -> ns_St_Boot_1)(false -> ns_St_Off_1);
+  v_271 = merge ck_1_3_1_1 (true -> ns_St_Boot_2)(false -> ns_St_Off_2);
+  v_272 = merge ck_1_3_1_1 (true -> ns_St_Boot_3)(false -> ns_St_Off_3);
+  v_273 =
     merge ck_1_3_1_0
       (true -> 
         (((true when true(ck_1_1)) when false(ck_1_2_1))
           when true(ck_1_3_1_0)))
       (false -> ns_St_Rlevel1_1);
-  v_279 =
+  v_274 =
     merge ck_1_3_1_0
       (true -> 
         (((true when true(ck_1_1)) when false(ck_1_2_1))
           when true(ck_1_3_1_0)))
       (false -> ns_St_Rlevel1_2);
-  v_280 =
+  v_275 =
     merge ck_1_3_1_0
       (true -> 
         (((true when true(ck_1_1)) when false(ck_1_2_1))
           when true(ck_1_3_1_0)))
       (false -> ns_St_Rlevel1_3);
-  v_281 =
+  v_276 =
     merge ck_1_3_0_0 (true -> ns_St_Rlevel3_1)(false -> ns_St_Rlevel4_1);
-  v_282 =
+  v_277 =
     merge ck_1_3_0_0 (true -> ns_St_Rlevel3_2)(false -> ns_St_Rlevel4_2);
-  v_283 =
+  v_278 =
     merge ck_1_3_0_0 (true -> ns_St_Rlevel3_3)(false -> ns_St_Rlevel4_3);
-  v_284 = merge ck_1_2_1 (true -> v_275)(false -> v_278);
-  v_285 = merge ck_1_2_1 (true -> v_276)(false -> v_279);
-  v_286 = merge ck_1_2_1 (true -> v_277)(false -> v_280);
-  v_287 =
+  v_279 = merge ck_1_2_1 (true -> v_270)(false -> v_273);
+  v_280 = merge ck_1_2_1 (true -> v_271)(false -> v_274);
+  v_281 = merge ck_1_2_1 (true -> v_272)(false -> v_275);
+  v_282 =
     merge ck_1_2_0
       (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
-      (false -> v_281);
-  v_288 =
+      (false -> v_276);
+  v_283 =
     merge ck_1_2_0
       (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
-      (false -> v_282);
-  v_289 =
+      (false -> v_277);
+  v_284 =
     merge ck_1_2_0
       (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
-      (false -> v_283);
-  ns_1 = merge ck_1_1 (true -> v_284)(false -> v_287);
-  ns_2 = merge ck_1_1 (true -> v_285)(false -> v_288);
-  ns_3 = merge ck_1_1 (true -> v_286)(false -> v_289);
-  v_290 = merge ck_1_3_1_1 (true -> nr_St_Boot)(false -> nr_St_Off);
-  v_291 =
+      (false -> v_278);
+  ns_1 = merge ck_1_1 (true -> v_279)(false -> v_282);
+  ns_2 = merge ck_1_1 (true -> v_280)(false -> v_283);
+  ns_3 = merge ck_1_1 (true -> v_281)(false -> v_284);
+  v_285 = merge ck_1_3_1_1 (true -> nr_St_Boot)(false -> nr_St_Off);
+  v_286 =
     merge ck_1_3_1_0
       (true -> 
         (((true when true(ck_1_1)) when false(ck_1_2_1))
           when true(ck_1_3_1_0)))
       (false -> nr_St_Rlevel1);
-  v_292 = merge ck_1_2_1 (true -> v_290)(false -> v_291);
-  v_293 = merge ck_1_3_0_0 (true -> nr_St_Rlevel3)(false -> nr_St_Rlevel4);
-  v_294 =
+  v_287 = merge ck_1_2_1 (true -> v_285)(false -> v_286);
+  v_288 = merge ck_1_3_0_0 (true -> nr_St_Rlevel3)(false -> nr_St_Rlevel4);
+  v_289 =
     merge ck_1_2_0
       (true -> ((true when false(ck_1_1)) when true(ck_1_2_0)))
-      (false -> v_293);
-  nr = merge ck_1_1 (true -> v_292)(false -> v_294);
+      (false -> v_288);
+  nr = merge ck_1_1 (true -> v_287)(false -> v_289);
   ck_1_3_1_1 = ((ck_1_3 when true(ck_1_1)) when true(ck_1_2_1));
   ck_1_3_1_0 = ((ck_1_3 when true(ck_1_1)) when false(ck_1_2_1));
   ck_1_2_1 = (ck_1_2 when true(ck_1_1));
@@ -299,12 +278,12 @@ let
     ((ns_St_Rlevel4_3 when false(ns_St_Rlevel4_1))
       when false(ns_St_Rlevel4_2_0));
   ns_St_Rlevel4_2_0 = (ns_St_Rlevel4_2 when false(ns_St_Rlevel4_1));
-  v_295 = true fby ns_1;
-  v_296 = true fby ns_2;
-  v_297 = false fby ns_3;
-  ck_1_4 = v_295;
-  ck_2 = v_296;
-  ck_3 = v_297;
+  v_290 = true fby ns_1;
+  v_291 = true fby ns_2;
+  v_292 = false fby ns_3;
+  ck_1_4 = v_290;
+  ck_2 = v_291;
+  ck_3 = v_292;
   r_St_Off =
     if (((a when true(ck_1_4)) when true(ck_2_1)) when false(ck_3_1_1))
     then true
@@ -539,54 +518,54 @@ let
   v_2_3_0_1 = ((v_2_3 when false(v_2_1)) when true(v_2_2_0));
   v_2_3_0_0 = ((v_2_3 when false(v_2_1)) when false(v_2_2_0));
   v_2_2_0 = (v_2_2 when false(v_2_1));
-  v_298 = merge ck_3_1_1 (true -> s_St_Boot_1)(false -> s_St_Off_1);
-  v_299 = merge ck_3_1_1 (true -> s_St_Boot_2)(false -> s_St_Off_2);
-  v_300 = merge ck_3_1_1 (true -> s_St_Boot_3)(false -> s_St_Off_3);
-  v_301 =
+  v_293 = merge ck_3_1_1 (true -> s_St_Boot_1)(false -> s_St_Off_1);
+  v_294 = merge ck_3_1_1 (true -> s_St_Boot_2)(false -> s_St_Off_2);
+  v_295 = merge ck_3_1_1 (true -> s_St_Boot_3)(false -> s_St_Off_3);
+  v_296 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1_4)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> s_St_Rlevel1_1);
-  v_302 =
+  v_297 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1_4)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> s_St_Rlevel1_2);
-  v_303 =
+  v_298 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1_4)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> s_St_Rlevel1_3);
-  v_304 = merge ck_3_0_0 (true -> s_St_Rlevel3_1)(false -> s_St_Rlevel4_1);
-  v_305 = merge ck_3_0_0 (true -> s_St_Rlevel3_2)(false -> s_St_Rlevel4_2);
-  v_306 = merge ck_3_0_0 (true -> s_St_Rlevel3_3)(false -> s_St_Rlevel4_3);
-  v_307 = merge ck_2_1 (true -> v_298)(false -> v_301);
-  v_308 = merge ck_2_1 (true -> v_299)(false -> v_302);
-  v_309 = merge ck_2_1 (true -> v_300)(false -> v_303);
-  v_310 =
+  v_299 = merge ck_3_0_0 (true -> s_St_Rlevel3_1)(false -> s_St_Rlevel4_1);
+  v_300 = merge ck_3_0_0 (true -> s_St_Rlevel3_2)(false -> s_St_Rlevel4_2);
+  v_301 = merge ck_3_0_0 (true -> s_St_Rlevel3_3)(false -> s_St_Rlevel4_3);
+  v_302 = merge ck_2_1 (true -> v_293)(false -> v_296);
+  v_303 = merge ck_2_1 (true -> v_294)(false -> v_297);
+  v_304 = merge ck_2_1 (true -> v_295)(false -> v_298);
+  v_305 =
     merge ck_2_0
-      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_304);
-  v_311 =
+      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_299);
+  v_306 =
     merge ck_2_0
-      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_305);
-  v_312 =
+      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_300);
+  v_307 =
     merge ck_2_0
-      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_306);
-  s_1 = merge ck_1_4 (true -> v_307)(false -> v_310);
-  s_2 = merge ck_1_4 (true -> v_308)(false -> v_311);
-  s_3 = merge ck_1_4 (true -> v_309)(false -> v_312);
-  v_313 = merge ck_3_1_1 (true -> r_St_Boot)(false -> r_St_Off);
-  v_314 =
+      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_301);
+  s_1 = merge ck_1_4 (true -> v_302)(false -> v_305);
+  s_2 = merge ck_1_4 (true -> v_303)(false -> v_306);
+  s_3 = merge ck_1_4 (true -> v_304)(false -> v_307);
+  v_308 = merge ck_3_1_1 (true -> r_St_Boot)(false -> r_St_Off);
+  v_309 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1_4)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> r_St_Rlevel1);
-  v_315 = merge ck_2_1 (true -> v_313)(false -> v_314);
-  v_316 = merge ck_3_0_0 (true -> r_St_Rlevel3)(false -> r_St_Rlevel4);
-  v_317 =
+  v_310 = merge ck_2_1 (true -> v_308)(false -> v_309);
+  v_311 = merge ck_3_0_0 (true -> r_St_Rlevel3)(false -> r_St_Rlevel4);
+  v_312 =
     merge ck_2_0
-      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_316);
-  r = merge ck_1_4 (true -> v_315)(false -> v_317);
+      (true -> ((true when false(ck_1_4)) when true(ck_2_0)))(false -> v_311);
+  r = merge ck_1_4 (true -> v_310)(false -> v_312);
   ck_3_1_1 = ((ck_3 when true(ck_1_4)) when true(ck_2_1));
   ck_3_1_0 = ((ck_3 when true(ck_1_4)) when false(ck_2_1));
   ck_2_1 = (ck_2 when true(ck_1_4));
@@ -663,15 +642,15 @@ tel
 type bat_states = BERR|B100|B75|B50|B25|BCHR
 node bateria(ac : bool; cp : bool; l1 : bool; l2 : bool; v : bool)
 returns (estado_bat_3 : bool; estado_bat_2 : bool; estado_bat_1 : bool)
-var v_359 : bool; v_358 : bool; v_357 : bool; v_356 : bool; v_355 : bool;
-    v_354 : bool; v_353 : bool; v_352 : bool; v_351 : bool; v_350 : bool;
+var v_354 : bool; v_353 : bool; v_352 : bool; v_351 : bool; v_350 : bool;
     v_349 : bool; v_348 : bool; v_347 : bool; v_346 : bool; v_345 : bool;
     v_344 : bool; v_343 : bool; v_342 : bool; v_341 : bool; v_340 : bool;
     v_339 : bool; v_338 : bool; v_337 : bool; v_336 : bool; v_335 : bool;
     v_334 : bool; v_333 : bool; v_332 : bool; v_331 : bool; v_330 : bool;
     v_329 : bool; v_328 : bool; v_327 : bool; v_326 : bool; v_325 : bool;
     v_324 : bool; v_323 : bool; v_322 : bool; v_321 : bool; v_320 : bool;
-    v_319 : bool; v_318 : bool; ns_St_1_Carregando_2_0 : bool;
+    v_319 : bool; v_318 : bool; v_317 : bool; v_316 : bool; v_315 : bool;
+    v_314 : bool; v_313 : bool; ns_St_1_Carregando_2_0 : bool;
     ns_St_1_Carregando_3_0_0 : bool; ns_St_1_Carregando_3_0_1 : bool;
     ns_St_1_Carregando_2_1 : bool; ns_St_1_Carregando_3_1_0 : bool;
     ns_St_1_Carregando_3_1_1 : bool; estado_bat_St_1_Carregando_2_0 : bool;
@@ -776,12 +755,12 @@ var v_359 : bool; v_358 : bool; v_357 : bool; v_356 : bool; v_355 : bool;
     v_32_3 : bool; v_32_2 : bool; v_32_1 : bool; v_31 : bool; v_30_3 : bool;
     v_30_2 : bool; v_30_1 : bool; v_29 : bool; v_28 : bool; v_27 : bool;
     v_26 : bool; v_25 : bool; v_24 : bool; v_23 : bool; v_22 : bool;
-    v_386 : bool; v_385 : bool; v_384 : bool; v_383 : bool; v_382 : bool;
     v_381 : bool; v_380 : bool; v_379 : bool; v_378 : bool; v_377 : bool;
     v_376 : bool; v_375 : bool; v_374 : bool; v_373 : bool; v_372 : bool;
     v_371 : bool; v_370 : bool; v_369 : bool; v_368 : bool; v_367 : bool;
     v_366 : bool; v_365 : bool; v_364 : bool; v_363 : bool; v_362 : bool;
-    v_361 : bool; v_360 : bool; s_St_1_Carregando_2_0 : bool;
+    v_361 : bool; v_360 : bool; v_359 : bool; v_358 : bool; v_357 : bool;
+    v_356 : bool; v_355 : bool; s_St_1_Carregando_2_0 : bool;
     s_St_1_Carregando_3_0_0 : bool; s_St_1_Carregando_3_0_1 : bool;
     s_St_1_Carregando_2_1 : bool; s_St_1_Carregando_3_1_0 : bool;
     s_St_1_Carregando_3_1_1 : bool; s_St_1_Baixo_2_0 : bool;
@@ -894,147 +873,147 @@ let
   ns_St_1_Carregando_1 = true;
   ns_St_1_Carregando_2 = true;
   ns_St_1_Carregando_3 = false;
-  v_318 =
+  v_313 =
     merge ck_2_3_1_1
       (true -> estado_bat_St_1_Baixo_1)
       (false -> estado_bat_St_1_Carregando_1);
-  v_319 =
+  v_314 =
     merge ck_2_3_1_1
       (true -> estado_bat_St_1_Baixo_2)
       (false -> estado_bat_St_1_Carregando_2);
-  v_320 =
+  v_315 =
     merge ck_2_3_1_1
       (true -> estado_bat_St_1_Baixo_3)
       (false -> estado_bat_St_1_Carregando_3);
-  v_321 =
+  v_316 =
     merge ck_2_3_1_0
       (true -> 
         (((true when true(ck_2_1)) when false(ck_2_2_1))
           when true(ck_2_3_1_0)))
       (false -> estado_bat_St_1_Cheio_1);
-  v_322 =
+  v_317 =
     merge ck_2_3_1_0
       (true -> 
         (((true when true(ck_2_1)) when false(ck_2_2_1))
           when true(ck_2_3_1_0)))
       (false -> estado_bat_St_1_Cheio_2);
-  v_323 =
+  v_318 =
     merge ck_2_3_1_0
       (true -> 
         (((true when true(ck_2_1)) when false(ck_2_2_1))
           when true(ck_2_3_1_0)))
       (false -> estado_bat_St_1_Cheio_3);
-  v_324 =
+  v_319 =
     merge ck_2_3_0_1
       (true -> estado_bat_St_1_Erro_1)(false -> estado_bat_St_1_Limiar1_1);
-  v_325 =
+  v_320 =
     merge ck_2_3_0_1
       (true -> estado_bat_St_1_Erro_2)(false -> estado_bat_St_1_Limiar1_2);
-  v_326 =
+  v_321 =
     merge ck_2_3_0_1
       (true -> estado_bat_St_1_Erro_3)(false -> estado_bat_St_1_Limiar1_3);
-  v_327 =
+  v_322 =
     merge ck_2_3_0_0
       (true -> 
         (((true when false(ck_2_1)) when false(ck_2_2_0))
           when true(ck_2_3_0_0)))
       (false -> estado_bat_St_1_Limiar2_1);
-  v_328 =
+  v_323 =
     merge ck_2_3_0_0
       (true -> 
         (((true when false(ck_2_1)) when false(ck_2_2_0))
           when true(ck_2_3_0_0)))
       (false -> estado_bat_St_1_Limiar2_2);
-  v_329 =
+  v_324 =
     merge ck_2_3_0_0
       (true -> 
         (((true when false(ck_2_1)) when false(ck_2_2_0))
           when true(ck_2_3_0_0)))
       (false -> estado_bat_St_1_Limiar2_3);
-  v_330 = merge ck_2_2_1 (true -> v_318)(false -> v_321);
-  v_331 = merge ck_2_2_1 (true -> v_319)(false -> v_322);
-  v_332 = merge ck_2_2_1 (true -> v_320)(false -> v_323);
-  v_333 = merge ck_2_2_0 (true -> v_324)(false -> v_327);
-  v_334 = merge ck_2_2_0 (true -> v_325)(false -> v_328);
-  v_335 = merge ck_2_2_0 (true -> v_326)(false -> v_329);
-  estado_bat_1 = merge ck_2_1 (true -> v_330)(false -> v_333);
-  estado_bat_2 = merge ck_2_1 (true -> v_331)(false -> v_334);
-  estado_bat_3 = merge ck_2_1 (true -> v_332)(false -> v_335);
-  v_336 =
+  v_325 = merge ck_2_2_1 (true -> v_313)(false -> v_316);
+  v_326 = merge ck_2_2_1 (true -> v_314)(false -> v_317);
+  v_327 = merge ck_2_2_1 (true -> v_315)(false -> v_318);
+  v_328 = merge ck_2_2_0 (true -> v_319)(false -> v_322);
+  v_329 = merge ck_2_2_0 (true -> v_320)(false -> v_323);
+  v_330 = merge ck_2_2_0 (true -> v_321)(false -> v_324);
+  estado_bat_1 = merge ck_2_1 (true -> v_325)(false -> v_328);
+  estado_bat_2 = merge ck_2_1 (true -> v_326)(false -> v_329);
+  estado_bat_3 = merge ck_2_1 (true -> v_327)(false -> v_330);
+  v_331 =
     merge ck_2_3_1_1 (true -> ns_St_1_Baixo_1)(false -> ns_St_1_Carregando_1);
-  v_337 =
+  v_332 =
     merge ck_2_3_1_1 (true -> ns_St_1_Baixo_2)(false -> ns_St_1_Carregando_2);
-  v_338 =
+  v_333 =
     merge ck_2_3_1_1 (true -> ns_St_1_Baixo_3)(false -> ns_St_1_Carregando_3);
-  v_339 =
+  v_334 =
     merge ck_2_3_1_0
       (true -> 
         (((true when true(ck_2_1)) when false(ck_2_2_1))
           when true(ck_2_3_1_0)))
       (false -> ns_St_1_Cheio_1);
-  v_340 =
+  v_335 =
     merge ck_2_3_1_0
       (true -> 
         (((true when true(ck_2_1)) when false(ck_2_2_1))
           when true(ck_2_3_1_0)))
       (false -> ns_St_1_Cheio_2);
-  v_341 =
+  v_336 =
     merge ck_2_3_1_0
       (true -> 
         (((true when true(ck_2_1)) when false(ck_2_2_1))
           when true(ck_2_3_1_0)))
       (false -> ns_St_1_Cheio_3);
-  v_342 =
+  v_337 =
     merge ck_2_3_0_1 (true -> ns_St_1_Erro_1)(false -> ns_St_1_Limiar1_1);
-  v_343 =
+  v_338 =
     merge ck_2_3_0_1 (true -> ns_St_1_Erro_2)(false -> ns_St_1_Limiar1_2);
-  v_344 =
+  v_339 =
     merge ck_2_3_0_1 (true -> ns_St_1_Erro_3)(false -> ns_St_1_Limiar1_3);
-  v_345 =
+  v_340 =
     merge ck_2_3_0_0
       (true -> 
         (((true when false(ck_2_1)) when false(ck_2_2_0))
           when true(ck_2_3_0_0)))
       (false -> ns_St_1_Limiar2_1);
-  v_346 =
+  v_341 =
     merge ck_2_3_0_0
       (true -> 
         (((true when false(ck_2_1)) when false(ck_2_2_0))
           when true(ck_2_3_0_0)))
       (false -> ns_St_1_Limiar2_2);
-  v_347 =
+  v_342 =
     merge ck_2_3_0_0
       (true -> 
         (((true when false(ck_2_1)) when false(ck_2_2_0))
           when true(ck_2_3_0_0)))
       (false -> ns_St_1_Limiar2_3);
-  v_348 = merge ck_2_2_1 (true -> v_336)(false -> v_339);
-  v_349 = merge ck_2_2_1 (true -> v_337)(false -> v_340);
-  v_350 = merge ck_2_2_1 (true -> v_338)(false -> v_341);
-  v_351 = merge ck_2_2_0 (true -> v_342)(false -> v_345);
-  v_352 = merge ck_2_2_0 (true -> v_343)(false -> v_346);
-  v_353 = merge ck_2_2_0 (true -> v_344)(false -> v_347);
-  ns_1 = merge ck_2_1 (true -> v_348)(false -> v_351);
-  ns_2 = merge ck_2_1 (true -> v_349)(false -> v_352);
-  ns_3 = merge ck_2_1 (true -> v_350)(false -> v_353);
-  v_354 =
+  v_343 = merge ck_2_2_1 (true -> v_331)(false -> v_334);
+  v_344 = merge ck_2_2_1 (true -> v_332)(false -> v_335);
+  v_345 = merge ck_2_2_1 (true -> v_333)(false -> v_336);
+  v_346 = merge ck_2_2_0 (true -> v_337)(false -> v_340);
+  v_347 = merge ck_2_2_0 (true -> v_338)(false -> v_341);
+  v_348 = merge ck_2_2_0 (true -> v_339)(false -> v_342);
+  ns_1 = merge ck_2_1 (true -> v_343)(false -> v_346);
+  ns_2 = merge ck_2_1 (true -> v_344)(false -> v_347);
+  ns_3 = merge ck_2_1 (true -> v_345)(false -> v_348);
+  v_349 =
     merge ck_2_3_1_1 (true -> nr_St_1_Baixo)(false -> nr_St_1_Carregando);
-  v_355 =
+  v_350 =
     merge ck_2_3_1_0
       (true -> 
         (((true when true(ck_2_1)) when false(ck_2_2_1))
           when true(ck_2_3_1_0)))
       (false -> nr_St_1_Cheio);
-  v_356 = merge ck_2_2_1 (true -> v_354)(false -> v_355);
-  v_357 = merge ck_2_3_0_1 (true -> nr_St_1_Erro)(false -> nr_St_1_Limiar1);
-  v_358 =
+  v_351 = merge ck_2_2_1 (true -> v_349)(false -> v_350);
+  v_352 = merge ck_2_3_0_1 (true -> nr_St_1_Erro)(false -> nr_St_1_Limiar1);
+  v_353 =
     merge ck_2_3_0_0
       (true -> 
         (((true when false(ck_2_1)) when false(ck_2_2_0))
           when true(ck_2_3_0_0)))
       (false -> nr_St_1_Limiar2);
-  v_359 = merge ck_2_2_0 (true -> v_357)(false -> v_358);
-  nr = merge ck_2_1 (true -> v_356)(false -> v_359);
+  v_354 = merge ck_2_2_0 (true -> v_352)(false -> v_353);
+  nr = merge ck_2_1 (true -> v_351)(false -> v_354);
   ck_2_3_1_1 = ((ck_2_3 when true(ck_2_1)) when true(ck_2_2_1));
   ck_2_3_1_0 = ((ck_2_3 when true(ck_2_1)) when false(ck_2_2_1));
   ck_2_2_1 = (ck_2_2 when true(ck_2_1));
@@ -1220,12 +1199,12 @@ let
       when false(ns_St_1_Carregando_2_0));
   ns_St_1_Carregando_2_0 =
     (ns_St_1_Carregando_2 when false(ns_St_1_Carregando_1));
-  v_360 = false fby ns_1;
-  v_361 = true fby ns_2;
-  v_362 = true fby ns_3;
-  ck_1 = v_360;
-  ck_2_4 = v_361;
-  ck_3 = v_362;
+  v_355 = false fby ns_1;
+  v_356 = true fby ns_2;
+  v_357 = true fby ns_3;
+  ck_1 = v_355;
+  ck_2_4 = v_356;
+  ck_3 = v_357;
   r_St_1_Erro =
     if (((ac when false(ck_1)) when true(ck_2_4_0)) when true(ck_3_0_1))
     then true
@@ -1648,69 +1627,69 @@ let
   v_34_3_0_1 = ((v_34_3 when false(v_34_1)) when true(v_34_2_0));
   v_34_3_0_0 = ((v_34_3 when false(v_34_1)) when false(v_34_2_0));
   v_34_2_0 = (v_34_2 when false(v_34_1));
-  v_363 =
+  v_358 =
     merge ck_3_1_1 (true -> s_St_1_Baixo_1)(false -> s_St_1_Carregando_1);
-  v_364 =
+  v_359 =
     merge ck_3_1_1 (true -> s_St_1_Baixo_2)(false -> s_St_1_Carregando_2);
-  v_365 =
+  v_360 =
     merge ck_3_1_1 (true -> s_St_1_Baixo_3)(false -> s_St_1_Carregando_3);
-  v_366 =
+  v_361 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_4_1)) when true(ck_3_1_0)))
       (false -> s_St_1_Cheio_1);
-  v_367 =
+  v_362 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_4_1)) when true(ck_3_1_0)))
       (false -> s_St_1_Cheio_2);
-  v_368 =
+  v_363 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_4_1)) when true(ck_3_1_0)))
       (false -> s_St_1_Cheio_3);
-  v_369 = merge ck_3_0_1 (true -> s_St_1_Erro_1)(false -> s_St_1_Limiar1_1);
-  v_370 = merge ck_3_0_1 (true -> s_St_1_Erro_2)(false -> s_St_1_Limiar1_2);
-  v_371 = merge ck_3_0_1 (true -> s_St_1_Erro_3)(false -> s_St_1_Limiar1_3);
-  v_372 =
+  v_364 = merge ck_3_0_1 (true -> s_St_1_Erro_1)(false -> s_St_1_Limiar1_1);
+  v_365 = merge ck_3_0_1 (true -> s_St_1_Erro_2)(false -> s_St_1_Limiar1_2);
+  v_366 = merge ck_3_0_1 (true -> s_St_1_Erro_3)(false -> s_St_1_Limiar1_3);
+  v_367 =
     merge ck_3_0_0
       (true -> 
         (((true when false(ck_1)) when false(ck_2_4_0)) when true(ck_3_0_0)))
       (false -> s_St_1_Limiar2_1);
-  v_373 =
+  v_368 =
     merge ck_3_0_0
       (true -> 
         (((true when false(ck_1)) when false(ck_2_4_0)) when true(ck_3_0_0)))
       (false -> s_St_1_Limiar2_2);
-  v_374 =
+  v_369 =
     merge ck_3_0_0
       (true -> 
         (((true when false(ck_1)) when false(ck_2_4_0)) when true(ck_3_0_0)))
       (false -> s_St_1_Limiar2_3);
-  v_375 = merge ck_2_4_1 (true -> v_363)(false -> v_366);
-  v_376 = merge ck_2_4_1 (true -> v_364)(false -> v_367);
-  v_377 = merge ck_2_4_1 (true -> v_365)(false -> v_368);
-  v_378 = merge ck_2_4_0 (true -> v_369)(false -> v_372);
-  v_379 = merge ck_2_4_0 (true -> v_370)(false -> v_373);
-  v_380 = merge ck_2_4_0 (true -> v_371)(false -> v_374);
-  s_1 = merge ck_1 (true -> v_375)(false -> v_378);
-  s_2 = merge ck_1 (true -> v_376)(false -> v_379);
-  s_3 = merge ck_1 (true -> v_377)(false -> v_380);
-  v_381 = merge ck_3_1_1 (true -> r_St_1_Baixo)(false -> r_St_1_Carregando);
-  v_382 =
+  v_370 = merge ck_2_4_1 (true -> v_358)(false -> v_361);
+  v_371 = merge ck_2_4_1 (true -> v_359)(false -> v_362);
+  v_372 = merge ck_2_4_1 (true -> v_360)(false -> v_363);
+  v_373 = merge ck_2_4_0 (true -> v_364)(false -> v_367);
+  v_374 = merge ck_2_4_0 (true -> v_365)(false -> v_368);
+  v_375 = merge ck_2_4_0 (true -> v_366)(false -> v_369);
+  s_1 = merge ck_1 (true -> v_370)(false -> v_373);
+  s_2 = merge ck_1 (true -> v_371)(false -> v_374);
+  s_3 = merge ck_1 (true -> v_372)(false -> v_375);
+  v_376 = merge ck_3_1_1 (true -> r_St_1_Baixo)(false -> r_St_1_Carregando);
+  v_377 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_4_1)) when true(ck_3_1_0)))
       (false -> r_St_1_Cheio);
-  v_383 = merge ck_2_4_1 (true -> v_381)(false -> v_382);
-  v_384 = merge ck_3_0_1 (true -> r_St_1_Erro)(false -> r_St_1_Limiar1);
-  v_385 =
+  v_378 = merge ck_2_4_1 (true -> v_376)(false -> v_377);
+  v_379 = merge ck_3_0_1 (true -> r_St_1_Erro)(false -> r_St_1_Limiar1);
+  v_380 =
     merge ck_3_0_0
       (true -> 
         (((true when false(ck_1)) when false(ck_2_4_0)) when true(ck_3_0_0)))
       (false -> r_St_1_Limiar2);
-  v_386 = merge ck_2_4_0 (true -> v_384)(false -> v_385);
-  r = merge ck_1 (true -> v_383)(false -> v_386);
+  v_381 = merge ck_2_4_0 (true -> v_379)(false -> v_380);
+  r = merge ck_1 (true -> v_378)(false -> v_381);
   ck_3_1_1 = ((ck_3 when true(ck_1)) when true(ck_2_4_1));
   ck_3_1_0 = ((ck_3 when true(ck_1)) when false(ck_2_4_1));
   ck_2_4_1 = (ck_2_4 when true(ck_1));
@@ -1902,12 +1881,12 @@ tel
 
 node modem_adsl(c : bool; t : bool; o : bool)
 returns (atuador : bool; estado : int)
-var v_416 : bool; v_415 : bool; v_414 : bool; v_413 : bool; v_412 : bool;
-    v_411 : bool; v_410 : bool; v_409 : bool; v_408 : bool; v_407 : bool;
+var v_411 : bool; v_410 : bool; v_409 : bool; v_408 : bool; v_407 : bool;
     v_406 : bool; v_405 : bool; v_404 : bool; v_403 : bool; v_402 : bool;
     v_401 : bool; v_400 : bool; v_399 : bool; v_398 : bool; v_397 : bool;
-    v_396 : int; v_395 : int; v_394 : int; v_393 : int; v_392 : int;
-    v_391 : bool; v_390 : bool; v_389 : bool; v_388 : bool; v_387 : bool;
+    v_396 : bool; v_395 : bool; v_394 : bool; v_393 : bool; v_392 : bool;
+    v_391 : int; v_390 : int; v_389 : int; v_388 : int; v_387 : int;
+    v_386 : bool; v_385 : bool; v_384 : bool; v_383 : bool; v_382 : bool;
     ns_St_5_Sleep_2_0 : bool; ns_St_5_Sleep_3_0_0 : bool;
     ns_St_5_Sleep_3_0_1 : bool; ns_St_5_Sleep_2_1 : bool;
     ns_St_5_Sleep_3_1_0 : bool; ns_St_5_Sleep_3_1_1 : bool;
@@ -1948,11 +1927,11 @@ var v_416 : bool; v_415 : bool; v_414 : bool; v_413 : bool; v_412 : bool;
     v_92 : bool; v_91_3 : bool; v_91_2 : bool; v_91_1 : bool; v_2_0 : bool;
     v_3_0_0 : bool; v_3_0_1 : bool; v_2_1 : bool; v_3_1_0 : bool;
     v_3_1_1 : bool; v_90 : bool; v_3 : bool; v_2 : bool; v_1 : bool;
-    v_439 : bool; v_438 : bool; v_437 : bool; v_436 : bool; v_435 : bool;
     v_434 : bool; v_433 : bool; v_432 : bool; v_431 : bool; v_430 : bool;
     v_429 : bool; v_428 : bool; v_427 : bool; v_426 : bool; v_425 : bool;
     v_424 : bool; v_423 : bool; v_422 : bool; v_421 : bool; v_420 : bool;
-    v_419 : bool; v_418 : bool; v_417 : bool; s_St_5_Sleep_2_0 : bool;
+    v_419 : bool; v_418 : bool; v_417 : bool; v_416 : bool; v_415 : bool;
+    v_414 : bool; v_413 : bool; v_412 : bool; s_St_5_Sleep_2_0 : bool;
     s_St_5_Sleep_3_0_0 : bool; s_St_5_Sleep_3_0_1 : bool;
     s_St_5_Sleep_2_1 : bool; s_St_5_Sleep_3_1_0 : bool;
     s_St_5_Sleep_3_1_1 : bool; s_St_5_Online_2_0 : bool;
@@ -2015,96 +1994,96 @@ let
   ns_St_5_Sleep_1 = false;
   ns_St_5_Sleep_2 = false;
   ns_St_5_Sleep_3 = true;
-  v_387 =
+  v_382 =
     merge ck_6_3_1_1 (true -> atuador_St_5_Boot)(false -> atuador_St_5_Off);
-  v_388 =
+  v_383 =
     merge ck_6_3_1_0
       (true -> 
         (((true when true(ck_6_1)) when false(ck_6_2_1))
           when true(ck_6_3_1_0)))
       (false -> atuador_St_5_Online);
-  v_389 = merge ck_6_2_1 (true -> v_387)(false -> v_388);
-  v_390 =
+  v_384 = merge ck_6_2_1 (true -> v_382)(false -> v_383);
+  v_385 =
     merge ck_6_3_0_0
       (true -> atuador_St_5_Sleep)(false -> atuador_St_5_Teste);
-  v_391 =
+  v_386 =
     merge ck_6_2_0
       (true -> ((true when false(ck_6_1)) when true(ck_6_2_0)))
-      (false -> v_390);
-  atuador = merge ck_6_1 (true -> v_389)(false -> v_391);
-  v_392 =
+      (false -> v_385);
+  atuador = merge ck_6_1 (true -> v_384)(false -> v_386);
+  v_387 =
     merge ck_6_3_1_1 (true -> estado_St_5_Boot)(false -> estado_St_5_Off);
-  v_393 =
+  v_388 =
     merge ck_6_3_1_0
       (true -> 
         (((0 when true(ck_6_1)) when false(ck_6_2_1)) when true(ck_6_3_1_0)))
       (false -> estado_St_5_Online);
-  v_394 = merge ck_6_2_1 (true -> v_392)(false -> v_393);
-  v_395 =
+  v_389 = merge ck_6_2_1 (true -> v_387)(false -> v_388);
+  v_390 =
     merge ck_6_3_0_0 (true -> estado_St_5_Sleep)(false -> estado_St_5_Teste);
-  v_396 =
+  v_391 =
     merge ck_6_2_0
-      (true -> ((0 when false(ck_6_1)) when true(ck_6_2_0)))(false -> v_395);
-  estado = merge ck_6_1 (true -> v_394)(false -> v_396);
-  v_397 = merge ck_6_3_1_1 (true -> ns_St_5_Boot_1)(false -> ns_St_5_Off_1);
-  v_398 = merge ck_6_3_1_1 (true -> ns_St_5_Boot_2)(false -> ns_St_5_Off_2);
-  v_399 = merge ck_6_3_1_1 (true -> ns_St_5_Boot_3)(false -> ns_St_5_Off_3);
-  v_400 =
+      (true -> ((0 when false(ck_6_1)) when true(ck_6_2_0)))(false -> v_390);
+  estado = merge ck_6_1 (true -> v_389)(false -> v_391);
+  v_392 = merge ck_6_3_1_1 (true -> ns_St_5_Boot_1)(false -> ns_St_5_Off_1);
+  v_393 = merge ck_6_3_1_1 (true -> ns_St_5_Boot_2)(false -> ns_St_5_Off_2);
+  v_394 = merge ck_6_3_1_1 (true -> ns_St_5_Boot_3)(false -> ns_St_5_Off_3);
+  v_395 =
     merge ck_6_3_1_0
       (true -> 
         (((true when true(ck_6_1)) when false(ck_6_2_1))
           when true(ck_6_3_1_0)))
       (false -> ns_St_5_Online_1);
-  v_401 =
+  v_396 =
     merge ck_6_3_1_0
       (true -> 
         (((true when true(ck_6_1)) when false(ck_6_2_1))
           when true(ck_6_3_1_0)))
       (false -> ns_St_5_Online_2);
-  v_402 =
+  v_397 =
     merge ck_6_3_1_0
       (true -> 
         (((true when true(ck_6_1)) when false(ck_6_2_1))
           when true(ck_6_3_1_0)))
       (false -> ns_St_5_Online_3);
-  v_403 =
+  v_398 =
     merge ck_6_3_0_0 (true -> ns_St_5_Sleep_1)(false -> ns_St_5_Teste_1);
-  v_404 =
+  v_399 =
     merge ck_6_3_0_0 (true -> ns_St_5_Sleep_2)(false -> ns_St_5_Teste_2);
-  v_405 =
+  v_400 =
     merge ck_6_3_0_0 (true -> ns_St_5_Sleep_3)(false -> ns_St_5_Teste_3);
-  v_406 = merge ck_6_2_1 (true -> v_397)(false -> v_400);
-  v_407 = merge ck_6_2_1 (true -> v_398)(false -> v_401);
-  v_408 = merge ck_6_2_1 (true -> v_399)(false -> v_402);
-  v_409 =
+  v_401 = merge ck_6_2_1 (true -> v_392)(false -> v_395);
+  v_402 = merge ck_6_2_1 (true -> v_393)(false -> v_396);
+  v_403 = merge ck_6_2_1 (true -> v_394)(false -> v_397);
+  v_404 =
     merge ck_6_2_0
       (true -> ((true when false(ck_6_1)) when true(ck_6_2_0)))
-      (false -> v_403);
-  v_410 =
+      (false -> v_398);
+  v_405 =
     merge ck_6_2_0
       (true -> ((true when false(ck_6_1)) when true(ck_6_2_0)))
-      (false -> v_404);
-  v_411 =
+      (false -> v_399);
+  v_406 =
     merge ck_6_2_0
       (true -> ((true when false(ck_6_1)) when true(ck_6_2_0)))
-      (false -> v_405);
-  ns_1 = merge ck_6_1 (true -> v_406)(false -> v_409);
-  ns_2 = merge ck_6_1 (true -> v_407)(false -> v_410);
-  ns_3 = merge ck_6_1 (true -> v_408)(false -> v_411);
-  v_412 = merge ck_6_3_1_1 (true -> nr_St_5_Boot)(false -> nr_St_5_Off);
-  v_413 =
+      (false -> v_400);
+  ns_1 = merge ck_6_1 (true -> v_401)(false -> v_404);
+  ns_2 = merge ck_6_1 (true -> v_402)(false -> v_405);
+  ns_3 = merge ck_6_1 (true -> v_403)(false -> v_406);
+  v_407 = merge ck_6_3_1_1 (true -> nr_St_5_Boot)(false -> nr_St_5_Off);
+  v_408 =
     merge ck_6_3_1_0
       (true -> 
         (((true when true(ck_6_1)) when false(ck_6_2_1))
           when true(ck_6_3_1_0)))
       (false -> nr_St_5_Online);
-  v_414 = merge ck_6_2_1 (true -> v_412)(false -> v_413);
-  v_415 = merge ck_6_3_0_0 (true -> nr_St_5_Sleep)(false -> nr_St_5_Teste);
-  v_416 =
+  v_409 = merge ck_6_2_1 (true -> v_407)(false -> v_408);
+  v_410 = merge ck_6_3_0_0 (true -> nr_St_5_Sleep)(false -> nr_St_5_Teste);
+  v_411 =
     merge ck_6_2_0
       (true -> ((true when false(ck_6_1)) when true(ck_6_2_0)))
-      (false -> v_415);
-  nr = merge ck_6_1 (true -> v_414)(false -> v_416);
+      (false -> v_410);
+  nr = merge ck_6_1 (true -> v_409)(false -> v_411);
   ck_6_3_1_1 = ((ck_6_3 when true(ck_6_1)) when true(ck_6_2_1));
   ck_6_3_1_0 = ((ck_6_3 when true(ck_6_1)) when false(ck_6_2_1));
   ck_6_2_1 = (ck_6_2 when true(ck_6_1));
@@ -2174,12 +2153,12 @@ let
     ((ns_St_5_Sleep_3 when false(ns_St_5_Sleep_1))
       when false(ns_St_5_Sleep_2_0));
   ns_St_5_Sleep_2_0 = (ns_St_5_Sleep_2 when false(ns_St_5_Sleep_1));
-  v_417 = true fby ns_1;
-  v_418 = true fby ns_2;
-  v_419 = false fby ns_3;
-  ck_1 = v_417;
-  ck_2 = v_418;
-  ck_3 = v_419;
+  v_412 = true fby ns_1;
+  v_413 = true fby ns_2;
+  v_414 = false fby ns_3;
+  ck_1 = v_412;
+  ck_2 = v_413;
+  ck_3 = v_414;
   r_St_5_Off =
     if (((c when true(ck_1)) when true(ck_2_1)) when false(ck_3_1_1))
     then true
@@ -2360,54 +2339,54 @@ let
   v_3_0_1 = ((v_3 when false(v_1)) when true(v_2_0));
   v_3_0_0 = ((v_3 when false(v_1)) when false(v_2_0));
   v_2_0 = (v_2 when false(v_1));
-  v_420 = merge ck_3_1_1 (true -> s_St_5_Boot_1)(false -> s_St_5_Off_1);
-  v_421 = merge ck_3_1_1 (true -> s_St_5_Boot_2)(false -> s_St_5_Off_2);
-  v_422 = merge ck_3_1_1 (true -> s_St_5_Boot_3)(false -> s_St_5_Off_3);
-  v_423 =
+  v_415 = merge ck_3_1_1 (true -> s_St_5_Boot_1)(false -> s_St_5_Off_1);
+  v_416 = merge ck_3_1_1 (true -> s_St_5_Boot_2)(false -> s_St_5_Off_2);
+  v_417 = merge ck_3_1_1 (true -> s_St_5_Boot_3)(false -> s_St_5_Off_3);
+  v_418 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> s_St_5_Online_1);
-  v_424 =
+  v_419 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> s_St_5_Online_2);
-  v_425 =
+  v_420 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> s_St_5_Online_3);
-  v_426 = merge ck_3_0_0 (true -> s_St_5_Sleep_1)(false -> s_St_5_Teste_1);
-  v_427 = merge ck_3_0_0 (true -> s_St_5_Sleep_2)(false -> s_St_5_Teste_2);
-  v_428 = merge ck_3_0_0 (true -> s_St_5_Sleep_3)(false -> s_St_5_Teste_3);
-  v_429 = merge ck_2_1 (true -> v_420)(false -> v_423);
-  v_430 = merge ck_2_1 (true -> v_421)(false -> v_424);
-  v_431 = merge ck_2_1 (true -> v_422)(false -> v_425);
-  v_432 =
+  v_421 = merge ck_3_0_0 (true -> s_St_5_Sleep_1)(false -> s_St_5_Teste_1);
+  v_422 = merge ck_3_0_0 (true -> s_St_5_Sleep_2)(false -> s_St_5_Teste_2);
+  v_423 = merge ck_3_0_0 (true -> s_St_5_Sleep_3)(false -> s_St_5_Teste_3);
+  v_424 = merge ck_2_1 (true -> v_415)(false -> v_418);
+  v_425 = merge ck_2_1 (true -> v_416)(false -> v_419);
+  v_426 = merge ck_2_1 (true -> v_417)(false -> v_420);
+  v_427 =
     merge ck_2_0
-      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_426);
-  v_433 =
+      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_421);
+  v_428 =
     merge ck_2_0
-      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_427);
-  v_434 =
+      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_422);
+  v_429 =
     merge ck_2_0
-      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_428);
-  s_1 = merge ck_1 (true -> v_429)(false -> v_432);
-  s_2 = merge ck_1 (true -> v_430)(false -> v_433);
-  s_3 = merge ck_1 (true -> v_431)(false -> v_434);
-  v_435 = merge ck_3_1_1 (true -> r_St_5_Boot)(false -> r_St_5_Off);
-  v_436 =
+      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_423);
+  s_1 = merge ck_1 (true -> v_424)(false -> v_427);
+  s_2 = merge ck_1 (true -> v_425)(false -> v_428);
+  s_3 = merge ck_1 (true -> v_426)(false -> v_429);
+  v_430 = merge ck_3_1_1 (true -> r_St_5_Boot)(false -> r_St_5_Off);
+  v_431 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> r_St_5_Online);
-  v_437 = merge ck_2_1 (true -> v_435)(false -> v_436);
-  v_438 = merge ck_3_0_0 (true -> r_St_5_Sleep)(false -> r_St_5_Teste);
-  v_439 =
+  v_432 = merge ck_2_1 (true -> v_430)(false -> v_431);
+  v_433 = merge ck_3_0_0 (true -> r_St_5_Sleep)(false -> r_St_5_Teste);
+  v_434 =
     merge ck_2_0
-      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_438);
-  r = merge ck_1 (true -> v_437)(false -> v_439);
+      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_433);
+  r = merge ck_1 (true -> v_432)(false -> v_434);
   ck_3_1_1 = ((ck_3 when true(ck_1)) when true(ck_2_1));
   ck_3_1_0 = ((ck_3 when true(ck_1)) when false(ck_2_1));
   ck_2_1 = (ck_2 when true(ck_1));
@@ -2488,9 +2467,9 @@ node contrato(ac : bool; cb : bool; l1b : bool; l2b : bool; vb : bool;
                td : bool; tm : bool; om : bool; ts : bool; swa : bool;
                swr1 : bool; swr3 : bool; swr4 : bool)
 returns (erro : bool; dia : bool; r_dia : bool; r_noite : bool;
-          pabx_atuador : bool; modem_atuador : bool; serv_atuador : bool;
-          modem_estado : int; serv_estado : int; bat12v_3 : bool;
-          bat12v_2 : bool; bat12v_1 : bool)
+          pabx_atuador : bool; modem_atuador : bool; out_atx : bool;
+          out_off : bool; modem_estado : int; serv_estado : int;
+          bat12v_3 : bool; bat12v_2 : bool; bat12v_1 : bool)
 contract
   var v_100 : bool;
   let
@@ -2500,17 +2479,17 @@ contract
                  with (br4 : bool; br3 : bool; br1 : bool; ba : bool;
                         cr4 : bool; cr3 : bool; cr1 : bool; co : bool;
                         ca : bool; cm : bool; cp : bool)
-                 var v_481 : bool; v_480 : bool; v_479 : bool; v_478 : bool;
-                     v_477 : bool; v_476 : bool; v_475 : bool; v_474 : bool;
-                     v_473 : bool; v_472 : bool; v_471 : bool; v_470 : bool;
-                     v_469 : bool; v_468 : bool; v_467 : bool; v_466 : bool;
-                     v_465 : bool; v_464 : bool; v_463 : bool; v_462 : bool;
-                     v_461 : bool; v_460 : bool; v_459 : bool; v_458 : bool;
-                     v_457 : bool; v_456 : bool; v_455 : bool; v_454 : bool;
-                     v_453 : bool; v_452 : bool; v_451 : bool; v_450 : bool;
-                     v_449 : bool; v_448 : bool; v_447 : bool; v_446 : bool;
-                     v_445 : bool; v_444 : bool; v_443 : bool; v_442 : bool;
-                     v_441 : bool; v_440 : bool;
+                 var v_476 : bool; v_475 : bool; v_474 : bool; v_473 : bool;
+                     v_472 : bool; v_471 : bool; v_470 : bool; v_469 : bool;
+                     v_468 : bool; v_467 : bool; v_466 : bool; v_465 : bool;
+                     v_464 : bool; v_463 : bool; v_462 : bool; v_461 : bool;
+                     v_460 : bool; v_459 : bool; v_458 : bool; v_457 : bool;
+                     v_456 : bool; v_455 : bool; v_454 : bool; v_453 : bool;
+                     v_452 : bool; v_451 : bool; v_450 : bool; v_449 : bool;
+                     v_448 : bool; v_447 : bool; v_446 : bool; v_445 : bool;
+                     v_444 : bool; v_443 : bool; v_442 : bool; v_441 : bool;
+                     v_440 : bool; v_439 : bool; v_438 : bool; v_437 : bool;
+                     v_436 : bool; v_435 : bool;
                      ns_St_6_Carregando_2_0 : bool;
                      ns_St_6_Carregando_3_0_0 : bool;
                      ns_St_6_Carregando_3_0_1 : bool;
@@ -2682,14 +2661,14 @@ contract
                      v_206 : bool; v_205_3 : bool; v_205_2 : bool;
                      v_205_1 : bool; v_204 : bool; v_203 : bool;
                      v_202 : bool; v_201 : bool; v_200 : bool; v_199 : bool;
-                     v_198 : bool; v_197 : bool; v_508 : bool; v_507 : bool;
-                     v_506 : bool; v_505 : bool; v_504 : bool; v_503 : bool;
-                     v_502 : bool; v_501 : bool; v_500 : bool; v_499 : bool;
-                     v_498 : bool; v_497 : bool; v_496 : bool; v_495 : bool;
-                     v_494 : bool; v_493 : bool; v_492 : bool; v_491 : bool;
-                     v_490 : bool; v_489 : bool; v_488 : bool; v_487 : bool;
-                     v_486 : bool; v_485 : bool; v_484 : bool; v_483 : bool;
-                     v_482 : bool; s_St_6_Carregando_2_0 : bool;
+                     v_198 : bool; v_197 : bool; v_503 : bool; v_502 : bool;
+                     v_501 : bool; v_500 : bool; v_499 : bool; v_498 : bool;
+                     v_497 : bool; v_496 : bool; v_495 : bool; v_494 : bool;
+                     v_493 : bool; v_492 : bool; v_491 : bool; v_490 : bool;
+                     v_489 : bool; v_488 : bool; v_487 : bool; v_486 : bool;
+                     v_485 : bool; v_484 : bool; v_483 : bool; v_482 : bool;
+                     v_481 : bool; v_480 : bool; v_479 : bool; v_478 : bool;
+                     v_477 : bool; s_St_6_Carregando_2_0 : bool;
                      s_St_6_Carregando_3_0_0 : bool;
                      s_St_6_Carregando_3_0_1 : bool;
                      s_St_6_Carregando_2_1 : bool;
@@ -2733,14 +2712,13 @@ contract
                      isday_St_7_Dia : bool; ck_14_1 : bool;
                      r_1_St_7_Noite : bool; s_2_St_7_Noite_1 : bool;
                      r_1_St_7_Dia : bool; s_2_St_7_Dia_1 : bool;
-                     ck_13_1 : bool; v_538 : bool; v_537 : bool;
-                     v_536 : bool; v_535 : bool; v_534 : bool; v_533 : bool;
-                     v_532 : bool; v_531 : bool; v_530 : bool; v_529 : bool;
-                     v_528 : bool; v_527 : bool; v_526 : bool; v_525 : bool;
-                     v_524 : bool; v_523 : bool; v_522 : bool; v_521 : bool;
-                     v_520 : bool; v_519 : bool; v_518 : int; v_517 : int;
-                     v_516 : int; v_515 : int; v_514 : int; v_513 : bool;
-                     v_512 : bool; v_511 : bool; v_510 : bool; v_509 : bool;
+                     ck_13_1 : bool; v_528 : bool; v_527 : bool;
+                     v_526 : bool; v_525 : bool; v_524 : bool; v_523 : bool;
+                     v_522 : bool; v_521 : bool; v_520 : bool; v_519 : bool;
+                     v_518 : bool; v_517 : bool; v_516 : bool; v_515 : bool;
+                     v_514 : bool; v_513 : bool; v_512 : bool; v_511 : bool;
+                     v_510 : bool; v_509 : bool; v_508 : int; v_507 : int;
+                     v_506 : int; v_505 : int; v_504 : int;
                      ns_2_St_8_Rlevel4_2_0 : bool;
                      ns_2_St_8_Rlevel4_3_0_0 : bool;
                      ns_2_St_8_Rlevel4_3_0_1 : bool;
@@ -2771,33 +2749,30 @@ contract
                      ck_12_3_1_1 : bool; nr_2_St_8_Rlevel4 : bool;
                      ns_2_St_8_Rlevel4_3 : bool; ns_2_St_8_Rlevel4_2 : bool;
                      ns_2_St_8_Rlevel4_1 : bool; estado_2_St_8_Rlevel4 : int;
-                     atuador_1_St_8_Rlevel4 : bool; nr_2_St_8_Rlevel3 : bool;
-                     ns_2_St_8_Rlevel3_3 : bool; ns_2_St_8_Rlevel3_2 : bool;
-                     ns_2_St_8_Rlevel3_1 : bool; estado_2_St_8_Rlevel3 : int;
-                     atuador_1_St_8_Rlevel3 : bool; nr_2_St_8_Rlevel1 : bool;
+                     nr_2_St_8_Rlevel3 : bool; ns_2_St_8_Rlevel3_3 : bool;
+                     ns_2_St_8_Rlevel3_2 : bool; ns_2_St_8_Rlevel3_1 : bool;
+                     estado_2_St_8_Rlevel3 : int; nr_2_St_8_Rlevel1 : bool;
                      ns_2_St_8_Rlevel1_3 : bool; ns_2_St_8_Rlevel1_2 : bool;
                      ns_2_St_8_Rlevel1_1 : bool; estado_2_St_8_Rlevel1 : int;
-                     atuador_1_St_8_Rlevel1 : bool; nr_2_St_8_Boot : bool;
-                     ns_2_St_8_Boot_3 : bool; ns_2_St_8_Boot_2 : bool;
-                     ns_2_St_8_Boot_1 : bool; estado_2_St_8_Boot : int;
-                     atuador_1_St_8_Boot : bool; nr_2_St_8_Off : bool;
+                     nr_2_St_8_Boot : bool; ns_2_St_8_Boot_3 : bool;
+                     ns_2_St_8_Boot_2 : bool; ns_2_St_8_Boot_1 : bool;
+                     estado_2_St_8_Boot : int; nr_2_St_8_Off : bool;
                      ns_2_St_8_Off_3 : bool; ns_2_St_8_Off_2 : bool;
                      ns_2_St_8_Off_1 : bool; estado_2_St_8_Off : int;
-                     atuador_1_St_8_Off : bool; ck_12_3 : bool;
-                     ck_12_2 : bool; ck_12_1 : bool; v_187_2_0 : bool;
-                     v_187_3_0_0 : bool; v_187_3_0_1 : bool;
-                     v_187_2_1 : bool; v_187_3_1_0 : bool;
-                     v_187_3_1_1 : bool; v_188 : bool; v_187_3 : bool;
-                     v_187_2 : bool; v_187_1 : bool; v_185_2_0 : bool;
-                     v_185_3_0_0 : bool; v_185_3_0_1 : bool;
-                     v_185_2_1 : bool; v_185_3_1_0 : bool;
-                     v_185_3_1_1 : bool; v_183_2_0 : bool;
-                     v_183_3_0_0 : bool; v_183_3_0_1 : bool;
-                     v_183_2_1 : bool; v_183_3_1_0 : bool;
-                     v_183_3_1_1 : bool; v_186 : bool; v_185_3 : bool;
-                     v_185_2 : bool; v_185_1 : bool; v_184 : bool;
-                     v_183_3 : bool; v_183_2 : bool; v_183_1 : bool;
-                     v_181_2_0 : bool; v_181_3_0_0 : bool;
+                     ck_12_3 : bool; ck_12_2 : bool; ck_12_1 : bool;
+                     v_187_2_0 : bool; v_187_3_0_0 : bool;
+                     v_187_3_0_1 : bool; v_187_2_1 : bool;
+                     v_187_3_1_0 : bool; v_187_3_1_1 : bool; v_188 : bool;
+                     v_187_3 : bool; v_187_2 : bool; v_187_1 : bool;
+                     v_185_2_0 : bool; v_185_3_0_0 : bool;
+                     v_185_3_0_1 : bool; v_185_2_1 : bool;
+                     v_185_3_1_0 : bool; v_185_3_1_1 : bool;
+                     v_183_2_0 : bool; v_183_3_0_0 : bool;
+                     v_183_3_0_1 : bool; v_183_2_1 : bool;
+                     v_183_3_1_0 : bool; v_183_3_1_1 : bool; v_186 : bool;
+                     v_185_3 : bool; v_185_2 : bool; v_185_1 : bool;
+                     v_184 : bool; v_183_3 : bool; v_183_2 : bool;
+                     v_183_1 : bool; v_181_2_0 : bool; v_181_3_0_0 : bool;
                      v_181_3_0_1 : bool; v_181_2_1 : bool;
                      v_181_3_1_0 : bool; v_181_3_1_1 : bool;
                      v_179_2_0 : bool; v_179_3_0_0 : bool;
@@ -2813,13 +2788,13 @@ contract
                      v_175_3_1_0 : bool; v_175_3_1_1 : bool; v_178 : bool;
                      v_177_3 : bool; v_177_2 : bool; v_177_1 : bool;
                      v_176 : bool; v_175_3 : bool; v_175_2 : bool;
-                     v_175_1 : bool; v_561 : bool; v_560 : bool;
-                     v_559 : bool; v_558 : bool; v_557 : bool; v_556 : bool;
-                     v_555 : bool; v_554 : bool; v_553 : bool; v_552 : bool;
-                     v_551 : bool; v_550 : bool; v_549 : bool; v_548 : bool;
-                     v_547 : bool; v_546 : bool; v_545 : bool; v_544 : bool;
-                     v_543 : bool; v_542 : bool; v_541 : bool; v_540 : bool;
-                     v_539 : bool; s_3_St_8_Rlevel4_2_0 : bool;
+                     v_175_1 : bool; v_551 : bool; v_550 : bool;
+                     v_549 : bool; v_548 : bool; v_547 : bool; v_546 : bool;
+                     v_545 : bool; v_544 : bool; v_543 : bool; v_542 : bool;
+                     v_541 : bool; v_540 : bool; v_539 : bool; v_538 : bool;
+                     v_537 : bool; v_536 : bool; v_535 : bool; v_534 : bool;
+                     v_533 : bool; v_532 : bool; v_531 : bool; v_530 : bool;
+                     v_529 : bool; s_3_St_8_Rlevel4_2_0 : bool;
                      s_3_St_8_Rlevel4_3_0_0 : bool;
                      s_3_St_8_Rlevel4_3_0_1 : bool;
                      s_3_St_8_Rlevel4_2_1 : bool;
@@ -2856,14 +2831,14 @@ contract
                      s_3_St_8_Boot_1 : bool; r_2_St_8_Off : bool;
                      s_3_St_8_Off_3 : bool; s_3_St_8_Off_2 : bool;
                      s_3_St_8_Off_1 : bool; ck_11_3 : bool; ck_11_2 : bool;
-                     ck_11_1 : bool; v_591 : bool; v_590 : bool;
-                     v_589 : bool; v_588 : bool; v_587 : bool; v_586 : bool;
-                     v_585 : bool; v_584 : bool; v_583 : bool; v_582 : bool;
-                     v_581 : bool; v_580 : bool; v_579 : bool; v_578 : bool;
-                     v_577 : bool; v_576 : bool; v_575 : bool; v_574 : bool;
-                     v_573 : bool; v_572 : bool; v_571 : int; v_570 : int;
-                     v_569 : int; v_568 : int; v_567 : int; v_566 : bool;
-                     v_565 : bool; v_564 : bool; v_563 : bool; v_562 : bool;
+                     ck_11_1 : bool; v_581 : bool; v_580 : bool;
+                     v_579 : bool; v_578 : bool; v_577 : bool; v_576 : bool;
+                     v_575 : bool; v_574 : bool; v_573 : bool; v_572 : bool;
+                     v_571 : bool; v_570 : bool; v_569 : bool; v_568 : bool;
+                     v_567 : bool; v_566 : bool; v_565 : bool; v_564 : bool;
+                     v_563 : bool; v_562 : bool; v_561 : int; v_560 : int;
+                     v_559 : int; v_558 : int; v_557 : int; v_556 : bool;
+                     v_555 : bool; v_554 : bool; v_553 : bool; v_552 : bool;
                      ns_3_St_9_Sleep_2_0 : bool;
                      ns_3_St_9_Sleep_3_0_0 : bool;
                      ns_3_St_9_Sleep_3_0_1 : bool;
@@ -2927,13 +2902,13 @@ contract
                      v_164_3_0_0 : bool; v_164_3_0_1 : bool;
                      v_164_2_1 : bool; v_164_3_1_0 : bool;
                      v_164_3_1_1 : bool; v_165 : bool; v_164_3 : bool;
-                     v_164_2 : bool; v_164_1 : bool; v_614 : bool;
-                     v_613 : bool; v_612 : bool; v_611 : bool; v_610 : bool;
-                     v_609 : bool; v_608 : bool; v_607 : bool; v_606 : bool;
-                     v_605 : bool; v_604 : bool; v_603 : bool; v_602 : bool;
-                     v_601 : bool; v_600 : bool; v_599 : bool; v_598 : bool;
-                     v_597 : bool; v_596 : bool; v_595 : bool; v_594 : bool;
-                     v_593 : bool; v_592 : bool; s_4_St_9_Sleep_2_0 : bool;
+                     v_164_2 : bool; v_164_1 : bool; v_604 : bool;
+                     v_603 : bool; v_602 : bool; v_601 : bool; v_600 : bool;
+                     v_599 : bool; v_598 : bool; v_597 : bool; v_596 : bool;
+                     v_595 : bool; v_594 : bool; v_593 : bool; v_592 : bool;
+                     v_591 : bool; v_590 : bool; v_589 : bool; v_588 : bool;
+                     v_587 : bool; v_586 : bool; v_585 : bool; v_584 : bool;
+                     v_583 : bool; v_582 : bool; s_4_St_9_Sleep_2_0 : bool;
                      s_4_St_9_Sleep_3_0_0 : bool;
                      s_4_St_9_Sleep_3_0_1 : bool; s_4_St_9_Sleep_2_1 : bool;
                      s_4_St_9_Sleep_3_1_0 : bool;
@@ -2987,11 +2962,11 @@ contract
                      v_114 : bool; v_113 : bool; v_112 : bool; v_111 : bool;
                      v_110 : bool; v_109 : bool; v_108 : bool; v_107 : bool;
                      v_106 : bool; v_105 : bool; v_104 : bool; v_103 : bool;
-                     v_102 : bool; v_101 : bool; v_632 : bool; v_631 : bool;
-                     v_630 : bool; v_629 : bool; v_628 : bool; v_627 : bool;
-                     v_626 : bool; v_625 : bool; v_624 : bool; v_623 : bool;
-                     v_622 : bool; v_621 : bool; v_620 : bool; v_619 : bool;
-                     v_618 : bool; v_617 : bool; v_616 : bool; v_615 : bool;
+                     v_102 : bool; v_101 : bool; v_622 : bool; v_621 : bool;
+                     v_620 : bool; v_619 : bool; v_618 : bool; v_617 : bool;
+                     v_616 : bool; v_615 : bool; v_614 : bool; v_613 : bool;
+                     v_612 : bool; v_611 : bool; v_610 : bool; v_609 : bool;
+                     v_608 : bool; v_607 : bool; v_606 : bool; v_605 : bool;
                      ck_2_0 : bool; ck_3_0_0 : bool; ck_3_0_1 : bool;
                      ck_2_1 : bool; ck_3_1_0 : bool; ck_3_1_1 : bool;
                      r_noite_B100 : bool; r_dia_B100 : bool;
@@ -3044,9 +3019,10 @@ contract
                      cr3_1 : bool; cr4_1 : bool; ba_1 : bool; b1 : bool;
                      b3 : bool; b4 : bool; s_atx : bool; s1 : bool;
                      s3 : bool; s4 : bool; a : bool; r1 : bool; r3 : bool;
-                     r4 : bool; atuador_1 : bool; estado_2 : int; c : bool;
-                     t : bool; o : bool; atuador : bool; estado_1 : int;
-                     ca_1 : bool; estado : bool;
+                     r4 : bool; out_atx_1 : bool; out_off_1 : bool;
+                     estado_2 : int; c : bool; t : bool; o : bool;
+                     atuador : bool; estado_1 : int; ca_1 : bool;
+                     estado : bool;
   let
     ac_1 = ac;
     cp_1 = cb;
@@ -3124,151 +3100,151 @@ contract
     ns_St_6_Carregando_1 = true;
     ns_St_6_Carregando_2 = true;
     ns_St_6_Carregando_3 = false;
-    v_440 =
+    v_435 =
       merge ck_16_3_1_1
         (true -> estado_bat_St_6_Baixo_1)
         (false -> estado_bat_St_6_Carregando_1);
-    v_441 =
+    v_436 =
       merge ck_16_3_1_1
         (true -> estado_bat_St_6_Baixo_2)
         (false -> estado_bat_St_6_Carregando_2);
-    v_442 =
+    v_437 =
       merge ck_16_3_1_1
         (true -> estado_bat_St_6_Baixo_3)
         (false -> estado_bat_St_6_Carregando_3);
-    v_443 =
+    v_438 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> estado_bat_St_6_Cheio_1);
-    v_444 =
+    v_439 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> estado_bat_St_6_Cheio_2);
-    v_445 =
+    v_440 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> estado_bat_St_6_Cheio_3);
-    v_446 =
+    v_441 =
       merge ck_16_3_0_1
         (true -> estado_bat_St_6_Erro_1)(false -> estado_bat_St_6_Limiar1_1);
-    v_447 =
+    v_442 =
       merge ck_16_3_0_1
         (true -> estado_bat_St_6_Erro_2)(false -> estado_bat_St_6_Limiar1_2);
-    v_448 =
+    v_443 =
       merge ck_16_3_0_1
         (true -> estado_bat_St_6_Erro_3)(false -> estado_bat_St_6_Limiar1_3);
-    v_449 =
+    v_444 =
       merge ck_16_3_0_0
         (true -> 
           (((true when false(ck_16_1)) when false(ck_16_2_0))
             when true(ck_16_3_0_0)))
         (false -> estado_bat_St_6_Limiar2_1);
-    v_450 =
+    v_445 =
       merge ck_16_3_0_0
         (true -> 
           (((true when false(ck_16_1)) when false(ck_16_2_0))
             when true(ck_16_3_0_0)))
         (false -> estado_bat_St_6_Limiar2_2);
-    v_451 =
+    v_446 =
       merge ck_16_3_0_0
         (true -> 
           (((true when false(ck_16_1)) when false(ck_16_2_0))
             when true(ck_16_3_0_0)))
         (false -> estado_bat_St_6_Limiar2_3);
-    v_452 = merge ck_16_2_1 (true -> v_440)(false -> v_443);
-    v_453 = merge ck_16_2_1 (true -> v_441)(false -> v_444);
-    v_454 = merge ck_16_2_1 (true -> v_442)(false -> v_445);
-    v_455 = merge ck_16_2_0 (true -> v_446)(false -> v_449);
-    v_456 = merge ck_16_2_0 (true -> v_447)(false -> v_450);
-    v_457 = merge ck_16_2_0 (true -> v_448)(false -> v_451);
-    estado_bat_1 = merge ck_16_1 (true -> v_452)(false -> v_455);
-    estado_bat_2 = merge ck_16_1 (true -> v_453)(false -> v_456);
-    estado_bat_3 = merge ck_16_1 (true -> v_454)(false -> v_457);
-    v_458 =
+    v_447 = merge ck_16_2_1 (true -> v_435)(false -> v_438);
+    v_448 = merge ck_16_2_1 (true -> v_436)(false -> v_439);
+    v_449 = merge ck_16_2_1 (true -> v_437)(false -> v_440);
+    v_450 = merge ck_16_2_0 (true -> v_441)(false -> v_444);
+    v_451 = merge ck_16_2_0 (true -> v_442)(false -> v_445);
+    v_452 = merge ck_16_2_0 (true -> v_443)(false -> v_446);
+    estado_bat_1 = merge ck_16_1 (true -> v_447)(false -> v_450);
+    estado_bat_2 = merge ck_16_1 (true -> v_448)(false -> v_451);
+    estado_bat_3 = merge ck_16_1 (true -> v_449)(false -> v_452);
+    v_453 =
       merge ck_16_3_1_1
         (true -> ns_St_6_Baixo_1)(false -> ns_St_6_Carregando_1);
-    v_459 =
+    v_454 =
       merge ck_16_3_1_1
         (true -> ns_St_6_Baixo_2)(false -> ns_St_6_Carregando_2);
-    v_460 =
+    v_455 =
       merge ck_16_3_1_1
         (true -> ns_St_6_Baixo_3)(false -> ns_St_6_Carregando_3);
-    v_461 =
+    v_456 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> ns_St_6_Cheio_1);
-    v_462 =
+    v_457 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> ns_St_6_Cheio_2);
-    v_463 =
+    v_458 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> ns_St_6_Cheio_3);
-    v_464 =
+    v_459 =
       merge ck_16_3_0_1 (true -> ns_St_6_Erro_1)(false -> ns_St_6_Limiar1_1);
-    v_465 =
+    v_460 =
       merge ck_16_3_0_1 (true -> ns_St_6_Erro_2)(false -> ns_St_6_Limiar1_2);
-    v_466 =
+    v_461 =
       merge ck_16_3_0_1 (true -> ns_St_6_Erro_3)(false -> ns_St_6_Limiar1_3);
-    v_467 =
+    v_462 =
       merge ck_16_3_0_0
         (true -> 
           (((true when false(ck_16_1)) when false(ck_16_2_0))
             when true(ck_16_3_0_0)))
         (false -> ns_St_6_Limiar2_1);
-    v_468 =
+    v_463 =
       merge ck_16_3_0_0
         (true -> 
           (((true when false(ck_16_1)) when false(ck_16_2_0))
             when true(ck_16_3_0_0)))
         (false -> ns_St_6_Limiar2_2);
-    v_469 =
+    v_464 =
       merge ck_16_3_0_0
         (true -> 
           (((true when false(ck_16_1)) when false(ck_16_2_0))
             when true(ck_16_3_0_0)))
         (false -> ns_St_6_Limiar2_3);
-    v_470 = merge ck_16_2_1 (true -> v_458)(false -> v_461);
-    v_471 = merge ck_16_2_1 (true -> v_459)(false -> v_462);
-    v_472 = merge ck_16_2_1 (true -> v_460)(false -> v_463);
-    v_473 = merge ck_16_2_0 (true -> v_464)(false -> v_467);
-    v_474 = merge ck_16_2_0 (true -> v_465)(false -> v_468);
-    v_475 = merge ck_16_2_0 (true -> v_466)(false -> v_469);
-    ns_1_2 = merge ck_16_1 (true -> v_470)(false -> v_473);
-    ns_2_4 = merge ck_16_1 (true -> v_471)(false -> v_474);
-    ns_3_4 = merge ck_16_1 (true -> v_472)(false -> v_475);
-    v_476 =
+    v_465 = merge ck_16_2_1 (true -> v_453)(false -> v_456);
+    v_466 = merge ck_16_2_1 (true -> v_454)(false -> v_457);
+    v_467 = merge ck_16_2_1 (true -> v_455)(false -> v_458);
+    v_468 = merge ck_16_2_0 (true -> v_459)(false -> v_462);
+    v_469 = merge ck_16_2_0 (true -> v_460)(false -> v_463);
+    v_470 = merge ck_16_2_0 (true -> v_461)(false -> v_464);
+    ns_1_2 = merge ck_16_1 (true -> v_465)(false -> v_468);
+    ns_2_4 = merge ck_16_1 (true -> v_466)(false -> v_469);
+    ns_3_4 = merge ck_16_1 (true -> v_467)(false -> v_470);
+    v_471 =
       merge ck_16_3_1_1 (true -> nr_St_6_Baixo)(false -> nr_St_6_Carregando);
-    v_477 =
+    v_472 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> nr_St_6_Cheio);
-    v_478 = merge ck_16_2_1 (true -> v_476)(false -> v_477);
-    v_479 =
+    v_473 = merge ck_16_2_1 (true -> v_471)(false -> v_472);
+    v_474 =
       merge ck_16_3_0_1 (true -> nr_St_6_Erro)(false -> nr_St_6_Limiar1);
-    v_480 =
+    v_475 =
       merge ck_16_3_0_0
         (true -> 
           (((true when false(ck_16_1)) when false(ck_16_2_0))
             when true(ck_16_3_0_0)))
         (false -> nr_St_6_Limiar2);
-    v_481 = merge ck_16_2_0 (true -> v_479)(false -> v_480);
-    nr = merge ck_16_1 (true -> v_478)(false -> v_481);
+    v_476 = merge ck_16_2_0 (true -> v_474)(false -> v_475);
+    nr = merge ck_16_1 (true -> v_473)(false -> v_476);
     ck_16_3_1_1 = ((ck_16_3 when true(ck_16_1)) when true(ck_16_2_1));
     ck_16_3_1_0 = ((ck_16_3 when true(ck_16_1)) when false(ck_16_2_1));
     ck_16_2_1 = (ck_16_2 when true(ck_16_1));
@@ -3459,12 +3435,12 @@ contract
         when false(ns_St_6_Carregando_2_0));
     ns_St_6_Carregando_2_0 =
       (ns_St_6_Carregando_2 when false(ns_St_6_Carregando_1));
-    v_482 = false fby ns_1_2;
-    v_483 = true fby ns_2_4;
-    v_484 = true fby ns_3_4;
-    ck_15_1 = v_482;
-    ck_15_2 = v_483;
-    ck_15_3 = v_484;
+    v_477 = false fby ns_1_2;
+    v_478 = true fby ns_2_4;
+    v_479 = true fby ns_3_4;
+    ck_15_1 = v_477;
+    ck_15_2 = v_478;
+    ck_15_3 = v_479;
     r_St_6_Erro =
       if (((ac_1 when false(ck_15_1)) when true(ck_15_2_0))
            when true(ck_15_3_0_1))
@@ -4001,84 +3977,84 @@ contract
     v_209_3_0_1 = ((v_209_3 when false(v_209_1)) when true(v_209_2_0));
     v_209_3_0_0 = ((v_209_3 when false(v_209_1)) when false(v_209_2_0));
     v_209_2_0 = (v_209_2 when false(v_209_1));
-    v_485 =
+    v_480 =
       merge ck_15_3_1_1
         (true -> s_St_6_Baixo_1)(false -> s_St_6_Carregando_1);
-    v_486 =
+    v_481 =
       merge ck_15_3_1_1
         (true -> s_St_6_Baixo_2)(false -> s_St_6_Carregando_2);
-    v_487 =
+    v_482 =
       merge ck_15_3_1_1
         (true -> s_St_6_Baixo_3)(false -> s_St_6_Carregando_3);
-    v_488 =
+    v_483 =
       merge ck_15_3_1_0
         (true -> 
           (((true when true(ck_15_1)) when false(ck_15_2_1))
             when true(ck_15_3_1_0)))
         (false -> s_St_6_Cheio_1);
-    v_489 =
+    v_484 =
       merge ck_15_3_1_0
         (true -> 
           (((true when true(ck_15_1)) when false(ck_15_2_1))
             when true(ck_15_3_1_0)))
         (false -> s_St_6_Cheio_2);
-    v_490 =
+    v_485 =
       merge ck_15_3_1_0
         (true -> 
           (((true when true(ck_15_1)) when false(ck_15_2_1))
             when true(ck_15_3_1_0)))
         (false -> s_St_6_Cheio_3);
-    v_491 =
+    v_486 =
       merge ck_15_3_0_1 (true -> s_St_6_Erro_1)(false -> s_St_6_Limiar1_1);
-    v_492 =
+    v_487 =
       merge ck_15_3_0_1 (true -> s_St_6_Erro_2)(false -> s_St_6_Limiar1_2);
-    v_493 =
+    v_488 =
       merge ck_15_3_0_1 (true -> s_St_6_Erro_3)(false -> s_St_6_Limiar1_3);
-    v_494 =
+    v_489 =
       merge ck_15_3_0_0
         (true -> 
           (((true when false(ck_15_1)) when false(ck_15_2_0))
             when true(ck_15_3_0_0)))
         (false -> s_St_6_Limiar2_1);
-    v_495 =
+    v_490 =
       merge ck_15_3_0_0
         (true -> 
           (((true when false(ck_15_1)) when false(ck_15_2_0))
             when true(ck_15_3_0_0)))
         (false -> s_St_6_Limiar2_2);
-    v_496 =
+    v_491 =
       merge ck_15_3_0_0
         (true -> 
           (((true when false(ck_15_1)) when false(ck_15_2_0))
             when true(ck_15_3_0_0)))
         (false -> s_St_6_Limiar2_3);
-    v_497 = merge ck_15_2_1 (true -> v_485)(false -> v_488);
-    v_498 = merge ck_15_2_1 (true -> v_486)(false -> v_489);
-    v_499 = merge ck_15_2_1 (true -> v_487)(false -> v_490);
-    v_500 = merge ck_15_2_0 (true -> v_491)(false -> v_494);
-    v_501 = merge ck_15_2_0 (true -> v_492)(false -> v_495);
-    v_502 = merge ck_15_2_0 (true -> v_493)(false -> v_496);
-    s_1 = merge ck_15_1 (true -> v_497)(false -> v_500);
-    s_2_2 = merge ck_15_1 (true -> v_498)(false -> v_501);
-    s_3_4 = merge ck_15_1 (true -> v_499)(false -> v_502);
-    v_503 =
+    v_492 = merge ck_15_2_1 (true -> v_480)(false -> v_483);
+    v_493 = merge ck_15_2_1 (true -> v_481)(false -> v_484);
+    v_494 = merge ck_15_2_1 (true -> v_482)(false -> v_485);
+    v_495 = merge ck_15_2_0 (true -> v_486)(false -> v_489);
+    v_496 = merge ck_15_2_0 (true -> v_487)(false -> v_490);
+    v_497 = merge ck_15_2_0 (true -> v_488)(false -> v_491);
+    s_1 = merge ck_15_1 (true -> v_492)(false -> v_495);
+    s_2_2 = merge ck_15_1 (true -> v_493)(false -> v_496);
+    s_3_4 = merge ck_15_1 (true -> v_494)(false -> v_497);
+    v_498 =
       merge ck_15_3_1_1 (true -> r_St_6_Baixo)(false -> r_St_6_Carregando);
-    v_504 =
+    v_499 =
       merge ck_15_3_1_0
         (true -> 
           (((true when true(ck_15_1)) when false(ck_15_2_1))
             when true(ck_15_3_1_0)))
         (false -> r_St_6_Cheio);
-    v_505 = merge ck_15_2_1 (true -> v_503)(false -> v_504);
-    v_506 = merge ck_15_3_0_1 (true -> r_St_6_Erro)(false -> r_St_6_Limiar1);
-    v_507 =
+    v_500 = merge ck_15_2_1 (true -> v_498)(false -> v_499);
+    v_501 = merge ck_15_3_0_1 (true -> r_St_6_Erro)(false -> r_St_6_Limiar1);
+    v_502 =
       merge ck_15_3_0_0
         (true -> 
           (((true when false(ck_15_1)) when false(ck_15_2_0))
             when true(ck_15_3_0_0)))
         (false -> r_St_6_Limiar2);
-    v_508 = merge ck_15_2_0 (true -> v_506)(false -> v_507);
-    r = merge ck_15_1 (true -> v_505)(false -> v_508);
+    v_503 = merge ck_15_2_0 (true -> v_501)(false -> v_502);
+    r = merge ck_15_1 (true -> v_500)(false -> v_503);
     ck_15_3_1_1 = ((ck_15_3 when true(ck_15_1)) when true(ck_15_2_1));
     ck_15_3_1_0 = ((ck_15_3 when true(ck_15_1)) when false(ck_15_2_1));
     ck_15_2_1 = (ck_15_2 when true(ck_15_1));
@@ -4203,6 +4179,8 @@ contract
     s1 = swr1;
     s3 = swr3;
     s4 = swr4;
+    out_atx_1 = c_atx;
+    out_off_1 = off_atx;
     a = (v_195 or v_196);
     v_196 = not(c_atx);
     v_195 = (ba_1 & s_atx);
@@ -4220,139 +4198,116 @@ contract
     ck_12_2 = s_3_2;
     ck_12_3 = s_3_3;
     estado_2_St_8_Off = 0;
-    atuador_1_St_8_Off = false;
     nr_2_St_8_Off = false;
     ns_2_St_8_Off_1 = true;
     ns_2_St_8_Off_2 = true;
     ns_2_St_8_Off_3 = false;
     estado_2_St_8_Boot = 1;
-    atuador_1_St_8_Boot = true;
     nr_2_St_8_Boot = false;
     ns_2_St_8_Boot_1 = true;
     ns_2_St_8_Boot_2 = true;
     ns_2_St_8_Boot_3 = true;
     estado_2_St_8_Rlevel1 = 2;
-    atuador_1_St_8_Rlevel1 = true;
     nr_2_St_8_Rlevel1 = false;
     ns_2_St_8_Rlevel1_1 = true;
     ns_2_St_8_Rlevel1_2 = false;
     ns_2_St_8_Rlevel1_3 = false;
     estado_2_St_8_Rlevel3 = 3;
-    atuador_1_St_8_Rlevel3 = true;
     nr_2_St_8_Rlevel3 = false;
     ns_2_St_8_Rlevel3_1 = false;
     ns_2_St_8_Rlevel3_2 = false;
     ns_2_St_8_Rlevel3_3 = true;
     estado_2_St_8_Rlevel4 = 4;
-    atuador_1_St_8_Rlevel4 = true;
     nr_2_St_8_Rlevel4 = false;
     ns_2_St_8_Rlevel4_1 = false;
     ns_2_St_8_Rlevel4_2 = false;
     ns_2_St_8_Rlevel4_3 = false;
-    v_509 =
-      merge ck_12_3_1_1
-        (true -> atuador_1_St_8_Boot)(false -> atuador_1_St_8_Off);
-    v_510 =
-      merge ck_12_3_1_0
-        (true -> 
-          (((true when true(ck_12_1)) when false(ck_12_2_1))
-            when true(ck_12_3_1_0)))
-        (false -> atuador_1_St_8_Rlevel1);
-    v_511 = merge ck_12_2_1 (true -> v_509)(false -> v_510);
-    v_512 =
-      merge ck_12_3_0_0
-        (true -> atuador_1_St_8_Rlevel3)(false -> atuador_1_St_8_Rlevel4);
-    v_513 =
-      merge ck_12_2_0
-        (true -> ((true when false(ck_12_1)) when true(ck_12_2_0)))
-        (false -> v_512);
-    atuador_1 = merge ck_12_1 (true -> v_511)(false -> v_513);
-    v_514 =
+    v_504 =
       merge ck_12_3_1_1
         (true -> estado_2_St_8_Boot)(false -> estado_2_St_8_Off);
-    v_515 =
+    v_505 =
       merge ck_12_3_1_0
         (true -> 
           (((0 when true(ck_12_1)) when false(ck_12_2_1))
             when true(ck_12_3_1_0)))
         (false -> estado_2_St_8_Rlevel1);
-    v_516 = merge ck_12_2_1 (true -> v_514)(false -> v_515);
-    v_517 =
+    v_506 = merge ck_12_2_1 (true -> v_504)(false -> v_505);
+    v_507 =
       merge ck_12_3_0_0
         (true -> estado_2_St_8_Rlevel3)(false -> estado_2_St_8_Rlevel4);
-    v_518 =
+    v_508 =
       merge ck_12_2_0
         (true -> ((0 when false(ck_12_1)) when true(ck_12_2_0)))
-        (false -> v_517);
-    estado_2 = merge ck_12_1 (true -> v_516)(false -> v_518);
-    v_519 =
+        (false -> v_507);
+    estado_2 = merge ck_12_1 (true -> v_506)(false -> v_508);
+    v_509 =
       merge ck_12_3_1_1 (true -> ns_2_St_8_Boot_1)(false -> ns_2_St_8_Off_1);
-    v_520 =
+    v_510 =
       merge ck_12_3_1_1 (true -> ns_2_St_8_Boot_2)(false -> ns_2_St_8_Off_2);
-    v_521 =
+    v_511 =
       merge ck_12_3_1_1 (true -> ns_2_St_8_Boot_3)(false -> ns_2_St_8_Off_3);
-    v_522 =
+    v_512 =
       merge ck_12_3_1_0
         (true -> 
           (((true when true(ck_12_1)) when false(ck_12_2_1))
             when true(ck_12_3_1_0)))
         (false -> ns_2_St_8_Rlevel1_1);
-    v_523 =
+    v_513 =
       merge ck_12_3_1_0
         (true -> 
           (((true when true(ck_12_1)) when false(ck_12_2_1))
             when true(ck_12_3_1_0)))
         (false -> ns_2_St_8_Rlevel1_2);
-    v_524 =
+    v_514 =
       merge ck_12_3_1_0
         (true -> 
           (((true when true(ck_12_1)) when false(ck_12_2_1))
             when true(ck_12_3_1_0)))
         (false -> ns_2_St_8_Rlevel1_3);
-    v_525 =
+    v_515 =
       merge ck_12_3_0_0
         (true -> ns_2_St_8_Rlevel3_1)(false -> ns_2_St_8_Rlevel4_1);
-    v_526 =
+    v_516 =
       merge ck_12_3_0_0
         (true -> ns_2_St_8_Rlevel3_2)(false -> ns_2_St_8_Rlevel4_2);
-    v_527 =
+    v_517 =
       merge ck_12_3_0_0
         (true -> ns_2_St_8_Rlevel3_3)(false -> ns_2_St_8_Rlevel4_3);
-    v_528 = merge ck_12_2_1 (true -> v_519)(false -> v_522);
-    v_529 = merge ck_12_2_1 (true -> v_520)(false -> v_523);
-    v_530 = merge ck_12_2_1 (true -> v_521)(false -> v_524);
-    v_531 =
+    v_518 = merge ck_12_2_1 (true -> v_509)(false -> v_512);
+    v_519 = merge ck_12_2_1 (true -> v_510)(false -> v_513);
+    v_520 = merge ck_12_2_1 (true -> v_511)(false -> v_514);
+    v_521 =
       merge ck_12_2_0
         (true -> ((true when false(ck_12_1)) when true(ck_12_2_0)))
-        (false -> v_525);
-    v_532 =
+        (false -> v_515);
+    v_522 =
       merge ck_12_2_0
         (true -> ((true when false(ck_12_1)) when true(ck_12_2_0)))
-        (false -> v_526);
-    v_533 =
+        (false -> v_516);
+    v_523 =
       merge ck_12_2_0
         (true -> ((true when false(ck_12_1)) when true(ck_12_2_0)))
-        (false -> v_527);
-    ns_2_1 = merge ck_12_1 (true -> v_528)(false -> v_531);
-    ns_2_2 = merge ck_12_1 (true -> v_529)(false -> v_532);
-    ns_2_3 = merge ck_12_1 (true -> v_530)(false -> v_533);
-    v_534 =
+        (false -> v_517);
+    ns_2_1 = merge ck_12_1 (true -> v_518)(false -> v_521);
+    ns_2_2 = merge ck_12_1 (true -> v_519)(false -> v_522);
+    ns_2_3 = merge ck_12_1 (true -> v_520)(false -> v_523);
+    v_524 =
       merge ck_12_3_1_1 (true -> nr_2_St_8_Boot)(false -> nr_2_St_8_Off);
-    v_535 =
+    v_525 =
       merge ck_12_3_1_0
         (true -> 
           (((true when true(ck_12_1)) when false(ck_12_2_1))
             when true(ck_12_3_1_0)))
         (false -> nr_2_St_8_Rlevel1);
-    v_536 = merge ck_12_2_1 (true -> v_534)(false -> v_535);
-    v_537 =
+    v_526 = merge ck_12_2_1 (true -> v_524)(false -> v_525);
+    v_527 =
       merge ck_12_3_0_0
         (true -> nr_2_St_8_Rlevel3)(false -> nr_2_St_8_Rlevel4);
-    v_538 =
+    v_528 =
       merge ck_12_2_0
         (true -> ((true when false(ck_12_1)) when true(ck_12_2_0)))
-        (false -> v_537);
-    nr_2 = merge ck_12_1 (true -> v_536)(false -> v_538);
+        (false -> v_527);
+    nr_2 = merge ck_12_1 (true -> v_526)(false -> v_528);
     ck_12_3_1_1 = ((ck_12_3 when true(ck_12_1)) when true(ck_12_2_1));
     ck_12_3_1_0 = ((ck_12_3 when true(ck_12_1)) when false(ck_12_2_1));
     ck_12_2_1 = (ck_12_2 when true(ck_12_1));
@@ -4435,12 +4390,12 @@ contract
         when false(ns_2_St_8_Rlevel4_2_0));
     ns_2_St_8_Rlevel4_2_0 =
       (ns_2_St_8_Rlevel4_2 when false(ns_2_St_8_Rlevel4_1));
-    v_539 = true fby ns_2_1;
-    v_540 = true fby ns_2_2;
-    v_541 = false fby ns_2_3;
-    ck_11_1 = v_539;
-    ck_11_2 = v_540;
-    ck_11_3 = v_541;
+    v_529 = true fby ns_2_1;
+    v_530 = true fby ns_2_2;
+    v_531 = false fby ns_2_3;
+    ck_11_1 = v_529;
+    ck_11_2 = v_530;
+    ck_11_3 = v_531;
     r_2_St_8_Off =
       if (((a when true(ck_11_1)) when true(ck_11_2_1))
            when false(ck_11_3_1_1))
@@ -4733,72 +4688,72 @@ contract
     v_177_3_0_1 = ((v_177_3 when false(v_177_1)) when true(v_177_2_0));
     v_177_3_0_0 = ((v_177_3 when false(v_177_1)) when false(v_177_2_0));
     v_177_2_0 = (v_177_2 when false(v_177_1));
-    v_542 =
+    v_532 =
       merge ck_11_3_1_1 (true -> s_3_St_8_Boot_1)(false -> s_3_St_8_Off_1);
-    v_543 =
+    v_533 =
       merge ck_11_3_1_1 (true -> s_3_St_8_Boot_2)(false -> s_3_St_8_Off_2);
-    v_544 =
+    v_534 =
       merge ck_11_3_1_1 (true -> s_3_St_8_Boot_3)(false -> s_3_St_8_Off_3);
-    v_545 =
+    v_535 =
       merge ck_11_3_1_0
         (true -> 
           (((true when true(ck_11_1)) when false(ck_11_2_1))
             when true(ck_11_3_1_0)))
         (false -> s_3_St_8_Rlevel1_1);
-    v_546 =
+    v_536 =
       merge ck_11_3_1_0
         (true -> 
           (((true when true(ck_11_1)) when false(ck_11_2_1))
             when true(ck_11_3_1_0)))
         (false -> s_3_St_8_Rlevel1_2);
-    v_547 =
+    v_537 =
       merge ck_11_3_1_0
         (true -> 
           (((true when true(ck_11_1)) when false(ck_11_2_1))
             when true(ck_11_3_1_0)))
         (false -> s_3_St_8_Rlevel1_3);
-    v_548 =
+    v_538 =
       merge ck_11_3_0_0
         (true -> s_3_St_8_Rlevel3_1)(false -> s_3_St_8_Rlevel4_1);
-    v_549 =
+    v_539 =
       merge ck_11_3_0_0
         (true -> s_3_St_8_Rlevel3_2)(false -> s_3_St_8_Rlevel4_2);
-    v_550 =
+    v_540 =
       merge ck_11_3_0_0
         (true -> s_3_St_8_Rlevel3_3)(false -> s_3_St_8_Rlevel4_3);
-    v_551 = merge ck_11_2_1 (true -> v_542)(false -> v_545);
-    v_552 = merge ck_11_2_1 (true -> v_543)(false -> v_546);
-    v_553 = merge ck_11_2_1 (true -> v_544)(false -> v_547);
-    v_554 =
+    v_541 = merge ck_11_2_1 (true -> v_532)(false -> v_535);
+    v_542 = merge ck_11_2_1 (true -> v_533)(false -> v_536);
+    v_543 = merge ck_11_2_1 (true -> v_534)(false -> v_537);
+    v_544 =
       merge ck_11_2_0
         (true -> ((true when false(ck_11_1)) when true(ck_11_2_0)))
-        (false -> v_548);
-    v_555 =
+        (false -> v_538);
+    v_545 =
       merge ck_11_2_0
         (true -> ((true when false(ck_11_1)) when true(ck_11_2_0)))
-        (false -> v_549);
-    v_556 =
+        (false -> v_539);
+    v_546 =
       merge ck_11_2_0
         (true -> ((true when false(ck_11_1)) when true(ck_11_2_0)))
-        (false -> v_550);
-    s_3_1 = merge ck_11_1 (true -> v_551)(false -> v_554);
-    s_3_2 = merge ck_11_1 (true -> v_552)(false -> v_555);
-    s_3_3 = merge ck_11_1 (true -> v_553)(false -> v_556);
-    v_557 = merge ck_11_3_1_1 (true -> r_2_St_8_Boot)(false -> r_2_St_8_Off);
-    v_558 =
+        (false -> v_540);
+    s_3_1 = merge ck_11_1 (true -> v_541)(false -> v_544);
+    s_3_2 = merge ck_11_1 (true -> v_542)(false -> v_545);
+    s_3_3 = merge ck_11_1 (true -> v_543)(false -> v_546);
+    v_547 = merge ck_11_3_1_1 (true -> r_2_St_8_Boot)(false -> r_2_St_8_Off);
+    v_548 =
       merge ck_11_3_1_0
         (true -> 
           (((true when true(ck_11_1)) when false(ck_11_2_1))
             when true(ck_11_3_1_0)))
         (false -> r_2_St_8_Rlevel1);
-    v_559 = merge ck_11_2_1 (true -> v_557)(false -> v_558);
-    v_560 =
+    v_549 = merge ck_11_2_1 (true -> v_547)(false -> v_548);
+    v_550 =
       merge ck_11_3_0_0 (true -> r_2_St_8_Rlevel3)(false -> r_2_St_8_Rlevel4);
-    v_561 =
+    v_551 =
       merge ck_11_2_0
         (true -> ((true when false(ck_11_1)) when true(ck_11_2_0)))
-        (false -> v_560);
-    r_2 = merge ck_11_1 (true -> v_559)(false -> v_561);
+        (false -> v_550);
+    r_2 = merge ck_11_1 (true -> v_549)(false -> v_551);
     ck_11_3_1_1 = ((ck_11_3 when true(ck_11_1)) when true(ck_11_2_1));
     ck_11_3_1_0 = ((ck_11_3 when true(ck_11_1)) when false(ck_11_2_1));
     ck_11_2_1 = (ck_11_2 when true(ck_11_1));
@@ -4915,109 +4870,109 @@ contract
     ns_3_St_9_Sleep_1 = false;
     ns_3_St_9_Sleep_2 = false;
     ns_3_St_9_Sleep_3 = true;
-    v_562 =
+    v_552 =
       merge ck_10_3_1_1
         (true -> atuador_St_9_Boot)(false -> atuador_St_9_Off);
-    v_563 =
+    v_553 =
       merge ck_10_3_1_0
         (true -> 
           (((true when true(ck_10_1)) when false(ck_10_2_1))
             when true(ck_10_3_1_0)))
         (false -> atuador_St_9_Online);
-    v_564 = merge ck_10_2_1 (true -> v_562)(false -> v_563);
-    v_565 =
+    v_554 = merge ck_10_2_1 (true -> v_552)(false -> v_553);
+    v_555 =
       merge ck_10_3_0_0
         (true -> atuador_St_9_Sleep)(false -> atuador_St_9_Teste);
-    v_566 =
+    v_556 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
-        (false -> v_565);
-    atuador = merge ck_10_1 (true -> v_564)(false -> v_566);
-    v_567 =
+        (false -> v_555);
+    atuador = merge ck_10_1 (true -> v_554)(false -> v_556);
+    v_557 =
       merge ck_10_3_1_1
         (true -> estado_1_St_9_Boot)(false -> estado_1_St_9_Off);
-    v_568 =
+    v_558 =
       merge ck_10_3_1_0
         (true -> 
           (((0 when true(ck_10_1)) when false(ck_10_2_1))
             when true(ck_10_3_1_0)))
         (false -> estado_1_St_9_Online);
-    v_569 = merge ck_10_2_1 (true -> v_567)(false -> v_568);
-    v_570 =
+    v_559 = merge ck_10_2_1 (true -> v_557)(false -> v_558);
+    v_560 =
       merge ck_10_3_0_0
         (true -> estado_1_St_9_Sleep)(false -> estado_1_St_9_Teste);
-    v_571 =
+    v_561 =
       merge ck_10_2_0
         (true -> ((0 when false(ck_10_1)) when true(ck_10_2_0)))
-        (false -> v_570);
-    estado_1 = merge ck_10_1 (true -> v_569)(false -> v_571);
-    v_572 =
+        (false -> v_560);
+    estado_1 = merge ck_10_1 (true -> v_559)(false -> v_561);
+    v_562 =
       merge ck_10_3_1_1 (true -> ns_3_St_9_Boot_1)(false -> ns_3_St_9_Off_1);
-    v_573 =
+    v_563 =
       merge ck_10_3_1_1 (true -> ns_3_St_9_Boot_2)(false -> ns_3_St_9_Off_2);
-    v_574 =
+    v_564 =
       merge ck_10_3_1_1 (true -> ns_3_St_9_Boot_3)(false -> ns_3_St_9_Off_3);
-    v_575 =
+    v_565 =
       merge ck_10_3_1_0
         (true -> 
           (((true when true(ck_10_1)) when false(ck_10_2_1))
             when true(ck_10_3_1_0)))
         (false -> ns_3_St_9_Online_1);
-    v_576 =
+    v_566 =
       merge ck_10_3_1_0
         (true -> 
           (((true when true(ck_10_1)) when false(ck_10_2_1))
             when true(ck_10_3_1_0)))
         (false -> ns_3_St_9_Online_2);
-    v_577 =
+    v_567 =
       merge ck_10_3_1_0
         (true -> 
           (((true when true(ck_10_1)) when false(ck_10_2_1))
             when true(ck_10_3_1_0)))
         (false -> ns_3_St_9_Online_3);
-    v_578 =
+    v_568 =
       merge ck_10_3_0_0
         (true -> ns_3_St_9_Sleep_1)(false -> ns_3_St_9_Teste_1);
-    v_579 =
+    v_569 =
       merge ck_10_3_0_0
         (true -> ns_3_St_9_Sleep_2)(false -> ns_3_St_9_Teste_2);
-    v_580 =
+    v_570 =
       merge ck_10_3_0_0
         (true -> ns_3_St_9_Sleep_3)(false -> ns_3_St_9_Teste_3);
-    v_581 = merge ck_10_2_1 (true -> v_572)(false -> v_575);
-    v_582 = merge ck_10_2_1 (true -> v_573)(false -> v_576);
-    v_583 = merge ck_10_2_1 (true -> v_574)(false -> v_577);
-    v_584 =
+    v_571 = merge ck_10_2_1 (true -> v_562)(false -> v_565);
+    v_572 = merge ck_10_2_1 (true -> v_563)(false -> v_566);
+    v_573 = merge ck_10_2_1 (true -> v_564)(false -> v_567);
+    v_574 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
-        (false -> v_578);
-    v_585 =
+        (false -> v_568);
+    v_575 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
-        (false -> v_579);
-    v_586 =
+        (false -> v_569);
+    v_576 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
-        (false -> v_580);
-    ns_3_1 = merge ck_10_1 (true -> v_581)(false -> v_584);
-    ns_3_2 = merge ck_10_1 (true -> v_582)(false -> v_585);
-    ns_3_3 = merge ck_10_1 (true -> v_583)(false -> v_586);
-    v_587 =
+        (false -> v_570);
+    ns_3_1 = merge ck_10_1 (true -> v_571)(false -> v_574);
+    ns_3_2 = merge ck_10_1 (true -> v_572)(false -> v_575);
+    ns_3_3 = merge ck_10_1 (true -> v_573)(false -> v_576);
+    v_577 =
       merge ck_10_3_1_1 (true -> nr_3_St_9_Boot)(false -> nr_3_St_9_Off);
-    v_588 =
+    v_578 =
       merge ck_10_3_1_0
         (true -> 
           (((true when true(ck_10_1)) when false(ck_10_2_1))
             when true(ck_10_3_1_0)))
         (false -> nr_3_St_9_Online);
-    v_589 = merge ck_10_2_1 (true -> v_587)(false -> v_588);
-    v_590 =
+    v_579 = merge ck_10_2_1 (true -> v_577)(false -> v_578);
+    v_580 =
       merge ck_10_3_0_0 (true -> nr_3_St_9_Sleep)(false -> nr_3_St_9_Teste);
-    v_591 =
+    v_581 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
-        (false -> v_590);
-    nr_3 = merge ck_10_1 (true -> v_589)(false -> v_591);
+        (false -> v_580);
+    nr_3 = merge ck_10_1 (true -> v_579)(false -> v_581);
     ck_10_3_1_1 = ((ck_10_3 when true(ck_10_1)) when true(ck_10_2_1));
     ck_10_3_1_0 = ((ck_10_3 when true(ck_10_1)) when false(ck_10_2_1));
     ck_10_2_1 = (ck_10_2 when true(ck_10_1));
@@ -5095,12 +5050,12 @@ contract
       ((ns_3_St_9_Sleep_3 when false(ns_3_St_9_Sleep_1))
         when false(ns_3_St_9_Sleep_2_0));
     ns_3_St_9_Sleep_2_0 = (ns_3_St_9_Sleep_2 when false(ns_3_St_9_Sleep_1));
-    v_592 = true fby ns_3_1;
-    v_593 = true fby ns_3_2;
-    v_594 = false fby ns_3_3;
-    ck_9_1 = v_592;
-    ck_9_2 = v_593;
-    ck_9_3 = v_594;
+    v_582 = true fby ns_3_1;
+    v_583 = true fby ns_3_2;
+    v_584 = false fby ns_3_3;
+    ck_9_1 = v_582;
+    ck_9_2 = v_583;
+    ck_9_3 = v_584;
     r_3_St_9_Off =
       if (((c when true(ck_9_1)) when true(ck_9_2_1)) when false(ck_9_3_1_1))
       then true
@@ -5316,69 +5271,69 @@ contract
     v_164_3_0_1 = ((v_164_3 when false(v_164_1)) when true(v_164_2_0));
     v_164_3_0_0 = ((v_164_3 when false(v_164_1)) when false(v_164_2_0));
     v_164_2_0 = (v_164_2 when false(v_164_1));
-    v_595 =
+    v_585 =
       merge ck_9_3_1_1 (true -> s_4_St_9_Boot_1)(false -> s_4_St_9_Off_1);
-    v_596 =
+    v_586 =
       merge ck_9_3_1_1 (true -> s_4_St_9_Boot_2)(false -> s_4_St_9_Off_2);
-    v_597 =
+    v_587 =
       merge ck_9_3_1_1 (true -> s_4_St_9_Boot_3)(false -> s_4_St_9_Off_3);
-    v_598 =
+    v_588 =
       merge ck_9_3_1_0
         (true -> 
           (((true when true(ck_9_1)) when false(ck_9_2_1))
             when true(ck_9_3_1_0)))
         (false -> s_4_St_9_Online_1);
-    v_599 =
+    v_589 =
       merge ck_9_3_1_0
         (true -> 
           (((true when true(ck_9_1)) when false(ck_9_2_1))
             when true(ck_9_3_1_0)))
         (false -> s_4_St_9_Online_2);
-    v_600 =
+    v_590 =
       merge ck_9_3_1_0
         (true -> 
           (((true when true(ck_9_1)) when false(ck_9_2_1))
             when true(ck_9_3_1_0)))
         (false -> s_4_St_9_Online_3);
-    v_601 =
+    v_591 =
       merge ck_9_3_0_0 (true -> s_4_St_9_Sleep_1)(false -> s_4_St_9_Teste_1);
-    v_602 =
+    v_592 =
       merge ck_9_3_0_0 (true -> s_4_St_9_Sleep_2)(false -> s_4_St_9_Teste_2);
-    v_603 =
+    v_593 =
       merge ck_9_3_0_0 (true -> s_4_St_9_Sleep_3)(false -> s_4_St_9_Teste_3);
-    v_604 = merge ck_9_2_1 (true -> v_595)(false -> v_598);
-    v_605 = merge ck_9_2_1 (true -> v_596)(false -> v_599);
-    v_606 = merge ck_9_2_1 (true -> v_597)(false -> v_600);
-    v_607 =
+    v_594 = merge ck_9_2_1 (true -> v_585)(false -> v_588);
+    v_595 = merge ck_9_2_1 (true -> v_586)(false -> v_589);
+    v_596 = merge ck_9_2_1 (true -> v_587)(false -> v_590);
+    v_597 =
       merge ck_9_2_0
         (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
-        (false -> v_601);
-    v_608 =
+        (false -> v_591);
+    v_598 =
       merge ck_9_2_0
         (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
-        (false -> v_602);
-    v_609 =
+        (false -> v_592);
+    v_599 =
       merge ck_9_2_0
         (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
-        (false -> v_603);
-    s_4_1 = merge ck_9_1 (true -> v_604)(false -> v_607);
-    s_4_2 = merge ck_9_1 (true -> v_605)(false -> v_608);
-    s_4_3 = merge ck_9_1 (true -> v_606)(false -> v_609);
-    v_610 = merge ck_9_3_1_1 (true -> r_3_St_9_Boot)(false -> r_3_St_9_Off);
-    v_611 =
+        (false -> v_593);
+    s_4_1 = merge ck_9_1 (true -> v_594)(false -> v_597);
+    s_4_2 = merge ck_9_1 (true -> v_595)(false -> v_598);
+    s_4_3 = merge ck_9_1 (true -> v_596)(false -> v_599);
+    v_600 = merge ck_9_3_1_1 (true -> r_3_St_9_Boot)(false -> r_3_St_9_Off);
+    v_601 =
       merge ck_9_3_1_0
         (true -> 
           (((true when true(ck_9_1)) when false(ck_9_2_1))
             when true(ck_9_3_1_0)))
         (false -> r_3_St_9_Online);
-    v_612 = merge ck_9_2_1 (true -> v_610)(false -> v_611);
-    v_613 =
+    v_602 = merge ck_9_2_1 (true -> v_600)(false -> v_601);
+    v_603 =
       merge ck_9_3_0_0 (true -> r_3_St_9_Sleep)(false -> r_3_St_9_Teste);
-    v_614 =
+    v_604 =
       merge ck_9_2_0
         (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
-        (false -> v_613);
-    r_3 = merge ck_9_1 (true -> v_612)(false -> v_614);
+        (false -> v_603);
+    r_3 = merge ck_9_1 (true -> v_602)(false -> v_604);
     ck_9_3_1_1 = ((ck_9_3 when true(ck_9_1)) when true(ck_9_2_1));
     ck_9_3_1_0 = ((ck_9_3 when true(ck_9_1)) when false(ck_9_2_1));
     ck_9_2_1 = (ck_9_2 when true(ck_9_1));
@@ -5482,7 +5437,8 @@ contract
     modem_estado = estado_1;
     modem_atuador = atuador;
     serv_estado = estado_2;
-    serv_atuador = atuador_1;
+    out_off = out_off_1;
+    out_atx = out_atx_1;
     dia = isday;
     bat12v_1 = estado_bat_1;
     bat12v_2 = estado_bat_2;
@@ -5493,10 +5449,9 @@ contract
     erro_BERR = true;
     r_dia_BERR = (v_162 & v_163);
     v_163 =
-      not
-      ((((serv_atuador when false(ck_1)) when false(ck_2_0))
-         when false(ck_3_0_0)))
-        ;
+      ((((serv_estado when false(ck_1)) when false(ck_2_0))
+         when false(ck_3_0_0))
+       = 0);
     v_162 = (v_160 & v_161);
     v_161 =
       not
@@ -5513,10 +5468,9 @@ contract
         ;
     r_noite_BERR = (v_157 & v_158);
     v_158 =
-      not
-      ((((serv_atuador when false(ck_1)) when false(ck_2_0))
-         when false(ck_3_0_0)))
-        ;
+      ((((serv_estado when false(ck_1)) when false(ck_2_0))
+         when false(ck_3_0_0))
+       = 0);
     v_157 = (v_155 & v_156);
     v_156 =
       not
@@ -5567,10 +5521,9 @@ contract
     erro_B25 = false;
     r_dia_B25 = (v_142 & v_143);
     v_143 =
-      not
-      ((((serv_atuador when true(ck_1)) when true(ck_2_1))
-         when false(ck_3_1_1)))
-        ;
+      ((((serv_estado when true(ck_1)) when true(ck_2_1))
+         when false(ck_3_1_1))
+       = 0);
     v_142 = (v_140 & v_141);
     v_141 =
       not
@@ -5587,10 +5540,9 @@ contract
         ;
     r_noite_B25 = (v_137 & v_138);
     v_138 =
-      not
-      ((((serv_atuador when true(ck_1)) when true(ck_2_1))
-         when false(ck_3_1_1)))
-        ;
+      ((((serv_estado when true(ck_1)) when true(ck_2_1))
+         when false(ck_3_1_1))
+       = 0);
     v_137 = (v_135 & v_136);
     v_136 =
       not
@@ -5626,10 +5578,9 @@ contract
         ;
     r_noite_B50 = (v_126 & v_127);
     v_127 =
-      not
-      ((((serv_atuador when true(ck_1)) when false(ck_2_1))
-         when false(ck_3_1_0)))
-        ;
+      ((((serv_estado when true(ck_1)) when false(ck_2_1))
+         when false(ck_3_1_0))
+       = 0);
     v_126 = (v_124 & v_125);
     v_125 =
       ((((modem_estado when true(ck_1)) when false(ck_2_1))
@@ -5666,10 +5617,9 @@ contract
         ;
     r_noite_B75 = (v_114 & v_115);
     v_115 =
-      not
-      ((((serv_atuador when false(ck_1)) when true(ck_2_0))
-         when true(ck_3_0_1)))
-        ;
+      ((((serv_estado when false(ck_1)) when true(ck_2_0))
+         when true(ck_3_0_1))
+       = 0);
     v_114 = (v_112 & v_113);
     v_113 =
       ((((modem_estado when false(ck_1)) when true(ck_2_0))
@@ -5716,51 +5666,51 @@ contract
         ;
     v_101 =
       not((((dia when false(ck_1)) when true(ck_2_0)) when false(ck_3_0_1)));
-    v_615 = merge ck_3_1_1 (true -> erro_BCHR)(false -> erro_B25);
-    v_616 =
+    v_605 = merge ck_3_1_1 (true -> erro_BCHR)(false -> erro_B25);
+    v_606 =
       merge ck_3_1_0
         (true -> 
           (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
         (false -> erro_B50);
-    v_617 = merge ck_2_1 (true -> v_615)(false -> v_616);
-    v_618 = merge ck_3_0_1 (true -> erro_B75)(false -> erro_B100);
-    v_619 =
+    v_607 = merge ck_2_1 (true -> v_605)(false -> v_606);
+    v_608 = merge ck_3_0_1 (true -> erro_B75)(false -> erro_B100);
+    v_609 =
       merge ck_3_0_0
         (true -> 
           (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_0_0)))
         (false -> erro_BERR);
-    v_620 = merge ck_2_0 (true -> v_618)(false -> v_619);
-    erro = merge ck_1 (true -> v_617)(false -> v_620);
-    v_621 = merge ck_3_1_1 (true -> r_dia_BCHR)(false -> r_dia_B25);
-    v_622 =
+    v_610 = merge ck_2_0 (true -> v_608)(false -> v_609);
+    erro = merge ck_1 (true -> v_607)(false -> v_610);
+    v_611 = merge ck_3_1_1 (true -> r_dia_BCHR)(false -> r_dia_B25);
+    v_612 =
       merge ck_3_1_0
         (true -> 
           (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
         (false -> r_dia_B50);
-    v_623 = merge ck_2_1 (true -> v_621)(false -> v_622);
-    v_624 = merge ck_3_0_1 (true -> r_dia_B75)(false -> r_dia_B100);
-    v_625 =
+    v_613 = merge ck_2_1 (true -> v_611)(false -> v_612);
+    v_614 = merge ck_3_0_1 (true -> r_dia_B75)(false -> r_dia_B100);
+    v_615 =
       merge ck_3_0_0
         (true -> 
           (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_0_0)))
         (false -> r_dia_BERR);
-    v_626 = merge ck_2_0 (true -> v_624)(false -> v_625);
-    r_dia = merge ck_1 (true -> v_623)(false -> v_626);
-    v_627 = merge ck_3_1_1 (true -> r_noite_BCHR)(false -> r_noite_B25);
-    v_628 =
+    v_616 = merge ck_2_0 (true -> v_614)(false -> v_615);
+    r_dia = merge ck_1 (true -> v_613)(false -> v_616);
+    v_617 = merge ck_3_1_1 (true -> r_noite_BCHR)(false -> r_noite_B25);
+    v_618 =
       merge ck_3_1_0
         (true -> 
           (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
         (false -> r_noite_B50);
-    v_629 = merge ck_2_1 (true -> v_627)(false -> v_628);
-    v_630 = merge ck_3_0_1 (true -> r_noite_B75)(false -> r_noite_B100);
-    v_631 =
+    v_619 = merge ck_2_1 (true -> v_617)(false -> v_618);
+    v_620 = merge ck_3_0_1 (true -> r_noite_B75)(false -> r_noite_B100);
+    v_621 =
       merge ck_3_0_0
         (true -> 
           (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_0_0)))
         (false -> r_noite_BERR);
-    v_632 = merge ck_2_0 (true -> v_630)(false -> v_631);
-    r_noite = merge ck_1 (true -> v_629)(false -> v_632);
+    v_622 = merge ck_2_0 (true -> v_620)(false -> v_621);
+    r_noite = merge ck_1 (true -> v_619)(false -> v_622);
     ck_3_1_1 = ((ck_3 when true(ck_1)) when true(ck_2_1));
     ck_3_1_0 = ((ck_3 when true(ck_1)) when false(ck_2_1));
     ck_2_1 = (ck_2 when true(ck_1));

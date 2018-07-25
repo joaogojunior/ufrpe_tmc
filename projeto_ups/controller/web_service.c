@@ -166,10 +166,14 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   sprintf(aux, "%d", _res.modem_atuador);
   strcat(json, aux);
 
-  strcat(json, ",\'serv_atuador\':");
-  sprintf(aux, "%d", _res.serv_atuador);
+  strcat(json, ",\'out_atx\':");
+  sprintf(aux, "%d", _res.out_atx);
   strcat(json, aux);
   
+  strcat(json, ",\'out_off\':");
+  sprintf(aux, "%d", _res.out_off);
+  strcat(json, aux);
+
   strcat(json, ",\'modem_estado\':");
   sprintf(aux, "%d", _res.modem_estado);
   strcat(json, aux);

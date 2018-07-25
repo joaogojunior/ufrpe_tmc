@@ -1,4 +1,4 @@
-/* --- Generated the 23/7/2018 at 5:47 --- */
+/* --- Generated the 24/7/2018 at 23:0 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -8,14 +8,15 @@
 #include "ups_controlador_types.h"
 #include "contrato_controller.h"
 typedef struct Ups_controlador__computador_mem {
-  int v_297;
-  int v_296;
-  int v_295;
+  int v_292;
+  int v_291;
+  int v_290;
   int pnr;
 } Ups_controlador__computador_mem;
 
 typedef struct Ups_controlador__computador_out {
-  int atuador;
+  int out_atx;
+  int out_off;
   int estado;
 } Ups_controlador__computador_out;
 
@@ -29,9 +30,9 @@ void Ups_controlador__computador_step(int c_atx, int off_atx, int ts,
                                       Ups_controlador__computador_mem* self);
 
 typedef struct Ups_controlador__bateria_mem {
-  int v_362;
-  int v_361;
-  int v_360;
+  int v_357;
+  int v_356;
+  int v_355;
   int pnr;
 } Ups_controlador__bateria_mem;
 
@@ -92,9 +93,9 @@ void Ups_controlador__led_step(int s, Ups_controlador__led_out* _out,
                                Ups_controlador__led_mem* self);
 
 typedef struct Ups_controlador__modem_adsl_mem {
-  int v_419;
-  int v_418;
-  int v_417;
+  int v_414;
+  int v_413;
+  int v_412;
   int pnr;
 } Ups_controlador__modem_adsl_mem;
 
@@ -110,16 +111,16 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
                                       Ups_controlador__modem_adsl_mem* self);
 
 typedef struct Ups_controlador__contrato_mem {
-  int v_484;
-  int v_483;
-  int v_482;
+  int v_479;
+  int v_478;
+  int v_477;
   int ck_13_1;
-  int v_541;
-  int v_540;
-  int v_539;
-  int v_594;
-  int v_593;
-  int v_592;
+  int v_531;
+  int v_530;
+  int v_529;
+  int v_584;
+  int v_583;
+  int v_582;
   int ck_7_1;
   int pnr_4;
   int pnr_3;
@@ -135,7 +136,8 @@ typedef struct Ups_controlador__contrato_out {
   int r_noite;
   int pabx_atuador;
   int modem_atuador;
-  int serv_atuador;
+  int out_atx;
+  int out_off;
   int modem_estado;
   int serv_estado;
   int bat12v_3;

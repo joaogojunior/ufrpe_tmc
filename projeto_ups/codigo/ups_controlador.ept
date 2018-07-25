@@ -3,9 +3,11 @@
     unless => transiciona para outro estado e executa o novo estado
 *)
 
-node computador(c_atx, off_atx, ts, cr1, cr3, cr4, ba, b1, b3, b4, s_atx, s1, s3, s4:bool) returns (atuador:bool; estado: int;)
+node computador(c_atx, off_atx, ts, cr1, cr3, cr4, ba, b1, b3, b4, s_atx, s1, s3, s4:bool) returns (out_atx, out_off:bool; estado: int;)
 var a, r1, r3, r4: bool;
 let
+out_atx = c_atx;
+out_off = off_atx;
 a = (ba & s_atx) or not c_atx;
 r1 = (b1 & s1) or not cr1;
 r3 = (b3 & s3) or not cr3;
@@ -13,28 +15,23 @@ r4 = (b4 & s4) or not cr4;
     automaton
     state Off do
       estado = 0;
-      atuador = false;
     unless a then Boot
     state Boot do
       estado = 1;
-      atuador = true;
     unless off_atx then Off
       | ts then Rlevel1
     state Rlevel1 do
       estado = 2;
-      atuador = true;
     unless a then Off
       | r3  then Rlevel3
       | r4  then Rlevel4
     state Rlevel3 do
       estado = 3;
-      atuador = true;
     unless a then Off
       | r1 then Rlevel1
       | r4 then Rlevel4
     state Rlevel4 do
       estado = 4;
-      atuador = true;
     unless a then Off
       | r1 then Rlevel1
       | r3 then Rlevel3
@@ -157,7 +154,7 @@ let
 tel
 
 node contrato( ac, cb, l1b, l2b, vb, td, tm, om, ts, swa, swr1, swr3, swr4: bool )
- returns ( erro,  dia, r_dia, r_noite, pabx_atuador, modem_atuador, serv_atuador: bool;  modem_estado, serv_estado: int; bat12v: bat_states)
+ returns ( erro,  dia, r_dia, r_noite, pabx_atuador, modem_atuador, out_atx, out_off: bool;  modem_estado, serv_estado: int; bat12v: bat_states)
     contract
 
      enforce (r_dia or r_noite)
@@ -167,7 +164,7 @@ let
 (* planta *)
     pabx_atuador = inlined atuador_sw(cp);
     (modem_atuador, modem_estado) = inlined modem_adsl(cm, tm, om);
-    (serv_atuador, serv_estado) = inlined computador(ca, co, ts, cr1, cr3, cr4, ba, br1, br3, br4, swa, swr1, swr3, swr4);
+    (out_atx, out_off, serv_estado) = inlined computador(ca, co, ts, cr1, cr3, cr4, ba, br1, br3, br4, swa, swr1, swr3, swr4);
 
     dia = inlined periodo_dia(td);
     bat12v = inlined bateria(ac, cb, l1b, l2b, vb);
@@ -175,24 +172,24 @@ let
      switch bat12v
      | BERR do
           erro = true;
-          r_dia = dia & not pabx_atuador & not modem_atuador & not serv_atuador;
-          r_noite = not dia & not pabx_atuador & not modem_atuador & not serv_atuador;
+          r_dia = dia & not pabx_atuador & not modem_atuador & ( serv_estado = 0 );
+          r_noite = not dia & not pabx_atuador & not modem_atuador & ( serv_estado = 0 );
      | BCHR do
           erro = false;
           r_dia =  dia & pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0 );   
           r_noite = not dia & pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0);
      | B25 do
           erro = false;
-          r_dia = dia & not pabx_atuador & not modem_atuador & not serv_atuador;
-          r_noite = not dia & not pabx_atuador & not modem_atuador & not serv_atuador;
+          r_dia = dia & not pabx_atuador & not modem_atuador & ( serv_estado = 0 );
+          r_noite = not dia & not pabx_atuador & not modem_atuador & ( serv_estado = 0 );
      | B50 do
           erro = false;
           r_dia =  dia & not pabx_atuador & (modem_estado > 0 ) & (serv_estado < 3) ;   
-          r_noite = not dia & not pabx_atuador & (modem_estado > 0 ) & not serv_atuador;
+          r_noite = not dia & not pabx_atuador & (modem_estado > 0 ) & ( serv_estado = 0 );
      | B75 do
           erro = false;
           r_dia =  dia & pabx_atuador & (modem_estado > 0 ) & ( serv_estado > 0 & serv_estado < 4 );
-          r_noite = not dia & not pabx_atuador & (modem_estado > 0 ) & not serv_atuador;
+          r_noite = not dia & not pabx_atuador & (modem_estado > 0 ) & ( serv_estado = 0 );
      | B100 do
           erro = false;
           r_dia =  dia & pabx_atuador & (modem_estado > 0 ) & (serv_estado > 0 );   
