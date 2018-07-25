@@ -1,4 +1,4 @@
-/* --- Generated the 24/7/2018 at 23:0 --- */
+/* --- Generated the 25/7/2018 at 8:45 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -291,8 +291,8 @@ void Ups_controlador__computador_step(int c_atx, int off_atx, int ts,
   int r1;
   int r3;
   int r4;
-  _out->out_atx = c_atx;
-  _out->out_off = off_atx;
+  _out->out_atx = !(c_atx);
+  _out->out_off = !(off_atx);
   v_21 = !(c_atx);
   v_20 = (ba&&s_atx);
   a = (v_20||v_21);
@@ -5290,11 +5290,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   cm = Contrato_controller__contrato_controller_out_st.contrato_cm;
   cp = Contrato_controller__contrato_controller_out_st.contrato_cp;
   c_atx = ca;
-  out_atx_1 = c_atx;
+  out_atx_1 = !(c_atx);
   _out->out_atx = out_atx_1;
   v_196 = !(c_atx);
   off_atx = co;
-  out_off_1 = off_atx;
+  out_off_1 = !(off_atx);
   _out->out_off = out_off_1;
   cr1_1 = cr1;
   v_194 = !(cr1_1);

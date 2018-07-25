@@ -95,8 +95,8 @@ var v_289 : bool; v_288 : bool; v_287 : bool; v_286 : bool; v_285 : bool;
     ns_1 : bool; r : bool; nr : bool; pnr : bool; a : bool; r1 : bool;
     r3 : bool; r4 : bool;
 let
-  out_atx = c_atx;
-  out_off = off_atx;
+  out_atx = not(c_atx);
+  out_off = not(off_atx);
   a = (v_20 or v_21);
   v_21 = not(c_atx);
   v_20 = (ba & s_atx);
@@ -4179,8 +4179,8 @@ contract
     s1 = swr1;
     s3 = swr3;
     s4 = swr4;
-    out_atx_1 = c_atx;
-    out_off_1 = off_atx;
+    out_atx_1 = not(c_atx);
+    out_off_1 = not(off_atx);
     a = (v_195 or v_196);
     v_196 = not(c_atx);
     v_195 = (ba_1 & s_atx);

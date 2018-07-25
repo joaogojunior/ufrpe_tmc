@@ -1,4 +1,4 @@
-% --- Generated the 24/7/2018 at 23:0 --- %
+% --- Generated the 25/7/2018 at 8:45 --- %
 % --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- %
 % --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- %
 
@@ -66,12 +66,12 @@ contrato_v_194 : (not contrato_cr1_1);
 contrato_r1 : (contrato_v_193 or contrato_v_194);
 contrato_ts_1 : contrato_ts;
 contrato_off_atx : contrato_co;
-contrato_out_off_1 : contrato_off_atx;
+contrato_out_off_1 : (not contrato_off_atx);
 contrato_out_off : contrato_out_off_1;
 contrato_c_atx : contrato_ca;
 contrato_v_196 : (not contrato_c_atx);
 contrato_a : (contrato_v_195 or contrato_v_196);
-contrato_out_atx_1 : contrato_c_atx;
+contrato_out_atx_1 : (not contrato_c_atx);
 contrato_out_atx : contrato_out_atx_1;
 contrato_t_1 : contrato_td;
 contrato_ck_15_3 : contrato_v_479;

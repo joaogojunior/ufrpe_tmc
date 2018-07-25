@@ -6,8 +6,8 @@
 node computador(c_atx, off_atx, ts, cr1, cr3, cr4, ba, b1, b3, b4, s_atx, s1, s3, s4:bool) returns (out_atx, out_off:bool; estado: int;)
 var a, r1, r3, r4: bool;
 let
-out_atx = c_atx;
-out_off = off_atx;
+out_atx = not c_atx;
+out_off = not off_atx;
 a = (ba & s_atx) or not c_atx;
 r1 = (b1 & s1) or not cr1;
 r3 = (b3 & s3) or not cr3;
