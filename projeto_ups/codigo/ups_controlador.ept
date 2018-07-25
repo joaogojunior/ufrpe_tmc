@@ -3,11 +3,9 @@
     unless => transiciona para outro estado e executa o novo estado
 *)
 
-node computador(c_atx, off_atx, ts, cr1, cr3, cr4, ba, b1, b3, b4, s_atx, s1, s3, s4:bool) returns (out_atx, out_off:bool; estado: int;)
+node computador(c_atx, off_atx, ts, cr1, cr3, cr4, ba, b1, b3, b4, s_atx, s1, s3, s4:bool) returns (estado: int;)
 var a, r1, r3, r4: bool;
 let
-out_atx = not c_atx;
-out_off = not off_atx;
 a = (ba & s_atx) or not c_atx;
 r1 = (b1 & s1) or not cr1;
 r3 = (b3 & s3) or not cr3;
@@ -154,7 +152,7 @@ let
 tel
 
 node contrato( ac, cb, l1b, l2b, vb, td, tm, om, ts, swa, swr1, swr3, swr4: bool )
- returns ( erro,  dia, r_dia, r_noite, pabx_atuador, modem_atuador, out_atx, out_off: bool;  modem_estado, serv_estado: int; bat12v: bat_states)
+ returns ( erro,  dia, r_dia, r_noite, pabx_atuador, modem_atuador: bool;  modem_estado, serv_estado: int; bat12v: bat_states)
     contract
 
      enforce (r_dia or r_noite)
@@ -164,7 +162,7 @@ let
 (* planta *)
     pabx_atuador = inlined atuador_sw(cp);
     (modem_atuador, modem_estado) = inlined modem_adsl(cm, tm, om);
-    (out_atx, out_off, serv_estado) = inlined computador(ca, co, ts, cr1, cr3, cr4, ba, br1, br3, br4, swa, swr1, swr3, swr4);
+    serv_estado = inlined computador(ca, co, ts, cr1, cr3, cr4, ba, br1, br3, br4, swa, swr1, swr3, swr4);
 
     dia = inlined periodo_dia(td);
     bat12v = inlined bateria(ac, cb, l1b, l2b, vb);

@@ -14,12 +14,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "_main.h"
+#include <bcm2835.h>
 
 #define PORT 8082
 #define n 14
 
+#define LED_ERRO RPI_GPIO_P1_11
+
 Ups_controlador__contrato_mem mem;
+Ups_controlador__contrato_out _res;
+
 int glob_cnt=0;
+
+    int ac = 0;
+    int cb = 0;
+    int l1b = 0;
+    int l2b = 0;
+    int vb = 0;
+    int td = 0;
+    int tm = 0;
+    int om = 0;
+    int ts = 0;
+    int swa = 0;
+    int swr1 = 0;
+    int swr3 = 0;
+    int swr4 = 0;
+
+int semaforo = 0;
 
 struct item
 {
@@ -53,22 +74,10 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   
   int step_c;
   int step_max;
-  
-    int ac = 0;
-    int cb = 0;
-    int l1b = 0;
-    int l2b = 0;
-    int vb = 0;
-    int td = 0;
-    int tm = 0;
-    int om = 0;
-    int ts = 0;
-    int swa = 0;
-    int swr1 = 0;
-    int swr3 = 0;
-    int swr4 = 0;
 
-  Ups_controlador__contrato_out _res;
+  while (semaforo) {}
+
+  semaforo = 1;
 
   int i;
   for(i= 0; i < n; i++)
@@ -202,12 +211,24 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   MHD_create_response_from_buffer (strlen (json), (void *) json, 
 				     MHD_RESPMEM_PERSISTENT);
   ret = MHD_queue_response (connection, MHD_HTTP_OK, response);
+
+  semaforo = 0;
+
   MHD_destroy_response (response);
 
   return ret;
 }
 
 int main(int argc, char** argv) {
+  
+/*setup do bcm2835*/
+ if (!bcm2835_init()) {
+	 printf ("Erro no init do bcm2835!");
+	 return 1;
+ }
+
+/* seta pino do led como output*/
+bcm2835_gpio_fsel(LED_ERRO, BCM2835_GPIO_FSEL_OUTP);
   
   struct MHD_Daemon *daemon;
   
@@ -225,7 +246,34 @@ int main(int argc, char** argv) {
   if (NULL == daemon)
     return 1;
 
-  (void) getchar ();
+  while (1) {
+
+  bcm2835_delay(1000);
+
+  /* aqui faz o polling de cada entrada*/
+
+  while (semaforo) {}
+
+  semaforo = 1;
+
+  Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
+		                                         swr1, swr3, swr4, &_res, &mem);
+
+
+  /* aqui procesa as saidos e escreve no gpio ou faz post no webservice do pc*/
+
+    if ( _res.erro == 1)
+    {
+      bcm2835_gpio_write(LED_ERRO, HIGH);
+    } 
+    else 
+    {
+      bcm2835_gpio_write(LED_ERRO, LOW);
+    }
+
+  semaforo =0;
+
+  };
 
   MHD_stop_daemon (daemon);
   return 0;
