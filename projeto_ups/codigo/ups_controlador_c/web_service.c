@@ -311,7 +311,6 @@ int main(int argc, char** argv) {
   if (NULL == daemon)
     return 1;
 
-  /* loop principal do pooling */
   while (1) {
 
   bcm2835_delay(1000);
