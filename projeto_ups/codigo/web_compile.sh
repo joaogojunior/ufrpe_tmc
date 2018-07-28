@@ -1,1 +1,0 @@
-../controller/web_compile.sh

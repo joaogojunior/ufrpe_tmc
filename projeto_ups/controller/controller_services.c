@@ -180,14 +180,6 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   sprintf(aux, "%d", _res.modem_atuador);
   strcat(json, aux);
 
-  strcat(json, ",\'out_atx\':");
-  sprintf(aux, "%d", _res.out_atx);
-  strcat(json, aux);
-  
-  strcat(json, ",\'out_off\':");
-  sprintf(aux, "%d", _res.out_off);
-  strcat(json, aux);
-
   strcat(json, ",\'modem_estado\':");
   sprintf(aux, "%d", _res.modem_estado);
   strcat(json, aux);
@@ -266,13 +258,13 @@ int http_post(void)
 int inicia_bcm(void) {
 
  if (!bcm2835_init()) {
-	 printf ("Erro no init do bcm2835!");
 	 return 1;
  }
 
 /* seta pino do led como output*/
 bcm2835_gpio_fsel(LED_ERRO, BCM2835_GPIO_FSEL_OUTP);
 
+return 0;
 }
 
 
@@ -293,7 +285,11 @@ int saida_gpio (void) {
 
 int main(int argc, char** argv) {
   
-  inicia_bcm();
+
+ if (inicia_bcm()) {
+	 printf ("Erro no init do bcm2835!");
+	 return 1;
+ }
 
   struct MHD_Daemon *daemon;
   
@@ -313,7 +309,8 @@ int main(int argc, char** argv) {
 
   /* loop principal do pooling */
   while (1) {
-
+ 
+  /* espera 1 seg */
   bcm2835_delay(1000);
 
   /* aqui faz o polling de cada entrada*/
