@@ -1,4 +1,4 @@
-/* --- Generated the 25/7/2018 at 8:45 --- */
+/* --- Generated the 28/7/2018 at 7:48 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -291,8 +291,6 @@ void Ups_controlador__computador_step(int c_atx, int off_atx, int ts,
   int r1;
   int r3;
   int r4;
-  _out->out_atx = !(c_atx);
-  _out->out_off = !(off_atx);
   v_21 = !(c_atx);
   v_20 = (ba&&s_atx);
   a = (v_20||v_21);
@@ -2994,75 +2992,6 @@ void Ups_controlador__periodo_dia_step(int t,
   self->ck_1 = ns_1;;
 }
 
-void Ups_controlador__led_reset(Ups_controlador__led_mem* self) {
-  self->pnr = false;
-  self->ck_1 = true;
-}
-
-void Ups_controlador__led_step(int s, Ups_controlador__led_out* _out,
-                               Ups_controlador__led_mem* self) {
-  
-  int nr_St_4_On;
-  int ns_St_4_On_1;
-  int enabled_St_4_On;
-  int nr_St_4_Off;
-  int ns_St_4_Off_1;
-  int enabled_St_4_Off;
-  int ck_5_1;
-  int v;
-  int r_St_4_On;
-  int s_1_St_4_On_1;
-  int r_St_4_Off;
-  int s_1_St_4_Off_1;
-  int s_1_1;
-  int ns_1;
-  int r;
-  int nr;
-  if (self->ck_1) {
-    if (s) {
-      r_St_4_Off = true;
-      s_1_St_4_Off_1 = false;
-    } else {
-      r_St_4_Off = self->pnr;
-      s_1_St_4_Off_1 = true;
-    };
-    r = r_St_4_Off;
-    s_1_1 = s_1_St_4_Off_1;
-  } else {
-    v = !(s);
-    if (v) {
-      r_St_4_On = true;
-    } else {
-      r_St_4_On = self->pnr;
-    };
-    r = r_St_4_On;
-    if (v) {
-      s_1_St_4_On_1 = true;
-    } else {
-      s_1_St_4_On_1 = false;
-    };
-    s_1_1 = s_1_St_4_On_1;
-  };
-  ck_5_1 = s_1_1;
-  if (ck_5_1) {
-    enabled_St_4_Off = false;
-    nr_St_4_Off = false;
-    ns_St_4_Off_1 = true;
-    _out->enabled = enabled_St_4_Off;
-    nr = nr_St_4_Off;
-    ns_1 = ns_St_4_Off_1;
-  } else {
-    enabled_St_4_On = true;
-    _out->enabled = enabled_St_4_On;
-    nr_St_4_On = false;
-    nr = nr_St_4_On;
-    ns_St_4_On_1 = false;
-    ns_1 = ns_St_4_On_1;
-  };
-  self->pnr = nr;
-  self->ck_1 = ns_1;;
-}
-
 void Ups_controlador__modem_adsl_reset(Ups_controlador__modem_adsl_mem* self) {
   self->pnr = false;
   self->v_412 = true;
@@ -3104,75 +3033,75 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
   int v_384;
   int v_383;
   int v_382;
-  int ns_St_5_Sleep_2_0;
-  int ns_St_5_Sleep_3_0_0;
-  int ns_St_5_Sleep_3_0_1;
-  int ns_St_5_Sleep_2_1;
-  int ns_St_5_Sleep_3_1_0;
-  int ns_St_5_Sleep_3_1_1;
-  int ns_St_5_Online_2_0;
-  int ns_St_5_Online_3_0_0;
-  int ns_St_5_Online_3_0_1;
-  int ns_St_5_Online_2_1;
-  int ns_St_5_Online_3_1_0;
-  int ns_St_5_Online_3_1_1;
-  int ns_St_5_Teste_2_0;
-  int ns_St_5_Teste_3_0_0;
-  int ns_St_5_Teste_3_0_1;
-  int ns_St_5_Teste_2_1;
-  int ns_St_5_Teste_3_1_0;
-  int ns_St_5_Teste_3_1_1;
-  int ns_St_5_Boot_2_0;
-  int ns_St_5_Boot_3_0_0;
-  int ns_St_5_Boot_3_0_1;
-  int ns_St_5_Boot_2_1;
-  int ns_St_5_Boot_3_1_0;
-  int ns_St_5_Boot_3_1_1;
-  int ns_St_5_Off_2_0;
-  int ns_St_5_Off_3_0_0;
-  int ns_St_5_Off_3_0_1;
-  int ns_St_5_Off_2_1;
-  int ns_St_5_Off_3_1_0;
-  int ns_St_5_Off_3_1_1;
-  int ck_6_2_0;
-  int ck_6_3_0_0;
-  int ck_6_3_0_1;
-  int ck_6_2_1;
-  int ck_6_3_1_0;
-  int ck_6_3_1_1;
-  int nr_St_5_Sleep;
-  int ns_St_5_Sleep_3;
-  int ns_St_5_Sleep_2;
-  int ns_St_5_Sleep_1;
-  int estado_St_5_Sleep;
-  int atuador_St_5_Sleep;
-  int nr_St_5_Online;
-  int ns_St_5_Online_3;
-  int ns_St_5_Online_2;
-  int ns_St_5_Online_1;
-  int estado_St_5_Online;
-  int atuador_St_5_Online;
-  int nr_St_5_Teste;
-  int ns_St_5_Teste_3;
-  int ns_St_5_Teste_2;
-  int ns_St_5_Teste_1;
-  int estado_St_5_Teste;
-  int atuador_St_5_Teste;
-  int nr_St_5_Boot;
-  int ns_St_5_Boot_3;
-  int ns_St_5_Boot_2;
-  int ns_St_5_Boot_1;
-  int estado_St_5_Boot;
-  int atuador_St_5_Boot;
-  int nr_St_5_Off;
-  int ns_St_5_Off_3;
-  int ns_St_5_Off_2;
-  int ns_St_5_Off_1;
-  int estado_St_5_Off;
-  int atuador_St_5_Off;
-  int ck_6_3;
-  int ck_6_2;
-  int ck_6_1;
+  int ns_St_4_Sleep_2_0;
+  int ns_St_4_Sleep_3_0_0;
+  int ns_St_4_Sleep_3_0_1;
+  int ns_St_4_Sleep_2_1;
+  int ns_St_4_Sleep_3_1_0;
+  int ns_St_4_Sleep_3_1_1;
+  int ns_St_4_Online_2_0;
+  int ns_St_4_Online_3_0_0;
+  int ns_St_4_Online_3_0_1;
+  int ns_St_4_Online_2_1;
+  int ns_St_4_Online_3_1_0;
+  int ns_St_4_Online_3_1_1;
+  int ns_St_4_Teste_2_0;
+  int ns_St_4_Teste_3_0_0;
+  int ns_St_4_Teste_3_0_1;
+  int ns_St_4_Teste_2_1;
+  int ns_St_4_Teste_3_1_0;
+  int ns_St_4_Teste_3_1_1;
+  int ns_St_4_Boot_2_0;
+  int ns_St_4_Boot_3_0_0;
+  int ns_St_4_Boot_3_0_1;
+  int ns_St_4_Boot_2_1;
+  int ns_St_4_Boot_3_1_0;
+  int ns_St_4_Boot_3_1_1;
+  int ns_St_4_Off_2_0;
+  int ns_St_4_Off_3_0_0;
+  int ns_St_4_Off_3_0_1;
+  int ns_St_4_Off_2_1;
+  int ns_St_4_Off_3_1_0;
+  int ns_St_4_Off_3_1_1;
+  int ck_5_2_0;
+  int ck_5_3_0_0;
+  int ck_5_3_0_1;
+  int ck_5_2_1;
+  int ck_5_3_1_0;
+  int ck_5_3_1_1;
+  int nr_St_4_Sleep;
+  int ns_St_4_Sleep_3;
+  int ns_St_4_Sleep_2;
+  int ns_St_4_Sleep_1;
+  int estado_St_4_Sleep;
+  int atuador_St_4_Sleep;
+  int nr_St_4_Online;
+  int ns_St_4_Online_3;
+  int ns_St_4_Online_2;
+  int ns_St_4_Online_1;
+  int estado_St_4_Online;
+  int atuador_St_4_Online;
+  int nr_St_4_Teste;
+  int ns_St_4_Teste_3;
+  int ns_St_4_Teste_2;
+  int ns_St_4_Teste_1;
+  int estado_St_4_Teste;
+  int atuador_St_4_Teste;
+  int nr_St_4_Boot;
+  int ns_St_4_Boot_3;
+  int ns_St_4_Boot_2;
+  int ns_St_4_Boot_1;
+  int estado_St_4_Boot;
+  int atuador_St_4_Boot;
+  int nr_St_4_Off;
+  int ns_St_4_Off_3;
+  int ns_St_4_Off_2;
+  int ns_St_4_Off_1;
+  int estado_St_4_Off;
+  int atuador_St_4_Off;
+  int ck_5_3;
+  int ck_5_2;
+  int ck_5_1;
   int v_98_2_0;
   int v_98_3_0_0;
   int v_98_3_0_1;
@@ -3244,62 +3173,62 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
   int v_417;
   int v_416;
   int v_415;
-  int s_St_5_Sleep_2_0;
-  int s_St_5_Sleep_3_0_0;
-  int s_St_5_Sleep_3_0_1;
-  int s_St_5_Sleep_2_1;
-  int s_St_5_Sleep_3_1_0;
-  int s_St_5_Sleep_3_1_1;
-  int s_St_5_Online_2_0;
-  int s_St_5_Online_3_0_0;
-  int s_St_5_Online_3_0_1;
-  int s_St_5_Online_2_1;
-  int s_St_5_Online_3_1_0;
-  int s_St_5_Online_3_1_1;
-  int s_St_5_Teste_2_0;
-  int s_St_5_Teste_3_0_0;
-  int s_St_5_Teste_3_0_1;
-  int s_St_5_Teste_2_1;
-  int s_St_5_Teste_3_1_0;
-  int s_St_5_Teste_3_1_1;
-  int s_St_5_Boot_2_0;
-  int s_St_5_Boot_3_0_0;
-  int s_St_5_Boot_3_0_1;
-  int s_St_5_Boot_2_1;
-  int s_St_5_Boot_3_1_0;
-  int s_St_5_Boot_3_1_1;
-  int s_St_5_Off_2_0;
-  int s_St_5_Off_3_0_0;
-  int s_St_5_Off_3_0_1;
-  int s_St_5_Off_2_1;
-  int s_St_5_Off_3_1_0;
-  int s_St_5_Off_3_1_1;
+  int s_St_4_Sleep_2_0;
+  int s_St_4_Sleep_3_0_0;
+  int s_St_4_Sleep_3_0_1;
+  int s_St_4_Sleep_2_1;
+  int s_St_4_Sleep_3_1_0;
+  int s_St_4_Sleep_3_1_1;
+  int s_St_4_Online_2_0;
+  int s_St_4_Online_3_0_0;
+  int s_St_4_Online_3_0_1;
+  int s_St_4_Online_2_1;
+  int s_St_4_Online_3_1_0;
+  int s_St_4_Online_3_1_1;
+  int s_St_4_Teste_2_0;
+  int s_St_4_Teste_3_0_0;
+  int s_St_4_Teste_3_0_1;
+  int s_St_4_Teste_2_1;
+  int s_St_4_Teste_3_1_0;
+  int s_St_4_Teste_3_1_1;
+  int s_St_4_Boot_2_0;
+  int s_St_4_Boot_3_0_0;
+  int s_St_4_Boot_3_0_1;
+  int s_St_4_Boot_2_1;
+  int s_St_4_Boot_3_1_0;
+  int s_St_4_Boot_3_1_1;
+  int s_St_4_Off_2_0;
+  int s_St_4_Off_3_0_0;
+  int s_St_4_Off_3_0_1;
+  int s_St_4_Off_2_1;
+  int s_St_4_Off_3_1_0;
+  int s_St_4_Off_3_1_1;
   int ck_2_0;
   int ck_3_0_0;
   int ck_3_0_1;
   int ck_2_1;
   int ck_3_1_0;
   int ck_3_1_1;
-  int r_St_5_Sleep;
-  int s_St_5_Sleep_3;
-  int s_St_5_Sleep_2;
-  int s_St_5_Sleep_1;
-  int r_St_5_Online;
-  int s_St_5_Online_3;
-  int s_St_5_Online_2;
-  int s_St_5_Online_1;
-  int r_St_5_Teste;
-  int s_St_5_Teste_3;
-  int s_St_5_Teste_2;
-  int s_St_5_Teste_1;
-  int r_St_5_Boot;
-  int s_St_5_Boot_3;
-  int s_St_5_Boot_2;
-  int s_St_5_Boot_1;
-  int r_St_5_Off;
-  int s_St_5_Off_3;
-  int s_St_5_Off_2;
-  int s_St_5_Off_1;
+  int r_St_4_Sleep;
+  int s_St_4_Sleep_3;
+  int s_St_4_Sleep_2;
+  int s_St_4_Sleep_1;
+  int r_St_4_Online;
+  int s_St_4_Online_3;
+  int s_St_4_Online_2;
+  int s_St_4_Online_1;
+  int r_St_4_Teste;
+  int s_St_4_Teste_3;
+  int s_St_4_Teste_2;
+  int s_St_4_Teste_1;
+  int r_St_4_Boot;
+  int s_St_4_Boot_3;
+  int s_St_4_Boot_2;
+  int s_St_4_Boot_1;
+  int r_St_4_Off;
+  int s_St_4_Off_3;
+  int s_St_4_Off_2;
+  int s_St_4_Off_1;
   int ck_3;
   int ck_2;
   int ck_1;
@@ -3337,44 +3266,44 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
           v_99 = self->pnr;
         };
         if (c) {
-          r_St_5_Boot = true;
+          r_St_4_Boot = true;
         } else {
-          r_St_5_Boot = v_99;
+          r_St_4_Boot = v_99;
         };
-        v_430 = r_St_5_Boot;
+        v_430 = r_St_4_Boot;
         if (t) {
           v_98_1 = false;
         } else {
           v_98_1 = true;
         };
         if (c) {
-          s_St_5_Boot_1 = true;
+          s_St_4_Boot_1 = true;
         } else {
-          s_St_5_Boot_1 = v_98_1;
+          s_St_4_Boot_1 = v_98_1;
         };
-        v_415 = s_St_5_Boot_1;
+        v_415 = s_St_4_Boot_1;
         if (t) {
           v_98_2 = false;
         } else {
           v_98_2 = true;
         };
         if (c) {
-          s_St_5_Boot_2 = true;
+          s_St_4_Boot_2 = true;
         } else {
-          s_St_5_Boot_2 = v_98_2;
+          s_St_4_Boot_2 = v_98_2;
         };
-        v_416 = s_St_5_Boot_2;
+        v_416 = s_St_4_Boot_2;
         if (t) {
           v_98_3 = false;
         } else {
           v_98_3 = true;
         };
         if (c) {
-          s_St_5_Boot_3 = false;
+          s_St_4_Boot_3 = false;
         } else {
-          s_St_5_Boot_3 = v_98_3;
+          s_St_4_Boot_3 = v_98_3;
         };
-        v_417 = s_St_5_Boot_3;
+        v_417 = s_St_4_Boot_3;
         if (v_98_1) {
           v_98_2_1 = v_98_2;
           if (v_98_2_1) {
@@ -3390,50 +3319,50 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
             v_98_3_0_0 = v_98_3;
           };
         };
-        if (s_St_5_Boot_1) {
-          s_St_5_Boot_2_1 = s_St_5_Boot_2;
-          if (s_St_5_Boot_2_1) {
-            s_St_5_Boot_3_1_1 = s_St_5_Boot_3;
+        if (s_St_4_Boot_1) {
+          s_St_4_Boot_2_1 = s_St_4_Boot_2;
+          if (s_St_4_Boot_2_1) {
+            s_St_4_Boot_3_1_1 = s_St_4_Boot_3;
           } else {
-            s_St_5_Boot_3_1_0 = s_St_5_Boot_3;
+            s_St_4_Boot_3_1_0 = s_St_4_Boot_3;
           };
         } else {
-          s_St_5_Boot_2_0 = s_St_5_Boot_2;
-          if (s_St_5_Boot_2_0) {
-            s_St_5_Boot_3_0_1 = s_St_5_Boot_3;
+          s_St_4_Boot_2_0 = s_St_4_Boot_2;
+          if (s_St_4_Boot_2_0) {
+            s_St_4_Boot_3_0_1 = s_St_4_Boot_3;
           } else {
-            s_St_5_Boot_3_0_0 = s_St_5_Boot_3;
+            s_St_4_Boot_3_0_0 = s_St_4_Boot_3;
           };
         };
       } else {
         if (c) {
-          r_St_5_Off = true;
-          s_St_5_Off_1 = true;
-          s_St_5_Off_2 = true;
-          s_St_5_Off_3 = true;
+          r_St_4_Off = true;
+          s_St_4_Off_1 = true;
+          s_St_4_Off_2 = true;
+          s_St_4_Off_3 = true;
         } else {
-          r_St_5_Off = self->pnr;
-          s_St_5_Off_1 = true;
-          s_St_5_Off_2 = true;
-          s_St_5_Off_3 = false;
+          r_St_4_Off = self->pnr;
+          s_St_4_Off_1 = true;
+          s_St_4_Off_2 = true;
+          s_St_4_Off_3 = false;
         };
-        v_430 = r_St_5_Off;
-        v_415 = s_St_5_Off_1;
-        v_416 = s_St_5_Off_2;
-        v_417 = s_St_5_Off_3;
-        if (s_St_5_Off_1) {
-          s_St_5_Off_2_1 = s_St_5_Off_2;
-          if (s_St_5_Off_2_1) {
-            s_St_5_Off_3_1_1 = s_St_5_Off_3;
+        v_430 = r_St_4_Off;
+        v_415 = s_St_4_Off_1;
+        v_416 = s_St_4_Off_2;
+        v_417 = s_St_4_Off_3;
+        if (s_St_4_Off_1) {
+          s_St_4_Off_2_1 = s_St_4_Off_2;
+          if (s_St_4_Off_2_1) {
+            s_St_4_Off_3_1_1 = s_St_4_Off_3;
           } else {
-            s_St_5_Off_3_1_0 = s_St_5_Off_3;
+            s_St_4_Off_3_1_0 = s_St_4_Off_3;
           };
         } else {
-          s_St_5_Off_2_0 = s_St_5_Off_2;
-          if (s_St_5_Off_2_0) {
-            s_St_5_Off_3_0_1 = s_St_5_Off_3;
+          s_St_4_Off_2_0 = s_St_4_Off_2;
+          if (s_St_4_Off_2_0) {
+            s_St_4_Off_3_0_1 = s_St_4_Off_3;
           } else {
-            s_St_5_Off_3_0_0 = s_St_5_Off_3;
+            s_St_4_Off_3_0_0 = s_St_4_Off_3;
           };
         };
       };
@@ -3455,44 +3384,44 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
           v_92 = self->pnr;
         };
         if (c) {
-          r_St_5_Online = true;
+          r_St_4_Online = true;
         } else {
-          r_St_5_Online = v_92;
+          r_St_4_Online = v_92;
         };
-        v_431 = r_St_5_Online;
+        v_431 = r_St_4_Online;
         if (t) {
           v_91_1 = false;
         } else {
           v_91_1 = true;
         };
         if (c) {
-          s_St_5_Online_1 = true;
+          s_St_4_Online_1 = true;
         } else {
-          s_St_5_Online_1 = v_91_1;
+          s_St_4_Online_1 = v_91_1;
         };
-        v_418 = s_St_5_Online_1;
+        v_418 = s_St_4_Online_1;
         if (t) {
           v_91_2 = false;
         } else {
           v_91_2 = false;
         };
         if (c) {
-          s_St_5_Online_2 = true;
+          s_St_4_Online_2 = true;
         } else {
-          s_St_5_Online_2 = v_91_2;
+          s_St_4_Online_2 = v_91_2;
         };
-        v_419 = s_St_5_Online_2;
+        v_419 = s_St_4_Online_2;
         if (t) {
           v_91_3 = false;
         } else {
           v_91_3 = false;
         };
         if (c) {
-          s_St_5_Online_3 = false;
+          s_St_4_Online_3 = false;
         } else {
-          s_St_5_Online_3 = v_91_3;
+          s_St_4_Online_3 = v_91_3;
         };
-        v_420 = s_St_5_Online_3;
+        v_420 = s_St_4_Online_3;
       };
       v_424 = v_418;
       v_425 = v_419;
@@ -3514,19 +3443,19 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
             v_91_3_0_0 = v_91_3;
           };
         };
-        if (s_St_5_Online_1) {
-          s_St_5_Online_2_1 = s_St_5_Online_2;
-          if (s_St_5_Online_2_1) {
-            s_St_5_Online_3_1_1 = s_St_5_Online_3;
+        if (s_St_4_Online_1) {
+          s_St_4_Online_2_1 = s_St_4_Online_2;
+          if (s_St_4_Online_2_1) {
+            s_St_4_Online_3_1_1 = s_St_4_Online_3;
           } else {
-            s_St_5_Online_3_1_0 = s_St_5_Online_3;
+            s_St_4_Online_3_1_0 = s_St_4_Online_3;
           };
         } else {
-          s_St_5_Online_2_0 = s_St_5_Online_2;
-          if (s_St_5_Online_2_0) {
-            s_St_5_Online_3_0_1 = s_St_5_Online_3;
+          s_St_4_Online_2_0 = s_St_4_Online_2;
+          if (s_St_4_Online_2_0) {
+            s_St_4_Online_3_0_1 = s_St_4_Online_3;
           } else {
-            s_St_5_Online_3_0_0 = s_St_5_Online_3;
+            s_St_4_Online_3_0_0 = s_St_4_Online_3;
           };
         };
       };
@@ -3552,44 +3481,44 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
           v_90 = self->pnr;
         };
         if (c) {
-          r_St_5_Sleep = true;
+          r_St_4_Sleep = true;
         } else {
-          r_St_5_Sleep = v_90;
+          r_St_4_Sleep = v_90;
         };
-        v_433 = r_St_5_Sleep;
+        v_433 = r_St_4_Sleep;
         if (t) {
           v_1 = true;
         } else {
           v_1 = false;
         };
         if (c) {
-          s_St_5_Sleep_1 = true;
+          s_St_4_Sleep_1 = true;
         } else {
-          s_St_5_Sleep_1 = v_1;
+          s_St_4_Sleep_1 = v_1;
         };
-        v_421 = s_St_5_Sleep_1;
+        v_421 = s_St_4_Sleep_1;
         if (t) {
           v_2 = true;
         } else {
           v_2 = false;
         };
         if (c) {
-          s_St_5_Sleep_2 = true;
+          s_St_4_Sleep_2 = true;
         } else {
-          s_St_5_Sleep_2 = v_2;
+          s_St_4_Sleep_2 = v_2;
         };
-        v_422 = s_St_5_Sleep_2;
+        v_422 = s_St_4_Sleep_2;
         if (t) {
           v_3 = true;
         } else {
           v_3 = true;
         };
         if (c) {
-          s_St_5_Sleep_3 = false;
+          s_St_4_Sleep_3 = false;
         } else {
-          s_St_5_Sleep_3 = v_3;
+          s_St_4_Sleep_3 = v_3;
         };
-        v_423 = s_St_5_Sleep_3;
+        v_423 = s_St_4_Sleep_3;
         if (v_1) {
           v_2_1 = v_2;
           if (v_2_1) {
@@ -3624,9 +3553,9 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
           v_97 = v_95;
         };
         if (c) {
-          r_St_5_Teste = true;
+          r_St_4_Teste = true;
         } else {
-          r_St_5_Teste = v_97;
+          r_St_4_Teste = v_97;
         };
         if (v_93) {
           v_96_1 = false;
@@ -3634,9 +3563,9 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
           v_96_1 = v_94_1;
         };
         if (c) {
-          s_St_5_Teste_1 = true;
+          s_St_4_Teste_1 = true;
         } else {
-          s_St_5_Teste_1 = v_96_1;
+          s_St_4_Teste_1 = v_96_1;
         };
         if (v_93) {
           v_96_2 = false;
@@ -3644,9 +3573,9 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
           v_96_2 = v_94_2;
         };
         if (c) {
-          s_St_5_Teste_2 = true;
+          s_St_4_Teste_2 = true;
         } else {
-          s_St_5_Teste_2 = v_96_2;
+          s_St_4_Teste_2 = v_96_2;
         };
         if (v_93) {
           v_96_3 = true;
@@ -3654,14 +3583,14 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
           v_96_3 = v_94_3;
         };
         if (c) {
-          s_St_5_Teste_3 = false;
+          s_St_4_Teste_3 = false;
         } else {
-          s_St_5_Teste_3 = v_96_3;
+          s_St_4_Teste_3 = v_96_3;
         };
-        v_433 = r_St_5_Teste;
-        v_421 = s_St_5_Teste_1;
-        v_422 = s_St_5_Teste_2;
-        v_423 = s_St_5_Teste_3;
+        v_433 = r_St_4_Teste;
+        v_421 = s_St_4_Teste_1;
+        v_422 = s_St_4_Teste_2;
+        v_423 = s_St_4_Teste_3;
         if (v_94_1) {
           v_94_2_1 = v_94_2;
           if (v_94_2_1) {
@@ -3703,67 +3632,67 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
     s_3 = v_429;
     r = v_434;
   };
-  ck_6_1 = s_1;
-  ck_6_2 = s_2;
-  ck_6_3 = s_3;
-  if (ck_6_1) {
-    ck_6_2_1 = ck_6_2;
-    if (ck_6_2_1) {
-      ck_6_3_1_1 = ck_6_3;
-      if (ck_6_3_1_1) {
-        estado_St_5_Boot = 2;
-        v_387 = estado_St_5_Boot;
-        atuador_St_5_Boot = true;
-        v_382 = atuador_St_5_Boot;
-        nr_St_5_Boot = false;
-        v_407 = nr_St_5_Boot;
-        ns_St_5_Boot_1 = true;
-        v_392 = ns_St_5_Boot_1;
-        ns_St_5_Boot_2 = true;
-        v_393 = ns_St_5_Boot_2;
-        ns_St_5_Boot_3 = true;
-        v_394 = ns_St_5_Boot_3;
-        if (ns_St_5_Boot_1) {
-          ns_St_5_Boot_2_1 = ns_St_5_Boot_2;
-          if (ns_St_5_Boot_2_1) {
-            ns_St_5_Boot_3_1_1 = ns_St_5_Boot_3;
+  ck_5_1 = s_1;
+  ck_5_2 = s_2;
+  ck_5_3 = s_3;
+  if (ck_5_1) {
+    ck_5_2_1 = ck_5_2;
+    if (ck_5_2_1) {
+      ck_5_3_1_1 = ck_5_3;
+      if (ck_5_3_1_1) {
+        estado_St_4_Boot = 2;
+        v_387 = estado_St_4_Boot;
+        atuador_St_4_Boot = true;
+        v_382 = atuador_St_4_Boot;
+        nr_St_4_Boot = false;
+        v_407 = nr_St_4_Boot;
+        ns_St_4_Boot_1 = true;
+        v_392 = ns_St_4_Boot_1;
+        ns_St_4_Boot_2 = true;
+        v_393 = ns_St_4_Boot_2;
+        ns_St_4_Boot_3 = true;
+        v_394 = ns_St_4_Boot_3;
+        if (ns_St_4_Boot_1) {
+          ns_St_4_Boot_2_1 = ns_St_4_Boot_2;
+          if (ns_St_4_Boot_2_1) {
+            ns_St_4_Boot_3_1_1 = ns_St_4_Boot_3;
           } else {
-            ns_St_5_Boot_3_1_0 = ns_St_5_Boot_3;
+            ns_St_4_Boot_3_1_0 = ns_St_4_Boot_3;
           };
         } else {
-          ns_St_5_Boot_2_0 = ns_St_5_Boot_2;
-          if (ns_St_5_Boot_2_0) {
-            ns_St_5_Boot_3_0_1 = ns_St_5_Boot_3;
+          ns_St_4_Boot_2_0 = ns_St_4_Boot_2;
+          if (ns_St_4_Boot_2_0) {
+            ns_St_4_Boot_3_0_1 = ns_St_4_Boot_3;
           } else {
-            ns_St_5_Boot_3_0_0 = ns_St_5_Boot_3;
+            ns_St_4_Boot_3_0_0 = ns_St_4_Boot_3;
           };
         };
       } else {
-        estado_St_5_Off = 0;
-        atuador_St_5_Off = false;
-        nr_St_5_Off = false;
-        ns_St_5_Off_1 = true;
-        ns_St_5_Off_2 = true;
-        ns_St_5_Off_3 = false;
-        v_387 = estado_St_5_Off;
-        v_382 = atuador_St_5_Off;
-        v_407 = nr_St_5_Off;
-        v_392 = ns_St_5_Off_1;
-        v_393 = ns_St_5_Off_2;
-        v_394 = ns_St_5_Off_3;
-        if (ns_St_5_Off_1) {
-          ns_St_5_Off_2_1 = ns_St_5_Off_2;
-          if (ns_St_5_Off_2_1) {
-            ns_St_5_Off_3_1_1 = ns_St_5_Off_3;
+        estado_St_4_Off = 0;
+        atuador_St_4_Off = false;
+        nr_St_4_Off = false;
+        ns_St_4_Off_1 = true;
+        ns_St_4_Off_2 = true;
+        ns_St_4_Off_3 = false;
+        v_387 = estado_St_4_Off;
+        v_382 = atuador_St_4_Off;
+        v_407 = nr_St_4_Off;
+        v_392 = ns_St_4_Off_1;
+        v_393 = ns_St_4_Off_2;
+        v_394 = ns_St_4_Off_3;
+        if (ns_St_4_Off_1) {
+          ns_St_4_Off_2_1 = ns_St_4_Off_2;
+          if (ns_St_4_Off_2_1) {
+            ns_St_4_Off_3_1_1 = ns_St_4_Off_3;
           } else {
-            ns_St_5_Off_3_1_0 = ns_St_5_Off_3;
+            ns_St_4_Off_3_1_0 = ns_St_4_Off_3;
           };
         } else {
-          ns_St_5_Off_2_0 = ns_St_5_Off_2;
-          if (ns_St_5_Off_2_0) {
-            ns_St_5_Off_3_0_1 = ns_St_5_Off_3;
+          ns_St_4_Off_2_0 = ns_St_4_Off_2;
+          if (ns_St_4_Off_2_0) {
+            ns_St_4_Off_3_0_1 = ns_St_4_Off_3;
           } else {
-            ns_St_5_Off_3_0_0 = ns_St_5_Off_3;
+            ns_St_4_Off_3_0_0 = ns_St_4_Off_3;
           };
         };
       };
@@ -3774,8 +3703,8 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
       v_403 = v_394;
       v_409 = v_407;
     } else {
-      ck_6_3_1_0 = ck_6_3;
-      if (ck_6_3_1_0) {
+      ck_5_3_1_0 = ck_5_3;
+      if (ck_5_3_1_0) {
         v_388 = 0;
         v_383 = true;
         v_408 = true;
@@ -3783,18 +3712,18 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
         v_396 = true;
         v_397 = true;
       } else {
-        estado_St_5_Online = 4;
-        v_388 = estado_St_5_Online;
-        atuador_St_5_Online = true;
-        v_383 = atuador_St_5_Online;
-        nr_St_5_Online = false;
-        v_408 = nr_St_5_Online;
-        ns_St_5_Online_1 = true;
-        v_395 = ns_St_5_Online_1;
-        ns_St_5_Online_2 = false;
-        v_396 = ns_St_5_Online_2;
-        ns_St_5_Online_3 = false;
-        v_397 = ns_St_5_Online_3;
+        estado_St_4_Online = 4;
+        v_388 = estado_St_4_Online;
+        atuador_St_4_Online = true;
+        v_383 = atuador_St_4_Online;
+        nr_St_4_Online = false;
+        v_408 = nr_St_4_Online;
+        ns_St_4_Online_1 = true;
+        v_395 = ns_St_4_Online_1;
+        ns_St_4_Online_2 = false;
+        v_396 = ns_St_4_Online_2;
+        ns_St_4_Online_3 = false;
+        v_397 = ns_St_4_Online_3;
       };
       v_384 = v_383;
       v_389 = v_388;
@@ -3802,20 +3731,20 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
       v_402 = v_396;
       v_403 = v_397;
       v_409 = v_408;
-      if (!(ck_6_3_1_0)) {
-        if (ns_St_5_Online_1) {
-          ns_St_5_Online_2_1 = ns_St_5_Online_2;
-          if (ns_St_5_Online_2_1) {
-            ns_St_5_Online_3_1_1 = ns_St_5_Online_3;
+      if (!(ck_5_3_1_0)) {
+        if (ns_St_4_Online_1) {
+          ns_St_4_Online_2_1 = ns_St_4_Online_2;
+          if (ns_St_4_Online_2_1) {
+            ns_St_4_Online_3_1_1 = ns_St_4_Online_3;
           } else {
-            ns_St_5_Online_3_1_0 = ns_St_5_Online_3;
+            ns_St_4_Online_3_1_0 = ns_St_4_Online_3;
           };
         } else {
-          ns_St_5_Online_2_0 = ns_St_5_Online_2;
-          if (ns_St_5_Online_2_0) {
-            ns_St_5_Online_3_0_1 = ns_St_5_Online_3;
+          ns_St_4_Online_2_0 = ns_St_4_Online_2;
+          if (ns_St_4_Online_2_0) {
+            ns_St_4_Online_3_0_1 = ns_St_4_Online_3;
           } else {
-            ns_St_5_Online_3_0_0 = ns_St_5_Online_3;
+            ns_St_4_Online_3_0_0 = ns_St_4_Online_3;
           };
         };
       };
@@ -3827,9 +3756,9 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
     ns_3 = v_403;
     nr = v_409;
   } else {
-    ck_6_2_0 = ck_6_2;
-    if (ck_6_2_0) {
-      ck_6_3_0_1 = ck_6_3;
+    ck_5_2_0 = ck_5_2;
+    if (ck_5_2_0) {
+      ck_5_3_0_1 = ck_5_3;
       v_386 = true;
       v_391 = 0;
       v_404 = true;
@@ -3837,33 +3766,33 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
       v_406 = true;
       v_411 = true;
     } else {
-      ck_6_3_0_0 = ck_6_3;
-      if (ck_6_3_0_0) {
-        estado_St_5_Sleep = 1;
-        v_390 = estado_St_5_Sleep;
-        atuador_St_5_Sleep = false;
-        v_385 = atuador_St_5_Sleep;
-        nr_St_5_Sleep = false;
-        v_410 = nr_St_5_Sleep;
-        ns_St_5_Sleep_1 = false;
-        v_398 = ns_St_5_Sleep_1;
-        ns_St_5_Sleep_2 = false;
-        v_399 = ns_St_5_Sleep_2;
-        ns_St_5_Sleep_3 = true;
-        v_400 = ns_St_5_Sleep_3;
+      ck_5_3_0_0 = ck_5_3;
+      if (ck_5_3_0_0) {
+        estado_St_4_Sleep = 1;
+        v_390 = estado_St_4_Sleep;
+        atuador_St_4_Sleep = false;
+        v_385 = atuador_St_4_Sleep;
+        nr_St_4_Sleep = false;
+        v_410 = nr_St_4_Sleep;
+        ns_St_4_Sleep_1 = false;
+        v_398 = ns_St_4_Sleep_1;
+        ns_St_4_Sleep_2 = false;
+        v_399 = ns_St_4_Sleep_2;
+        ns_St_4_Sleep_3 = true;
+        v_400 = ns_St_4_Sleep_3;
       } else {
-        estado_St_5_Teste = 3;
-        atuador_St_5_Teste = true;
-        nr_St_5_Teste = false;
-        ns_St_5_Teste_1 = false;
-        ns_St_5_Teste_2 = false;
-        ns_St_5_Teste_3 = false;
-        v_390 = estado_St_5_Teste;
-        v_385 = atuador_St_5_Teste;
-        v_410 = nr_St_5_Teste;
-        v_398 = ns_St_5_Teste_1;
-        v_399 = ns_St_5_Teste_2;
-        v_400 = ns_St_5_Teste_3;
+        estado_St_4_Teste = 3;
+        atuador_St_4_Teste = true;
+        nr_St_4_Teste = false;
+        ns_St_4_Teste_1 = false;
+        ns_St_4_Teste_2 = false;
+        ns_St_4_Teste_3 = false;
+        v_390 = estado_St_4_Teste;
+        v_385 = atuador_St_4_Teste;
+        v_410 = nr_St_4_Teste;
+        v_398 = ns_St_4_Teste_1;
+        v_399 = ns_St_4_Teste_2;
+        v_400 = ns_St_4_Teste_3;
       };
       v_386 = v_385;
       v_391 = v_390;
@@ -3894,38 +3823,38 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
       ns_3_0_0 = ns_3;
     };
   };
-  if (!(ck_6_1)) {
-    if (!(ck_6_2_0)) {
-      if (ck_6_3_0_0) {
-        if (ns_St_5_Sleep_1) {
-          ns_St_5_Sleep_2_1 = ns_St_5_Sleep_2;
-          if (ns_St_5_Sleep_2_1) {
-            ns_St_5_Sleep_3_1_1 = ns_St_5_Sleep_3;
+  if (!(ck_5_1)) {
+    if (!(ck_5_2_0)) {
+      if (ck_5_3_0_0) {
+        if (ns_St_4_Sleep_1) {
+          ns_St_4_Sleep_2_1 = ns_St_4_Sleep_2;
+          if (ns_St_4_Sleep_2_1) {
+            ns_St_4_Sleep_3_1_1 = ns_St_4_Sleep_3;
           } else {
-            ns_St_5_Sleep_3_1_0 = ns_St_5_Sleep_3;
+            ns_St_4_Sleep_3_1_0 = ns_St_4_Sleep_3;
           };
         } else {
-          ns_St_5_Sleep_2_0 = ns_St_5_Sleep_2;
-          if (ns_St_5_Sleep_2_0) {
-            ns_St_5_Sleep_3_0_1 = ns_St_5_Sleep_3;
+          ns_St_4_Sleep_2_0 = ns_St_4_Sleep_2;
+          if (ns_St_4_Sleep_2_0) {
+            ns_St_4_Sleep_3_0_1 = ns_St_4_Sleep_3;
           } else {
-            ns_St_5_Sleep_3_0_0 = ns_St_5_Sleep_3;
+            ns_St_4_Sleep_3_0_0 = ns_St_4_Sleep_3;
           };
         };
       } else {
-        if (ns_St_5_Teste_1) {
-          ns_St_5_Teste_2_1 = ns_St_5_Teste_2;
-          if (ns_St_5_Teste_2_1) {
-            ns_St_5_Teste_3_1_1 = ns_St_5_Teste_3;
+        if (ns_St_4_Teste_1) {
+          ns_St_4_Teste_2_1 = ns_St_4_Teste_2;
+          if (ns_St_4_Teste_2_1) {
+            ns_St_4_Teste_3_1_1 = ns_St_4_Teste_3;
           } else {
-            ns_St_5_Teste_3_1_0 = ns_St_5_Teste_3;
+            ns_St_4_Teste_3_1_0 = ns_St_4_Teste_3;
           };
         } else {
-          ns_St_5_Teste_2_0 = ns_St_5_Teste_2;
-          if (ns_St_5_Teste_2_0) {
-            ns_St_5_Teste_3_0_1 = ns_St_5_Teste_3;
+          ns_St_4_Teste_2_0 = ns_St_4_Teste_2;
+          if (ns_St_4_Teste_2_0) {
+            ns_St_4_Teste_3_0_1 = ns_St_4_Teste_3;
           } else {
-            ns_St_5_Teste_3_0_0 = ns_St_5_Teste_3;
+            ns_St_4_Teste_3_0_0 = ns_St_4_Teste_3;
           };
         };
       };
@@ -3949,35 +3878,35 @@ void Ups_controlador__modem_adsl_step(int c, int t, int o,
   if (!(ck_1)) {
     if (!(ck_2_0)) {
       if (ck_3_0_0) {
-        if (s_St_5_Sleep_1) {
-          s_St_5_Sleep_2_1 = s_St_5_Sleep_2;
-          if (s_St_5_Sleep_2_1) {
-            s_St_5_Sleep_3_1_1 = s_St_5_Sleep_3;
+        if (s_St_4_Sleep_1) {
+          s_St_4_Sleep_2_1 = s_St_4_Sleep_2;
+          if (s_St_4_Sleep_2_1) {
+            s_St_4_Sleep_3_1_1 = s_St_4_Sleep_3;
           } else {
-            s_St_5_Sleep_3_1_0 = s_St_5_Sleep_3;
+            s_St_4_Sleep_3_1_0 = s_St_4_Sleep_3;
           };
         } else {
-          s_St_5_Sleep_2_0 = s_St_5_Sleep_2;
-          if (s_St_5_Sleep_2_0) {
-            s_St_5_Sleep_3_0_1 = s_St_5_Sleep_3;
+          s_St_4_Sleep_2_0 = s_St_4_Sleep_2;
+          if (s_St_4_Sleep_2_0) {
+            s_St_4_Sleep_3_0_1 = s_St_4_Sleep_3;
           } else {
-            s_St_5_Sleep_3_0_0 = s_St_5_Sleep_3;
+            s_St_4_Sleep_3_0_0 = s_St_4_Sleep_3;
           };
         };
       } else {
-        if (s_St_5_Teste_1) {
-          s_St_5_Teste_2_1 = s_St_5_Teste_2;
-          if (s_St_5_Teste_2_1) {
-            s_St_5_Teste_3_1_1 = s_St_5_Teste_3;
+        if (s_St_4_Teste_1) {
+          s_St_4_Teste_2_1 = s_St_4_Teste_2;
+          if (s_St_4_Teste_2_1) {
+            s_St_4_Teste_3_1_1 = s_St_4_Teste_3;
           } else {
-            s_St_5_Teste_3_1_0 = s_St_5_Teste_3;
+            s_St_4_Teste_3_1_0 = s_St_4_Teste_3;
           };
         } else {
-          s_St_5_Teste_2_0 = s_St_5_Teste_2;
-          if (s_St_5_Teste_2_0) {
-            s_St_5_Teste_3_0_1 = s_St_5_Teste_3;
+          s_St_4_Teste_2_0 = s_St_4_Teste_2;
+          if (s_St_4_Teste_2_0) {
+            s_St_4_Teste_3_0_1 = s_St_4_Teste_3;
           } else {
-            s_St_5_Teste_3_0_0 = s_St_5_Teste_3;
+            s_St_4_Teste_3_0_0 = s_St_4_Teste_3;
           };
         };
       };
@@ -3995,7 +3924,7 @@ void Ups_controlador__contrato_reset(Ups_controlador__contrato_mem* self) {
   self->v_478 = true;
   self->v_479 = true;
   self->pnr_1 = false;
-  self->ck_13_1 = true;
+  self->ck_12_1 = true;
   self->pnr_2 = false;
   self->v_529 = true;
   self->v_530 = true;
@@ -4005,7 +3934,7 @@ void Ups_controlador__contrato_reset(Ups_controlador__contrato_mem* self) {
   self->v_583 = true;
   self->v_584 = false;
   self->pnr_4 = false;
-  self->ck_7_1 = true;
+  self->ck_6_1 = true;
 }
 
 void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
@@ -4057,129 +3986,129 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int v_437;
   int v_436;
   int v_435;
-  int ns_St_6_Carregando_2_0;
-  int ns_St_6_Carregando_3_0_0;
-  int ns_St_6_Carregando_3_0_1;
-  int ns_St_6_Carregando_2_1;
-  int ns_St_6_Carregando_3_1_0;
-  int ns_St_6_Carregando_3_1_1;
-  int estado_bat_St_6_Carregando_2_0;
-  int estado_bat_St_6_Carregando_3_0_0;
-  int estado_bat_St_6_Carregando_3_0_1;
-  int estado_bat_St_6_Carregando_2_1;
-  int estado_bat_St_6_Carregando_3_1_0;
-  int estado_bat_St_6_Carregando_3_1_1;
-  int ns_St_6_Baixo_2_0;
-  int ns_St_6_Baixo_3_0_0;
-  int ns_St_6_Baixo_3_0_1;
-  int ns_St_6_Baixo_2_1;
-  int ns_St_6_Baixo_3_1_0;
-  int ns_St_6_Baixo_3_1_1;
-  int estado_bat_St_6_Baixo_2_0;
-  int estado_bat_St_6_Baixo_3_0_0;
-  int estado_bat_St_6_Baixo_3_0_1;
-  int estado_bat_St_6_Baixo_2_1;
-  int estado_bat_St_6_Baixo_3_1_0;
-  int estado_bat_St_6_Baixo_3_1_1;
-  int ns_St_6_Limiar2_2_0;
-  int ns_St_6_Limiar2_3_0_0;
-  int ns_St_6_Limiar2_3_0_1;
-  int ns_St_6_Limiar2_2_1;
-  int ns_St_6_Limiar2_3_1_0;
-  int ns_St_6_Limiar2_3_1_1;
-  int estado_bat_St_6_Limiar2_2_0;
-  int estado_bat_St_6_Limiar2_3_0_0;
-  int estado_bat_St_6_Limiar2_3_0_1;
-  int estado_bat_St_6_Limiar2_2_1;
-  int estado_bat_St_6_Limiar2_3_1_0;
-  int estado_bat_St_6_Limiar2_3_1_1;
-  int ns_St_6_Limiar1_2_0;
-  int ns_St_6_Limiar1_3_0_0;
-  int ns_St_6_Limiar1_3_0_1;
-  int ns_St_6_Limiar1_2_1;
-  int ns_St_6_Limiar1_3_1_0;
-  int ns_St_6_Limiar1_3_1_1;
-  int estado_bat_St_6_Limiar1_2_0;
-  int estado_bat_St_6_Limiar1_3_0_0;
-  int estado_bat_St_6_Limiar1_3_0_1;
-  int estado_bat_St_6_Limiar1_2_1;
-  int estado_bat_St_6_Limiar1_3_1_0;
-  int estado_bat_St_6_Limiar1_3_1_1;
-  int ns_St_6_Cheio_2_0;
-  int ns_St_6_Cheio_3_0_0;
-  int ns_St_6_Cheio_3_0_1;
-  int ns_St_6_Cheio_2_1;
-  int ns_St_6_Cheio_3_1_0;
-  int ns_St_6_Cheio_3_1_1;
-  int estado_bat_St_6_Cheio_2_0;
-  int estado_bat_St_6_Cheio_3_0_0;
-  int estado_bat_St_6_Cheio_3_0_1;
-  int estado_bat_St_6_Cheio_2_1;
-  int estado_bat_St_6_Cheio_3_1_0;
-  int estado_bat_St_6_Cheio_3_1_1;
-  int ns_St_6_Erro_2_0;
-  int ns_St_6_Erro_3_0_0;
-  int ns_St_6_Erro_3_0_1;
-  int ns_St_6_Erro_2_1;
-  int ns_St_6_Erro_3_1_0;
-  int ns_St_6_Erro_3_1_1;
-  int estado_bat_St_6_Erro_2_0;
-  int estado_bat_St_6_Erro_3_0_0;
-  int estado_bat_St_6_Erro_3_0_1;
-  int estado_bat_St_6_Erro_2_1;
-  int estado_bat_St_6_Erro_3_1_0;
-  int estado_bat_St_6_Erro_3_1_1;
-  int ck_16_2_0;
-  int ck_16_3_0_0;
-  int ck_16_3_0_1;
-  int ck_16_2_1;
-  int ck_16_3_1_0;
-  int ck_16_3_1_1;
-  int nr_St_6_Carregando;
-  int ns_St_6_Carregando_3;
-  int ns_St_6_Carregando_2;
-  int ns_St_6_Carregando_1;
-  int estado_bat_St_6_Carregando_3;
-  int estado_bat_St_6_Carregando_2;
-  int estado_bat_St_6_Carregando_1;
-  int nr_St_6_Baixo;
-  int ns_St_6_Baixo_3;
-  int ns_St_6_Baixo_2;
-  int ns_St_6_Baixo_1;
-  int estado_bat_St_6_Baixo_3;
-  int estado_bat_St_6_Baixo_2;
-  int estado_bat_St_6_Baixo_1;
-  int nr_St_6_Limiar2;
-  int ns_St_6_Limiar2_3;
-  int ns_St_6_Limiar2_2;
-  int ns_St_6_Limiar2_1;
-  int estado_bat_St_6_Limiar2_3;
-  int estado_bat_St_6_Limiar2_2;
-  int estado_bat_St_6_Limiar2_1;
-  int nr_St_6_Limiar1;
-  int ns_St_6_Limiar1_3;
-  int ns_St_6_Limiar1_2;
-  int ns_St_6_Limiar1_1;
-  int estado_bat_St_6_Limiar1_3;
-  int estado_bat_St_6_Limiar1_2;
-  int estado_bat_St_6_Limiar1_1;
-  int nr_St_6_Cheio;
-  int ns_St_6_Cheio_3;
-  int ns_St_6_Cheio_2;
-  int ns_St_6_Cheio_1;
-  int estado_bat_St_6_Cheio_3;
-  int estado_bat_St_6_Cheio_2;
-  int estado_bat_St_6_Cheio_1;
-  int nr_St_6_Erro;
-  int ns_St_6_Erro_3;
-  int ns_St_6_Erro_2;
-  int ns_St_6_Erro_1;
-  int estado_bat_St_6_Erro_3;
-  int estado_bat_St_6_Erro_2;
-  int estado_bat_St_6_Erro_1;
-  int ck_16_3;
-  int ck_16_2;
-  int ck_16_1;
+  int ns_St_5_Carregando_2_0;
+  int ns_St_5_Carregando_3_0_0;
+  int ns_St_5_Carregando_3_0_1;
+  int ns_St_5_Carregando_2_1;
+  int ns_St_5_Carregando_3_1_0;
+  int ns_St_5_Carregando_3_1_1;
+  int estado_bat_St_5_Carregando_2_0;
+  int estado_bat_St_5_Carregando_3_0_0;
+  int estado_bat_St_5_Carregando_3_0_1;
+  int estado_bat_St_5_Carregando_2_1;
+  int estado_bat_St_5_Carregando_3_1_0;
+  int estado_bat_St_5_Carregando_3_1_1;
+  int ns_St_5_Baixo_2_0;
+  int ns_St_5_Baixo_3_0_0;
+  int ns_St_5_Baixo_3_0_1;
+  int ns_St_5_Baixo_2_1;
+  int ns_St_5_Baixo_3_1_0;
+  int ns_St_5_Baixo_3_1_1;
+  int estado_bat_St_5_Baixo_2_0;
+  int estado_bat_St_5_Baixo_3_0_0;
+  int estado_bat_St_5_Baixo_3_0_1;
+  int estado_bat_St_5_Baixo_2_1;
+  int estado_bat_St_5_Baixo_3_1_0;
+  int estado_bat_St_5_Baixo_3_1_1;
+  int ns_St_5_Limiar2_2_0;
+  int ns_St_5_Limiar2_3_0_0;
+  int ns_St_5_Limiar2_3_0_1;
+  int ns_St_5_Limiar2_2_1;
+  int ns_St_5_Limiar2_3_1_0;
+  int ns_St_5_Limiar2_3_1_1;
+  int estado_bat_St_5_Limiar2_2_0;
+  int estado_bat_St_5_Limiar2_3_0_0;
+  int estado_bat_St_5_Limiar2_3_0_1;
+  int estado_bat_St_5_Limiar2_2_1;
+  int estado_bat_St_5_Limiar2_3_1_0;
+  int estado_bat_St_5_Limiar2_3_1_1;
+  int ns_St_5_Limiar1_2_0;
+  int ns_St_5_Limiar1_3_0_0;
+  int ns_St_5_Limiar1_3_0_1;
+  int ns_St_5_Limiar1_2_1;
+  int ns_St_5_Limiar1_3_1_0;
+  int ns_St_5_Limiar1_3_1_1;
+  int estado_bat_St_5_Limiar1_2_0;
+  int estado_bat_St_5_Limiar1_3_0_0;
+  int estado_bat_St_5_Limiar1_3_0_1;
+  int estado_bat_St_5_Limiar1_2_1;
+  int estado_bat_St_5_Limiar1_3_1_0;
+  int estado_bat_St_5_Limiar1_3_1_1;
+  int ns_St_5_Cheio_2_0;
+  int ns_St_5_Cheio_3_0_0;
+  int ns_St_5_Cheio_3_0_1;
+  int ns_St_5_Cheio_2_1;
+  int ns_St_5_Cheio_3_1_0;
+  int ns_St_5_Cheio_3_1_1;
+  int estado_bat_St_5_Cheio_2_0;
+  int estado_bat_St_5_Cheio_3_0_0;
+  int estado_bat_St_5_Cheio_3_0_1;
+  int estado_bat_St_5_Cheio_2_1;
+  int estado_bat_St_5_Cheio_3_1_0;
+  int estado_bat_St_5_Cheio_3_1_1;
+  int ns_St_5_Erro_2_0;
+  int ns_St_5_Erro_3_0_0;
+  int ns_St_5_Erro_3_0_1;
+  int ns_St_5_Erro_2_1;
+  int ns_St_5_Erro_3_1_0;
+  int ns_St_5_Erro_3_1_1;
+  int estado_bat_St_5_Erro_2_0;
+  int estado_bat_St_5_Erro_3_0_0;
+  int estado_bat_St_5_Erro_3_0_1;
+  int estado_bat_St_5_Erro_2_1;
+  int estado_bat_St_5_Erro_3_1_0;
+  int estado_bat_St_5_Erro_3_1_1;
+  int ck_15_2_0;
+  int ck_15_3_0_0;
+  int ck_15_3_0_1;
+  int ck_15_2_1;
+  int ck_15_3_1_0;
+  int ck_15_3_1_1;
+  int nr_St_5_Carregando;
+  int ns_St_5_Carregando_3;
+  int ns_St_5_Carregando_2;
+  int ns_St_5_Carregando_1;
+  int estado_bat_St_5_Carregando_3;
+  int estado_bat_St_5_Carregando_2;
+  int estado_bat_St_5_Carregando_1;
+  int nr_St_5_Baixo;
+  int ns_St_5_Baixo_3;
+  int ns_St_5_Baixo_2;
+  int ns_St_5_Baixo_1;
+  int estado_bat_St_5_Baixo_3;
+  int estado_bat_St_5_Baixo_2;
+  int estado_bat_St_5_Baixo_1;
+  int nr_St_5_Limiar2;
+  int ns_St_5_Limiar2_3;
+  int ns_St_5_Limiar2_2;
+  int ns_St_5_Limiar2_1;
+  int estado_bat_St_5_Limiar2_3;
+  int estado_bat_St_5_Limiar2_2;
+  int estado_bat_St_5_Limiar2_1;
+  int nr_St_5_Limiar1;
+  int ns_St_5_Limiar1_3;
+  int ns_St_5_Limiar1_2;
+  int ns_St_5_Limiar1_1;
+  int estado_bat_St_5_Limiar1_3;
+  int estado_bat_St_5_Limiar1_2;
+  int estado_bat_St_5_Limiar1_1;
+  int nr_St_5_Cheio;
+  int ns_St_5_Cheio_3;
+  int ns_St_5_Cheio_2;
+  int ns_St_5_Cheio_1;
+  int estado_bat_St_5_Cheio_3;
+  int estado_bat_St_5_Cheio_2;
+  int estado_bat_St_5_Cheio_1;
+  int nr_St_5_Erro;
+  int ns_St_5_Erro_3;
+  int ns_St_5_Erro_2;
+  int ns_St_5_Erro_1;
+  int estado_bat_St_5_Erro_3;
+  int estado_bat_St_5_Erro_2;
+  int estado_bat_St_5_Erro_1;
+  int ck_15_3;
+  int ck_15_2;
+  int ck_15_1;
   int v_243_2_0;
   int v_243_3_0_0;
   int v_243_3_0_1;
@@ -4388,86 +4317,86 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int v_482;
   int v_481;
   int v_480;
-  int s_St_6_Carregando_2_0;
-  int s_St_6_Carregando_3_0_0;
-  int s_St_6_Carregando_3_0_1;
-  int s_St_6_Carregando_2_1;
-  int s_St_6_Carregando_3_1_0;
-  int s_St_6_Carregando_3_1_1;
-  int s_St_6_Baixo_2_0;
-  int s_St_6_Baixo_3_0_0;
-  int s_St_6_Baixo_3_0_1;
-  int s_St_6_Baixo_2_1;
-  int s_St_6_Baixo_3_1_0;
-  int s_St_6_Baixo_3_1_1;
-  int s_St_6_Limiar2_2_0;
-  int s_St_6_Limiar2_3_0_0;
-  int s_St_6_Limiar2_3_0_1;
-  int s_St_6_Limiar2_2_1;
-  int s_St_6_Limiar2_3_1_0;
-  int s_St_6_Limiar2_3_1_1;
-  int s_St_6_Limiar1_2_0;
-  int s_St_6_Limiar1_3_0_0;
-  int s_St_6_Limiar1_3_0_1;
-  int s_St_6_Limiar1_2_1;
-  int s_St_6_Limiar1_3_1_0;
-  int s_St_6_Limiar1_3_1_1;
-  int s_St_6_Cheio_2_0;
-  int s_St_6_Cheio_3_0_0;
-  int s_St_6_Cheio_3_0_1;
-  int s_St_6_Cheio_2_1;
-  int s_St_6_Cheio_3_1_0;
-  int s_St_6_Cheio_3_1_1;
-  int s_St_6_Erro_2_0;
-  int s_St_6_Erro_3_0_0;
-  int s_St_6_Erro_3_0_1;
-  int s_St_6_Erro_2_1;
-  int s_St_6_Erro_3_1_0;
-  int s_St_6_Erro_3_1_1;
-  int ck_15_2_0;
-  int ck_15_3_0_0;
-  int ck_15_3_0_1;
-  int ck_15_2_1;
-  int ck_15_3_1_0;
-  int ck_15_3_1_1;
-  int r_St_6_Carregando;
-  int s_St_6_Carregando_3;
-  int s_St_6_Carregando_2;
-  int s_St_6_Carregando_1;
-  int r_St_6_Baixo;
-  int s_St_6_Baixo_3;
-  int s_St_6_Baixo_2;
-  int s_St_6_Baixo_1;
-  int r_St_6_Limiar2;
-  int s_St_6_Limiar2_3;
-  int s_St_6_Limiar2_2;
-  int s_St_6_Limiar2_1;
-  int r_St_6_Limiar1;
-  int s_St_6_Limiar1_3;
-  int s_St_6_Limiar1_2;
-  int s_St_6_Limiar1_1;
-  int r_St_6_Cheio;
-  int s_St_6_Cheio_3;
-  int s_St_6_Cheio_2;
-  int s_St_6_Cheio_1;
-  int r_St_6_Erro;
-  int s_St_6_Erro_3;
-  int s_St_6_Erro_2;
-  int s_St_6_Erro_1;
-  int ck_15_3;
-  int ck_15_2;
-  int ck_15_1;
-  int nr_1_St_7_Noite;
-  int ns_1_St_7_Noite_1;
-  int isday_St_7_Noite;
-  int nr_1_St_7_Dia;
-  int ns_1_St_7_Dia_1;
-  int isday_St_7_Dia;
+  int s_St_5_Carregando_2_0;
+  int s_St_5_Carregando_3_0_0;
+  int s_St_5_Carregando_3_0_1;
+  int s_St_5_Carregando_2_1;
+  int s_St_5_Carregando_3_1_0;
+  int s_St_5_Carregando_3_1_1;
+  int s_St_5_Baixo_2_0;
+  int s_St_5_Baixo_3_0_0;
+  int s_St_5_Baixo_3_0_1;
+  int s_St_5_Baixo_2_1;
+  int s_St_5_Baixo_3_1_0;
+  int s_St_5_Baixo_3_1_1;
+  int s_St_5_Limiar2_2_0;
+  int s_St_5_Limiar2_3_0_0;
+  int s_St_5_Limiar2_3_0_1;
+  int s_St_5_Limiar2_2_1;
+  int s_St_5_Limiar2_3_1_0;
+  int s_St_5_Limiar2_3_1_1;
+  int s_St_5_Limiar1_2_0;
+  int s_St_5_Limiar1_3_0_0;
+  int s_St_5_Limiar1_3_0_1;
+  int s_St_5_Limiar1_2_1;
+  int s_St_5_Limiar1_3_1_0;
+  int s_St_5_Limiar1_3_1_1;
+  int s_St_5_Cheio_2_0;
+  int s_St_5_Cheio_3_0_0;
+  int s_St_5_Cheio_3_0_1;
+  int s_St_5_Cheio_2_1;
+  int s_St_5_Cheio_3_1_0;
+  int s_St_5_Cheio_3_1_1;
+  int s_St_5_Erro_2_0;
+  int s_St_5_Erro_3_0_0;
+  int s_St_5_Erro_3_0_1;
+  int s_St_5_Erro_2_1;
+  int s_St_5_Erro_3_1_0;
+  int s_St_5_Erro_3_1_1;
+  int ck_14_2_0;
+  int ck_14_3_0_0;
+  int ck_14_3_0_1;
+  int ck_14_2_1;
+  int ck_14_3_1_0;
+  int ck_14_3_1_1;
+  int r_St_5_Carregando;
+  int s_St_5_Carregando_3;
+  int s_St_5_Carregando_2;
+  int s_St_5_Carregando_1;
+  int r_St_5_Baixo;
+  int s_St_5_Baixo_3;
+  int s_St_5_Baixo_2;
+  int s_St_5_Baixo_1;
+  int r_St_5_Limiar2;
+  int s_St_5_Limiar2_3;
+  int s_St_5_Limiar2_2;
+  int s_St_5_Limiar2_1;
+  int r_St_5_Limiar1;
+  int s_St_5_Limiar1_3;
+  int s_St_5_Limiar1_2;
+  int s_St_5_Limiar1_1;
+  int r_St_5_Cheio;
+  int s_St_5_Cheio_3;
+  int s_St_5_Cheio_2;
+  int s_St_5_Cheio_1;
+  int r_St_5_Erro;
+  int s_St_5_Erro_3;
+  int s_St_5_Erro_2;
+  int s_St_5_Erro_1;
+  int ck_14_3;
+  int ck_14_2;
   int ck_14_1;
-  int r_1_St_7_Noite;
-  int s_2_St_7_Noite_1;
-  int r_1_St_7_Dia;
-  int s_2_St_7_Dia_1;
+  int nr_1_St_6_Noite;
+  int ns_1_St_6_Noite_1;
+  int isday_St_6_Noite;
+  int nr_1_St_6_Dia;
+  int ns_1_St_6_Dia_1;
+  int isday_St_6_Dia;
+  int ck_13_1;
+  int r_1_St_6_Noite;
+  int s_1_St_6_Noite_1;
+  int r_1_St_6_Dia;
+  int s_1_St_6_Dia_1;
   int v_528;
   int v_527;
   int v_526;
@@ -4493,70 +4422,70 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int v_506;
   int v_505;
   int v_504;
-  int ns_2_St_8_Rlevel4_2_0;
-  int ns_2_St_8_Rlevel4_3_0_0;
-  int ns_2_St_8_Rlevel4_3_0_1;
-  int ns_2_St_8_Rlevel4_2_1;
-  int ns_2_St_8_Rlevel4_3_1_0;
-  int ns_2_St_8_Rlevel4_3_1_1;
-  int ns_2_St_8_Rlevel3_2_0;
-  int ns_2_St_8_Rlevel3_3_0_0;
-  int ns_2_St_8_Rlevel3_3_0_1;
-  int ns_2_St_8_Rlevel3_2_1;
-  int ns_2_St_8_Rlevel3_3_1_0;
-  int ns_2_St_8_Rlevel3_3_1_1;
-  int ns_2_St_8_Rlevel1_2_0;
-  int ns_2_St_8_Rlevel1_3_0_0;
-  int ns_2_St_8_Rlevel1_3_0_1;
-  int ns_2_St_8_Rlevel1_2_1;
-  int ns_2_St_8_Rlevel1_3_1_0;
-  int ns_2_St_8_Rlevel1_3_1_1;
-  int ns_2_St_8_Boot_2_0;
-  int ns_2_St_8_Boot_3_0_0;
-  int ns_2_St_8_Boot_3_0_1;
-  int ns_2_St_8_Boot_2_1;
-  int ns_2_St_8_Boot_3_1_0;
-  int ns_2_St_8_Boot_3_1_1;
-  int ns_2_St_8_Off_2_0;
-  int ns_2_St_8_Off_3_0_0;
-  int ns_2_St_8_Off_3_0_1;
-  int ns_2_St_8_Off_2_1;
-  int ns_2_St_8_Off_3_1_0;
-  int ns_2_St_8_Off_3_1_1;
-  int ck_12_2_0;
-  int ck_12_3_0_0;
-  int ck_12_3_0_1;
-  int ck_12_2_1;
-  int ck_12_3_1_0;
-  int ck_12_3_1_1;
-  int nr_2_St_8_Rlevel4;
-  int ns_2_St_8_Rlevel4_3;
-  int ns_2_St_8_Rlevel4_2;
-  int ns_2_St_8_Rlevel4_1;
-  int estado_2_St_8_Rlevel4;
-  int nr_2_St_8_Rlevel3;
-  int ns_2_St_8_Rlevel3_3;
-  int ns_2_St_8_Rlevel3_2;
-  int ns_2_St_8_Rlevel3_1;
-  int estado_2_St_8_Rlevel3;
-  int nr_2_St_8_Rlevel1;
-  int ns_2_St_8_Rlevel1_3;
-  int ns_2_St_8_Rlevel1_2;
-  int ns_2_St_8_Rlevel1_1;
-  int estado_2_St_8_Rlevel1;
-  int nr_2_St_8_Boot;
-  int ns_2_St_8_Boot_3;
-  int ns_2_St_8_Boot_2;
-  int ns_2_St_8_Boot_1;
-  int estado_2_St_8_Boot;
-  int nr_2_St_8_Off;
-  int ns_2_St_8_Off_3;
-  int ns_2_St_8_Off_2;
-  int ns_2_St_8_Off_1;
-  int estado_2_St_8_Off;
-  int ck_12_3;
-  int ck_12_2;
-  int ck_12_1;
+  int ns_2_St_7_Rlevel4_2_0;
+  int ns_2_St_7_Rlevel4_3_0_0;
+  int ns_2_St_7_Rlevel4_3_0_1;
+  int ns_2_St_7_Rlevel4_2_1;
+  int ns_2_St_7_Rlevel4_3_1_0;
+  int ns_2_St_7_Rlevel4_3_1_1;
+  int ns_2_St_7_Rlevel3_2_0;
+  int ns_2_St_7_Rlevel3_3_0_0;
+  int ns_2_St_7_Rlevel3_3_0_1;
+  int ns_2_St_7_Rlevel3_2_1;
+  int ns_2_St_7_Rlevel3_3_1_0;
+  int ns_2_St_7_Rlevel3_3_1_1;
+  int ns_2_St_7_Rlevel1_2_0;
+  int ns_2_St_7_Rlevel1_3_0_0;
+  int ns_2_St_7_Rlevel1_3_0_1;
+  int ns_2_St_7_Rlevel1_2_1;
+  int ns_2_St_7_Rlevel1_3_1_0;
+  int ns_2_St_7_Rlevel1_3_1_1;
+  int ns_2_St_7_Boot_2_0;
+  int ns_2_St_7_Boot_3_0_0;
+  int ns_2_St_7_Boot_3_0_1;
+  int ns_2_St_7_Boot_2_1;
+  int ns_2_St_7_Boot_3_1_0;
+  int ns_2_St_7_Boot_3_1_1;
+  int ns_2_St_7_Off_2_0;
+  int ns_2_St_7_Off_3_0_0;
+  int ns_2_St_7_Off_3_0_1;
+  int ns_2_St_7_Off_2_1;
+  int ns_2_St_7_Off_3_1_0;
+  int ns_2_St_7_Off_3_1_1;
+  int ck_11_2_0;
+  int ck_11_3_0_0;
+  int ck_11_3_0_1;
+  int ck_11_2_1;
+  int ck_11_3_1_0;
+  int ck_11_3_1_1;
+  int nr_2_St_7_Rlevel4;
+  int ns_2_St_7_Rlevel4_3;
+  int ns_2_St_7_Rlevel4_2;
+  int ns_2_St_7_Rlevel4_1;
+  int estado_2_St_7_Rlevel4;
+  int nr_2_St_7_Rlevel3;
+  int ns_2_St_7_Rlevel3_3;
+  int ns_2_St_7_Rlevel3_2;
+  int ns_2_St_7_Rlevel3_1;
+  int estado_2_St_7_Rlevel3;
+  int nr_2_St_7_Rlevel1;
+  int ns_2_St_7_Rlevel1_3;
+  int ns_2_St_7_Rlevel1_2;
+  int ns_2_St_7_Rlevel1_1;
+  int estado_2_St_7_Rlevel1;
+  int nr_2_St_7_Boot;
+  int ns_2_St_7_Boot_3;
+  int ns_2_St_7_Boot_2;
+  int ns_2_St_7_Boot_1;
+  int estado_2_St_7_Boot;
+  int nr_2_St_7_Off;
+  int ns_2_St_7_Off_3;
+  int ns_2_St_7_Off_2;
+  int ns_2_St_7_Off_1;
+  int estado_2_St_7_Off;
+  int ck_11_3;
+  int ck_11_2;
+  int ck_11_1;
   int v_187_2_0;
   int v_187_3_0_0;
   int v_187_3_0_1;
@@ -4647,65 +4576,65 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int v_534;
   int v_533;
   int v_532;
-  int s_3_St_8_Rlevel4_2_0;
-  int s_3_St_8_Rlevel4_3_0_0;
-  int s_3_St_8_Rlevel4_3_0_1;
-  int s_3_St_8_Rlevel4_2_1;
-  int s_3_St_8_Rlevel4_3_1_0;
-  int s_3_St_8_Rlevel4_3_1_1;
-  int s_3_St_8_Rlevel3_2_0;
-  int s_3_St_8_Rlevel3_3_0_0;
-  int s_3_St_8_Rlevel3_3_0_1;
-  int s_3_St_8_Rlevel3_2_1;
-  int s_3_St_8_Rlevel3_3_1_0;
-  int s_3_St_8_Rlevel3_3_1_1;
-  int s_3_St_8_Rlevel1_2_0;
-  int s_3_St_8_Rlevel1_3_0_0;
-  int s_3_St_8_Rlevel1_3_0_1;
-  int s_3_St_8_Rlevel1_2_1;
-  int s_3_St_8_Rlevel1_3_1_0;
-  int s_3_St_8_Rlevel1_3_1_1;
-  int s_3_St_8_Boot_2_0;
-  int s_3_St_8_Boot_3_0_0;
-  int s_3_St_8_Boot_3_0_1;
-  int s_3_St_8_Boot_2_1;
-  int s_3_St_8_Boot_3_1_0;
-  int s_3_St_8_Boot_3_1_1;
-  int s_3_St_8_Off_2_0;
-  int s_3_St_8_Off_3_0_0;
-  int s_3_St_8_Off_3_0_1;
-  int s_3_St_8_Off_2_1;
-  int s_3_St_8_Off_3_1_0;
-  int s_3_St_8_Off_3_1_1;
-  int ck_11_2_0;
-  int ck_11_3_0_0;
-  int ck_11_3_0_1;
-  int ck_11_2_1;
-  int ck_11_3_1_0;
-  int ck_11_3_1_1;
-  int r_2_St_8_Rlevel4;
-  int s_3_St_8_Rlevel4_3;
-  int s_3_St_8_Rlevel4_2;
-  int s_3_St_8_Rlevel4_1;
-  int r_2_St_8_Rlevel3;
-  int s_3_St_8_Rlevel3_3;
-  int s_3_St_8_Rlevel3_2;
-  int s_3_St_8_Rlevel3_1;
-  int r_2_St_8_Rlevel1;
-  int s_3_St_8_Rlevel1_3;
-  int s_3_St_8_Rlevel1_2;
-  int s_3_St_8_Rlevel1_1;
-  int r_2_St_8_Boot;
-  int s_3_St_8_Boot_3;
-  int s_3_St_8_Boot_2;
-  int s_3_St_8_Boot_1;
-  int r_2_St_8_Off;
-  int s_3_St_8_Off_3;
-  int s_3_St_8_Off_2;
-  int s_3_St_8_Off_1;
-  int ck_11_3;
-  int ck_11_2;
-  int ck_11_1;
+  int s_2_St_7_Rlevel4_2_0;
+  int s_2_St_7_Rlevel4_3_0_0;
+  int s_2_St_7_Rlevel4_3_0_1;
+  int s_2_St_7_Rlevel4_2_1;
+  int s_2_St_7_Rlevel4_3_1_0;
+  int s_2_St_7_Rlevel4_3_1_1;
+  int s_2_St_7_Rlevel3_2_0;
+  int s_2_St_7_Rlevel3_3_0_0;
+  int s_2_St_7_Rlevel3_3_0_1;
+  int s_2_St_7_Rlevel3_2_1;
+  int s_2_St_7_Rlevel3_3_1_0;
+  int s_2_St_7_Rlevel3_3_1_1;
+  int s_2_St_7_Rlevel1_2_0;
+  int s_2_St_7_Rlevel1_3_0_0;
+  int s_2_St_7_Rlevel1_3_0_1;
+  int s_2_St_7_Rlevel1_2_1;
+  int s_2_St_7_Rlevel1_3_1_0;
+  int s_2_St_7_Rlevel1_3_1_1;
+  int s_2_St_7_Boot_2_0;
+  int s_2_St_7_Boot_3_0_0;
+  int s_2_St_7_Boot_3_0_1;
+  int s_2_St_7_Boot_2_1;
+  int s_2_St_7_Boot_3_1_0;
+  int s_2_St_7_Boot_3_1_1;
+  int s_2_St_7_Off_2_0;
+  int s_2_St_7_Off_3_0_0;
+  int s_2_St_7_Off_3_0_1;
+  int s_2_St_7_Off_2_1;
+  int s_2_St_7_Off_3_1_0;
+  int s_2_St_7_Off_3_1_1;
+  int ck_10_2_0;
+  int ck_10_3_0_0;
+  int ck_10_3_0_1;
+  int ck_10_2_1;
+  int ck_10_3_1_0;
+  int ck_10_3_1_1;
+  int r_2_St_7_Rlevel4;
+  int s_2_St_7_Rlevel4_3;
+  int s_2_St_7_Rlevel4_2;
+  int s_2_St_7_Rlevel4_1;
+  int r_2_St_7_Rlevel3;
+  int s_2_St_7_Rlevel3_3;
+  int s_2_St_7_Rlevel3_2;
+  int s_2_St_7_Rlevel3_1;
+  int r_2_St_7_Rlevel1;
+  int s_2_St_7_Rlevel1_3;
+  int s_2_St_7_Rlevel1_2;
+  int s_2_St_7_Rlevel1_1;
+  int r_2_St_7_Boot;
+  int s_2_St_7_Boot_3;
+  int s_2_St_7_Boot_2;
+  int s_2_St_7_Boot_1;
+  int r_2_St_7_Off;
+  int s_2_St_7_Off_3;
+  int s_2_St_7_Off_2;
+  int s_2_St_7_Off_1;
+  int ck_10_3;
+  int ck_10_2;
+  int ck_10_1;
   int v_581;
   int v_580;
   int v_579;
@@ -4736,75 +4665,75 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int v_554;
   int v_553;
   int v_552;
-  int ns_3_St_9_Sleep_2_0;
-  int ns_3_St_9_Sleep_3_0_0;
-  int ns_3_St_9_Sleep_3_0_1;
-  int ns_3_St_9_Sleep_2_1;
-  int ns_3_St_9_Sleep_3_1_0;
-  int ns_3_St_9_Sleep_3_1_1;
-  int ns_3_St_9_Online_2_0;
-  int ns_3_St_9_Online_3_0_0;
-  int ns_3_St_9_Online_3_0_1;
-  int ns_3_St_9_Online_2_1;
-  int ns_3_St_9_Online_3_1_0;
-  int ns_3_St_9_Online_3_1_1;
-  int ns_3_St_9_Teste_2_0;
-  int ns_3_St_9_Teste_3_0_0;
-  int ns_3_St_9_Teste_3_0_1;
-  int ns_3_St_9_Teste_2_1;
-  int ns_3_St_9_Teste_3_1_0;
-  int ns_3_St_9_Teste_3_1_1;
-  int ns_3_St_9_Boot_2_0;
-  int ns_3_St_9_Boot_3_0_0;
-  int ns_3_St_9_Boot_3_0_1;
-  int ns_3_St_9_Boot_2_1;
-  int ns_3_St_9_Boot_3_1_0;
-  int ns_3_St_9_Boot_3_1_1;
-  int ns_3_St_9_Off_2_0;
-  int ns_3_St_9_Off_3_0_0;
-  int ns_3_St_9_Off_3_0_1;
-  int ns_3_St_9_Off_2_1;
-  int ns_3_St_9_Off_3_1_0;
-  int ns_3_St_9_Off_3_1_1;
-  int ck_10_2_0;
-  int ck_10_3_0_0;
-  int ck_10_3_0_1;
-  int ck_10_2_1;
-  int ck_10_3_1_0;
-  int ck_10_3_1_1;
-  int nr_3_St_9_Sleep;
-  int ns_3_St_9_Sleep_3;
-  int ns_3_St_9_Sleep_2;
-  int ns_3_St_9_Sleep_1;
-  int estado_1_St_9_Sleep;
-  int atuador_St_9_Sleep;
-  int nr_3_St_9_Online;
-  int ns_3_St_9_Online_3;
-  int ns_3_St_9_Online_2;
-  int ns_3_St_9_Online_1;
-  int estado_1_St_9_Online;
-  int atuador_St_9_Online;
-  int nr_3_St_9_Teste;
-  int ns_3_St_9_Teste_3;
-  int ns_3_St_9_Teste_2;
-  int ns_3_St_9_Teste_1;
-  int estado_1_St_9_Teste;
-  int atuador_St_9_Teste;
-  int nr_3_St_9_Boot;
-  int ns_3_St_9_Boot_3;
-  int ns_3_St_9_Boot_2;
-  int ns_3_St_9_Boot_1;
-  int estado_1_St_9_Boot;
-  int atuador_St_9_Boot;
-  int nr_3_St_9_Off;
-  int ns_3_St_9_Off_3;
-  int ns_3_St_9_Off_2;
-  int ns_3_St_9_Off_1;
-  int estado_1_St_9_Off;
-  int atuador_St_9_Off;
-  int ck_10_3;
-  int ck_10_2;
-  int ck_10_1;
+  int ns_3_St_8_Sleep_2_0;
+  int ns_3_St_8_Sleep_3_0_0;
+  int ns_3_St_8_Sleep_3_0_1;
+  int ns_3_St_8_Sleep_2_1;
+  int ns_3_St_8_Sleep_3_1_0;
+  int ns_3_St_8_Sleep_3_1_1;
+  int ns_3_St_8_Online_2_0;
+  int ns_3_St_8_Online_3_0_0;
+  int ns_3_St_8_Online_3_0_1;
+  int ns_3_St_8_Online_2_1;
+  int ns_3_St_8_Online_3_1_0;
+  int ns_3_St_8_Online_3_1_1;
+  int ns_3_St_8_Teste_2_0;
+  int ns_3_St_8_Teste_3_0_0;
+  int ns_3_St_8_Teste_3_0_1;
+  int ns_3_St_8_Teste_2_1;
+  int ns_3_St_8_Teste_3_1_0;
+  int ns_3_St_8_Teste_3_1_1;
+  int ns_3_St_8_Boot_2_0;
+  int ns_3_St_8_Boot_3_0_0;
+  int ns_3_St_8_Boot_3_0_1;
+  int ns_3_St_8_Boot_2_1;
+  int ns_3_St_8_Boot_3_1_0;
+  int ns_3_St_8_Boot_3_1_1;
+  int ns_3_St_8_Off_2_0;
+  int ns_3_St_8_Off_3_0_0;
+  int ns_3_St_8_Off_3_0_1;
+  int ns_3_St_8_Off_2_1;
+  int ns_3_St_8_Off_3_1_0;
+  int ns_3_St_8_Off_3_1_1;
+  int ck_9_2_0;
+  int ck_9_3_0_0;
+  int ck_9_3_0_1;
+  int ck_9_2_1;
+  int ck_9_3_1_0;
+  int ck_9_3_1_1;
+  int nr_3_St_8_Sleep;
+  int ns_3_St_8_Sleep_3;
+  int ns_3_St_8_Sleep_2;
+  int ns_3_St_8_Sleep_1;
+  int estado_1_St_8_Sleep;
+  int atuador_St_8_Sleep;
+  int nr_3_St_8_Online;
+  int ns_3_St_8_Online_3;
+  int ns_3_St_8_Online_2;
+  int ns_3_St_8_Online_1;
+  int estado_1_St_8_Online;
+  int atuador_St_8_Online;
+  int nr_3_St_8_Teste;
+  int ns_3_St_8_Teste_3;
+  int ns_3_St_8_Teste_2;
+  int ns_3_St_8_Teste_1;
+  int estado_1_St_8_Teste;
+  int atuador_St_8_Teste;
+  int nr_3_St_8_Boot;
+  int ns_3_St_8_Boot_3;
+  int ns_3_St_8_Boot_2;
+  int ns_3_St_8_Boot_1;
+  int estado_1_St_8_Boot;
+  int atuador_St_8_Boot;
+  int nr_3_St_8_Off;
+  int ns_3_St_8_Off_3;
+  int ns_3_St_8_Off_2;
+  int ns_3_St_8_Off_1;
+  int estado_1_St_8_Off;
+  int atuador_St_8_Off;
+  int ck_9_3;
+  int ck_9_2;
+  int ck_9_1;
   int v_173_2_0;
   int v_173_3_0_0;
   int v_173_3_0_1;
@@ -4876,76 +4805,76 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int v_587;
   int v_586;
   int v_585;
-  int s_4_St_9_Sleep_2_0;
-  int s_4_St_9_Sleep_3_0_0;
-  int s_4_St_9_Sleep_3_0_1;
-  int s_4_St_9_Sleep_2_1;
-  int s_4_St_9_Sleep_3_1_0;
-  int s_4_St_9_Sleep_3_1_1;
-  int s_4_St_9_Online_2_0;
-  int s_4_St_9_Online_3_0_0;
-  int s_4_St_9_Online_3_0_1;
-  int s_4_St_9_Online_2_1;
-  int s_4_St_9_Online_3_1_0;
-  int s_4_St_9_Online_3_1_1;
-  int s_4_St_9_Teste_2_0;
-  int s_4_St_9_Teste_3_0_0;
-  int s_4_St_9_Teste_3_0_1;
-  int s_4_St_9_Teste_2_1;
-  int s_4_St_9_Teste_3_1_0;
-  int s_4_St_9_Teste_3_1_1;
-  int s_4_St_9_Boot_2_0;
-  int s_4_St_9_Boot_3_0_0;
-  int s_4_St_9_Boot_3_0_1;
-  int s_4_St_9_Boot_2_1;
-  int s_4_St_9_Boot_3_1_0;
-  int s_4_St_9_Boot_3_1_1;
-  int s_4_St_9_Off_2_0;
-  int s_4_St_9_Off_3_0_0;
-  int s_4_St_9_Off_3_0_1;
-  int s_4_St_9_Off_2_1;
-  int s_4_St_9_Off_3_1_0;
-  int s_4_St_9_Off_3_1_1;
-  int ck_9_2_0;
-  int ck_9_3_0_0;
-  int ck_9_3_0_1;
-  int ck_9_2_1;
-  int ck_9_3_1_0;
-  int ck_9_3_1_1;
-  int r_3_St_9_Sleep;
-  int s_4_St_9_Sleep_3;
-  int s_4_St_9_Sleep_2;
-  int s_4_St_9_Sleep_1;
-  int r_3_St_9_Online;
-  int s_4_St_9_Online_3;
-  int s_4_St_9_Online_2;
-  int s_4_St_9_Online_1;
-  int r_3_St_9_Teste;
-  int s_4_St_9_Teste_3;
-  int s_4_St_9_Teste_2;
-  int s_4_St_9_Teste_1;
-  int r_3_St_9_Boot;
-  int s_4_St_9_Boot_3;
-  int s_4_St_9_Boot_2;
-  int s_4_St_9_Boot_1;
-  int r_3_St_9_Off;
-  int s_4_St_9_Off_3;
-  int s_4_St_9_Off_2;
-  int s_4_St_9_Off_1;
-  int ck_9_3;
-  int ck_9_2;
-  int ck_9_1;
-  int nr_4_St_10_Lig;
-  int ns_4_St_10_Lig_1;
-  int estado_St_10_Lig;
-  int nr_4_St_10_Des;
-  int ns_4_St_10_Des_1;
-  int estado_St_10_Des;
+  int s_3_St_8_Sleep_2_0;
+  int s_3_St_8_Sleep_3_0_0;
+  int s_3_St_8_Sleep_3_0_1;
+  int s_3_St_8_Sleep_2_1;
+  int s_3_St_8_Sleep_3_1_0;
+  int s_3_St_8_Sleep_3_1_1;
+  int s_3_St_8_Online_2_0;
+  int s_3_St_8_Online_3_0_0;
+  int s_3_St_8_Online_3_0_1;
+  int s_3_St_8_Online_2_1;
+  int s_3_St_8_Online_3_1_0;
+  int s_3_St_8_Online_3_1_1;
+  int s_3_St_8_Teste_2_0;
+  int s_3_St_8_Teste_3_0_0;
+  int s_3_St_8_Teste_3_0_1;
+  int s_3_St_8_Teste_2_1;
+  int s_3_St_8_Teste_3_1_0;
+  int s_3_St_8_Teste_3_1_1;
+  int s_3_St_8_Boot_2_0;
+  int s_3_St_8_Boot_3_0_0;
+  int s_3_St_8_Boot_3_0_1;
+  int s_3_St_8_Boot_2_1;
+  int s_3_St_8_Boot_3_1_0;
+  int s_3_St_8_Boot_3_1_1;
+  int s_3_St_8_Off_2_0;
+  int s_3_St_8_Off_3_0_0;
+  int s_3_St_8_Off_3_0_1;
+  int s_3_St_8_Off_2_1;
+  int s_3_St_8_Off_3_1_0;
+  int s_3_St_8_Off_3_1_1;
+  int ck_8_2_0;
+  int ck_8_3_0_0;
+  int ck_8_3_0_1;
+  int ck_8_2_1;
+  int ck_8_3_1_0;
+  int ck_8_3_1_1;
+  int r_3_St_8_Sleep;
+  int s_3_St_8_Sleep_3;
+  int s_3_St_8_Sleep_2;
+  int s_3_St_8_Sleep_1;
+  int r_3_St_8_Online;
+  int s_3_St_8_Online_3;
+  int s_3_St_8_Online_2;
+  int s_3_St_8_Online_1;
+  int r_3_St_8_Teste;
+  int s_3_St_8_Teste_3;
+  int s_3_St_8_Teste_2;
+  int s_3_St_8_Teste_1;
+  int r_3_St_8_Boot;
+  int s_3_St_8_Boot_3;
+  int s_3_St_8_Boot_2;
+  int s_3_St_8_Boot_1;
+  int r_3_St_8_Off;
+  int s_3_St_8_Off_3;
+  int s_3_St_8_Off_2;
+  int s_3_St_8_Off_1;
+  int ck_8_3;
+  int ck_8_2;
   int ck_8_1;
-  int r_4_St_10_Lig;
-  int s_5_St_10_Lig_1;
-  int r_4_St_10_Des;
-  int s_5_St_10_Des_1;
+  int nr_4_St_9_Lig;
+  int ns_4_St_9_Lig_1;
+  int estado_St_9_Lig;
+  int nr_4_St_9_Des;
+  int ns_4_St_9_Des_1;
+  int estado_St_9_Des;
+  int ck_7_1;
+  int r_4_St_9_Lig;
+  int s_4_St_9_Lig_1;
+  int r_4_St_9_Des;
+  int s_4_St_9_Des_1;
   int v_163;
   int v_162;
   int v_161;
@@ -5060,34 +4989,34 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int bat12v_2_1;
   int bat12v_3_1_0;
   int bat12v_3_1_1;
-  int s_4_2_0;
-  int s_4_3_0_0;
-  int s_4_3_0_1;
-  int s_4_2_1;
-  int s_4_3_1_0;
-  int s_4_3_1_1;
-  int ns_3_2_0;
-  int ns_3_3_0_0;
-  int ns_3_3_0_1;
-  int ns_3_2_1;
-  int ns_3_3_1_0;
-  int ns_3_3_1_1;
   int s_3_2_0;
   int s_3_3_0_0;
   int s_3_3_0_1;
   int s_3_2_1;
   int s_3_3_1_0;
   int s_3_3_1_1;
+  int ns_3_2_0;
+  int ns_3_3_0_0;
+  int ns_3_3_0_1;
+  int ns_3_2_1;
+  int ns_3_3_1_0;
+  int ns_3_3_1_1;
+  int s_2_2_0;
+  int s_2_3_0_0;
+  int s_2_3_0_1;
+  int s_2_2_1;
+  int s_2_3_1_0;
+  int s_2_3_1_1;
   int ns_2_2_0;
   int ns_2_3_0_0;
   int ns_2_3_0_1;
   int ns_2_2_1;
   int ns_2_3_1_0;
   int ns_2_3_1_1;
-  int s_2_2_0;
+  int s_2_4_0;
   int s_3_4_0_0;
   int s_3_4_0_1;
-  int s_2_2_1;
+  int s_2_4_1;
   int s_3_4_1_0;
   int s_3_4_1_1;
   int ns_2_4_0;
@@ -5130,33 +5059,33 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int v_191;
   int v_190;
   int v_189;
-  int s_5_1;
+  int s_4_1;
   int ns_4_1;
   int r_4;
   int nr_4;
-  int s_4_3;
-  int s_4_2;
-  int s_4_1;
+  int s_3_3;
+  int s_3_2;
+  int s_3_1;
   int ns_3_3;
   int ns_3_2;
   int ns_3_1;
   int r_3;
   int nr_3;
-  int s_3_3;
-  int s_3_2;
-  int s_3_1;
+  int s_2_3;
+  int s_2_2;
+  int s_2_1;
   int ns_2_3;
   int ns_2_2;
   int ns_2_1;
   int r_2;
   int nr_2;
-  int s_2_1;
+  int s_1_1;
   int ns_1_1;
   int r_1;
   int nr_1;
   int s_3_4;
-  int s_2_2;
-  int s_1;
+  int s_2_4;
+  int s_1_2;
   int ns_3_4;
   int ns_2_4;
   int ns_1_2;
@@ -5195,8 +5124,6 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   int r1;
   int r3;
   int r4;
-  int out_atx_1;
-  int out_off_1;
   int estado_2;
   int c;
   int t;
@@ -5247,31 +5174,31 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   d = (v_255&&v);
   v_250 = !(d);
   e = (v_249&&v_250);
-  ck_15_1 = self->v_477;
-  ck_15_2 = self->v_478;
-  ck_15_3 = self->v_479;
+  ck_14_1 = self->v_477;
+  ck_14_2 = self->v_478;
+  ck_14_3 = self->v_479;
   t_1 = td;
   ts_1 = ts;
   s_atx = swa;
   s1 = swr1;
   s3 = swr3;
   s4 = swr4;
-  ck_11_1 = self->v_529;
-  ck_11_2 = self->v_530;
-  ck_11_3 = self->v_531;
+  ck_10_1 = self->v_529;
+  ck_10_2 = self->v_530;
+  ck_10_3 = self->v_531;
   t = tm;
   o = om;
-  ck_9_1 = self->v_582;
-  ck_9_2 = self->v_583;
-  ck_9_3 = self->v_584;
+  ck_8_1 = self->v_582;
+  ck_8_2 = self->v_583;
+  ck_8_3 = self->v_584;
   Contrato_controller__contrato_controller_step(ac, cb, l1b, l2b, vb, td, tm,
                                                 om, ts, swa, swr1, swr3,
-                                                swr4, self->ck_7_1,
+                                                swr4, self->ck_6_1,
                                                 self->pnr_4, self->v_584,
                                                 self->v_583, self->v_582,
                                                 self->pnr_3, self->v_531,
                                                 self->v_530, self->v_529,
-                                                self->pnr_2, self->ck_13_1,
+                                                self->pnr_2, self->ck_12_1,
                                                 self->pnr_1, self->v_479,
                                                 self->v_478, self->v_477,
                                                 self->pnr, true, true, true,
@@ -5290,12 +5217,8 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   cm = Contrato_controller__contrato_controller_out_st.contrato_cm;
   cp = Contrato_controller__contrato_controller_out_st.contrato_cp;
   c_atx = ca;
-  out_atx_1 = !(c_atx);
-  _out->out_atx = out_atx_1;
   v_196 = !(c_atx);
   off_atx = co;
-  out_off_1 = !(off_atx);
-  _out->out_off = out_off_1;
   cr1_1 = cr1;
   v_194 = !(cr1_1);
   cr3_1 = cr3;
@@ -5316,11 +5239,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   r4 = (v_189||v_190);
   c = cm;
   ca_1 = cp;
-  if (ck_15_1) {
-    ck_15_2_1 = ck_15_2;
-    if (ck_15_2_1) {
-      ck_15_3_1_1 = ck_15_3;
-      if (ck_15_3_1_1) {
+  if (ck_14_1) {
+    ck_14_2_1 = ck_14_2;
+    if (ck_14_2_1) {
+      ck_14_3_1_1 = ck_14_3;
+      if (ck_14_3_1_1) {
         v_211 = (e||a_1);
         v_212 = (v_211||b);
         if (v_212) {
@@ -5334,9 +5257,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_216 = v_214;
         };
         if (ac_1) {
-          r_St_6_Baixo = true;
+          r_St_5_Baixo = true;
         } else {
-          r_St_6_Baixo = v_216;
+          r_St_5_Baixo = v_216;
         };
         if (v_212) {
           v_213_1 = false;
@@ -5349,9 +5272,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_215_1 = v_213_1;
         };
         if (ac_1) {
-          s_St_6_Baixo_1 = true;
+          s_St_5_Baixo_1 = true;
         } else {
-          s_St_6_Baixo_1 = v_215_1;
+          s_St_5_Baixo_1 = v_215_1;
         };
         if (v_212) {
           v_213_2 = true;
@@ -5364,9 +5287,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_215_2 = v_213_2;
         };
         if (ac_1) {
-          s_St_6_Baixo_2 = true;
+          s_St_5_Baixo_2 = true;
         } else {
-          s_St_6_Baixo_2 = v_215_2;
+          s_St_5_Baixo_2 = v_215_2;
         };
         if (v_212) {
           v_213_3 = true;
@@ -5379,14 +5302,14 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_215_3 = v_213_3;
         };
         if (ac_1) {
-          s_St_6_Baixo_3 = false;
+          s_St_5_Baixo_3 = false;
         } else {
-          s_St_6_Baixo_3 = v_215_3;
+          s_St_5_Baixo_3 = v_215_3;
         };
-        v_498 = r_St_6_Baixo;
-        v_480 = s_St_6_Baixo_1;
-        v_481 = s_St_6_Baixo_2;
-        v_482 = s_St_6_Baixo_3;
+        v_498 = r_St_5_Baixo;
+        v_480 = s_St_5_Baixo_1;
+        v_481 = s_St_5_Baixo_2;
+        v_482 = s_St_5_Baixo_3;
       } else {
         v_203 = !(ac_1);
         v_204 = (v_203&&d);
@@ -5430,35 +5353,35 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
         v_197 = !(ac_1);
         v_198 = (v_197&&b);
         if (v_198) {
-          r_St_6_Carregando = true;
+          r_St_5_Carregando = true;
         } else {
-          r_St_6_Carregando = v_210;
+          r_St_5_Carregando = v_210;
         };
-        v_498 = r_St_6_Carregando;
+        v_498 = r_St_5_Carregando;
         if (v_198) {
-          s_St_6_Carregando_1 = true;
+          s_St_5_Carregando_1 = true;
         } else {
-          s_St_6_Carregando_1 = v_209_1;
+          s_St_5_Carregando_1 = v_209_1;
         };
-        v_480 = s_St_6_Carregando_1;
+        v_480 = s_St_5_Carregando_1;
         if (v_198) {
-          s_St_6_Carregando_2 = false;
+          s_St_5_Carregando_2 = false;
         } else {
-          s_St_6_Carregando_2 = v_209_2;
+          s_St_5_Carregando_2 = v_209_2;
         };
-        v_481 = s_St_6_Carregando_2;
+        v_481 = s_St_5_Carregando_2;
         if (v_198) {
-          s_St_6_Carregando_3 = false;
+          s_St_5_Carregando_3 = false;
         } else {
-          s_St_6_Carregando_3 = v_209_3;
+          s_St_5_Carregando_3 = v_209_3;
         };
-        v_482 = s_St_6_Carregando_3;
+        v_482 = s_St_5_Carregando_3;
       };
       v_492 = v_480;
       v_493 = v_481;
       v_494 = v_482;
       v_500 = v_498;
-      if (ck_15_3_1_1) {
+      if (ck_14_3_1_1) {
         if (v_213_1) {
           v_213_2_1 = v_213_2;
           if (v_213_2_1) {
@@ -5489,19 +5412,19 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_215_3_0_0 = v_215_3;
           };
         };
-        if (s_St_6_Baixo_1) {
-          s_St_6_Baixo_2_1 = s_St_6_Baixo_2;
-          if (s_St_6_Baixo_2_1) {
-            s_St_6_Baixo_3_1_1 = s_St_6_Baixo_3;
+        if (s_St_5_Baixo_1) {
+          s_St_5_Baixo_2_1 = s_St_5_Baixo_2;
+          if (s_St_5_Baixo_2_1) {
+            s_St_5_Baixo_3_1_1 = s_St_5_Baixo_3;
           } else {
-            s_St_6_Baixo_3_1_0 = s_St_6_Baixo_3;
+            s_St_5_Baixo_3_1_0 = s_St_5_Baixo_3;
           };
         } else {
-          s_St_6_Baixo_2_0 = s_St_6_Baixo_2;
-          if (s_St_6_Baixo_2_0) {
-            s_St_6_Baixo_3_0_1 = s_St_6_Baixo_3;
+          s_St_5_Baixo_2_0 = s_St_5_Baixo_2;
+          if (s_St_5_Baixo_2_0) {
+            s_St_5_Baixo_3_0_1 = s_St_5_Baixo_3;
           } else {
-            s_St_6_Baixo_3_0_0 = s_St_6_Baixo_3;
+            s_St_5_Baixo_3_0_0 = s_St_5_Baixo_3;
           };
         };
       } else {
@@ -5550,25 +5473,25 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_209_3_0_0 = v_209_3;
           };
         };
-        if (s_St_6_Carregando_1) {
-          s_St_6_Carregando_2_1 = s_St_6_Carregando_2;
-          if (s_St_6_Carregando_2_1) {
-            s_St_6_Carregando_3_1_1 = s_St_6_Carregando_3;
+        if (s_St_5_Carregando_1) {
+          s_St_5_Carregando_2_1 = s_St_5_Carregando_2;
+          if (s_St_5_Carregando_2_1) {
+            s_St_5_Carregando_3_1_1 = s_St_5_Carregando_3;
           } else {
-            s_St_6_Carregando_3_1_0 = s_St_6_Carregando_3;
+            s_St_5_Carregando_3_1_0 = s_St_5_Carregando_3;
           };
         } else {
-          s_St_6_Carregando_2_0 = s_St_6_Carregando_2;
-          if (s_St_6_Carregando_2_0) {
-            s_St_6_Carregando_3_0_1 = s_St_6_Carregando_3;
+          s_St_5_Carregando_2_0 = s_St_5_Carregando_2;
+          if (s_St_5_Carregando_2_0) {
+            s_St_5_Carregando_3_0_1 = s_St_5_Carregando_3;
           } else {
-            s_St_6_Carregando_3_0_0 = s_St_6_Carregando_3;
+            s_St_5_Carregando_3_0_0 = s_St_5_Carregando_3;
           };
         };
       };
     } else {
-      ck_15_3_1_0 = ck_15_3;
-      if (ck_15_3_1_0) {
+      ck_14_3_1_0 = ck_14_3;
+      if (ck_14_3_1_0) {
         v_499 = true;
         v_483 = true;
         v_484 = true;
@@ -5587,11 +5510,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_236 = v_234;
         };
         if (ac_1) {
-          r_St_6_Cheio = true;
+          r_St_5_Cheio = true;
         } else {
-          r_St_6_Cheio = v_236;
+          r_St_5_Cheio = v_236;
         };
-        v_499 = r_St_6_Cheio;
+        v_499 = r_St_5_Cheio;
         if (v_232) {
           v_233_1 = false;
         } else {
@@ -5603,11 +5526,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_235_1 = v_233_1;
         };
         if (ac_1) {
-          s_St_6_Cheio_1 = true;
+          s_St_5_Cheio_1 = true;
         } else {
-          s_St_6_Cheio_1 = v_235_1;
+          s_St_5_Cheio_1 = v_235_1;
         };
-        v_483 = s_St_6_Cheio_1;
+        v_483 = s_St_5_Cheio_1;
         if (v_232) {
           v_233_2 = true;
         } else {
@@ -5619,11 +5542,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_235_2 = v_233_2;
         };
         if (ac_1) {
-          s_St_6_Cheio_2 = true;
+          s_St_5_Cheio_2 = true;
         } else {
-          s_St_6_Cheio_2 = v_235_2;
+          s_St_5_Cheio_2 = v_235_2;
         };
-        v_484 = s_St_6_Cheio_2;
+        v_484 = s_St_5_Cheio_2;
         if (v_232) {
           v_233_3 = true;
         } else {
@@ -5635,11 +5558,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_235_3 = v_233_3;
         };
         if (ac_1) {
-          s_St_6_Cheio_3 = false;
+          s_St_5_Cheio_3 = false;
         } else {
-          s_St_6_Cheio_3 = v_235_3;
+          s_St_5_Cheio_3 = v_235_3;
         };
-        v_485 = s_St_6_Cheio_3;
+        v_485 = s_St_5_Cheio_3;
         if (v_233_1) {
           v_233_2_1 = v_233_2;
           if (v_233_2_1) {
@@ -5670,19 +5593,19 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_235_3_0_0 = v_235_3;
           };
         };
-        if (s_St_6_Cheio_1) {
-          s_St_6_Cheio_2_1 = s_St_6_Cheio_2;
-          if (s_St_6_Cheio_2_1) {
-            s_St_6_Cheio_3_1_1 = s_St_6_Cheio_3;
+        if (s_St_5_Cheio_1) {
+          s_St_5_Cheio_2_1 = s_St_5_Cheio_2;
+          if (s_St_5_Cheio_2_1) {
+            s_St_5_Cheio_3_1_1 = s_St_5_Cheio_3;
           } else {
-            s_St_6_Cheio_3_1_0 = s_St_6_Cheio_3;
+            s_St_5_Cheio_3_1_0 = s_St_5_Cheio_3;
           };
         } else {
-          s_St_6_Cheio_2_0 = s_St_6_Cheio_2;
-          if (s_St_6_Cheio_2_0) {
-            s_St_6_Cheio_3_0_1 = s_St_6_Cheio_3;
+          s_St_5_Cheio_2_0 = s_St_5_Cheio_2;
+          if (s_St_5_Cheio_2_0) {
+            s_St_5_Cheio_3_0_1 = s_St_5_Cheio_3;
           } else {
-            s_St_6_Cheio_3_0_0 = s_St_6_Cheio_3;
+            s_St_5_Cheio_3_0_0 = s_St_5_Cheio_3;
           };
         };
       };
@@ -5691,15 +5614,15 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_494 = v_485;
       v_500 = v_499;
     };
-    s_1 = v_492;
-    s_2_2 = v_493;
+    s_1_2 = v_492;
+    s_2_4 = v_493;
     s_3_4 = v_494;
     r = v_500;
   } else {
-    ck_15_2_0 = ck_15_2;
-    if (ck_15_2_0) {
-      ck_15_3_0_1 = ck_15_3;
-      if (ck_15_3_0_1) {
+    ck_14_2_0 = ck_14_2;
+    if (ck_14_2_0) {
+      ck_14_3_0_1 = ck_14_3;
+      if (ck_14_3_0_1) {
         if (d) {
           v_238 = true;
         } else {
@@ -5721,9 +5644,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_244 = v_242;
         };
         if (ac_1) {
-          r_St_6_Erro = true;
+          r_St_5_Erro = true;
         } else {
-          r_St_6_Erro = v_244;
+          r_St_5_Erro = v_244;
         };
         if (d) {
           v_237_1 = true;
@@ -5746,9 +5669,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_243_1 = v_241_1;
         };
         if (ac_1) {
-          s_St_6_Erro_1 = true;
+          s_St_5_Erro_1 = true;
         } else {
-          s_St_6_Erro_1 = v_243_1;
+          s_St_5_Erro_1 = v_243_1;
         };
         if (d) {
           v_237_2 = true;
@@ -5771,9 +5694,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_243_2 = v_241_2;
         };
         if (ac_1) {
-          s_St_6_Erro_2 = true;
+          s_St_5_Erro_2 = true;
         } else {
-          s_St_6_Erro_2 = v_243_2;
+          s_St_5_Erro_2 = v_243_2;
         };
         if (d) {
           v_237_3 = true;
@@ -5796,14 +5719,14 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_243_3 = v_241_3;
         };
         if (ac_1) {
-          s_St_6_Erro_3 = false;
+          s_St_5_Erro_3 = false;
         } else {
-          s_St_6_Erro_3 = v_243_3;
+          s_St_5_Erro_3 = v_243_3;
         };
-        v_501 = r_St_6_Erro;
-        v_486 = s_St_6_Erro_1;
-        v_487 = s_St_6_Erro_2;
-        v_488 = s_St_6_Erro_3;
+        v_501 = r_St_5_Erro;
+        v_486 = s_St_5_Erro_1;
+        v_487 = s_St_5_Erro_2;
+        v_488 = s_St_5_Erro_3;
         if (v_237_1) {
           v_237_2_1 = v_237_2;
           if (v_237_2_1) {
@@ -5864,19 +5787,19 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_243_3_0_0 = v_243_3;
           };
         };
-        if (s_St_6_Erro_1) {
-          s_St_6_Erro_2_1 = s_St_6_Erro_2;
-          if (s_St_6_Erro_2_1) {
-            s_St_6_Erro_3_1_1 = s_St_6_Erro_3;
+        if (s_St_5_Erro_1) {
+          s_St_5_Erro_2_1 = s_St_5_Erro_2;
+          if (s_St_5_Erro_2_1) {
+            s_St_5_Erro_3_1_1 = s_St_5_Erro_3;
           } else {
-            s_St_6_Erro_3_1_0 = s_St_6_Erro_3;
+            s_St_5_Erro_3_1_0 = s_St_5_Erro_3;
           };
         } else {
-          s_St_6_Erro_2_0 = s_St_6_Erro_2;
-          if (s_St_6_Erro_2_0) {
-            s_St_6_Erro_3_0_1 = s_St_6_Erro_3;
+          s_St_5_Erro_2_0 = s_St_5_Erro_2;
+          if (s_St_5_Erro_2_0) {
+            s_St_5_Erro_3_0_1 = s_St_5_Erro_3;
           } else {
-            s_St_6_Erro_3_0_0 = s_St_6_Erro_3;
+            s_St_5_Erro_3_0_0 = s_St_5_Erro_3;
           };
         };
       } else {
@@ -5897,11 +5820,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_230 = v_228;
         };
         if (ac_1) {
-          r_St_6_Limiar1 = true;
+          r_St_5_Limiar1 = true;
         } else {
-          r_St_6_Limiar1 = v_230;
+          r_St_5_Limiar1 = v_230;
         };
-        v_501 = r_St_6_Limiar1;
+        v_501 = r_St_5_Limiar1;
         if (v_224) {
           v_225_1 = false;
         } else {
@@ -5918,11 +5841,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_229_1 = v_227_1;
         };
         if (ac_1) {
-          s_St_6_Limiar1_1 = true;
+          s_St_5_Limiar1_1 = true;
         } else {
-          s_St_6_Limiar1_1 = v_229_1;
+          s_St_5_Limiar1_1 = v_229_1;
         };
-        v_486 = s_St_6_Limiar1_1;
+        v_486 = s_St_5_Limiar1_1;
         if (v_224) {
           v_225_2 = true;
         } else {
@@ -5939,11 +5862,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_229_2 = v_227_2;
         };
         if (ac_1) {
-          s_St_6_Limiar1_2 = true;
+          s_St_5_Limiar1_2 = true;
         } else {
-          s_St_6_Limiar1_2 = v_229_2;
+          s_St_5_Limiar1_2 = v_229_2;
         };
-        v_487 = s_St_6_Limiar1_2;
+        v_487 = s_St_5_Limiar1_2;
         if (v_224) {
           v_225_3 = true;
         } else {
@@ -5960,11 +5883,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_229_3 = v_227_3;
         };
         if (ac_1) {
-          s_St_6_Limiar1_3 = false;
+          s_St_5_Limiar1_3 = false;
         } else {
-          s_St_6_Limiar1_3 = v_229_3;
+          s_St_5_Limiar1_3 = v_229_3;
         };
-        v_488 = s_St_6_Limiar1_3;
+        v_488 = s_St_5_Limiar1_3;
         if (v_225_1) {
           v_225_2_1 = v_225_2;
           if (v_225_2_1) {
@@ -6010,19 +5933,19 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_229_3_0_0 = v_229_3;
           };
         };
-        if (s_St_6_Limiar1_1) {
-          s_St_6_Limiar1_2_1 = s_St_6_Limiar1_2;
-          if (s_St_6_Limiar1_2_1) {
-            s_St_6_Limiar1_3_1_1 = s_St_6_Limiar1_3;
+        if (s_St_5_Limiar1_1) {
+          s_St_5_Limiar1_2_1 = s_St_5_Limiar1_2;
+          if (s_St_5_Limiar1_2_1) {
+            s_St_5_Limiar1_3_1_1 = s_St_5_Limiar1_3;
           } else {
-            s_St_6_Limiar1_3_1_0 = s_St_6_Limiar1_3;
+            s_St_5_Limiar1_3_1_0 = s_St_5_Limiar1_3;
           };
         } else {
-          s_St_6_Limiar1_2_0 = s_St_6_Limiar1_2;
-          if (s_St_6_Limiar1_2_0) {
-            s_St_6_Limiar1_3_0_1 = s_St_6_Limiar1_3;
+          s_St_5_Limiar1_2_0 = s_St_5_Limiar1_2;
+          if (s_St_5_Limiar1_2_0) {
+            s_St_5_Limiar1_3_0_1 = s_St_5_Limiar1_3;
           } else {
-            s_St_6_Limiar1_3_0_0 = s_St_6_Limiar1_3;
+            s_St_5_Limiar1_3_0_0 = s_St_5_Limiar1_3;
           };
         };
       };
@@ -6031,8 +5954,8 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_497 = v_488;
       v_503 = v_501;
     } else {
-      ck_15_3_0_0 = ck_15_3;
-      if (ck_15_3_0_0) {
+      ck_14_3_0_0 = ck_14_3;
+      if (ck_14_3_0_0) {
         v_502 = true;
         v_489 = true;
         v_490 = true;
@@ -6055,11 +5978,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_223 = v_221;
         };
         if (ac_1) {
-          r_St_6_Limiar2 = true;
+          r_St_5_Limiar2 = true;
         } else {
-          r_St_6_Limiar2 = v_223;
+          r_St_5_Limiar2 = v_223;
         };
-        v_502 = r_St_6_Limiar2;
+        v_502 = r_St_5_Limiar2;
         if (v_217) {
           v_218_1 = false;
         } else {
@@ -6076,11 +5999,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_222_1 = v_220_1;
         };
         if (ac_1) {
-          s_St_6_Limiar2_1 = true;
+          s_St_5_Limiar2_1 = true;
         } else {
-          s_St_6_Limiar2_1 = v_222_1;
+          s_St_5_Limiar2_1 = v_222_1;
         };
-        v_489 = s_St_6_Limiar2_1;
+        v_489 = s_St_5_Limiar2_1;
         if (v_217) {
           v_218_2 = true;
         } else {
@@ -6097,11 +6020,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_222_2 = v_220_2;
         };
         if (ac_1) {
-          s_St_6_Limiar2_2 = true;
+          s_St_5_Limiar2_2 = true;
         } else {
-          s_St_6_Limiar2_2 = v_222_2;
+          s_St_5_Limiar2_2 = v_222_2;
         };
-        v_490 = s_St_6_Limiar2_2;
+        v_490 = s_St_5_Limiar2_2;
         if (v_217) {
           v_218_3 = true;
         } else {
@@ -6118,59 +6041,59 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_222_3 = v_220_3;
         };
         if (ac_1) {
-          s_St_6_Limiar2_3 = false;
+          s_St_5_Limiar2_3 = false;
         } else {
-          s_St_6_Limiar2_3 = v_222_3;
+          s_St_5_Limiar2_3 = v_222_3;
         };
-        v_491 = s_St_6_Limiar2_3;
+        v_491 = s_St_5_Limiar2_3;
       };
       v_495 = v_489;
       v_496 = v_490;
       v_497 = v_491;
       v_503 = v_502;
     };
-    s_1 = v_495;
-    s_2_2 = v_496;
+    s_1_2 = v_495;
+    s_2_4 = v_496;
     s_3_4 = v_497;
     r = v_503;
   };
-  ck_16_1 = s_1;
-  ck_16_2 = s_2_2;
-  ck_16_3 = s_3_4;
-  if (ck_16_1) {
-    ck_16_2_1 = ck_16_2;
-    if (ck_16_2_1) {
-      ck_16_3_1_1 = ck_16_3;
-      if (ck_16_3_1_1) {
-        estado_bat_St_6_Baixo_1 = true;
-        estado_bat_St_6_Baixo_2 = true;
-        estado_bat_St_6_Baixo_3 = false;
-        nr_St_6_Baixo = false;
-        ns_St_6_Baixo_1 = true;
-        ns_St_6_Baixo_2 = true;
-        ns_St_6_Baixo_3 = true;
-        v_435 = estado_bat_St_6_Baixo_1;
-        v_436 = estado_bat_St_6_Baixo_2;
-        v_437 = estado_bat_St_6_Baixo_3;
-        v_471 = nr_St_6_Baixo;
-        v_453 = ns_St_6_Baixo_1;
-        v_454 = ns_St_6_Baixo_2;
-        v_455 = ns_St_6_Baixo_3;
+  ck_15_1 = s_1_2;
+  ck_15_2 = s_2_4;
+  ck_15_3 = s_3_4;
+  if (ck_15_1) {
+    ck_15_2_1 = ck_15_2;
+    if (ck_15_2_1) {
+      ck_15_3_1_1 = ck_15_3;
+      if (ck_15_3_1_1) {
+        estado_bat_St_5_Baixo_1 = true;
+        estado_bat_St_5_Baixo_2 = true;
+        estado_bat_St_5_Baixo_3 = false;
+        nr_St_5_Baixo = false;
+        ns_St_5_Baixo_1 = true;
+        ns_St_5_Baixo_2 = true;
+        ns_St_5_Baixo_3 = true;
+        v_435 = estado_bat_St_5_Baixo_1;
+        v_436 = estado_bat_St_5_Baixo_2;
+        v_437 = estado_bat_St_5_Baixo_3;
+        v_471 = nr_St_5_Baixo;
+        v_453 = ns_St_5_Baixo_1;
+        v_454 = ns_St_5_Baixo_2;
+        v_455 = ns_St_5_Baixo_3;
       } else {
-        estado_bat_St_6_Carregando_1 = true;
-        v_435 = estado_bat_St_6_Carregando_1;
-        estado_bat_St_6_Carregando_2 = true;
-        v_436 = estado_bat_St_6_Carregando_2;
-        estado_bat_St_6_Carregando_3 = true;
-        v_437 = estado_bat_St_6_Carregando_3;
-        nr_St_6_Carregando = false;
-        v_471 = nr_St_6_Carregando;
-        ns_St_6_Carregando_1 = true;
-        v_453 = ns_St_6_Carregando_1;
-        ns_St_6_Carregando_2 = true;
-        v_454 = ns_St_6_Carregando_2;
-        ns_St_6_Carregando_3 = false;
-        v_455 = ns_St_6_Carregando_3;
+        estado_bat_St_5_Carregando_1 = true;
+        v_435 = estado_bat_St_5_Carregando_1;
+        estado_bat_St_5_Carregando_2 = true;
+        v_436 = estado_bat_St_5_Carregando_2;
+        estado_bat_St_5_Carregando_3 = true;
+        v_437 = estado_bat_St_5_Carregando_3;
+        nr_St_5_Carregando = false;
+        v_471 = nr_St_5_Carregando;
+        ns_St_5_Carregando_1 = true;
+        v_453 = ns_St_5_Carregando_1;
+        ns_St_5_Carregando_2 = true;
+        v_454 = ns_St_5_Carregando_2;
+        ns_St_5_Carregando_3 = false;
+        v_455 = ns_St_5_Carregando_3;
       };
       v_447 = v_435;
       v_448 = v_436;
@@ -6179,72 +6102,72 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_466 = v_454;
       v_467 = v_455;
       v_473 = v_471;
-      if (ck_16_3_1_1) {
-        if (estado_bat_St_6_Baixo_1) {
-          estado_bat_St_6_Baixo_2_1 = estado_bat_St_6_Baixo_2;
-          if (estado_bat_St_6_Baixo_2_1) {
-            estado_bat_St_6_Baixo_3_1_1 = estado_bat_St_6_Baixo_3;
+      if (ck_15_3_1_1) {
+        if (estado_bat_St_5_Baixo_1) {
+          estado_bat_St_5_Baixo_2_1 = estado_bat_St_5_Baixo_2;
+          if (estado_bat_St_5_Baixo_2_1) {
+            estado_bat_St_5_Baixo_3_1_1 = estado_bat_St_5_Baixo_3;
           } else {
-            estado_bat_St_6_Baixo_3_1_0 = estado_bat_St_6_Baixo_3;
+            estado_bat_St_5_Baixo_3_1_0 = estado_bat_St_5_Baixo_3;
           };
         } else {
-          estado_bat_St_6_Baixo_2_0 = estado_bat_St_6_Baixo_2;
-          if (estado_bat_St_6_Baixo_2_0) {
-            estado_bat_St_6_Baixo_3_0_1 = estado_bat_St_6_Baixo_3;
+          estado_bat_St_5_Baixo_2_0 = estado_bat_St_5_Baixo_2;
+          if (estado_bat_St_5_Baixo_2_0) {
+            estado_bat_St_5_Baixo_3_0_1 = estado_bat_St_5_Baixo_3;
           } else {
-            estado_bat_St_6_Baixo_3_0_0 = estado_bat_St_6_Baixo_3;
+            estado_bat_St_5_Baixo_3_0_0 = estado_bat_St_5_Baixo_3;
           };
         };
-        if (ns_St_6_Baixo_1) {
-          ns_St_6_Baixo_2_1 = ns_St_6_Baixo_2;
-          if (ns_St_6_Baixo_2_1) {
-            ns_St_6_Baixo_3_1_1 = ns_St_6_Baixo_3;
+        if (ns_St_5_Baixo_1) {
+          ns_St_5_Baixo_2_1 = ns_St_5_Baixo_2;
+          if (ns_St_5_Baixo_2_1) {
+            ns_St_5_Baixo_3_1_1 = ns_St_5_Baixo_3;
           } else {
-            ns_St_6_Baixo_3_1_0 = ns_St_6_Baixo_3;
+            ns_St_5_Baixo_3_1_0 = ns_St_5_Baixo_3;
           };
         } else {
-          ns_St_6_Baixo_2_0 = ns_St_6_Baixo_2;
-          if (ns_St_6_Baixo_2_0) {
-            ns_St_6_Baixo_3_0_1 = ns_St_6_Baixo_3;
+          ns_St_5_Baixo_2_0 = ns_St_5_Baixo_2;
+          if (ns_St_5_Baixo_2_0) {
+            ns_St_5_Baixo_3_0_1 = ns_St_5_Baixo_3;
           } else {
-            ns_St_6_Baixo_3_0_0 = ns_St_6_Baixo_3;
+            ns_St_5_Baixo_3_0_0 = ns_St_5_Baixo_3;
           };
         };
       } else {
-        if (estado_bat_St_6_Carregando_1) {
-          estado_bat_St_6_Carregando_2_1 = estado_bat_St_6_Carregando_2;
-          if (estado_bat_St_6_Carregando_2_1) {
-            estado_bat_St_6_Carregando_3_1_1 = estado_bat_St_6_Carregando_3;
+        if (estado_bat_St_5_Carregando_1) {
+          estado_bat_St_5_Carregando_2_1 = estado_bat_St_5_Carregando_2;
+          if (estado_bat_St_5_Carregando_2_1) {
+            estado_bat_St_5_Carregando_3_1_1 = estado_bat_St_5_Carregando_3;
           } else {
-            estado_bat_St_6_Carregando_3_1_0 = estado_bat_St_6_Carregando_3;
+            estado_bat_St_5_Carregando_3_1_0 = estado_bat_St_5_Carregando_3;
           };
         } else {
-          estado_bat_St_6_Carregando_2_0 = estado_bat_St_6_Carregando_2;
-          if (estado_bat_St_6_Carregando_2_0) {
-            estado_bat_St_6_Carregando_3_0_1 = estado_bat_St_6_Carregando_3;
+          estado_bat_St_5_Carregando_2_0 = estado_bat_St_5_Carregando_2;
+          if (estado_bat_St_5_Carregando_2_0) {
+            estado_bat_St_5_Carregando_3_0_1 = estado_bat_St_5_Carregando_3;
           } else {
-            estado_bat_St_6_Carregando_3_0_0 = estado_bat_St_6_Carregando_3;
+            estado_bat_St_5_Carregando_3_0_0 = estado_bat_St_5_Carregando_3;
           };
         };
-        if (ns_St_6_Carregando_1) {
-          ns_St_6_Carregando_2_1 = ns_St_6_Carregando_2;
-          if (ns_St_6_Carregando_2_1) {
-            ns_St_6_Carregando_3_1_1 = ns_St_6_Carregando_3;
+        if (ns_St_5_Carregando_1) {
+          ns_St_5_Carregando_2_1 = ns_St_5_Carregando_2;
+          if (ns_St_5_Carregando_2_1) {
+            ns_St_5_Carregando_3_1_1 = ns_St_5_Carregando_3;
           } else {
-            ns_St_6_Carregando_3_1_0 = ns_St_6_Carregando_3;
+            ns_St_5_Carregando_3_1_0 = ns_St_5_Carregando_3;
           };
         } else {
-          ns_St_6_Carregando_2_0 = ns_St_6_Carregando_2;
-          if (ns_St_6_Carregando_2_0) {
-            ns_St_6_Carregando_3_0_1 = ns_St_6_Carregando_3;
+          ns_St_5_Carregando_2_0 = ns_St_5_Carregando_2;
+          if (ns_St_5_Carregando_2_0) {
+            ns_St_5_Carregando_3_0_1 = ns_St_5_Carregando_3;
           } else {
-            ns_St_6_Carregando_3_0_0 = ns_St_6_Carregando_3;
+            ns_St_5_Carregando_3_0_0 = ns_St_5_Carregando_3;
           };
         };
       };
     } else {
-      ck_16_3_1_0 = ck_16_3;
-      if (ck_16_3_1_0) {
+      ck_15_3_1_0 = ck_15_3;
+      if (ck_15_3_1_0) {
         v_438 = true;
         v_439 = true;
         v_440 = true;
@@ -6253,48 +6176,48 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
         v_457 = true;
         v_458 = true;
       } else {
-        estado_bat_St_6_Cheio_1 = false;
-        v_438 = estado_bat_St_6_Cheio_1;
-        estado_bat_St_6_Cheio_2 = true;
-        v_439 = estado_bat_St_6_Cheio_2;
-        estado_bat_St_6_Cheio_3 = false;
-        v_440 = estado_bat_St_6_Cheio_3;
-        nr_St_6_Cheio = false;
-        v_472 = nr_St_6_Cheio;
-        ns_St_6_Cheio_1 = true;
-        v_456 = ns_St_6_Cheio_1;
-        ns_St_6_Cheio_2 = false;
-        v_457 = ns_St_6_Cheio_2;
-        ns_St_6_Cheio_3 = false;
-        v_458 = ns_St_6_Cheio_3;
-        if (estado_bat_St_6_Cheio_1) {
-          estado_bat_St_6_Cheio_2_1 = estado_bat_St_6_Cheio_2;
-          if (estado_bat_St_6_Cheio_2_1) {
-            estado_bat_St_6_Cheio_3_1_1 = estado_bat_St_6_Cheio_3;
+        estado_bat_St_5_Cheio_1 = false;
+        v_438 = estado_bat_St_5_Cheio_1;
+        estado_bat_St_5_Cheio_2 = true;
+        v_439 = estado_bat_St_5_Cheio_2;
+        estado_bat_St_5_Cheio_3 = false;
+        v_440 = estado_bat_St_5_Cheio_3;
+        nr_St_5_Cheio = false;
+        v_472 = nr_St_5_Cheio;
+        ns_St_5_Cheio_1 = true;
+        v_456 = ns_St_5_Cheio_1;
+        ns_St_5_Cheio_2 = false;
+        v_457 = ns_St_5_Cheio_2;
+        ns_St_5_Cheio_3 = false;
+        v_458 = ns_St_5_Cheio_3;
+        if (estado_bat_St_5_Cheio_1) {
+          estado_bat_St_5_Cheio_2_1 = estado_bat_St_5_Cheio_2;
+          if (estado_bat_St_5_Cheio_2_1) {
+            estado_bat_St_5_Cheio_3_1_1 = estado_bat_St_5_Cheio_3;
           } else {
-            estado_bat_St_6_Cheio_3_1_0 = estado_bat_St_6_Cheio_3;
+            estado_bat_St_5_Cheio_3_1_0 = estado_bat_St_5_Cheio_3;
           };
         } else {
-          estado_bat_St_6_Cheio_2_0 = estado_bat_St_6_Cheio_2;
-          if (estado_bat_St_6_Cheio_2_0) {
-            estado_bat_St_6_Cheio_3_0_1 = estado_bat_St_6_Cheio_3;
+          estado_bat_St_5_Cheio_2_0 = estado_bat_St_5_Cheio_2;
+          if (estado_bat_St_5_Cheio_2_0) {
+            estado_bat_St_5_Cheio_3_0_1 = estado_bat_St_5_Cheio_3;
           } else {
-            estado_bat_St_6_Cheio_3_0_0 = estado_bat_St_6_Cheio_3;
+            estado_bat_St_5_Cheio_3_0_0 = estado_bat_St_5_Cheio_3;
           };
         };
-        if (ns_St_6_Cheio_1) {
-          ns_St_6_Cheio_2_1 = ns_St_6_Cheio_2;
-          if (ns_St_6_Cheio_2_1) {
-            ns_St_6_Cheio_3_1_1 = ns_St_6_Cheio_3;
+        if (ns_St_5_Cheio_1) {
+          ns_St_5_Cheio_2_1 = ns_St_5_Cheio_2;
+          if (ns_St_5_Cheio_2_1) {
+            ns_St_5_Cheio_3_1_1 = ns_St_5_Cheio_3;
           } else {
-            ns_St_6_Cheio_3_1_0 = ns_St_6_Cheio_3;
+            ns_St_5_Cheio_3_1_0 = ns_St_5_Cheio_3;
           };
         } else {
-          ns_St_6_Cheio_2_0 = ns_St_6_Cheio_2;
-          if (ns_St_6_Cheio_2_0) {
-            ns_St_6_Cheio_3_0_1 = ns_St_6_Cheio_3;
+          ns_St_5_Cheio_2_0 = ns_St_5_Cheio_2;
+          if (ns_St_5_Cheio_2_0) {
+            ns_St_5_Cheio_3_0_1 = ns_St_5_Cheio_3;
           } else {
-            ns_St_6_Cheio_3_0_0 = ns_St_6_Cheio_3;
+            ns_St_5_Cheio_3_0_0 = ns_St_5_Cheio_3;
           };
         };
       };
@@ -6314,97 +6237,97 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
     ns_3_4 = v_467;
     nr = v_473;
   } else {
-    ck_16_2_0 = ck_16_2;
-    if (ck_16_2_0) {
-      ck_16_3_0_1 = ck_16_3;
-      if (ck_16_3_0_1) {
-        estado_bat_St_6_Erro_1 = false;
-        estado_bat_St_6_Erro_2 = false;
-        estado_bat_St_6_Erro_3 = false;
-        nr_St_6_Erro = false;
-        ns_St_6_Erro_1 = false;
-        ns_St_6_Erro_2 = true;
-        ns_St_6_Erro_3 = true;
-        v_441 = estado_bat_St_6_Erro_1;
-        v_442 = estado_bat_St_6_Erro_2;
-        v_443 = estado_bat_St_6_Erro_3;
-        v_474 = nr_St_6_Erro;
-        v_459 = ns_St_6_Erro_1;
-        v_460 = ns_St_6_Erro_2;
-        v_461 = ns_St_6_Erro_3;
-        if (estado_bat_St_6_Erro_1) {
-          estado_bat_St_6_Erro_2_1 = estado_bat_St_6_Erro_2;
-          if (estado_bat_St_6_Erro_2_1) {
-            estado_bat_St_6_Erro_3_1_1 = estado_bat_St_6_Erro_3;
+    ck_15_2_0 = ck_15_2;
+    if (ck_15_2_0) {
+      ck_15_3_0_1 = ck_15_3;
+      if (ck_15_3_0_1) {
+        estado_bat_St_5_Erro_1 = false;
+        estado_bat_St_5_Erro_2 = false;
+        estado_bat_St_5_Erro_3 = false;
+        nr_St_5_Erro = false;
+        ns_St_5_Erro_1 = false;
+        ns_St_5_Erro_2 = true;
+        ns_St_5_Erro_3 = true;
+        v_441 = estado_bat_St_5_Erro_1;
+        v_442 = estado_bat_St_5_Erro_2;
+        v_443 = estado_bat_St_5_Erro_3;
+        v_474 = nr_St_5_Erro;
+        v_459 = ns_St_5_Erro_1;
+        v_460 = ns_St_5_Erro_2;
+        v_461 = ns_St_5_Erro_3;
+        if (estado_bat_St_5_Erro_1) {
+          estado_bat_St_5_Erro_2_1 = estado_bat_St_5_Erro_2;
+          if (estado_bat_St_5_Erro_2_1) {
+            estado_bat_St_5_Erro_3_1_1 = estado_bat_St_5_Erro_3;
           } else {
-            estado_bat_St_6_Erro_3_1_0 = estado_bat_St_6_Erro_3;
+            estado_bat_St_5_Erro_3_1_0 = estado_bat_St_5_Erro_3;
           };
         } else {
-          estado_bat_St_6_Erro_2_0 = estado_bat_St_6_Erro_2;
-          if (estado_bat_St_6_Erro_2_0) {
-            estado_bat_St_6_Erro_3_0_1 = estado_bat_St_6_Erro_3;
+          estado_bat_St_5_Erro_2_0 = estado_bat_St_5_Erro_2;
+          if (estado_bat_St_5_Erro_2_0) {
+            estado_bat_St_5_Erro_3_0_1 = estado_bat_St_5_Erro_3;
           } else {
-            estado_bat_St_6_Erro_3_0_0 = estado_bat_St_6_Erro_3;
+            estado_bat_St_5_Erro_3_0_0 = estado_bat_St_5_Erro_3;
           };
         };
-        if (ns_St_6_Erro_1) {
-          ns_St_6_Erro_2_1 = ns_St_6_Erro_2;
-          if (ns_St_6_Erro_2_1) {
-            ns_St_6_Erro_3_1_1 = ns_St_6_Erro_3;
+        if (ns_St_5_Erro_1) {
+          ns_St_5_Erro_2_1 = ns_St_5_Erro_2;
+          if (ns_St_5_Erro_2_1) {
+            ns_St_5_Erro_3_1_1 = ns_St_5_Erro_3;
           } else {
-            ns_St_6_Erro_3_1_0 = ns_St_6_Erro_3;
+            ns_St_5_Erro_3_1_0 = ns_St_5_Erro_3;
           };
         } else {
-          ns_St_6_Erro_2_0 = ns_St_6_Erro_2;
-          if (ns_St_6_Erro_2_0) {
-            ns_St_6_Erro_3_0_1 = ns_St_6_Erro_3;
+          ns_St_5_Erro_2_0 = ns_St_5_Erro_2;
+          if (ns_St_5_Erro_2_0) {
+            ns_St_5_Erro_3_0_1 = ns_St_5_Erro_3;
           } else {
-            ns_St_6_Erro_3_0_0 = ns_St_6_Erro_3;
+            ns_St_5_Erro_3_0_0 = ns_St_5_Erro_3;
           };
         };
       } else {
-        estado_bat_St_6_Limiar1_1 = false;
-        v_441 = estado_bat_St_6_Limiar1_1;
-        estado_bat_St_6_Limiar1_2 = true;
-        v_442 = estado_bat_St_6_Limiar1_2;
-        estado_bat_St_6_Limiar1_3 = true;
-        v_443 = estado_bat_St_6_Limiar1_3;
-        nr_St_6_Limiar1 = false;
-        v_474 = nr_St_6_Limiar1;
-        ns_St_6_Limiar1_1 = false;
-        v_459 = ns_St_6_Limiar1_1;
-        ns_St_6_Limiar1_2 = true;
-        v_460 = ns_St_6_Limiar1_2;
-        ns_St_6_Limiar1_3 = false;
-        v_461 = ns_St_6_Limiar1_3;
-        if (estado_bat_St_6_Limiar1_1) {
-          estado_bat_St_6_Limiar1_2_1 = estado_bat_St_6_Limiar1_2;
-          if (estado_bat_St_6_Limiar1_2_1) {
-            estado_bat_St_6_Limiar1_3_1_1 = estado_bat_St_6_Limiar1_3;
+        estado_bat_St_5_Limiar1_1 = false;
+        v_441 = estado_bat_St_5_Limiar1_1;
+        estado_bat_St_5_Limiar1_2 = true;
+        v_442 = estado_bat_St_5_Limiar1_2;
+        estado_bat_St_5_Limiar1_3 = true;
+        v_443 = estado_bat_St_5_Limiar1_3;
+        nr_St_5_Limiar1 = false;
+        v_474 = nr_St_5_Limiar1;
+        ns_St_5_Limiar1_1 = false;
+        v_459 = ns_St_5_Limiar1_1;
+        ns_St_5_Limiar1_2 = true;
+        v_460 = ns_St_5_Limiar1_2;
+        ns_St_5_Limiar1_3 = false;
+        v_461 = ns_St_5_Limiar1_3;
+        if (estado_bat_St_5_Limiar1_1) {
+          estado_bat_St_5_Limiar1_2_1 = estado_bat_St_5_Limiar1_2;
+          if (estado_bat_St_5_Limiar1_2_1) {
+            estado_bat_St_5_Limiar1_3_1_1 = estado_bat_St_5_Limiar1_3;
           } else {
-            estado_bat_St_6_Limiar1_3_1_0 = estado_bat_St_6_Limiar1_3;
+            estado_bat_St_5_Limiar1_3_1_0 = estado_bat_St_5_Limiar1_3;
           };
         } else {
-          estado_bat_St_6_Limiar1_2_0 = estado_bat_St_6_Limiar1_2;
-          if (estado_bat_St_6_Limiar1_2_0) {
-            estado_bat_St_6_Limiar1_3_0_1 = estado_bat_St_6_Limiar1_3;
+          estado_bat_St_5_Limiar1_2_0 = estado_bat_St_5_Limiar1_2;
+          if (estado_bat_St_5_Limiar1_2_0) {
+            estado_bat_St_5_Limiar1_3_0_1 = estado_bat_St_5_Limiar1_3;
           } else {
-            estado_bat_St_6_Limiar1_3_0_0 = estado_bat_St_6_Limiar1_3;
+            estado_bat_St_5_Limiar1_3_0_0 = estado_bat_St_5_Limiar1_3;
           };
         };
-        if (ns_St_6_Limiar1_1) {
-          ns_St_6_Limiar1_2_1 = ns_St_6_Limiar1_2;
-          if (ns_St_6_Limiar1_2_1) {
-            ns_St_6_Limiar1_3_1_1 = ns_St_6_Limiar1_3;
+        if (ns_St_5_Limiar1_1) {
+          ns_St_5_Limiar1_2_1 = ns_St_5_Limiar1_2;
+          if (ns_St_5_Limiar1_2_1) {
+            ns_St_5_Limiar1_3_1_1 = ns_St_5_Limiar1_3;
           } else {
-            ns_St_6_Limiar1_3_1_0 = ns_St_6_Limiar1_3;
+            ns_St_5_Limiar1_3_1_0 = ns_St_5_Limiar1_3;
           };
         } else {
-          ns_St_6_Limiar1_2_0 = ns_St_6_Limiar1_2;
-          if (ns_St_6_Limiar1_2_0) {
-            ns_St_6_Limiar1_3_0_1 = ns_St_6_Limiar1_3;
+          ns_St_5_Limiar1_2_0 = ns_St_5_Limiar1_2;
+          if (ns_St_5_Limiar1_2_0) {
+            ns_St_5_Limiar1_3_0_1 = ns_St_5_Limiar1_3;
           } else {
-            ns_St_6_Limiar1_3_0_0 = ns_St_6_Limiar1_3;
+            ns_St_5_Limiar1_3_0_0 = ns_St_5_Limiar1_3;
           };
         };
       };
@@ -6416,8 +6339,8 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_470 = v_461;
       v_476 = v_474;
     } else {
-      ck_16_3_0_0 = ck_16_3;
-      if (ck_16_3_0_0) {
+      ck_15_3_0_0 = ck_15_3;
+      if (ck_15_3_0_0) {
         v_444 = true;
         v_445 = true;
         v_446 = true;
@@ -6426,20 +6349,20 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
         v_463 = true;
         v_464 = true;
       } else {
-        estado_bat_St_6_Limiar2_1 = true;
-        v_444 = estado_bat_St_6_Limiar2_1;
-        estado_bat_St_6_Limiar2_2 = false;
-        v_445 = estado_bat_St_6_Limiar2_2;
-        estado_bat_St_6_Limiar2_3 = false;
-        v_446 = estado_bat_St_6_Limiar2_3;
-        nr_St_6_Limiar2 = false;
-        v_475 = nr_St_6_Limiar2;
-        ns_St_6_Limiar2_1 = false;
-        v_462 = ns_St_6_Limiar2_1;
-        ns_St_6_Limiar2_2 = false;
-        v_463 = ns_St_6_Limiar2_2;
-        ns_St_6_Limiar2_3 = false;
-        v_464 = ns_St_6_Limiar2_3;
+        estado_bat_St_5_Limiar2_1 = true;
+        v_444 = estado_bat_St_5_Limiar2_1;
+        estado_bat_St_5_Limiar2_2 = false;
+        v_445 = estado_bat_St_5_Limiar2_2;
+        estado_bat_St_5_Limiar2_3 = false;
+        v_446 = estado_bat_St_5_Limiar2_3;
+        nr_St_5_Limiar2 = false;
+        v_475 = nr_St_5_Limiar2;
+        ns_St_5_Limiar2_1 = false;
+        v_462 = ns_St_5_Limiar2_1;
+        ns_St_5_Limiar2_2 = false;
+        v_463 = ns_St_5_Limiar2_2;
+        ns_St_5_Limiar2_3 = false;
+        v_464 = ns_St_5_Limiar2_3;
       };
       v_450 = v_444;
       v_451 = v_445;
@@ -6555,60 +6478,60 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       ns_3_4_0_0 = ns_3_4;
     };
   };
-  if (!(ck_16_1)) {
-    if (!(ck_16_2_0)) {
-      if (!(ck_16_3_0_0)) {
-        if (estado_bat_St_6_Limiar2_1) {
-          estado_bat_St_6_Limiar2_2_1 = estado_bat_St_6_Limiar2_2;
-          if (estado_bat_St_6_Limiar2_2_1) {
-            estado_bat_St_6_Limiar2_3_1_1 = estado_bat_St_6_Limiar2_3;
+  if (!(ck_15_1)) {
+    if (!(ck_15_2_0)) {
+      if (!(ck_15_3_0_0)) {
+        if (estado_bat_St_5_Limiar2_1) {
+          estado_bat_St_5_Limiar2_2_1 = estado_bat_St_5_Limiar2_2;
+          if (estado_bat_St_5_Limiar2_2_1) {
+            estado_bat_St_5_Limiar2_3_1_1 = estado_bat_St_5_Limiar2_3;
           } else {
-            estado_bat_St_6_Limiar2_3_1_0 = estado_bat_St_6_Limiar2_3;
+            estado_bat_St_5_Limiar2_3_1_0 = estado_bat_St_5_Limiar2_3;
           };
         } else {
-          estado_bat_St_6_Limiar2_2_0 = estado_bat_St_6_Limiar2_2;
-          if (estado_bat_St_6_Limiar2_2_0) {
-            estado_bat_St_6_Limiar2_3_0_1 = estado_bat_St_6_Limiar2_3;
+          estado_bat_St_5_Limiar2_2_0 = estado_bat_St_5_Limiar2_2;
+          if (estado_bat_St_5_Limiar2_2_0) {
+            estado_bat_St_5_Limiar2_3_0_1 = estado_bat_St_5_Limiar2_3;
           } else {
-            estado_bat_St_6_Limiar2_3_0_0 = estado_bat_St_6_Limiar2_3;
+            estado_bat_St_5_Limiar2_3_0_0 = estado_bat_St_5_Limiar2_3;
           };
         };
-        if (ns_St_6_Limiar2_1) {
-          ns_St_6_Limiar2_2_1 = ns_St_6_Limiar2_2;
-          if (ns_St_6_Limiar2_2_1) {
-            ns_St_6_Limiar2_3_1_1 = ns_St_6_Limiar2_3;
+        if (ns_St_5_Limiar2_1) {
+          ns_St_5_Limiar2_2_1 = ns_St_5_Limiar2_2;
+          if (ns_St_5_Limiar2_2_1) {
+            ns_St_5_Limiar2_3_1_1 = ns_St_5_Limiar2_3;
           } else {
-            ns_St_6_Limiar2_3_1_0 = ns_St_6_Limiar2_3;
+            ns_St_5_Limiar2_3_1_0 = ns_St_5_Limiar2_3;
           };
         } else {
-          ns_St_6_Limiar2_2_0 = ns_St_6_Limiar2_2;
-          if (ns_St_6_Limiar2_2_0) {
-            ns_St_6_Limiar2_3_0_1 = ns_St_6_Limiar2_3;
+          ns_St_5_Limiar2_2_0 = ns_St_5_Limiar2_2;
+          if (ns_St_5_Limiar2_2_0) {
+            ns_St_5_Limiar2_3_0_1 = ns_St_5_Limiar2_3;
           } else {
-            ns_St_6_Limiar2_3_0_0 = ns_St_6_Limiar2_3;
+            ns_St_5_Limiar2_3_0_0 = ns_St_5_Limiar2_3;
           };
         };
       };
     };
   };
-  if (s_1) {
-    s_2_2_1 = s_2_2;
-    if (s_2_2_1) {
+  if (s_1_2) {
+    s_2_4_1 = s_2_4;
+    if (s_2_4_1) {
       s_3_4_1_1 = s_3_4;
     } else {
       s_3_4_1_0 = s_3_4;
     };
   } else {
-    s_2_2_0 = s_2_2;
-    if (s_2_2_0) {
+    s_2_4_0 = s_2_4;
+    if (s_2_4_0) {
       s_3_4_0_1 = s_3_4;
     } else {
       s_3_4_0_0 = s_3_4;
     };
   };
-  if (!(ck_15_1)) {
-    if (!(ck_15_2_0)) {
-      if (!(ck_15_3_0_0)) {
+  if (!(ck_14_1)) {
+    if (!(ck_14_2_0)) {
+      if (!(ck_14_3_0_0)) {
         if (v_218_1) {
           v_218_2_1 = v_218_2;
           if (v_218_2_1) {
@@ -6654,63 +6577,63 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_222_3_0_0 = v_222_3;
           };
         };
-        if (s_St_6_Limiar2_1) {
-          s_St_6_Limiar2_2_1 = s_St_6_Limiar2_2;
-          if (s_St_6_Limiar2_2_1) {
-            s_St_6_Limiar2_3_1_1 = s_St_6_Limiar2_3;
+        if (s_St_5_Limiar2_1) {
+          s_St_5_Limiar2_2_1 = s_St_5_Limiar2_2;
+          if (s_St_5_Limiar2_2_1) {
+            s_St_5_Limiar2_3_1_1 = s_St_5_Limiar2_3;
           } else {
-            s_St_6_Limiar2_3_1_0 = s_St_6_Limiar2_3;
+            s_St_5_Limiar2_3_1_0 = s_St_5_Limiar2_3;
           };
         } else {
-          s_St_6_Limiar2_2_0 = s_St_6_Limiar2_2;
-          if (s_St_6_Limiar2_2_0) {
-            s_St_6_Limiar2_3_0_1 = s_St_6_Limiar2_3;
+          s_St_5_Limiar2_2_0 = s_St_5_Limiar2_2;
+          if (s_St_5_Limiar2_2_0) {
+            s_St_5_Limiar2_3_0_1 = s_St_5_Limiar2_3;
           } else {
-            s_St_6_Limiar2_3_0_0 = s_St_6_Limiar2_3;
+            s_St_5_Limiar2_3_0_0 = s_St_5_Limiar2_3;
           };
         };
       };
     };
   };
-  if (self->ck_13_1) {
+  if (self->ck_12_1) {
     if (t_1) {
-      r_1_St_7_Dia = true;
-      s_2_St_7_Dia_1 = false;
+      r_1_St_6_Dia = true;
+      s_1_St_6_Dia_1 = false;
     } else {
-      r_1_St_7_Dia = self->pnr_1;
-      s_2_St_7_Dia_1 = true;
+      r_1_St_6_Dia = self->pnr_1;
+      s_1_St_6_Dia_1 = true;
     };
-    r_1 = r_1_St_7_Dia;
-    s_2_1 = s_2_St_7_Dia_1;
+    r_1 = r_1_St_6_Dia;
+    s_1_1 = s_1_St_6_Dia_1;
   } else {
     if (t_1) {
-      r_1_St_7_Noite = true;
+      r_1_St_6_Noite = true;
     } else {
-      r_1_St_7_Noite = self->pnr_1;
+      r_1_St_6_Noite = self->pnr_1;
     };
-    r_1 = r_1_St_7_Noite;
+    r_1 = r_1_St_6_Noite;
     if (t_1) {
-      s_2_St_7_Noite_1 = true;
+      s_1_St_6_Noite_1 = true;
     } else {
-      s_2_St_7_Noite_1 = false;
+      s_1_St_6_Noite_1 = false;
     };
-    s_2_1 = s_2_St_7_Noite_1;
+    s_1_1 = s_1_St_6_Noite_1;
   };
-  ck_14_1 = s_2_1;
-  if (ck_14_1) {
-    isday_St_7_Dia = true;
-    nr_1_St_7_Dia = false;
-    ns_1_St_7_Dia_1 = true;
-    isday = isday_St_7_Dia;
-    nr_1 = nr_1_St_7_Dia;
-    ns_1_1 = ns_1_St_7_Dia_1;
+  ck_13_1 = s_1_1;
+  if (ck_13_1) {
+    isday_St_6_Dia = true;
+    nr_1_St_6_Dia = false;
+    ns_1_St_6_Dia_1 = true;
+    isday = isday_St_6_Dia;
+    nr_1 = nr_1_St_6_Dia;
+    ns_1_1 = ns_1_St_6_Dia_1;
   } else {
-    isday_St_7_Noite = false;
-    isday = isday_St_7_Noite;
-    nr_1_St_7_Noite = false;
-    nr_1 = nr_1_St_7_Noite;
-    ns_1_St_7_Noite_1 = false;
-    ns_1_1 = ns_1_St_7_Noite_1;
+    isday_St_6_Noite = false;
+    isday = isday_St_6_Noite;
+    nr_1_St_6_Noite = false;
+    nr_1 = nr_1_St_6_Noite;
+    ns_1_St_6_Noite_1 = false;
+    ns_1_1 = ns_1_St_6_Noite_1;
   };
   _out->dia = isday;
   if (ck_1) {
@@ -6738,55 +6661,55 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       };
     };
   };
-  if (ck_11_1) {
-    ck_11_2_1 = ck_11_2;
-    if (ck_11_2_1) {
-      ck_11_3_1_1 = ck_11_3;
-      if (ck_11_3_1_1) {
+  if (ck_10_1) {
+    ck_10_2_1 = ck_10_2;
+    if (ck_10_2_1) {
+      ck_10_3_1_1 = ck_10_3;
+      if (ck_10_3_1_1) {
         if (ts_1) {
           v_188 = true;
         } else {
           v_188 = self->pnr_2;
         };
         if (off_atx) {
-          r_2_St_8_Boot = true;
+          r_2_St_7_Boot = true;
         } else {
-          r_2_St_8_Boot = v_188;
+          r_2_St_7_Boot = v_188;
         };
-        v_547 = r_2_St_8_Boot;
+        v_547 = r_2_St_7_Boot;
         if (ts_1) {
           v_187_1 = true;
         } else {
           v_187_1 = true;
         };
         if (off_atx) {
-          s_3_St_8_Boot_1 = true;
+          s_2_St_7_Boot_1 = true;
         } else {
-          s_3_St_8_Boot_1 = v_187_1;
+          s_2_St_7_Boot_1 = v_187_1;
         };
-        v_532 = s_3_St_8_Boot_1;
+        v_532 = s_2_St_7_Boot_1;
         if (ts_1) {
           v_187_2 = false;
         } else {
           v_187_2 = true;
         };
         if (off_atx) {
-          s_3_St_8_Boot_2 = true;
+          s_2_St_7_Boot_2 = true;
         } else {
-          s_3_St_8_Boot_2 = v_187_2;
+          s_2_St_7_Boot_2 = v_187_2;
         };
-        v_533 = s_3_St_8_Boot_2;
+        v_533 = s_2_St_7_Boot_2;
         if (ts_1) {
           v_187_3 = false;
         } else {
           v_187_3 = true;
         };
         if (off_atx) {
-          s_3_St_8_Boot_3 = false;
+          s_2_St_7_Boot_3 = false;
         } else {
-          s_3_St_8_Boot_3 = v_187_3;
+          s_2_St_7_Boot_3 = v_187_3;
         };
-        v_534 = s_3_St_8_Boot_3;
+        v_534 = s_2_St_7_Boot_3;
         if (v_187_1) {
           v_187_2_1 = v_187_2;
           if (v_187_2_1) {
@@ -6802,50 +6725,50 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_187_3_0_0 = v_187_3;
           };
         };
-        if (s_3_St_8_Boot_1) {
-          s_3_St_8_Boot_2_1 = s_3_St_8_Boot_2;
-          if (s_3_St_8_Boot_2_1) {
-            s_3_St_8_Boot_3_1_1 = s_3_St_8_Boot_3;
+        if (s_2_St_7_Boot_1) {
+          s_2_St_7_Boot_2_1 = s_2_St_7_Boot_2;
+          if (s_2_St_7_Boot_2_1) {
+            s_2_St_7_Boot_3_1_1 = s_2_St_7_Boot_3;
           } else {
-            s_3_St_8_Boot_3_1_0 = s_3_St_8_Boot_3;
+            s_2_St_7_Boot_3_1_0 = s_2_St_7_Boot_3;
           };
         } else {
-          s_3_St_8_Boot_2_0 = s_3_St_8_Boot_2;
-          if (s_3_St_8_Boot_2_0) {
-            s_3_St_8_Boot_3_0_1 = s_3_St_8_Boot_3;
+          s_2_St_7_Boot_2_0 = s_2_St_7_Boot_2;
+          if (s_2_St_7_Boot_2_0) {
+            s_2_St_7_Boot_3_0_1 = s_2_St_7_Boot_3;
           } else {
-            s_3_St_8_Boot_3_0_0 = s_3_St_8_Boot_3;
+            s_2_St_7_Boot_3_0_0 = s_2_St_7_Boot_3;
           };
         };
       } else {
         if (a) {
-          r_2_St_8_Off = true;
-          s_3_St_8_Off_1 = true;
-          s_3_St_8_Off_2 = true;
-          s_3_St_8_Off_3 = true;
+          r_2_St_7_Off = true;
+          s_2_St_7_Off_1 = true;
+          s_2_St_7_Off_2 = true;
+          s_2_St_7_Off_3 = true;
         } else {
-          r_2_St_8_Off = self->pnr_2;
-          s_3_St_8_Off_1 = true;
-          s_3_St_8_Off_2 = true;
-          s_3_St_8_Off_3 = false;
+          r_2_St_7_Off = self->pnr_2;
+          s_2_St_7_Off_1 = true;
+          s_2_St_7_Off_2 = true;
+          s_2_St_7_Off_3 = false;
         };
-        v_547 = r_2_St_8_Off;
-        v_532 = s_3_St_8_Off_1;
-        v_533 = s_3_St_8_Off_2;
-        v_534 = s_3_St_8_Off_3;
-        if (s_3_St_8_Off_1) {
-          s_3_St_8_Off_2_1 = s_3_St_8_Off_2;
-          if (s_3_St_8_Off_2_1) {
-            s_3_St_8_Off_3_1_1 = s_3_St_8_Off_3;
+        v_547 = r_2_St_7_Off;
+        v_532 = s_2_St_7_Off_1;
+        v_533 = s_2_St_7_Off_2;
+        v_534 = s_2_St_7_Off_3;
+        if (s_2_St_7_Off_1) {
+          s_2_St_7_Off_2_1 = s_2_St_7_Off_2;
+          if (s_2_St_7_Off_2_1) {
+            s_2_St_7_Off_3_1_1 = s_2_St_7_Off_3;
           } else {
-            s_3_St_8_Off_3_1_0 = s_3_St_8_Off_3;
+            s_2_St_7_Off_3_1_0 = s_2_St_7_Off_3;
           };
         } else {
-          s_3_St_8_Off_2_0 = s_3_St_8_Off_2;
-          if (s_3_St_8_Off_2_0) {
-            s_3_St_8_Off_3_0_1 = s_3_St_8_Off_3;
+          s_2_St_7_Off_2_0 = s_2_St_7_Off_2;
+          if (s_2_St_7_Off_2_0) {
+            s_2_St_7_Off_3_0_1 = s_2_St_7_Off_3;
           } else {
-            s_3_St_8_Off_3_0_0 = s_3_St_8_Off_3;
+            s_2_St_7_Off_3_0_0 = s_2_St_7_Off_3;
           };
         };
       };
@@ -6854,8 +6777,8 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_543 = v_534;
       v_549 = v_547;
     } else {
-      ck_11_3_1_0 = ck_11_3;
-      if (ck_11_3_1_0) {
+      ck_10_3_1_0 = ck_10_3;
+      if (ck_10_3_1_0) {
         v_548 = true;
         v_535 = true;
         v_536 = true;
@@ -6872,11 +6795,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_186 = v_184;
         };
         if (a) {
-          r_2_St_8_Rlevel1 = true;
+          r_2_St_7_Rlevel1 = true;
         } else {
-          r_2_St_8_Rlevel1 = v_186;
+          r_2_St_7_Rlevel1 = v_186;
         };
-        v_548 = r_2_St_8_Rlevel1;
+        v_548 = r_2_St_7_Rlevel1;
         if (r4) {
           v_183_1 = false;
         } else {
@@ -6888,11 +6811,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_185_1 = v_183_1;
         };
         if (a) {
-          s_3_St_8_Rlevel1_1 = true;
+          s_2_St_7_Rlevel1_1 = true;
         } else {
-          s_3_St_8_Rlevel1_1 = v_185_1;
+          s_2_St_7_Rlevel1_1 = v_185_1;
         };
-        v_535 = s_3_St_8_Rlevel1_1;
+        v_535 = s_2_St_7_Rlevel1_1;
         if (r4) {
           v_183_2 = false;
         } else {
@@ -6904,11 +6827,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_185_2 = v_183_2;
         };
         if (a) {
-          s_3_St_8_Rlevel1_2 = true;
+          s_2_St_7_Rlevel1_2 = true;
         } else {
-          s_3_St_8_Rlevel1_2 = v_185_2;
+          s_2_St_7_Rlevel1_2 = v_185_2;
         };
-        v_536 = s_3_St_8_Rlevel1_2;
+        v_536 = s_2_St_7_Rlevel1_2;
         if (r4) {
           v_183_3 = false;
         } else {
@@ -6920,17 +6843,17 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_185_3 = v_183_3;
         };
         if (a) {
-          s_3_St_8_Rlevel1_3 = false;
+          s_2_St_7_Rlevel1_3 = false;
         } else {
-          s_3_St_8_Rlevel1_3 = v_185_3;
+          s_2_St_7_Rlevel1_3 = v_185_3;
         };
-        v_537 = s_3_St_8_Rlevel1_3;
+        v_537 = s_2_St_7_Rlevel1_3;
       };
       v_541 = v_535;
       v_542 = v_536;
       v_543 = v_537;
       v_549 = v_548;
-      if (!(ck_11_3_1_0)) {
+      if (!(ck_10_3_1_0)) {
         if (v_183_1) {
           v_183_2_1 = v_183_2;
           if (v_183_2_1) {
@@ -6961,38 +6884,38 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_185_3_0_0 = v_185_3;
           };
         };
-        if (s_3_St_8_Rlevel1_1) {
-          s_3_St_8_Rlevel1_2_1 = s_3_St_8_Rlevel1_2;
-          if (s_3_St_8_Rlevel1_2_1) {
-            s_3_St_8_Rlevel1_3_1_1 = s_3_St_8_Rlevel1_3;
+        if (s_2_St_7_Rlevel1_1) {
+          s_2_St_7_Rlevel1_2_1 = s_2_St_7_Rlevel1_2;
+          if (s_2_St_7_Rlevel1_2_1) {
+            s_2_St_7_Rlevel1_3_1_1 = s_2_St_7_Rlevel1_3;
           } else {
-            s_3_St_8_Rlevel1_3_1_0 = s_3_St_8_Rlevel1_3;
+            s_2_St_7_Rlevel1_3_1_0 = s_2_St_7_Rlevel1_3;
           };
         } else {
-          s_3_St_8_Rlevel1_2_0 = s_3_St_8_Rlevel1_2;
-          if (s_3_St_8_Rlevel1_2_0) {
-            s_3_St_8_Rlevel1_3_0_1 = s_3_St_8_Rlevel1_3;
+          s_2_St_7_Rlevel1_2_0 = s_2_St_7_Rlevel1_2;
+          if (s_2_St_7_Rlevel1_2_0) {
+            s_2_St_7_Rlevel1_3_0_1 = s_2_St_7_Rlevel1_3;
           } else {
-            s_3_St_8_Rlevel1_3_0_0 = s_3_St_8_Rlevel1_3;
+            s_2_St_7_Rlevel1_3_0_0 = s_2_St_7_Rlevel1_3;
           };
         };
       };
     };
-    s_3_1 = v_541;
-    s_3_2 = v_542;
-    s_3_3 = v_543;
+    s_2_1 = v_541;
+    s_2_2 = v_542;
+    s_2_3 = v_543;
     r_2 = v_549;
   } else {
-    ck_11_2_0 = ck_11_2;
-    if (ck_11_2_0) {
-      ck_11_3_0_1 = ck_11_3;
+    ck_10_2_0 = ck_10_2;
+    if (ck_10_2_0) {
+      ck_10_3_0_1 = ck_10_3;
       v_544 = true;
       v_545 = true;
       v_546 = true;
       v_551 = true;
     } else {
-      ck_11_3_0_0 = ck_11_3;
-      if (ck_11_3_0_0) {
+      ck_10_3_0_0 = ck_10_3;
+      if (ck_10_3_0_0) {
         if (r4) {
           v_180 = true;
         } else {
@@ -7004,9 +6927,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_182 = v_180;
         };
         if (a) {
-          r_2_St_8_Rlevel3 = true;
+          r_2_St_7_Rlevel3 = true;
         } else {
-          r_2_St_8_Rlevel3 = v_182;
+          r_2_St_7_Rlevel3 = v_182;
         };
         if (r4) {
           v_179_1 = false;
@@ -7019,9 +6942,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_181_1 = v_179_1;
         };
         if (a) {
-          s_3_St_8_Rlevel3_1 = true;
+          s_2_St_7_Rlevel3_1 = true;
         } else {
-          s_3_St_8_Rlevel3_1 = v_181_1;
+          s_2_St_7_Rlevel3_1 = v_181_1;
         };
         if (r4) {
           v_179_2 = false;
@@ -7034,9 +6957,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_181_2 = v_179_2;
         };
         if (a) {
-          s_3_St_8_Rlevel3_2 = true;
+          s_2_St_7_Rlevel3_2 = true;
         } else {
-          s_3_St_8_Rlevel3_2 = v_181_2;
+          s_2_St_7_Rlevel3_2 = v_181_2;
         };
         if (r4) {
           v_179_3 = false;
@@ -7049,14 +6972,14 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_181_3 = v_179_3;
         };
         if (a) {
-          s_3_St_8_Rlevel3_3 = false;
+          s_2_St_7_Rlevel3_3 = false;
         } else {
-          s_3_St_8_Rlevel3_3 = v_181_3;
+          s_2_St_7_Rlevel3_3 = v_181_3;
         };
-        v_550 = r_2_St_8_Rlevel3;
-        v_538 = s_3_St_8_Rlevel3_1;
-        v_539 = s_3_St_8_Rlevel3_2;
-        v_540 = s_3_St_8_Rlevel3_3;
+        v_550 = r_2_St_7_Rlevel3;
+        v_538 = s_2_St_7_Rlevel3_1;
+        v_539 = s_2_St_7_Rlevel3_2;
+        v_540 = s_2_St_7_Rlevel3_3;
         if (v_179_1) {
           v_179_2_1 = v_179_2;
           if (v_179_2_1) {
@@ -7099,11 +7022,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_178 = v_176;
         };
         if (a) {
-          r_2_St_8_Rlevel4 = true;
+          r_2_St_7_Rlevel4 = true;
         } else {
-          r_2_St_8_Rlevel4 = v_178;
+          r_2_St_7_Rlevel4 = v_178;
         };
-        v_550 = r_2_St_8_Rlevel4;
+        v_550 = r_2_St_7_Rlevel4;
         if (r3) {
           v_175_1 = false;
         } else {
@@ -7115,11 +7038,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_177_1 = v_175_1;
         };
         if (a) {
-          s_3_St_8_Rlevel4_1 = true;
+          s_2_St_7_Rlevel4_1 = true;
         } else {
-          s_3_St_8_Rlevel4_1 = v_177_1;
+          s_2_St_7_Rlevel4_1 = v_177_1;
         };
-        v_538 = s_3_St_8_Rlevel4_1;
+        v_538 = s_2_St_7_Rlevel4_1;
         if (r3) {
           v_175_2 = false;
         } else {
@@ -7131,11 +7054,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_177_2 = v_175_2;
         };
         if (a) {
-          s_3_St_8_Rlevel4_2 = true;
+          s_2_St_7_Rlevel4_2 = true;
         } else {
-          s_3_St_8_Rlevel4_2 = v_177_2;
+          s_2_St_7_Rlevel4_2 = v_177_2;
         };
-        v_539 = s_3_St_8_Rlevel4_2;
+        v_539 = s_2_St_7_Rlevel4_2;
         if (r3) {
           v_175_3 = true;
         } else {
@@ -7147,11 +7070,11 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_177_3 = v_175_3;
         };
         if (a) {
-          s_3_St_8_Rlevel4_3 = false;
+          s_2_St_7_Rlevel4_3 = false;
         } else {
-          s_3_St_8_Rlevel4_3 = v_177_3;
+          s_2_St_7_Rlevel4_3 = v_177_3;
         };
-        v_540 = s_3_St_8_Rlevel4_3;
+        v_540 = s_2_St_7_Rlevel4_3;
         if (v_175_1) {
           v_175_2_1 = v_175_2;
           if (v_175_2_1) {
@@ -7188,68 +7111,68 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_546 = v_540;
       v_551 = v_550;
     };
-    s_3_1 = v_544;
-    s_3_2 = v_545;
-    s_3_3 = v_546;
+    s_2_1 = v_544;
+    s_2_2 = v_545;
+    s_2_3 = v_546;
     r_2 = v_551;
   };
-  ck_12_1 = s_3_1;
-  ck_12_2 = s_3_2;
-  ck_12_3 = s_3_3;
-  if (ck_12_1) {
-    ck_12_2_1 = ck_12_2;
-    if (ck_12_2_1) {
-      ck_12_3_1_1 = ck_12_3;
-      if (ck_12_3_1_1) {
-        estado_2_St_8_Boot = 1;
-        v_504 = estado_2_St_8_Boot;
-        nr_2_St_8_Boot = false;
-        v_524 = nr_2_St_8_Boot;
-        ns_2_St_8_Boot_1 = true;
-        v_509 = ns_2_St_8_Boot_1;
-        ns_2_St_8_Boot_2 = true;
-        v_510 = ns_2_St_8_Boot_2;
-        ns_2_St_8_Boot_3 = true;
-        v_511 = ns_2_St_8_Boot_3;
-        if (ns_2_St_8_Boot_1) {
-          ns_2_St_8_Boot_2_1 = ns_2_St_8_Boot_2;
-          if (ns_2_St_8_Boot_2_1) {
-            ns_2_St_8_Boot_3_1_1 = ns_2_St_8_Boot_3;
+  ck_11_1 = s_2_1;
+  ck_11_2 = s_2_2;
+  ck_11_3 = s_2_3;
+  if (ck_11_1) {
+    ck_11_2_1 = ck_11_2;
+    if (ck_11_2_1) {
+      ck_11_3_1_1 = ck_11_3;
+      if (ck_11_3_1_1) {
+        estado_2_St_7_Boot = 1;
+        v_504 = estado_2_St_7_Boot;
+        nr_2_St_7_Boot = false;
+        v_524 = nr_2_St_7_Boot;
+        ns_2_St_7_Boot_1 = true;
+        v_509 = ns_2_St_7_Boot_1;
+        ns_2_St_7_Boot_2 = true;
+        v_510 = ns_2_St_7_Boot_2;
+        ns_2_St_7_Boot_3 = true;
+        v_511 = ns_2_St_7_Boot_3;
+        if (ns_2_St_7_Boot_1) {
+          ns_2_St_7_Boot_2_1 = ns_2_St_7_Boot_2;
+          if (ns_2_St_7_Boot_2_1) {
+            ns_2_St_7_Boot_3_1_1 = ns_2_St_7_Boot_3;
           } else {
-            ns_2_St_8_Boot_3_1_0 = ns_2_St_8_Boot_3;
+            ns_2_St_7_Boot_3_1_0 = ns_2_St_7_Boot_3;
           };
         } else {
-          ns_2_St_8_Boot_2_0 = ns_2_St_8_Boot_2;
-          if (ns_2_St_8_Boot_2_0) {
-            ns_2_St_8_Boot_3_0_1 = ns_2_St_8_Boot_3;
+          ns_2_St_7_Boot_2_0 = ns_2_St_7_Boot_2;
+          if (ns_2_St_7_Boot_2_0) {
+            ns_2_St_7_Boot_3_0_1 = ns_2_St_7_Boot_3;
           } else {
-            ns_2_St_8_Boot_3_0_0 = ns_2_St_8_Boot_3;
+            ns_2_St_7_Boot_3_0_0 = ns_2_St_7_Boot_3;
           };
         };
       } else {
-        estado_2_St_8_Off = 0;
-        nr_2_St_8_Off = false;
-        ns_2_St_8_Off_1 = true;
-        ns_2_St_8_Off_2 = true;
-        ns_2_St_8_Off_3 = false;
-        v_504 = estado_2_St_8_Off;
-        v_524 = nr_2_St_8_Off;
-        v_509 = ns_2_St_8_Off_1;
-        v_510 = ns_2_St_8_Off_2;
-        v_511 = ns_2_St_8_Off_3;
-        if (ns_2_St_8_Off_1) {
-          ns_2_St_8_Off_2_1 = ns_2_St_8_Off_2;
-          if (ns_2_St_8_Off_2_1) {
-            ns_2_St_8_Off_3_1_1 = ns_2_St_8_Off_3;
+        estado_2_St_7_Off = 0;
+        nr_2_St_7_Off = false;
+        ns_2_St_7_Off_1 = true;
+        ns_2_St_7_Off_2 = true;
+        ns_2_St_7_Off_3 = false;
+        v_504 = estado_2_St_7_Off;
+        v_524 = nr_2_St_7_Off;
+        v_509 = ns_2_St_7_Off_1;
+        v_510 = ns_2_St_7_Off_2;
+        v_511 = ns_2_St_7_Off_3;
+        if (ns_2_St_7_Off_1) {
+          ns_2_St_7_Off_2_1 = ns_2_St_7_Off_2;
+          if (ns_2_St_7_Off_2_1) {
+            ns_2_St_7_Off_3_1_1 = ns_2_St_7_Off_3;
           } else {
-            ns_2_St_8_Off_3_1_0 = ns_2_St_8_Off_3;
+            ns_2_St_7_Off_3_1_0 = ns_2_St_7_Off_3;
           };
         } else {
-          ns_2_St_8_Off_2_0 = ns_2_St_8_Off_2;
-          if (ns_2_St_8_Off_2_0) {
-            ns_2_St_8_Off_3_0_1 = ns_2_St_8_Off_3;
+          ns_2_St_7_Off_2_0 = ns_2_St_7_Off_2;
+          if (ns_2_St_7_Off_2_0) {
+            ns_2_St_7_Off_3_0_1 = ns_2_St_7_Off_3;
           } else {
-            ns_2_St_8_Off_3_0_0 = ns_2_St_8_Off_3;
+            ns_2_St_7_Off_3_0_0 = ns_2_St_7_Off_3;
           };
         };
       };
@@ -7259,44 +7182,44 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_520 = v_511;
       v_526 = v_524;
     } else {
-      ck_12_3_1_0 = ck_12_3;
-      if (ck_12_3_1_0) {
+      ck_11_3_1_0 = ck_11_3;
+      if (ck_11_3_1_0) {
         v_505 = 0;
         v_525 = true;
         v_512 = true;
         v_513 = true;
         v_514 = true;
       } else {
-        estado_2_St_8_Rlevel1 = 2;
-        v_505 = estado_2_St_8_Rlevel1;
-        nr_2_St_8_Rlevel1 = false;
-        v_525 = nr_2_St_8_Rlevel1;
-        ns_2_St_8_Rlevel1_1 = true;
-        v_512 = ns_2_St_8_Rlevel1_1;
-        ns_2_St_8_Rlevel1_2 = false;
-        v_513 = ns_2_St_8_Rlevel1_2;
-        ns_2_St_8_Rlevel1_3 = false;
-        v_514 = ns_2_St_8_Rlevel1_3;
+        estado_2_St_7_Rlevel1 = 2;
+        v_505 = estado_2_St_7_Rlevel1;
+        nr_2_St_7_Rlevel1 = false;
+        v_525 = nr_2_St_7_Rlevel1;
+        ns_2_St_7_Rlevel1_1 = true;
+        v_512 = ns_2_St_7_Rlevel1_1;
+        ns_2_St_7_Rlevel1_2 = false;
+        v_513 = ns_2_St_7_Rlevel1_2;
+        ns_2_St_7_Rlevel1_3 = false;
+        v_514 = ns_2_St_7_Rlevel1_3;
       };
       v_506 = v_505;
       v_518 = v_512;
       v_519 = v_513;
       v_520 = v_514;
       v_526 = v_525;
-      if (!(ck_12_3_1_0)) {
-        if (ns_2_St_8_Rlevel1_1) {
-          ns_2_St_8_Rlevel1_2_1 = ns_2_St_8_Rlevel1_2;
-          if (ns_2_St_8_Rlevel1_2_1) {
-            ns_2_St_8_Rlevel1_3_1_1 = ns_2_St_8_Rlevel1_3;
+      if (!(ck_11_3_1_0)) {
+        if (ns_2_St_7_Rlevel1_1) {
+          ns_2_St_7_Rlevel1_2_1 = ns_2_St_7_Rlevel1_2;
+          if (ns_2_St_7_Rlevel1_2_1) {
+            ns_2_St_7_Rlevel1_3_1_1 = ns_2_St_7_Rlevel1_3;
           } else {
-            ns_2_St_8_Rlevel1_3_1_0 = ns_2_St_8_Rlevel1_3;
+            ns_2_St_7_Rlevel1_3_1_0 = ns_2_St_7_Rlevel1_3;
           };
         } else {
-          ns_2_St_8_Rlevel1_2_0 = ns_2_St_8_Rlevel1_2;
-          if (ns_2_St_8_Rlevel1_2_0) {
-            ns_2_St_8_Rlevel1_3_0_1 = ns_2_St_8_Rlevel1_3;
+          ns_2_St_7_Rlevel1_2_0 = ns_2_St_7_Rlevel1_2;
+          if (ns_2_St_7_Rlevel1_2_0) {
+            ns_2_St_7_Rlevel1_3_0_1 = ns_2_St_7_Rlevel1_3;
           } else {
-            ns_2_St_8_Rlevel1_3_0_0 = ns_2_St_8_Rlevel1_3;
+            ns_2_St_7_Rlevel1_3_0_0 = ns_2_St_7_Rlevel1_3;
           };
         };
       };
@@ -7307,38 +7230,38 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
     ns_2_3 = v_520;
     nr_2 = v_526;
   } else {
-    ck_12_2_0 = ck_12_2;
-    if (ck_12_2_0) {
-      ck_12_3_0_1 = ck_12_3;
+    ck_11_2_0 = ck_11_2;
+    if (ck_11_2_0) {
+      ck_11_3_0_1 = ck_11_3;
       v_508 = 0;
       v_521 = true;
       v_522 = true;
       v_523 = true;
       v_528 = true;
     } else {
-      ck_12_3_0_0 = ck_12_3;
-      if (ck_12_3_0_0) {
-        estado_2_St_8_Rlevel3 = 3;
-        nr_2_St_8_Rlevel3 = false;
-        ns_2_St_8_Rlevel3_1 = false;
-        ns_2_St_8_Rlevel3_2 = false;
-        ns_2_St_8_Rlevel3_3 = true;
-        v_507 = estado_2_St_8_Rlevel3;
-        v_527 = nr_2_St_8_Rlevel3;
-        v_515 = ns_2_St_8_Rlevel3_1;
-        v_516 = ns_2_St_8_Rlevel3_2;
-        v_517 = ns_2_St_8_Rlevel3_3;
+      ck_11_3_0_0 = ck_11_3;
+      if (ck_11_3_0_0) {
+        estado_2_St_7_Rlevel3 = 3;
+        nr_2_St_7_Rlevel3 = false;
+        ns_2_St_7_Rlevel3_1 = false;
+        ns_2_St_7_Rlevel3_2 = false;
+        ns_2_St_7_Rlevel3_3 = true;
+        v_507 = estado_2_St_7_Rlevel3;
+        v_527 = nr_2_St_7_Rlevel3;
+        v_515 = ns_2_St_7_Rlevel3_1;
+        v_516 = ns_2_St_7_Rlevel3_2;
+        v_517 = ns_2_St_7_Rlevel3_3;
       } else {
-        estado_2_St_8_Rlevel4 = 4;
-        v_507 = estado_2_St_8_Rlevel4;
-        nr_2_St_8_Rlevel4 = false;
-        v_527 = nr_2_St_8_Rlevel4;
-        ns_2_St_8_Rlevel4_1 = false;
-        v_515 = ns_2_St_8_Rlevel4_1;
-        ns_2_St_8_Rlevel4_2 = false;
-        v_516 = ns_2_St_8_Rlevel4_2;
-        ns_2_St_8_Rlevel4_3 = false;
-        v_517 = ns_2_St_8_Rlevel4_3;
+        estado_2_St_7_Rlevel4 = 4;
+        v_507 = estado_2_St_7_Rlevel4;
+        nr_2_St_7_Rlevel4 = false;
+        v_527 = nr_2_St_7_Rlevel4;
+        ns_2_St_7_Rlevel4_1 = false;
+        v_515 = ns_2_St_7_Rlevel4_1;
+        ns_2_St_7_Rlevel4_2 = false;
+        v_516 = ns_2_St_7_Rlevel4_2;
+        ns_2_St_7_Rlevel4_3 = false;
+        v_517 = ns_2_St_7_Rlevel4_3;
       };
       v_508 = v_507;
       v_521 = v_515;
@@ -7401,144 +7324,144 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       ns_2_3_0_0 = ns_2_3;
     };
   };
-  if (!(ck_12_1)) {
-    if (!(ck_12_2_0)) {
-      if (ck_12_3_0_0) {
-        if (ns_2_St_8_Rlevel3_1) {
-          ns_2_St_8_Rlevel3_2_1 = ns_2_St_8_Rlevel3_2;
-          if (ns_2_St_8_Rlevel3_2_1) {
-            ns_2_St_8_Rlevel3_3_1_1 = ns_2_St_8_Rlevel3_3;
-          } else {
-            ns_2_St_8_Rlevel3_3_1_0 = ns_2_St_8_Rlevel3_3;
-          };
-        } else {
-          ns_2_St_8_Rlevel3_2_0 = ns_2_St_8_Rlevel3_2;
-          if (ns_2_St_8_Rlevel3_2_0) {
-            ns_2_St_8_Rlevel3_3_0_1 = ns_2_St_8_Rlevel3_3;
-          } else {
-            ns_2_St_8_Rlevel3_3_0_0 = ns_2_St_8_Rlevel3_3;
-          };
-        };
-      } else {
-        if (ns_2_St_8_Rlevel4_1) {
-          ns_2_St_8_Rlevel4_2_1 = ns_2_St_8_Rlevel4_2;
-          if (ns_2_St_8_Rlevel4_2_1) {
-            ns_2_St_8_Rlevel4_3_1_1 = ns_2_St_8_Rlevel4_3;
-          } else {
-            ns_2_St_8_Rlevel4_3_1_0 = ns_2_St_8_Rlevel4_3;
-          };
-        } else {
-          ns_2_St_8_Rlevel4_2_0 = ns_2_St_8_Rlevel4_2;
-          if (ns_2_St_8_Rlevel4_2_0) {
-            ns_2_St_8_Rlevel4_3_0_1 = ns_2_St_8_Rlevel4_3;
-          } else {
-            ns_2_St_8_Rlevel4_3_0_0 = ns_2_St_8_Rlevel4_3;
-          };
-        };
-      };
-    };
-  };
-  if (s_3_1) {
-    s_3_2_1 = s_3_2;
-    if (s_3_2_1) {
-      s_3_3_1_1 = s_3_3;
-    } else {
-      s_3_3_1_0 = s_3_3;
-    };
-  } else {
-    s_3_2_0 = s_3_2;
-    if (s_3_2_0) {
-      s_3_3_0_1 = s_3_3;
-    } else {
-      s_3_3_0_0 = s_3_3;
-    };
-  };
   if (!(ck_11_1)) {
     if (!(ck_11_2_0)) {
       if (ck_11_3_0_0) {
-        if (s_3_St_8_Rlevel3_1) {
-          s_3_St_8_Rlevel3_2_1 = s_3_St_8_Rlevel3_2;
-          if (s_3_St_8_Rlevel3_2_1) {
-            s_3_St_8_Rlevel3_3_1_1 = s_3_St_8_Rlevel3_3;
+        if (ns_2_St_7_Rlevel3_1) {
+          ns_2_St_7_Rlevel3_2_1 = ns_2_St_7_Rlevel3_2;
+          if (ns_2_St_7_Rlevel3_2_1) {
+            ns_2_St_7_Rlevel3_3_1_1 = ns_2_St_7_Rlevel3_3;
           } else {
-            s_3_St_8_Rlevel3_3_1_0 = s_3_St_8_Rlevel3_3;
+            ns_2_St_7_Rlevel3_3_1_0 = ns_2_St_7_Rlevel3_3;
           };
         } else {
-          s_3_St_8_Rlevel3_2_0 = s_3_St_8_Rlevel3_2;
-          if (s_3_St_8_Rlevel3_2_0) {
-            s_3_St_8_Rlevel3_3_0_1 = s_3_St_8_Rlevel3_3;
+          ns_2_St_7_Rlevel3_2_0 = ns_2_St_7_Rlevel3_2;
+          if (ns_2_St_7_Rlevel3_2_0) {
+            ns_2_St_7_Rlevel3_3_0_1 = ns_2_St_7_Rlevel3_3;
           } else {
-            s_3_St_8_Rlevel3_3_0_0 = s_3_St_8_Rlevel3_3;
+            ns_2_St_7_Rlevel3_3_0_0 = ns_2_St_7_Rlevel3_3;
           };
         };
       } else {
-        if (s_3_St_8_Rlevel4_1) {
-          s_3_St_8_Rlevel4_2_1 = s_3_St_8_Rlevel4_2;
-          if (s_3_St_8_Rlevel4_2_1) {
-            s_3_St_8_Rlevel4_3_1_1 = s_3_St_8_Rlevel4_3;
+        if (ns_2_St_7_Rlevel4_1) {
+          ns_2_St_7_Rlevel4_2_1 = ns_2_St_7_Rlevel4_2;
+          if (ns_2_St_7_Rlevel4_2_1) {
+            ns_2_St_7_Rlevel4_3_1_1 = ns_2_St_7_Rlevel4_3;
           } else {
-            s_3_St_8_Rlevel4_3_1_0 = s_3_St_8_Rlevel4_3;
+            ns_2_St_7_Rlevel4_3_1_0 = ns_2_St_7_Rlevel4_3;
           };
         } else {
-          s_3_St_8_Rlevel4_2_0 = s_3_St_8_Rlevel4_2;
-          if (s_3_St_8_Rlevel4_2_0) {
-            s_3_St_8_Rlevel4_3_0_1 = s_3_St_8_Rlevel4_3;
+          ns_2_St_7_Rlevel4_2_0 = ns_2_St_7_Rlevel4_2;
+          if (ns_2_St_7_Rlevel4_2_0) {
+            ns_2_St_7_Rlevel4_3_0_1 = ns_2_St_7_Rlevel4_3;
           } else {
-            s_3_St_8_Rlevel4_3_0_0 = s_3_St_8_Rlevel4_3;
+            ns_2_St_7_Rlevel4_3_0_0 = ns_2_St_7_Rlevel4_3;
           };
         };
       };
     };
   };
-  if (ck_9_1) {
-    ck_9_2_1 = ck_9_2;
-    if (ck_9_2_1) {
-      ck_9_3_1_1 = ck_9_3;
-      if (ck_9_3_1_1) {
+  if (s_2_1) {
+    s_2_2_1 = s_2_2;
+    if (s_2_2_1) {
+      s_2_3_1_1 = s_2_3;
+    } else {
+      s_2_3_1_0 = s_2_3;
+    };
+  } else {
+    s_2_2_0 = s_2_2;
+    if (s_2_2_0) {
+      s_2_3_0_1 = s_2_3;
+    } else {
+      s_2_3_0_0 = s_2_3;
+    };
+  };
+  if (!(ck_10_1)) {
+    if (!(ck_10_2_0)) {
+      if (ck_10_3_0_0) {
+        if (s_2_St_7_Rlevel3_1) {
+          s_2_St_7_Rlevel3_2_1 = s_2_St_7_Rlevel3_2;
+          if (s_2_St_7_Rlevel3_2_1) {
+            s_2_St_7_Rlevel3_3_1_1 = s_2_St_7_Rlevel3_3;
+          } else {
+            s_2_St_7_Rlevel3_3_1_0 = s_2_St_7_Rlevel3_3;
+          };
+        } else {
+          s_2_St_7_Rlevel3_2_0 = s_2_St_7_Rlevel3_2;
+          if (s_2_St_7_Rlevel3_2_0) {
+            s_2_St_7_Rlevel3_3_0_1 = s_2_St_7_Rlevel3_3;
+          } else {
+            s_2_St_7_Rlevel3_3_0_0 = s_2_St_7_Rlevel3_3;
+          };
+        };
+      } else {
+        if (s_2_St_7_Rlevel4_1) {
+          s_2_St_7_Rlevel4_2_1 = s_2_St_7_Rlevel4_2;
+          if (s_2_St_7_Rlevel4_2_1) {
+            s_2_St_7_Rlevel4_3_1_1 = s_2_St_7_Rlevel4_3;
+          } else {
+            s_2_St_7_Rlevel4_3_1_0 = s_2_St_7_Rlevel4_3;
+          };
+        } else {
+          s_2_St_7_Rlevel4_2_0 = s_2_St_7_Rlevel4_2;
+          if (s_2_St_7_Rlevel4_2_0) {
+            s_2_St_7_Rlevel4_3_0_1 = s_2_St_7_Rlevel4_3;
+          } else {
+            s_2_St_7_Rlevel4_3_0_0 = s_2_St_7_Rlevel4_3;
+          };
+        };
+      };
+    };
+  };
+  if (ck_8_1) {
+    ck_8_2_1 = ck_8_2;
+    if (ck_8_2_1) {
+      ck_8_3_1_1 = ck_8_3;
+      if (ck_8_3_1_1) {
         if (t) {
           v_174 = true;
         } else {
           v_174 = self->pnr_3;
         };
         if (c) {
-          r_3_St_9_Boot = true;
+          r_3_St_8_Boot = true;
         } else {
-          r_3_St_9_Boot = v_174;
+          r_3_St_8_Boot = v_174;
         };
-        v_600 = r_3_St_9_Boot;
+        v_600 = r_3_St_8_Boot;
         if (t) {
           v_173_1 = false;
         } else {
           v_173_1 = true;
         };
         if (c) {
-          s_4_St_9_Boot_1 = true;
+          s_3_St_8_Boot_1 = true;
         } else {
-          s_4_St_9_Boot_1 = v_173_1;
+          s_3_St_8_Boot_1 = v_173_1;
         };
-        v_585 = s_4_St_9_Boot_1;
+        v_585 = s_3_St_8_Boot_1;
         if (t) {
           v_173_2 = false;
         } else {
           v_173_2 = true;
         };
         if (c) {
-          s_4_St_9_Boot_2 = true;
+          s_3_St_8_Boot_2 = true;
         } else {
-          s_4_St_9_Boot_2 = v_173_2;
+          s_3_St_8_Boot_2 = v_173_2;
         };
-        v_586 = s_4_St_9_Boot_2;
+        v_586 = s_3_St_8_Boot_2;
         if (t) {
           v_173_3 = false;
         } else {
           v_173_3 = true;
         };
         if (c) {
-          s_4_St_9_Boot_3 = false;
+          s_3_St_8_Boot_3 = false;
         } else {
-          s_4_St_9_Boot_3 = v_173_3;
+          s_3_St_8_Boot_3 = v_173_3;
         };
-        v_587 = s_4_St_9_Boot_3;
+        v_587 = s_3_St_8_Boot_3;
         if (v_173_1) {
           v_173_2_1 = v_173_2;
           if (v_173_2_1) {
@@ -7554,50 +7477,50 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_173_3_0_0 = v_173_3;
           };
         };
-        if (s_4_St_9_Boot_1) {
-          s_4_St_9_Boot_2_1 = s_4_St_9_Boot_2;
-          if (s_4_St_9_Boot_2_1) {
-            s_4_St_9_Boot_3_1_1 = s_4_St_9_Boot_3;
+        if (s_3_St_8_Boot_1) {
+          s_3_St_8_Boot_2_1 = s_3_St_8_Boot_2;
+          if (s_3_St_8_Boot_2_1) {
+            s_3_St_8_Boot_3_1_1 = s_3_St_8_Boot_3;
           } else {
-            s_4_St_9_Boot_3_1_0 = s_4_St_9_Boot_3;
+            s_3_St_8_Boot_3_1_0 = s_3_St_8_Boot_3;
           };
         } else {
-          s_4_St_9_Boot_2_0 = s_4_St_9_Boot_2;
-          if (s_4_St_9_Boot_2_0) {
-            s_4_St_9_Boot_3_0_1 = s_4_St_9_Boot_3;
+          s_3_St_8_Boot_2_0 = s_3_St_8_Boot_2;
+          if (s_3_St_8_Boot_2_0) {
+            s_3_St_8_Boot_3_0_1 = s_3_St_8_Boot_3;
           } else {
-            s_4_St_9_Boot_3_0_0 = s_4_St_9_Boot_3;
+            s_3_St_8_Boot_3_0_0 = s_3_St_8_Boot_3;
           };
         };
       } else {
         if (c) {
-          r_3_St_9_Off = true;
-          s_4_St_9_Off_1 = true;
-          s_4_St_9_Off_2 = true;
-          s_4_St_9_Off_3 = true;
+          r_3_St_8_Off = true;
+          s_3_St_8_Off_1 = true;
+          s_3_St_8_Off_2 = true;
+          s_3_St_8_Off_3 = true;
         } else {
-          r_3_St_9_Off = self->pnr_3;
-          s_4_St_9_Off_1 = true;
-          s_4_St_9_Off_2 = true;
-          s_4_St_9_Off_3 = false;
+          r_3_St_8_Off = self->pnr_3;
+          s_3_St_8_Off_1 = true;
+          s_3_St_8_Off_2 = true;
+          s_3_St_8_Off_3 = false;
         };
-        v_600 = r_3_St_9_Off;
-        v_585 = s_4_St_9_Off_1;
-        v_586 = s_4_St_9_Off_2;
-        v_587 = s_4_St_9_Off_3;
-        if (s_4_St_9_Off_1) {
-          s_4_St_9_Off_2_1 = s_4_St_9_Off_2;
-          if (s_4_St_9_Off_2_1) {
-            s_4_St_9_Off_3_1_1 = s_4_St_9_Off_3;
+        v_600 = r_3_St_8_Off;
+        v_585 = s_3_St_8_Off_1;
+        v_586 = s_3_St_8_Off_2;
+        v_587 = s_3_St_8_Off_3;
+        if (s_3_St_8_Off_1) {
+          s_3_St_8_Off_2_1 = s_3_St_8_Off_2;
+          if (s_3_St_8_Off_2_1) {
+            s_3_St_8_Off_3_1_1 = s_3_St_8_Off_3;
           } else {
-            s_4_St_9_Off_3_1_0 = s_4_St_9_Off_3;
+            s_3_St_8_Off_3_1_0 = s_3_St_8_Off_3;
           };
         } else {
-          s_4_St_9_Off_2_0 = s_4_St_9_Off_2;
-          if (s_4_St_9_Off_2_0) {
-            s_4_St_9_Off_3_0_1 = s_4_St_9_Off_3;
+          s_3_St_8_Off_2_0 = s_3_St_8_Off_2;
+          if (s_3_St_8_Off_2_0) {
+            s_3_St_8_Off_3_0_1 = s_3_St_8_Off_3;
           } else {
-            s_4_St_9_Off_3_0_0 = s_4_St_9_Off_3;
+            s_3_St_8_Off_3_0_0 = s_3_St_8_Off_3;
           };
         };
       };
@@ -7606,8 +7529,8 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_596 = v_587;
       v_602 = v_600;
     } else {
-      ck_9_3_1_0 = ck_9_3;
-      if (ck_9_3_1_0) {
+      ck_8_3_1_0 = ck_8_3;
+      if (ck_8_3_1_0) {
         v_601 = true;
         v_588 = true;
         v_589 = true;
@@ -7619,50 +7542,50 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_167 = self->pnr_3;
         };
         if (c) {
-          r_3_St_9_Online = true;
+          r_3_St_8_Online = true;
         } else {
-          r_3_St_9_Online = v_167;
+          r_3_St_8_Online = v_167;
         };
-        v_601 = r_3_St_9_Online;
+        v_601 = r_3_St_8_Online;
         if (t) {
           v_166_1 = false;
         } else {
           v_166_1 = true;
         };
         if (c) {
-          s_4_St_9_Online_1 = true;
+          s_3_St_8_Online_1 = true;
         } else {
-          s_4_St_9_Online_1 = v_166_1;
+          s_3_St_8_Online_1 = v_166_1;
         };
-        v_588 = s_4_St_9_Online_1;
+        v_588 = s_3_St_8_Online_1;
         if (t) {
           v_166_2 = false;
         } else {
           v_166_2 = false;
         };
         if (c) {
-          s_4_St_9_Online_2 = true;
+          s_3_St_8_Online_2 = true;
         } else {
-          s_4_St_9_Online_2 = v_166_2;
+          s_3_St_8_Online_2 = v_166_2;
         };
-        v_589 = s_4_St_9_Online_2;
+        v_589 = s_3_St_8_Online_2;
         if (t) {
           v_166_3 = false;
         } else {
           v_166_3 = false;
         };
         if (c) {
-          s_4_St_9_Online_3 = false;
+          s_3_St_8_Online_3 = false;
         } else {
-          s_4_St_9_Online_3 = v_166_3;
+          s_3_St_8_Online_3 = v_166_3;
         };
-        v_590 = s_4_St_9_Online_3;
+        v_590 = s_3_St_8_Online_3;
       };
       v_594 = v_588;
       v_595 = v_589;
       v_596 = v_590;
       v_602 = v_601;
-      if (!(ck_9_3_1_0)) {
+      if (!(ck_8_3_1_0)) {
         if (v_166_1) {
           v_166_2_1 = v_166_2;
           if (v_166_2_1) {
@@ -7678,82 +7601,82 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
             v_166_3_0_0 = v_166_3;
           };
         };
-        if (s_4_St_9_Online_1) {
-          s_4_St_9_Online_2_1 = s_4_St_9_Online_2;
-          if (s_4_St_9_Online_2_1) {
-            s_4_St_9_Online_3_1_1 = s_4_St_9_Online_3;
+        if (s_3_St_8_Online_1) {
+          s_3_St_8_Online_2_1 = s_3_St_8_Online_2;
+          if (s_3_St_8_Online_2_1) {
+            s_3_St_8_Online_3_1_1 = s_3_St_8_Online_3;
           } else {
-            s_4_St_9_Online_3_1_0 = s_4_St_9_Online_3;
+            s_3_St_8_Online_3_1_0 = s_3_St_8_Online_3;
           };
         } else {
-          s_4_St_9_Online_2_0 = s_4_St_9_Online_2;
-          if (s_4_St_9_Online_2_0) {
-            s_4_St_9_Online_3_0_1 = s_4_St_9_Online_3;
+          s_3_St_8_Online_2_0 = s_3_St_8_Online_2;
+          if (s_3_St_8_Online_2_0) {
+            s_3_St_8_Online_3_0_1 = s_3_St_8_Online_3;
           } else {
-            s_4_St_9_Online_3_0_0 = s_4_St_9_Online_3;
+            s_3_St_8_Online_3_0_0 = s_3_St_8_Online_3;
           };
         };
       };
     };
-    s_4_1 = v_594;
-    s_4_2 = v_595;
-    s_4_3 = v_596;
+    s_3_1 = v_594;
+    s_3_2 = v_595;
+    s_3_3 = v_596;
     r_3 = v_602;
   } else {
-    ck_9_2_0 = ck_9_2;
-    if (ck_9_2_0) {
-      ck_9_3_0_1 = ck_9_3;
+    ck_8_2_0 = ck_8_2;
+    if (ck_8_2_0) {
+      ck_8_3_0_1 = ck_8_3;
       v_597 = true;
       v_598 = true;
       v_599 = true;
       v_604 = true;
     } else {
-      ck_9_3_0_0 = ck_9_3;
-      if (ck_9_3_0_0) {
+      ck_8_3_0_0 = ck_8_3;
+      if (ck_8_3_0_0) {
         if (t) {
           v_165 = true;
         } else {
           v_165 = self->pnr_3;
         };
         if (c) {
-          r_3_St_9_Sleep = true;
+          r_3_St_8_Sleep = true;
         } else {
-          r_3_St_9_Sleep = v_165;
+          r_3_St_8_Sleep = v_165;
         };
-        v_603 = r_3_St_9_Sleep;
+        v_603 = r_3_St_8_Sleep;
         if (t) {
           v_164_1 = true;
         } else {
           v_164_1 = false;
         };
         if (c) {
-          s_4_St_9_Sleep_1 = true;
+          s_3_St_8_Sleep_1 = true;
         } else {
-          s_4_St_9_Sleep_1 = v_164_1;
+          s_3_St_8_Sleep_1 = v_164_1;
         };
-        v_591 = s_4_St_9_Sleep_1;
+        v_591 = s_3_St_8_Sleep_1;
         if (t) {
           v_164_2 = true;
         } else {
           v_164_2 = false;
         };
         if (c) {
-          s_4_St_9_Sleep_2 = true;
+          s_3_St_8_Sleep_2 = true;
         } else {
-          s_4_St_9_Sleep_2 = v_164_2;
+          s_3_St_8_Sleep_2 = v_164_2;
         };
-        v_592 = s_4_St_9_Sleep_2;
+        v_592 = s_3_St_8_Sleep_2;
         if (t) {
           v_164_3 = true;
         } else {
           v_164_3 = true;
         };
         if (c) {
-          s_4_St_9_Sleep_3 = false;
+          s_3_St_8_Sleep_3 = false;
         } else {
-          s_4_St_9_Sleep_3 = v_164_3;
+          s_3_St_8_Sleep_3 = v_164_3;
         };
-        v_593 = s_4_St_9_Sleep_3;
+        v_593 = s_3_St_8_Sleep_3;
         if (v_164_1) {
           v_164_2_1 = v_164_2;
           if (v_164_2_1) {
@@ -7788,9 +7711,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_172 = v_170;
         };
         if (c) {
-          r_3_St_9_Teste = true;
+          r_3_St_8_Teste = true;
         } else {
-          r_3_St_9_Teste = v_172;
+          r_3_St_8_Teste = v_172;
         };
         if (v_168) {
           v_171_1 = false;
@@ -7798,9 +7721,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_171_1 = v_169_1;
         };
         if (c) {
-          s_4_St_9_Teste_1 = true;
+          s_3_St_8_Teste_1 = true;
         } else {
-          s_4_St_9_Teste_1 = v_171_1;
+          s_3_St_8_Teste_1 = v_171_1;
         };
         if (v_168) {
           v_171_2 = false;
@@ -7808,9 +7731,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_171_2 = v_169_2;
         };
         if (c) {
-          s_4_St_9_Teste_2 = true;
+          s_3_St_8_Teste_2 = true;
         } else {
-          s_4_St_9_Teste_2 = v_171_2;
+          s_3_St_8_Teste_2 = v_171_2;
         };
         if (v_168) {
           v_171_3 = true;
@@ -7818,14 +7741,14 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
           v_171_3 = v_169_3;
         };
         if (c) {
-          s_4_St_9_Teste_3 = false;
+          s_3_St_8_Teste_3 = false;
         } else {
-          s_4_St_9_Teste_3 = v_171_3;
+          s_3_St_8_Teste_3 = v_171_3;
         };
-        v_603 = r_3_St_9_Teste;
-        v_591 = s_4_St_9_Teste_1;
-        v_592 = s_4_St_9_Teste_2;
-        v_593 = s_4_St_9_Teste_3;
+        v_603 = r_3_St_8_Teste;
+        v_591 = s_3_St_8_Teste_1;
+        v_592 = s_3_St_8_Teste_2;
+        v_593 = s_3_St_8_Teste_3;
         if (v_169_1) {
           v_169_2_1 = v_169_2;
           if (v_169_2_1) {
@@ -7862,72 +7785,72 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_599 = v_593;
       v_604 = v_603;
     };
-    s_4_1 = v_597;
-    s_4_2 = v_598;
-    s_4_3 = v_599;
+    s_3_1 = v_597;
+    s_3_2 = v_598;
+    s_3_3 = v_599;
     r_3 = v_604;
   };
-  ck_10_1 = s_4_1;
-  ck_10_2 = s_4_2;
-  ck_10_3 = s_4_3;
-  if (ck_10_1) {
-    ck_10_2_1 = ck_10_2;
-    if (ck_10_2_1) {
-      ck_10_3_1_1 = ck_10_3;
-      if (ck_10_3_1_1) {
-        estado_1_St_9_Boot = 2;
-        v_557 = estado_1_St_9_Boot;
-        atuador_St_9_Boot = true;
-        v_552 = atuador_St_9_Boot;
-        nr_3_St_9_Boot = false;
-        v_577 = nr_3_St_9_Boot;
-        ns_3_St_9_Boot_1 = true;
-        v_562 = ns_3_St_9_Boot_1;
-        ns_3_St_9_Boot_2 = true;
-        v_563 = ns_3_St_9_Boot_2;
-        ns_3_St_9_Boot_3 = true;
-        v_564 = ns_3_St_9_Boot_3;
-        if (ns_3_St_9_Boot_1) {
-          ns_3_St_9_Boot_2_1 = ns_3_St_9_Boot_2;
-          if (ns_3_St_9_Boot_2_1) {
-            ns_3_St_9_Boot_3_1_1 = ns_3_St_9_Boot_3;
+  ck_9_1 = s_3_1;
+  ck_9_2 = s_3_2;
+  ck_9_3 = s_3_3;
+  if (ck_9_1) {
+    ck_9_2_1 = ck_9_2;
+    if (ck_9_2_1) {
+      ck_9_3_1_1 = ck_9_3;
+      if (ck_9_3_1_1) {
+        estado_1_St_8_Boot = 2;
+        v_557 = estado_1_St_8_Boot;
+        atuador_St_8_Boot = true;
+        v_552 = atuador_St_8_Boot;
+        nr_3_St_8_Boot = false;
+        v_577 = nr_3_St_8_Boot;
+        ns_3_St_8_Boot_1 = true;
+        v_562 = ns_3_St_8_Boot_1;
+        ns_3_St_8_Boot_2 = true;
+        v_563 = ns_3_St_8_Boot_2;
+        ns_3_St_8_Boot_3 = true;
+        v_564 = ns_3_St_8_Boot_3;
+        if (ns_3_St_8_Boot_1) {
+          ns_3_St_8_Boot_2_1 = ns_3_St_8_Boot_2;
+          if (ns_3_St_8_Boot_2_1) {
+            ns_3_St_8_Boot_3_1_1 = ns_3_St_8_Boot_3;
           } else {
-            ns_3_St_9_Boot_3_1_0 = ns_3_St_9_Boot_3;
+            ns_3_St_8_Boot_3_1_0 = ns_3_St_8_Boot_3;
           };
         } else {
-          ns_3_St_9_Boot_2_0 = ns_3_St_9_Boot_2;
-          if (ns_3_St_9_Boot_2_0) {
-            ns_3_St_9_Boot_3_0_1 = ns_3_St_9_Boot_3;
+          ns_3_St_8_Boot_2_0 = ns_3_St_8_Boot_2;
+          if (ns_3_St_8_Boot_2_0) {
+            ns_3_St_8_Boot_3_0_1 = ns_3_St_8_Boot_3;
           } else {
-            ns_3_St_9_Boot_3_0_0 = ns_3_St_9_Boot_3;
+            ns_3_St_8_Boot_3_0_0 = ns_3_St_8_Boot_3;
           };
         };
       } else {
-        estado_1_St_9_Off = 0;
-        atuador_St_9_Off = false;
-        nr_3_St_9_Off = false;
-        ns_3_St_9_Off_1 = true;
-        ns_3_St_9_Off_2 = true;
-        ns_3_St_9_Off_3 = false;
-        v_557 = estado_1_St_9_Off;
-        v_552 = atuador_St_9_Off;
-        v_577 = nr_3_St_9_Off;
-        v_562 = ns_3_St_9_Off_1;
-        v_563 = ns_3_St_9_Off_2;
-        v_564 = ns_3_St_9_Off_3;
-        if (ns_3_St_9_Off_1) {
-          ns_3_St_9_Off_2_1 = ns_3_St_9_Off_2;
-          if (ns_3_St_9_Off_2_1) {
-            ns_3_St_9_Off_3_1_1 = ns_3_St_9_Off_3;
+        estado_1_St_8_Off = 0;
+        atuador_St_8_Off = false;
+        nr_3_St_8_Off = false;
+        ns_3_St_8_Off_1 = true;
+        ns_3_St_8_Off_2 = true;
+        ns_3_St_8_Off_3 = false;
+        v_557 = estado_1_St_8_Off;
+        v_552 = atuador_St_8_Off;
+        v_577 = nr_3_St_8_Off;
+        v_562 = ns_3_St_8_Off_1;
+        v_563 = ns_3_St_8_Off_2;
+        v_564 = ns_3_St_8_Off_3;
+        if (ns_3_St_8_Off_1) {
+          ns_3_St_8_Off_2_1 = ns_3_St_8_Off_2;
+          if (ns_3_St_8_Off_2_1) {
+            ns_3_St_8_Off_3_1_1 = ns_3_St_8_Off_3;
           } else {
-            ns_3_St_9_Off_3_1_0 = ns_3_St_9_Off_3;
+            ns_3_St_8_Off_3_1_0 = ns_3_St_8_Off_3;
           };
         } else {
-          ns_3_St_9_Off_2_0 = ns_3_St_9_Off_2;
-          if (ns_3_St_9_Off_2_0) {
-            ns_3_St_9_Off_3_0_1 = ns_3_St_9_Off_3;
+          ns_3_St_8_Off_2_0 = ns_3_St_8_Off_2;
+          if (ns_3_St_8_Off_2_0) {
+            ns_3_St_8_Off_3_0_1 = ns_3_St_8_Off_3;
           } else {
-            ns_3_St_9_Off_3_0_0 = ns_3_St_9_Off_3;
+            ns_3_St_8_Off_3_0_0 = ns_3_St_8_Off_3;
           };
         };
       };
@@ -7938,8 +7861,8 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_573 = v_564;
       v_579 = v_577;
     } else {
-      ck_10_3_1_0 = ck_10_3;
-      if (ck_10_3_1_0) {
+      ck_9_3_1_0 = ck_9_3;
+      if (ck_9_3_1_0) {
         v_558 = 0;
         v_553 = true;
         v_578 = true;
@@ -7947,18 +7870,18 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
         v_566 = true;
         v_567 = true;
       } else {
-        estado_1_St_9_Online = 4;
-        v_558 = estado_1_St_9_Online;
-        atuador_St_9_Online = true;
-        v_553 = atuador_St_9_Online;
-        nr_3_St_9_Online = false;
-        v_578 = nr_3_St_9_Online;
-        ns_3_St_9_Online_1 = true;
-        v_565 = ns_3_St_9_Online_1;
-        ns_3_St_9_Online_2 = false;
-        v_566 = ns_3_St_9_Online_2;
-        ns_3_St_9_Online_3 = false;
-        v_567 = ns_3_St_9_Online_3;
+        estado_1_St_8_Online = 4;
+        v_558 = estado_1_St_8_Online;
+        atuador_St_8_Online = true;
+        v_553 = atuador_St_8_Online;
+        nr_3_St_8_Online = false;
+        v_578 = nr_3_St_8_Online;
+        ns_3_St_8_Online_1 = true;
+        v_565 = ns_3_St_8_Online_1;
+        ns_3_St_8_Online_2 = false;
+        v_566 = ns_3_St_8_Online_2;
+        ns_3_St_8_Online_3 = false;
+        v_567 = ns_3_St_8_Online_3;
       };
       v_554 = v_553;
       v_559 = v_558;
@@ -7966,20 +7889,20 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_572 = v_566;
       v_573 = v_567;
       v_579 = v_578;
-      if (!(ck_10_3_1_0)) {
-        if (ns_3_St_9_Online_1) {
-          ns_3_St_9_Online_2_1 = ns_3_St_9_Online_2;
-          if (ns_3_St_9_Online_2_1) {
-            ns_3_St_9_Online_3_1_1 = ns_3_St_9_Online_3;
+      if (!(ck_9_3_1_0)) {
+        if (ns_3_St_8_Online_1) {
+          ns_3_St_8_Online_2_1 = ns_3_St_8_Online_2;
+          if (ns_3_St_8_Online_2_1) {
+            ns_3_St_8_Online_3_1_1 = ns_3_St_8_Online_3;
           } else {
-            ns_3_St_9_Online_3_1_0 = ns_3_St_9_Online_3;
+            ns_3_St_8_Online_3_1_0 = ns_3_St_8_Online_3;
           };
         } else {
-          ns_3_St_9_Online_2_0 = ns_3_St_9_Online_2;
-          if (ns_3_St_9_Online_2_0) {
-            ns_3_St_9_Online_3_0_1 = ns_3_St_9_Online_3;
+          ns_3_St_8_Online_2_0 = ns_3_St_8_Online_2;
+          if (ns_3_St_8_Online_2_0) {
+            ns_3_St_8_Online_3_0_1 = ns_3_St_8_Online_3;
           } else {
-            ns_3_St_9_Online_3_0_0 = ns_3_St_9_Online_3;
+            ns_3_St_8_Online_3_0_0 = ns_3_St_8_Online_3;
           };
         };
       };
@@ -7991,9 +7914,9 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
     ns_3_3 = v_573;
     nr_3 = v_579;
   } else {
-    ck_10_2_0 = ck_10_2;
-    if (ck_10_2_0) {
-      ck_10_3_0_1 = ck_10_3;
+    ck_9_2_0 = ck_9_2;
+    if (ck_9_2_0) {
+      ck_9_3_0_1 = ck_9_3;
       v_556 = true;
       v_561 = 0;
       v_574 = true;
@@ -8001,33 +7924,33 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       v_576 = true;
       v_581 = true;
     } else {
-      ck_10_3_0_0 = ck_10_3;
-      if (ck_10_3_0_0) {
-        estado_1_St_9_Sleep = 1;
-        v_560 = estado_1_St_9_Sleep;
-        atuador_St_9_Sleep = false;
-        v_555 = atuador_St_9_Sleep;
-        nr_3_St_9_Sleep = false;
-        v_580 = nr_3_St_9_Sleep;
-        ns_3_St_9_Sleep_1 = false;
-        v_568 = ns_3_St_9_Sleep_1;
-        ns_3_St_9_Sleep_2 = false;
-        v_569 = ns_3_St_9_Sleep_2;
-        ns_3_St_9_Sleep_3 = true;
-        v_570 = ns_3_St_9_Sleep_3;
+      ck_9_3_0_0 = ck_9_3;
+      if (ck_9_3_0_0) {
+        estado_1_St_8_Sleep = 1;
+        v_560 = estado_1_St_8_Sleep;
+        atuador_St_8_Sleep = false;
+        v_555 = atuador_St_8_Sleep;
+        nr_3_St_8_Sleep = false;
+        v_580 = nr_3_St_8_Sleep;
+        ns_3_St_8_Sleep_1 = false;
+        v_568 = ns_3_St_8_Sleep_1;
+        ns_3_St_8_Sleep_2 = false;
+        v_569 = ns_3_St_8_Sleep_2;
+        ns_3_St_8_Sleep_3 = true;
+        v_570 = ns_3_St_8_Sleep_3;
       } else {
-        estado_1_St_9_Teste = 3;
-        atuador_St_9_Teste = true;
-        nr_3_St_9_Teste = false;
-        ns_3_St_9_Teste_1 = false;
-        ns_3_St_9_Teste_2 = false;
-        ns_3_St_9_Teste_3 = false;
-        v_560 = estado_1_St_9_Teste;
-        v_555 = atuador_St_9_Teste;
-        v_580 = nr_3_St_9_Teste;
-        v_568 = ns_3_St_9_Teste_1;
-        v_569 = ns_3_St_9_Teste_2;
-        v_570 = ns_3_St_9_Teste_3;
+        estado_1_St_8_Teste = 3;
+        atuador_St_8_Teste = true;
+        nr_3_St_8_Teste = false;
+        ns_3_St_8_Teste_1 = false;
+        ns_3_St_8_Teste_2 = false;
+        ns_3_St_8_Teste_3 = false;
+        v_560 = estado_1_St_8_Teste;
+        v_555 = atuador_St_8_Teste;
+        v_580 = nr_3_St_8_Teste;
+        v_568 = ns_3_St_8_Teste_1;
+        v_569 = ns_3_St_8_Teste_2;
+        v_570 = ns_3_St_8_Teste_3;
       };
       v_556 = v_555;
       v_561 = v_560;
@@ -8091,134 +8014,134 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
       ns_3_3_0_0 = ns_3_3;
     };
   };
-  if (!(ck_10_1)) {
-    if (!(ck_10_2_0)) {
-      if (ck_10_3_0_0) {
-        if (ns_3_St_9_Sleep_1) {
-          ns_3_St_9_Sleep_2_1 = ns_3_St_9_Sleep_2;
-          if (ns_3_St_9_Sleep_2_1) {
-            ns_3_St_9_Sleep_3_1_1 = ns_3_St_9_Sleep_3;
-          } else {
-            ns_3_St_9_Sleep_3_1_0 = ns_3_St_9_Sleep_3;
-          };
-        } else {
-          ns_3_St_9_Sleep_2_0 = ns_3_St_9_Sleep_2;
-          if (ns_3_St_9_Sleep_2_0) {
-            ns_3_St_9_Sleep_3_0_1 = ns_3_St_9_Sleep_3;
-          } else {
-            ns_3_St_9_Sleep_3_0_0 = ns_3_St_9_Sleep_3;
-          };
-        };
-      } else {
-        if (ns_3_St_9_Teste_1) {
-          ns_3_St_9_Teste_2_1 = ns_3_St_9_Teste_2;
-          if (ns_3_St_9_Teste_2_1) {
-            ns_3_St_9_Teste_3_1_1 = ns_3_St_9_Teste_3;
-          } else {
-            ns_3_St_9_Teste_3_1_0 = ns_3_St_9_Teste_3;
-          };
-        } else {
-          ns_3_St_9_Teste_2_0 = ns_3_St_9_Teste_2;
-          if (ns_3_St_9_Teste_2_0) {
-            ns_3_St_9_Teste_3_0_1 = ns_3_St_9_Teste_3;
-          } else {
-            ns_3_St_9_Teste_3_0_0 = ns_3_St_9_Teste_3;
-          };
-        };
-      };
-    };
-  };
-  if (s_4_1) {
-    s_4_2_1 = s_4_2;
-    if (s_4_2_1) {
-      s_4_3_1_1 = s_4_3;
-    } else {
-      s_4_3_1_0 = s_4_3;
-    };
-  } else {
-    s_4_2_0 = s_4_2;
-    if (s_4_2_0) {
-      s_4_3_0_1 = s_4_3;
-    } else {
-      s_4_3_0_0 = s_4_3;
-    };
-  };
   if (!(ck_9_1)) {
     if (!(ck_9_2_0)) {
       if (ck_9_3_0_0) {
-        if (s_4_St_9_Sleep_1) {
-          s_4_St_9_Sleep_2_1 = s_4_St_9_Sleep_2;
-          if (s_4_St_9_Sleep_2_1) {
-            s_4_St_9_Sleep_3_1_1 = s_4_St_9_Sleep_3;
+        if (ns_3_St_8_Sleep_1) {
+          ns_3_St_8_Sleep_2_1 = ns_3_St_8_Sleep_2;
+          if (ns_3_St_8_Sleep_2_1) {
+            ns_3_St_8_Sleep_3_1_1 = ns_3_St_8_Sleep_3;
           } else {
-            s_4_St_9_Sleep_3_1_0 = s_4_St_9_Sleep_3;
+            ns_3_St_8_Sleep_3_1_0 = ns_3_St_8_Sleep_3;
           };
         } else {
-          s_4_St_9_Sleep_2_0 = s_4_St_9_Sleep_2;
-          if (s_4_St_9_Sleep_2_0) {
-            s_4_St_9_Sleep_3_0_1 = s_4_St_9_Sleep_3;
+          ns_3_St_8_Sleep_2_0 = ns_3_St_8_Sleep_2;
+          if (ns_3_St_8_Sleep_2_0) {
+            ns_3_St_8_Sleep_3_0_1 = ns_3_St_8_Sleep_3;
           } else {
-            s_4_St_9_Sleep_3_0_0 = s_4_St_9_Sleep_3;
+            ns_3_St_8_Sleep_3_0_0 = ns_3_St_8_Sleep_3;
           };
         };
       } else {
-        if (s_4_St_9_Teste_1) {
-          s_4_St_9_Teste_2_1 = s_4_St_9_Teste_2;
-          if (s_4_St_9_Teste_2_1) {
-            s_4_St_9_Teste_3_1_1 = s_4_St_9_Teste_3;
+        if (ns_3_St_8_Teste_1) {
+          ns_3_St_8_Teste_2_1 = ns_3_St_8_Teste_2;
+          if (ns_3_St_8_Teste_2_1) {
+            ns_3_St_8_Teste_3_1_1 = ns_3_St_8_Teste_3;
           } else {
-            s_4_St_9_Teste_3_1_0 = s_4_St_9_Teste_3;
+            ns_3_St_8_Teste_3_1_0 = ns_3_St_8_Teste_3;
           };
         } else {
-          s_4_St_9_Teste_2_0 = s_4_St_9_Teste_2;
-          if (s_4_St_9_Teste_2_0) {
-            s_4_St_9_Teste_3_0_1 = s_4_St_9_Teste_3;
+          ns_3_St_8_Teste_2_0 = ns_3_St_8_Teste_2;
+          if (ns_3_St_8_Teste_2_0) {
+            ns_3_St_8_Teste_3_0_1 = ns_3_St_8_Teste_3;
           } else {
-            s_4_St_9_Teste_3_0_0 = s_4_St_9_Teste_3;
+            ns_3_St_8_Teste_3_0_0 = ns_3_St_8_Teste_3;
           };
         };
       };
     };
   };
-  if (self->ck_7_1) {
-    if (ca_1) {
-      r_4_St_10_Des = true;
-      s_5_St_10_Des_1 = false;
+  if (s_3_1) {
+    s_3_2_1 = s_3_2;
+    if (s_3_2_1) {
+      s_3_3_1_1 = s_3_3;
     } else {
-      r_4_St_10_Des = self->pnr_4;
-      s_5_St_10_Des_1 = true;
+      s_3_3_1_0 = s_3_3;
     };
-    r_4 = r_4_St_10_Des;
-    s_5_1 = s_5_St_10_Des_1;
   } else {
-    if (ca_1) {
-      r_4_St_10_Lig = true;
+    s_3_2_0 = s_3_2;
+    if (s_3_2_0) {
+      s_3_3_0_1 = s_3_3;
     } else {
-      r_4_St_10_Lig = self->pnr_4;
+      s_3_3_0_0 = s_3_3;
     };
-    r_4 = r_4_St_10_Lig;
-    if (ca_1) {
-      s_5_St_10_Lig_1 = true;
-    } else {
-      s_5_St_10_Lig_1 = false;
-    };
-    s_5_1 = s_5_St_10_Lig_1;
   };
-  ck_8_1 = s_5_1;
-  if (ck_8_1) {
-    estado_St_10_Des = false;
-    nr_4_St_10_Des = false;
-    ns_4_St_10_Des_1 = true;
-    estado = estado_St_10_Des;
-    nr_4 = nr_4_St_10_Des;
-    ns_4_1 = ns_4_St_10_Des_1;
+  if (!(ck_8_1)) {
+    if (!(ck_8_2_0)) {
+      if (ck_8_3_0_0) {
+        if (s_3_St_8_Sleep_1) {
+          s_3_St_8_Sleep_2_1 = s_3_St_8_Sleep_2;
+          if (s_3_St_8_Sleep_2_1) {
+            s_3_St_8_Sleep_3_1_1 = s_3_St_8_Sleep_3;
+          } else {
+            s_3_St_8_Sleep_3_1_0 = s_3_St_8_Sleep_3;
+          };
+        } else {
+          s_3_St_8_Sleep_2_0 = s_3_St_8_Sleep_2;
+          if (s_3_St_8_Sleep_2_0) {
+            s_3_St_8_Sleep_3_0_1 = s_3_St_8_Sleep_3;
+          } else {
+            s_3_St_8_Sleep_3_0_0 = s_3_St_8_Sleep_3;
+          };
+        };
+      } else {
+        if (s_3_St_8_Teste_1) {
+          s_3_St_8_Teste_2_1 = s_3_St_8_Teste_2;
+          if (s_3_St_8_Teste_2_1) {
+            s_3_St_8_Teste_3_1_1 = s_3_St_8_Teste_3;
+          } else {
+            s_3_St_8_Teste_3_1_0 = s_3_St_8_Teste_3;
+          };
+        } else {
+          s_3_St_8_Teste_2_0 = s_3_St_8_Teste_2;
+          if (s_3_St_8_Teste_2_0) {
+            s_3_St_8_Teste_3_0_1 = s_3_St_8_Teste_3;
+          } else {
+            s_3_St_8_Teste_3_0_0 = s_3_St_8_Teste_3;
+          };
+        };
+      };
+    };
+  };
+  if (self->ck_6_1) {
+    if (ca_1) {
+      r_4_St_9_Des = true;
+      s_4_St_9_Des_1 = false;
+    } else {
+      r_4_St_9_Des = self->pnr_4;
+      s_4_St_9_Des_1 = true;
+    };
+    r_4 = r_4_St_9_Des;
+    s_4_1 = s_4_St_9_Des_1;
   } else {
-    estado_St_10_Lig = true;
-    estado = estado_St_10_Lig;
-    nr_4_St_10_Lig = false;
-    nr_4 = nr_4_St_10_Lig;
-    ns_4_St_10_Lig_1 = false;
-    ns_4_1 = ns_4_St_10_Lig_1;
+    if (ca_1) {
+      r_4_St_9_Lig = true;
+    } else {
+      r_4_St_9_Lig = self->pnr_4;
+    };
+    r_4 = r_4_St_9_Lig;
+    if (ca_1) {
+      s_4_St_9_Lig_1 = true;
+    } else {
+      s_4_St_9_Lig_1 = false;
+    };
+    s_4_1 = s_4_St_9_Lig_1;
+  };
+  ck_7_1 = s_4_1;
+  if (ck_7_1) {
+    estado_St_9_Des = false;
+    nr_4_St_9_Des = false;
+    ns_4_St_9_Des_1 = true;
+    estado = estado_St_9_Des;
+    nr_4 = nr_4_St_9_Des;
+    ns_4_1 = ns_4_St_9_Des_1;
+  } else {
+    estado_St_9_Lig = true;
+    estado = estado_St_9_Lig;
+    nr_4_St_9_Lig = false;
+    nr_4 = nr_4_St_9_Lig;
+    ns_4_St_9_Lig_1 = false;
+    ns_4_1 = ns_4_St_9_Lig_1;
   };
   _out->pabx_atuador = estado;
   if (ck_1) {
@@ -8319,7 +8242,7 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   self->v_478 = ns_2_4;
   self->v_479 = ns_3_4;
   self->pnr_1 = nr_1;
-  self->ck_13_1 = ns_1_1;
+  self->ck_12_1 = ns_1_1;
   self->pnr_2 = nr_2;
   self->v_529 = ns_2_1;
   self->v_530 = ns_2_2;
@@ -8329,6 +8252,6 @@ void Ups_controlador__contrato_step(int ac, int cb, int l1b, int l2b, int vb,
   self->v_583 = ns_3_2;
   self->v_584 = ns_3_3;
   self->pnr_4 = nr_4;
-  self->ck_7_1 = ns_4_1;;
+  self->ck_6_1 = ns_4_1;;
 }
 

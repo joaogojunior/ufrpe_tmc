@@ -108,18 +108,6 @@ let
     end
 tel
 
-node led(s:bool) returns (enabled: bool)
-let
-    automaton
-    state Off do
-      enabled = false;
-    unless s then On
-    state On do
-      enabled = true;
-    unless not s then Off
-    end
-tel
-
 node modem_adsl(c, t, o :bool) returns (atuador: bool; estado:int)
 let
     automaton

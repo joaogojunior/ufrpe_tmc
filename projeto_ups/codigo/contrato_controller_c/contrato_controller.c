@@ -1,4 +1,4 @@
-/* --- Generated the 25/7/2018 at 8:45 --- */
+/* --- Generated the 28/7/2018 at 7:48 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c contrato_controller.ept --- */
 
@@ -20,7 +20,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
                                                                 int contrato_swr1,
                                                                 int contrato_swr3,
                                                                 int contrato_swr4,
-                                                                int contrato_ck_7_1,
+                                                                int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
                                                                 int contrato_v_584,
                                                                 int contrato_v_583,
@@ -30,7 +30,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
                                                                 int contrato_v_530,
                                                                 int contrato_v_529,
                                                                 int contrato_pnr_2,
-                                                                int contrato_ck_13_1,
+                                                                int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
                                                                 int contrato_v_479,
                                                                 int contrato_v_478,
@@ -570,7 +570,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_23 = sub_24;
     sub_27 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_22 = sub_27;
   } else {
     sub_22 = sub_23;
@@ -684,7 +684,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_6 = sub_7;
   sub_5 = sub_6;
   sub_4 = sub_5;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_52 = sub_23;
   } else {
     sub_52 = sub_27;
@@ -848,7 +848,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_87 = sub_25;
     sub_88 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_86 = sub_88;
   } else {
     sub_86 = sub_87;
@@ -860,7 +860,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     v_130 = sub_86;
     sub_85 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_84 = v_130;
   } else {
     sub_84 = sub_85;
@@ -872,7 +872,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_79 = sub_80;
   sub_78 = sub_79;
   sub_77 = sub_78;
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_96 = sub_87;
   } else {
     sub_96 = sub_88;
@@ -884,7 +884,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_95 = sub_96;
     sub_97 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_94 = sub_97;
   } else {
     sub_94 = sub_95;
@@ -1124,7 +1124,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_140 = sub_67;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_133 = sub_95;
   } else {
     sub_133 = sub_97;
@@ -1408,7 +1408,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_174 = sub_175;
     sub_178 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_173 = sub_178;
   } else {
     sub_173 = sub_174;
@@ -1522,7 +1522,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_157 = sub_158;
   sub_156 = sub_157;
   sub_155 = sub_156;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_203 = sub_174;
   } else {
     sub_203 = sub_178;
@@ -1686,7 +1686,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_238 = sub_176;
     sub_239 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_237 = sub_239;
   } else {
     sub_237 = sub_238;
@@ -1698,7 +1698,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     v_50 = sub_237;
     sub_236 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_235 = v_50;
   } else {
     sub_235 = sub_236;
@@ -1710,7 +1710,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_230 = sub_231;
   sub_229 = sub_230;
   sub_228 = sub_229;
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_247 = sub_238;
   } else {
     sub_247 = sub_239;
@@ -1722,7 +1722,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_246 = sub_247;
     sub_248 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_245 = sub_248;
   } else {
     sub_245 = sub_246;
@@ -1823,7 +1823,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     v_40 = sub_271;
     sub_270 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_269 = v_40;
   } else {
     sub_269 = sub_270;
@@ -1835,7 +1835,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_268 = sub_269;
     sub_272 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_267 = sub_272;
   } else {
     sub_267 = sub_268;
@@ -2030,7 +2030,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_60 = sub_218;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_295 = sub_246;
   } else {
     sub_295 = sub_248;
@@ -2112,7 +2112,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_13 = sub_298;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_313 = sub_268;
   } else {
     sub_313 = sub_272;
@@ -2333,7 +2333,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
                                                                 int contrato_swr1,
                                                                 int contrato_swr3,
                                                                 int contrato_swr4,
-                                                                int contrato_ck_7_1,
+                                                                int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
                                                                 int contrato_v_584,
                                                                 int contrato_v_583,
@@ -2343,7 +2343,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
                                                                 int contrato_v_530,
                                                                 int contrato_v_529,
                                                                 int contrato_pnr_2,
-                                                                int contrato_ck_13_1,
+                                                                int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
                                                                 int contrato_v_479,
                                                                 int contrato_v_478,
@@ -2834,7 +2834,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_22 = sub_23;
     sub_26 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_21 = sub_26;
   } else {
     sub_21 = sub_22;
@@ -2947,7 +2947,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_6 = sub_7;
   sub_5 = sub_6;
   sub_4 = sub_5;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_50 = sub_22;
   } else {
     sub_50 = sub_26;
@@ -3110,7 +3110,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_84 = sub_24;
     sub_85 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_83 = sub_85;
   } else {
     sub_83 = sub_84;
@@ -3122,7 +3122,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     v_293 = sub_83;
     sub_82 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_81 = v_293;
   } else {
     sub_81 = sub_82;
@@ -3133,7 +3133,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_77 = sub_78;
   sub_76 = sub_77;
   sub_75 = sub_76;
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_90 = sub_84;
   } else {
     sub_90 = sub_85;
@@ -3145,7 +3145,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_89 = sub_90;
     sub_91 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_88 = sub_91;
   } else {
     sub_88 = sub_89;
@@ -3159,7 +3159,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_95 = false;
     sub_98 = sub_96;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_94 = sub_98;
   } else {
     sub_94 = sub_95;
@@ -3171,7 +3171,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_93 = sub_94;
     sub_99 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_92 = sub_99;
   } else {
     sub_92 = sub_93;
@@ -3408,7 +3408,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_303 = sub_65;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_138 = sub_89;
   } else {
     sub_138 = sub_91;
@@ -3668,7 +3668,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_177 = sub_178;
     sub_179 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_176 = sub_179;
   } else {
     sub_176 = sub_177;
@@ -3781,7 +3781,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_161 = sub_162;
   sub_160 = sub_161;
   sub_159 = sub_160;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_203 = sub_177;
   } else {
     sub_203 = sub_179;
@@ -3937,7 +3937,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_157 = sub_158;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_236 = sub_95;
   } else {
     sub_236 = sub_98;
@@ -3949,7 +3949,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     v_217 = sub_236;
     sub_235 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_234 = v_217;
   } else {
     sub_234 = sub_235;
@@ -4161,7 +4161,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_227 = sub_218;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_270 = sub_93;
   } else {
     sub_270 = sub_99;
@@ -4439,7 +4439,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
                                                                 int contrato_swr1,
                                                                 int contrato_swr3,
                                                                 int contrato_swr4,
-                                                                int contrato_ck_7_1,
+                                                                int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
                                                                 int contrato_v_584,
                                                                 int contrato_v_583,
@@ -4449,7 +4449,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
                                                                 int contrato_v_530,
                                                                 int contrato_v_529,
                                                                 int contrato_pnr_2,
-                                                                int contrato_ck_13_1,
+                                                                int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
                                                                 int contrato_v_479,
                                                                 int contrato_v_478,
@@ -4915,7 +4915,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_21 = sub_22;
     sub_25 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_20 = sub_25;
   } else {
     sub_20 = sub_21;
@@ -5027,7 +5027,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_6 = sub_7;
   sub_5 = sub_6;
   sub_4 = sub_5;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_48 = sub_21;
   } else {
     sub_48 = sub_25;
@@ -5189,7 +5189,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_81 = sub_23;
     sub_82 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_80 = sub_82;
   } else {
     sub_80 = sub_81;
@@ -5201,7 +5201,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     v_441 = sub_80;
     sub_79 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_78 = v_441;
   } else {
     sub_78 = sub_79;
@@ -5211,7 +5211,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_75 = sub_76;
   sub_74 = sub_75;
   sub_73 = sub_74;
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_89 = sub_81;
   } else {
     sub_89 = sub_82;
@@ -5223,7 +5223,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_88 = sub_89;
     sub_90 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_87 = sub_90;
   } else {
     sub_87 = sub_88;
@@ -5239,7 +5239,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_96 = false;
     sub_99 = sub_97;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_95 = sub_99;
   } else {
     sub_95 = sub_96;
@@ -5251,7 +5251,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_94 = sub_95;
     sub_100 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_93 = sub_100;
   } else {
     sub_93 = sub_94;
@@ -5452,7 +5452,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     v_451 = sub_63;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_132 = sub_94;
   } else {
     sub_132 = sub_100;
@@ -5462,7 +5462,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_131 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_134 = sub_88;
   } else {
     sub_134 = sub_90;
@@ -5709,7 +5709,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_170 = sub_171;
     sub_172 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_169 = sub_172;
   } else {
     sub_169 = sub_170;
@@ -5821,7 +5821,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_155 = sub_156;
   sub_154 = sub_155;
   sub_153 = sub_154;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_195 = sub_170;
   } else {
     sub_195 = sub_172;
@@ -5976,7 +5976,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_151 = sub_152;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_227 = sub_96;
   } else {
     sub_227 = sub_99;
@@ -5988,7 +5988,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     v_374 = sub_227;
     sub_226 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_225 = v_374;
   } else {
     sub_225 = sub_226;
@@ -6446,7 +6446,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
                                                                int contrato_swr1,
                                                                int contrato_swr3,
                                                                int contrato_swr4,
-                                                               int contrato_ck_7_1,
+                                                               int contrato_ck_6_1,
                                                                int contrato_pnr_4,
                                                                int contrato_v_584,
                                                                int contrato_v_583,
@@ -6456,7 +6456,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
                                                                int contrato_v_530,
                                                                int contrato_v_529,
                                                                int contrato_pnr_2,
-                                                               int contrato_ck_13_1,
+                                                               int contrato_ck_12_1,
                                                                int contrato_pnr_1,
                                                                int contrato_v_479,
                                                                int contrato_v_478,
@@ -6929,7 +6929,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_22 = sub_23;
     sub_26 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_21 = sub_26;
   } else {
     sub_21 = sub_22;
@@ -6972,7 +6972,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_37 = sub_38;
     sub_41 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_36 = sub_41;
   } else {
     sub_36 = sub_37;
@@ -7045,7 +7045,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   sub_6 = sub_7;
   sub_5 = sub_6;
   sub_4 = sub_5;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_60 = sub_37;
   } else {
     sub_60 = sub_41;
@@ -7060,7 +7060,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_54 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_67 = sub_22;
   } else {
     sub_67 = sub_26;
@@ -7201,7 +7201,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_97 = sub_39;
     sub_98 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_96 = sub_98;
   } else {
     sub_96 = sub_97;
@@ -7213,7 +7213,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_100 = false;
     sub_101 = sub_24;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_99 = sub_101;
   } else {
     sub_99 = sub_100;
@@ -7225,7 +7225,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_589 = sub_96;
     sub_95 = sub_99;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_94 = v_589;
   } else {
     sub_94 = sub_95;
@@ -7239,7 +7239,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_587 = sub_96;
     sub_104 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_103 = v_587;
   } else {
     sub_103 = sub_104;
@@ -7273,7 +7273,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_110 = sub_99;
     sub_111 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_109 = sub_111;
   } else {
     sub_109 = sub_110;
@@ -7306,7 +7306,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_591 = sub_106;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_122 = sub_100;
   } else {
     sub_122 = sub_101;
@@ -7318,7 +7318,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_584 = sub_122;
     sub_121 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_120 = v_584;
   } else {
     sub_120 = sub_121;
@@ -7429,7 +7429,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_135 = sub_114;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_146 = sub_97;
   } else {
     sub_146 = sub_98;
@@ -7441,7 +7441,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_573 = sub_122;
     sub_145 = sub_146;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_144 = v_573;
   } else {
     sub_144 = sub_145;
@@ -7528,7 +7528,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_163 = sub_39;
     sub_164 = sub_24;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_162 = sub_164;
   } else {
     sub_162 = sub_163;
@@ -7540,7 +7540,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_562 = sub_162;
     sub_161 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_160 = v_562;
   } else {
     sub_160 = sub_161;
@@ -7558,7 +7558,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   };
   sub_158 = sub_159;
   sub_157 = sub_158;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_169 = sub_110;
   } else {
     sub_169 = sub_111;
@@ -8013,7 +8013,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_242 = sub_146;
     sub_243 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_241 = sub_243;
   } else {
     sub_241 = sub_242;
@@ -8196,7 +8196,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_530 = sub_228;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_273 = sub_242;
   } else {
     sub_273 = sub_243;
@@ -8266,7 +8266,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_283 = sub_215;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_290 = sub_163;
   } else {
     sub_290 = sub_164;
@@ -8278,7 +8278,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_496 = sub_290;
     sub_289 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_288 = v_496;
   } else {
     sub_288 = sub_289;
@@ -8465,7 +8465,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
                                                                 int contrato_swr1,
                                                                 int contrato_swr3,
                                                                 int contrato_swr4,
-                                                                int contrato_ck_7_1,
+                                                                int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
                                                                 int contrato_v_584,
                                                                 int contrato_v_583,
@@ -8475,7 +8475,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
                                                                 int contrato_v_530,
                                                                 int contrato_v_529,
                                                                 int contrato_pnr_2,
-                                                                int contrato_ck_13_1,
+                                                                int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
                                                                 int contrato_v_479,
                                                                 int contrato_v_478,
@@ -8907,7 +8907,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_21 = sub_22;
     sub_25 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_20 = sub_25;
   } else {
     sub_20 = sub_21;
@@ -9002,7 +9002,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_6 = sub_7;
   sub_5 = sub_6;
   sub_4 = sub_5;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_45 = sub_21;
   } else {
     sub_45 = sub_25;
@@ -9147,7 +9147,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_74 = sub_23;
     sub_75 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_73 = sub_75;
     sub_76 = sub_74;
   } else {
@@ -9161,7 +9161,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     v_718 = sub_73;
     sub_72 = sub_76;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_71 = v_718;
   } else {
     sub_71 = sub_72;
@@ -9175,7 +9175,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     v_717 = sub_73;
     sub_78 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_77 = v_717;
   } else {
     sub_77 = sub_78;
@@ -9208,7 +9208,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_83 = sub_76;
     sub_84 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_82 = sub_84;
   } else {
     sub_82 = sub_83;
@@ -9279,7 +9279,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_101 = false;
     sub_104 = sub_102;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_100 = sub_104;
   } else {
     sub_100 = sub_101;
@@ -9291,7 +9291,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     v_714 = sub_73;
     sub_99 = sub_100;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_98 = v_714;
   } else {
     sub_98 = sub_99;
@@ -9314,7 +9314,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_108 = sub_100;
     sub_109 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_107 = sub_109;
   } else {
     sub_107 = sub_108;
@@ -9453,7 +9453,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_735 = sub_59;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_128 = sub_83;
   } else {
     sub_128 = sub_84;
@@ -9506,7 +9506,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_695 = sub_131;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_142 = sub_108;
   } else {
     sub_142 = sub_109;
@@ -9684,7 +9684,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_167 = sub_168;
     sub_169 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_166 = sub_169;
   } else {
     sub_166 = sub_167;
@@ -9779,7 +9779,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_152 = sub_153;
   sub_151 = sub_152;
   sub_150 = sub_151;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_189 = sub_167;
   } else {
     sub_189 = sub_169;
@@ -9932,7 +9932,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_659 = v_658;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_217 = sub_101;
   } else {
     sub_217 = sub_104;
@@ -9944,7 +9944,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     v_652 = sub_217;
     sub_216 = sub_100;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_215 = v_652;
   } else {
     sub_215 = sub_216;
@@ -9958,7 +9958,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     v_651 = sub_217;
     sub_219 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_218 = v_651;
   } else {
     sub_218 = sub_219;
@@ -10338,7 +10338,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
                                                                 int contrato_swr1,
                                                                 int contrato_swr3,
                                                                 int contrato_swr4,
-                                                                int contrato_ck_7_1,
+                                                                int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
                                                                 int contrato_v_584,
                                                                 int contrato_v_583,
@@ -10348,7 +10348,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
                                                                 int contrato_v_530,
                                                                 int contrato_v_529,
                                                                 int contrato_pnr_2,
-                                                                int contrato_ck_13_1,
+                                                                int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
                                                                 int contrato_v_479,
                                                                 int contrato_v_478,
@@ -10738,7 +10738,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_20 = sub_21;
     sub_24 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_19 = sub_24;
   } else {
     sub_19 = sub_20;
@@ -10832,7 +10832,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   sub_6 = sub_7;
   sub_5 = sub_6;
   sub_4 = sub_5;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_43 = sub_20;
   } else {
     sub_43 = sub_24;
@@ -10976,7 +10976,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_72 = sub_22;
     sub_73 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_71 = sub_73;
     sub_74 = sub_72;
   } else {
@@ -10990,7 +10990,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     v_847 = sub_71;
     sub_70 = sub_74;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_69 = v_847;
   } else {
     sub_69 = sub_70;
@@ -11005,7 +11005,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_79 = sub_74;
     sub_80 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_78 = sub_80;
   } else {
     sub_78 = sub_79;
@@ -11025,7 +11025,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     v_846 = sub_71;
     sub_86 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_85 = v_846;
   } else {
     sub_85 = sub_86;
@@ -11127,7 +11127,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_856 = sub_57;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_102 = sub_79;
   } else {
     sub_102 = sub_80;
@@ -11187,7 +11187,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_117 = false;
     sub_120 = sub_118;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_116 = sub_120;
   } else {
     sub_116 = sub_117;
@@ -11199,7 +11199,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_115 = false;
     sub_121 = sub_116;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_114 = sub_121;
   } else {
     sub_114 = sub_115;
@@ -11372,7 +11372,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_145 = sub_146;
     sub_147 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_144 = sub_147;
   } else {
     sub_144 = sub_145;
@@ -11466,7 +11466,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   sub_131 = sub_132;
   sub_130 = sub_131;
   sub_129 = sub_130;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_166 = sub_145;
   } else {
     sub_166 = sub_147;
@@ -11603,7 +11603,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_127 = sub_128;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_194 = sub_117;
   } else {
     sub_194 = sub_120;
@@ -11617,7 +11617,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     v_790 = sub_194;
     sub_193 = sub_116;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_192 = v_790;
   } else {
     sub_192 = sub_193;
@@ -11629,7 +11629,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_195 = sub_74;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     v_792 = v_791;
   } else {
     v_792 = sub_195;
@@ -11649,7 +11649,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_795 = v_794;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_198 = sub_115;
   } else {
     sub_198 = sub_121;
@@ -11683,7 +11683,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     v_789 = sub_194;
     sub_204 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_203 = v_789;
   } else {
     sub_203 = sub_204;
@@ -12028,7 +12028,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
                                                                 int contrato_swr1,
                                                                 int contrato_swr3,
                                                                 int contrato_swr4,
-                                                                int contrato_ck_7_1,
+                                                                int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
                                                                 int contrato_v_584,
                                                                 int contrato_v_583,
@@ -12038,7 +12038,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
                                                                 int contrato_v_530,
                                                                 int contrato_v_529,
                                                                 int contrato_pnr_2,
-                                                                int contrato_ck_13_1,
+                                                                int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
                                                                 int contrato_v_479,
                                                                 int contrato_v_478,
@@ -12249,7 +12249,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     sub_18 = sub_19;
     sub_24 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_17 = sub_24;
   } else {
     sub_17 = sub_18;
@@ -12342,7 +12342,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   sub_5 = sub_6;
   sub_4 = sub_5;
   sub_3 = sub_4;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_42 = sub_18;
   } else {
     sub_42 = sub_24;
@@ -12485,7 +12485,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     sub_70 = sub_20;
     sub_71 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_69 = sub_71;
     sub_72 = sub_70;
   } else {
@@ -12499,7 +12499,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     v_912 = sub_69;
     sub_68 = sub_72;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_67 = v_912;
   } else {
     sub_67 = sub_68;
@@ -12513,7 +12513,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     sub_76 = sub_72;
     sub_77 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_75 = sub_77;
   } else {
     sub_75 = sub_76;
@@ -12532,7 +12532,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     v_911 = sub_69;
     sub_82 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_81 = v_911;
   } else {
     sub_81 = sub_82;
@@ -12633,7 +12633,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     v_921 = sub_56;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_98 = sub_76;
   } else {
     sub_98 = sub_77;
@@ -12645,7 +12645,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     v_897 = sub_21;
     sub_101 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_100 = v_897;
   } else {
     sub_100 = sub_101;
@@ -12657,7 +12657,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     v_898 = sub_100;
     sub_99 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     v_899 = v_898;
   } else {
     v_899 = sub_99;
@@ -12875,7 +12875,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
                                                                int contrato_swr1,
                                                                int contrato_swr3,
                                                                int contrato_swr4,
-                                                               int contrato_ck_7_1,
+                                                               int contrato_ck_6_1,
                                                                int contrato_pnr_4,
                                                                int contrato_v_584,
                                                                int contrato_v_583,
@@ -12885,7 +12885,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
                                                                int contrato_v_530,
                                                                int contrato_v_529,
                                                                int contrato_pnr_2,
-                                                               int contrato_ck_13_1,
+                                                               int contrato_ck_12_1,
                                                                int contrato_pnr_1,
                                                                int contrato_v_479,
                                                                int contrato_v_478,
@@ -13227,7 +13227,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     sub_18 = sub_19;
     sub_22 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_17 = sub_22;
   } else {
     sub_17 = sub_18;
@@ -13308,7 +13308,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   sub_6 = sub_7;
   sub_5 = sub_6;
   sub_4 = sub_5;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_38 = sub_18;
   } else {
     sub_38 = sub_22;
@@ -13351,7 +13351,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     sub_47 = false;
     sub_51 = sub_48;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_46 = sub_51;
   } else {
     sub_46 = sub_47;
@@ -13462,7 +13462,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     sub_74 = sub_20;
     sub_75 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_73 = sub_75;
     sub_76 = sub_74;
   } else {
@@ -13476,7 +13476,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_1009 = sub_73;
     sub_72 = sub_76;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_71 = v_1009;
   } else {
     sub_71 = sub_72;
@@ -13490,7 +13490,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     sub_80 = sub_76;
     sub_81 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_79 = sub_81;
   } else {
     sub_79 = sub_80;
@@ -13509,7 +13509,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_1008 = sub_73;
     sub_85 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_84 = v_1008;
   } else {
     sub_84 = sub_85;
@@ -13550,7 +13550,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     sub_96 = sub_49;
     sub_97 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_95 = sub_97;
   } else {
     sub_95 = sub_96;
@@ -13562,7 +13562,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_1005 = sub_95;
     sub_94 = sub_76;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_93 = v_1005;
   } else {
     sub_93 = sub_94;
@@ -13630,7 +13630,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   } else {
     v_1017 = sub_61;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_109 = sub_80;
   } else {
     sub_109 = sub_81;
@@ -13671,7 +13671,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_994 = sub_20;
     sub_119 = sub_49;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_118 = v_994;
   } else {
     sub_118 = sub_119;
@@ -13683,7 +13683,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_995 = sub_118;
     sub_117 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_116 = v_995;
   } else {
     sub_116 = sub_117;
@@ -13837,7 +13837,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   } else {
     sub_1 = v_1040;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_140 = sub_47;
   } else {
     sub_140 = sub_51;
@@ -14035,7 +14035,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   } else {
     sub_125 = sub_126;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_176 = sub_96;
   } else {
     sub_176 = sub_97;
@@ -14047,7 +14047,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_964 = sub_95;
     sub_175 = sub_176;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_174 = v_964;
   } else {
     sub_174 = sub_175;
@@ -14061,7 +14061,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     sub_180 = sub_176;
     sub_181 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_179 = sub_181;
   } else {
     sub_179 = sub_180;
@@ -14080,7 +14080,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_963 = sub_95;
     sub_185 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_184 = v_963;
   } else {
     sub_184 = sub_185;
@@ -14170,7 +14170,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   } else {
     v_972 = sub_164;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_200 = sub_180;
   } else {
     sub_200 = sub_181;
@@ -14368,7 +14368,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
                                                                int contrato_swr1,
                                                                int contrato_swr3,
                                                                int contrato_swr4,
-                                                               int contrato_ck_7_1,
+                                                               int contrato_ck_6_1,
                                                                int contrato_pnr_4,
                                                                int contrato_v_584,
                                                                int contrato_v_583,
@@ -14378,7 +14378,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
                                                                int contrato_v_530,
                                                                int contrato_v_529,
                                                                int contrato_pnr_2,
-                                                               int contrato_ck_13_1,
+                                                               int contrato_ck_12_1,
                                                                int contrato_pnr_1,
                                                                int contrato_v_479,
                                                                int contrato_v_478,
@@ -14600,7 +14600,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_16 = sub_17;
     sub_20 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_15 = sub_20;
   } else {
     sub_15 = sub_16;
@@ -14619,7 +14619,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_25 = sub_26;
     sub_30 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_24 = sub_30;
   } else {
     sub_24 = sub_25;
@@ -14642,7 +14642,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_34 = sub_35;
     sub_38 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_33 = sub_38;
   } else {
     sub_33 = sub_34;
@@ -14705,14 +14705,14 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   sub_5 = sub_6;
   sub_4 = sub_5;
   sub_3 = sub_4;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_52 = sub_25;
   } else {
     sub_52 = sub_30;
   };
   sub_51 = sub_52;
   sub_50 = sub_51;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_54 = sub_34;
   } else {
     sub_54 = sub_38;
@@ -14728,7 +14728,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_48 = sub_49;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_58 = sub_16;
   } else {
     sub_58 = sub_20;
@@ -14843,7 +14843,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_81 = sub_27;
     sub_82 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_80 = sub_82;
   } else {
     sub_80 = sub_81;
@@ -14855,7 +14855,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_84 = false;
     sub_85 = sub_18;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_83 = sub_85;
   } else {
     sub_83 = sub_84;
@@ -14867,7 +14867,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1068 = sub_80;
     sub_79 = sub_83;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_78 = v_1068;
   } else {
     sub_78 = sub_79;
@@ -14880,7 +14880,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_90 = sub_36;
     sub_91 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_89 = sub_91;
   } else {
     sub_89 = sub_90;
@@ -14892,7 +14892,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1067 = sub_89;
     sub_88 = sub_83;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_87 = v_1067;
   } else {
     sub_87 = sub_88;
@@ -14903,7 +14903,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_76 = sub_86;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_97 = sub_81;
   } else {
     sub_97 = sub_82;
@@ -14915,7 +14915,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_96 = sub_97;
     sub_98 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_95 = sub_98;
   } else {
     sub_95 = sub_96;
@@ -14928,7 +14928,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_75 = sub_76;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_103 = sub_84;
   } else {
     sub_103 = sub_85;
@@ -14940,13 +14940,13 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1065 = sub_103;
     sub_102 = sub_97;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_101 = v_1065;
   } else {
     sub_101 = sub_102;
   };
   sub_100 = sub_101;
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_107 = sub_90;
   } else {
     sub_107 = sub_91;
@@ -14958,7 +14958,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1064 = sub_103;
     sub_106 = sub_107;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_105 = v_1064;
   } else {
     sub_105 = sub_106;
@@ -14981,7 +14981,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1063 = sub_80;
     sub_111 = sub_97;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_110 = v_1063;
   } else {
     sub_110 = sub_111;
@@ -15054,7 +15054,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1054 = sub_27;
     sub_125 = sub_36;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_124 = v_1054;
   } else {
     sub_124 = sub_125;
@@ -15066,7 +15066,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1055 = sub_124;
     sub_123 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_122 = v_1055;
   } else {
     sub_122 = sub_123;
@@ -15077,7 +15077,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_120 = sub_121;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_129 = sub_96;
   } else {
     sub_129 = sub_98;
@@ -15099,7 +15099,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1052 = sub_27;
     sub_136 = sub_18;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_135 = v_1052;
   } else {
     sub_135 = sub_136;
@@ -15111,7 +15111,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1053 = sub_135;
     sub_134 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_133 = v_1053;
   } else {
     sub_133 = sub_134;
@@ -15280,7 +15280,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
                                                                int contrato_swr1,
                                                                int contrato_swr3,
                                                                int contrato_swr4,
-                                                               int contrato_ck_7_1,
+                                                               int contrato_ck_6_1,
                                                                int contrato_pnr_4,
                                                                int contrato_v_584,
                                                                int contrato_v_583,
@@ -15290,7 +15290,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
                                                                int contrato_v_530,
                                                                int contrato_v_529,
                                                                int contrato_pnr_2,
-                                                               int contrato_ck_13_1,
+                                                               int contrato_ck_12_1,
                                                                int contrato_pnr_1,
                                                                int contrato_v_479,
                                                                int contrato_v_478,
@@ -15531,7 +15531,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_14 = sub_15;
     sub_18 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_13 = sub_18;
   } else {
     sub_13 = sub_14;
@@ -15552,7 +15552,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_25 = sub_26;
     sub_30 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_24 = sub_30;
   } else {
     sub_24 = sub_25;
@@ -15579,7 +15579,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_37 = sub_38;
     sub_41 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_36 = sub_41;
   } else {
     sub_36 = sub_37;
@@ -15606,7 +15606,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_5 = sub_6;
   sub_4 = sub_5;
   sub_3 = sub_4;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_55 = sub_37;
   } else {
     sub_55 = sub_41;
@@ -15634,7 +15634,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   } else {
     sub_50 = sub_51;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_61 = sub_25;
   } else {
     sub_61 = sub_30;
@@ -15695,7 +15695,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   } else {
     v_1129 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_72 = sub_14;
   } else {
     sub_72 = sub_18;
@@ -15769,7 +15769,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_89 = sub_16;
     sub_90 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_88 = sub_90;
     sub_91 = sub_89;
   } else {
@@ -15783,7 +15783,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     v_1115 = sub_88;
     sub_87 = sub_91;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_86 = v_1115;
   } else {
     sub_86 = sub_87;
@@ -15798,7 +15798,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_96 = sub_91;
     sub_97 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_95 = sub_97;
   } else {
     sub_95 = sub_96;
@@ -15835,7 +15835,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_108 = sub_27;
     sub_109 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_107 = sub_109;
     sub_110 = sub_108;
   } else {
@@ -15849,7 +15849,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     v_1112 = sub_107;
     sub_106 = sub_110;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_105 = v_1112;
   } else {
     sub_105 = sub_106;
@@ -15864,7 +15864,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_115 = sub_110;
     sub_116 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_114 = sub_116;
   } else {
     sub_114 = sub_115;
@@ -15908,7 +15908,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_127 = sub_39;
     sub_128 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_126 = sub_128;
     sub_129 = sub_127;
   } else {
@@ -15922,7 +15922,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     v_1109 = sub_126;
     sub_125 = sub_129;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_124 = v_1109;
   } else {
     sub_124 = sub_125;
@@ -15937,7 +15937,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_134 = sub_129;
     sub_135 = false;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_133 = sub_135;
   } else {
     sub_133 = sub_134;
@@ -15991,7 +15991,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   } else {
     v_1120 = sub_76;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_146 = sub_96;
   } else {
     sub_146 = sub_97;
@@ -16021,7 +16021,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   };
   sub_140 = sub_141;
   sub_139 = sub_140;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_154 = sub_115;
   } else {
     sub_154 = sub_116;
@@ -16058,7 +16058,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     v_1106 = sub_147;
     sub_138 = sub_139;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_162 = sub_134;
   } else {
     sub_162 = sub_135;
@@ -16215,7 +16215,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
                                                                int contrato_swr1,
                                                                int contrato_swr3,
                                                                int contrato_swr4,
-                                                               int contrato_ck_7_1,
+                                                               int contrato_ck_6_1,
                                                                int contrato_pnr_4,
                                                                int contrato_v_584,
                                                                int contrato_v_583,
@@ -16225,7 +16225,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
                                                                int contrato_v_530,
                                                                int contrato_v_529,
                                                                int contrato_pnr_2,
-                                                               int contrato_ck_13_1,
+                                                               int contrato_ck_12_1,
                                                                int contrato_pnr_1,
                                                                int contrato_v_479,
                                                                int contrato_v_478,
@@ -16341,7 +16341,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   sub_17 = true;
   sub_16 = sub_17;
   sub_15 = sub_16;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_11 = sub_15;
   } else {
     sub_11 = sub_12;
@@ -16354,7 +16354,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   sub_5 = sub_6;
   sub_4 = sub_5;
   sub_3 = sub_4;
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_30 = sub_12;
   } else {
     sub_30 = sub_15;
@@ -16434,14 +16434,14 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
     sub_44 = sub_16;
     sub_45 = sub_13;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     v_1147 = sub_44;
     sub_43 = sub_45;
   } else {
     v_1147 = sub_45;
     sub_43 = sub_44;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_42 = v_1147;
   } else {
     sub_42 = sub_43;
@@ -16456,7 +16456,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
     v_1146 = sub_13;
     sub_51 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_50 = v_1146;
   } else {
     sub_50 = sub_51;
@@ -16468,12 +16468,12 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
     v_1145 = sub_16;
     sub_53 = false;
   };
-  if (contrato_ck_13_1) {
+  if (contrato_ck_12_1) {
     sub_52 = v_1145;
   } else {
     sub_52 = sub_53;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_49 = sub_52;
   } else {
     sub_49 = sub_50;
@@ -16513,7 +16513,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   } else {
     v_1150 = sub_34;
   };
-  if (contrato_ck_7_1) {
+  if (contrato_ck_6_1) {
     sub_62 = sub_50;
   } else {
     sub_62 = sub_52;
@@ -16655,7 +16655,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                    int contrato_swr1,
                                                    int contrato_swr3,
                                                    int contrato_swr4,
-                                                   int contrato_ck_7_1,
+                                                   int contrato_ck_6_1,
                                                    int contrato_pnr_4,
                                                    int contrato_v_584,
                                                    int contrato_v_583,
@@ -16665,7 +16665,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                    int contrato_v_530,
                                                    int contrato_v_529,
                                                    int contrato_pnr_2,
-                                                   int contrato_ck_13_1,
+                                                   int contrato_ck_12_1,
                                                    int contrato_pnr_1,
                                                    int contrato_v_479,
                                                    int contrato_v_478,
@@ -16707,7 +16707,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr1,
                                                             contrato_swr3,
                                                             contrato_swr4,
-                                                            contrato_ck_7_1,
+                                                            contrato_ck_6_1,
                                                             contrato_pnr_4,
                                                             contrato_v_584,
                                                             contrato_v_583,
@@ -16717,7 +16717,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_v_530,
                                                             contrato_v_529,
                                                             contrato_pnr_2,
-                                                            contrato_ck_13_1,
+                                                            contrato_ck_12_1,
                                                             contrato_pnr_1,
                                                             contrato_v_479,
                                                             contrato_v_478,
@@ -16749,7 +16749,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr1,
                                                             contrato_swr3,
                                                             contrato_swr4,
-                                                            contrato_ck_7_1,
+                                                            contrato_ck_6_1,
                                                             contrato_pnr_4,
                                                             contrato_v_584,
                                                             contrato_v_583,
@@ -16759,7 +16759,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_v_530,
                                                             contrato_v_529,
                                                             contrato_pnr_2,
-                                                            contrato_ck_13_1,
+                                                            contrato_ck_12_1,
                                                             contrato_pnr_1,
                                                             contrato_v_479,
                                                             contrato_v_478,
@@ -16792,7 +16792,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr1,
                                                             contrato_swr3,
                                                             contrato_swr4,
-                                                            contrato_ck_7_1,
+                                                            contrato_ck_6_1,
                                                             contrato_pnr_4,
                                                             contrato_v_584,
                                                             contrato_v_583,
@@ -16802,7 +16802,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_v_530,
                                                             contrato_v_529,
                                                             contrato_pnr_2,
-                                                            contrato_ck_13_1,
+                                                            contrato_ck_12_1,
                                                             contrato_pnr_1,
                                                             contrato_v_479,
                                                             contrato_v_478,
@@ -16836,7 +16836,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr1,
                                                             contrato_swr3,
                                                             contrato_swr4,
-                                                            contrato_ck_7_1,
+                                                            contrato_ck_6_1,
                                                             contrato_pnr_4,
                                                             contrato_v_584,
                                                             contrato_v_583,
@@ -16846,7 +16846,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_v_530,
                                                             contrato_v_529,
                                                             contrato_pnr_2,
-                                                            contrato_ck_13_1,
+                                                            contrato_ck_12_1,
                                                             contrato_pnr_1,
                                                             contrato_v_479,
                                                             contrato_v_478,
@@ -16881,7 +16881,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr1,
                                                              contrato_swr3,
                                                              contrato_swr4,
-                                                             contrato_ck_7_1,
+                                                             contrato_ck_6_1,
                                                              contrato_pnr_4,
                                                              contrato_v_584,
                                                              contrato_v_583,
@@ -16891,7 +16891,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_v_530,
                                                              contrato_v_529,
                                                              contrato_pnr_2,
-                                                             contrato_ck_13_1,
+                                                             contrato_ck_12_1,
                                                              contrato_pnr_1,
                                                              contrato_v_479,
                                                              contrato_v_478,
@@ -16927,7 +16927,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr1,
                                                              contrato_swr3,
                                                              contrato_swr4,
-                                                             contrato_ck_7_1,
+                                                             contrato_ck_6_1,
                                                              contrato_pnr_4,
                                                              contrato_v_584,
                                                              contrato_v_583,
@@ -16937,7 +16937,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_v_530,
                                                              contrato_v_529,
                                                              contrato_pnr_2,
-                                                             contrato_ck_13_1,
+                                                             contrato_ck_12_1,
                                                              contrato_pnr_1,
                                                              contrato_v_479,
                                                              contrato_v_478,
@@ -16974,7 +16974,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr1,
                                                              contrato_swr3,
                                                              contrato_swr4,
-                                                             contrato_ck_7_1,
+                                                             contrato_ck_6_1,
                                                              contrato_pnr_4,
                                                              contrato_v_584,
                                                              contrato_v_583,
@@ -16984,7 +16984,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_v_530,
                                                              contrato_v_529,
                                                              contrato_pnr_2,
-                                                             contrato_ck_13_1,
+                                                             contrato_ck_12_1,
                                                              contrato_pnr_1,
                                                              contrato_v_479,
                                                              contrato_v_478,
@@ -17022,7 +17022,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr1,
                                                             contrato_swr3,
                                                             contrato_swr4,
-                                                            contrato_ck_7_1,
+                                                            contrato_ck_6_1,
                                                             contrato_pnr_4,
                                                             contrato_v_584,
                                                             contrato_v_583,
@@ -17032,7 +17032,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_v_530,
                                                             contrato_v_529,
                                                             contrato_pnr_2,
-                                                            contrato_ck_13_1,
+                                                            contrato_ck_12_1,
                                                             contrato_pnr_1,
                                                             contrato_v_479,
                                                             contrato_v_478,
@@ -17071,7 +17071,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr1,
                                                              contrato_swr3,
                                                              contrato_swr4,
-                                                             contrato_ck_7_1,
+                                                             contrato_ck_6_1,
                                                              contrato_pnr_4,
                                                              contrato_v_584,
                                                              contrato_v_583,
@@ -17081,7 +17081,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_v_530,
                                                              contrato_v_529,
                                                              contrato_pnr_2,
-                                                             contrato_ck_13_1,
+                                                             contrato_ck_12_1,
                                                              contrato_pnr_1,
                                                              contrato_v_479,
                                                              contrato_v_478,
@@ -17121,7 +17121,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr1,
                                                              contrato_swr3,
                                                              contrato_swr4,
-                                                             contrato_ck_7_1,
+                                                             contrato_ck_6_1,
                                                              contrato_pnr_4,
                                                              contrato_v_584,
                                                              contrato_v_583,
@@ -17131,7 +17131,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_v_530,
                                                              contrato_v_529,
                                                              contrato_pnr_2,
-                                                             contrato_ck_13_1,
+                                                             contrato_ck_12_1,
                                                              contrato_pnr_1,
                                                              contrato_v_479,
                                                              contrato_v_478,
@@ -17172,7 +17172,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr1,
                                                              contrato_swr3,
                                                              contrato_swr4,
-                                                             contrato_ck_7_1,
+                                                             contrato_ck_6_1,
                                                              contrato_pnr_4,
                                                              contrato_v_584,
                                                              contrato_v_583,
@@ -17182,7 +17182,7 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_v_530,
                                                              contrato_v_529,
                                                              contrato_pnr_2,
-                                                             contrato_ck_13_1,
+                                                             contrato_ck_12_1,
                                                              contrato_pnr_1,
                                                              contrato_v_479,
                                                              contrato_v_478,

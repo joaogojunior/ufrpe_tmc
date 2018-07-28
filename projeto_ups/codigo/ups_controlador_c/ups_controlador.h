@@ -1,4 +1,4 @@
-/* --- Generated the 25/7/2018 at 8:45 --- */
+/* --- Generated the 28/7/2018 at 7:48 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -15,8 +15,6 @@ typedef struct Ups_controlador__computador_mem {
 } Ups_controlador__computador_mem;
 
 typedef struct Ups_controlador__computador_out {
-  int out_atx;
-  int out_off;
   int estado;
 } Ups_controlador__computador_out;
 
@@ -78,20 +76,6 @@ void Ups_controlador__periodo_dia_step(int t,
                                        Ups_controlador__periodo_dia_out* _out,
                                        Ups_controlador__periodo_dia_mem* self);
 
-typedef struct Ups_controlador__led_mem {
-  int ck_1;
-  int pnr;
-} Ups_controlador__led_mem;
-
-typedef struct Ups_controlador__led_out {
-  int enabled;
-} Ups_controlador__led_out;
-
-void Ups_controlador__led_reset(Ups_controlador__led_mem* self);
-
-void Ups_controlador__led_step(int s, Ups_controlador__led_out* _out,
-                               Ups_controlador__led_mem* self);
-
 typedef struct Ups_controlador__modem_adsl_mem {
   int v_414;
   int v_413;
@@ -114,14 +98,14 @@ typedef struct Ups_controlador__contrato_mem {
   int v_479;
   int v_478;
   int v_477;
-  int ck_13_1;
+  int ck_12_1;
   int v_531;
   int v_530;
   int v_529;
   int v_584;
   int v_583;
   int v_582;
-  int ck_7_1;
+  int ck_6_1;
   int pnr_4;
   int pnr_3;
   int pnr_2;
@@ -136,8 +120,6 @@ typedef struct Ups_controlador__contrato_out {
   int r_noite;
   int pabx_atuador;
   int modem_atuador;
-  int out_atx;
-  int out_off;
   int modem_estado;
   int serv_estado;
   int bat12v_3;

@@ -1,4 +1,4 @@
-/* --- Generated the 25/7/2018 at 8:45 --- */
+/* --- Generated the 28/7/2018 at 7:48 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s contrato ups_controlador.ept --- */
 
@@ -86,10 +86,6 @@ int main(int argc, char** argv) {
     printf("%d ", _res.pabx_atuador);
     printf("=> ");
     printf("%d ", _res.modem_atuador);
-    printf("=> ");
-    printf("%d ", _res.out_atx);
-    printf("=> ");
-    printf("%d ", _res.out_off);
     printf("=> ");
     printf("%d ", _res.modem_estado);
     printf("=> ");
