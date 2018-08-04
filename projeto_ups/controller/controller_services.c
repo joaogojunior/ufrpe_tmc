@@ -34,6 +34,7 @@
 #define LED_ERRO RPI_BPLUS_GPIO_J8_11
 #define ATUADOR_MODEM RPI_BPLUS_GPIO_J8_13
 #define ATUADOR_PABX RPI_BPLUS_GPIO_J8_15
+#define ATX_OUT RPI_BPLUS_GPIO_J8_03
 
 Ups_controlador__contrato_mem mem;
 Ups_controlador__contrato_out _res;
@@ -60,6 +61,8 @@ int swr1 = 0;
 int swr3 = 0;
 int swr4 = 0;
 
+int atx_count = 0;
+int pc_estado_ant = 0;
 int semaforo = 0;
 int ocupado = 0;
 
@@ -174,10 +177,13 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   {
     printf("%s, %s\n",dict[i].key, dict[i].value);
   }  
-  
+ 
+  //salva estado do pc no estado anterior
+  pc_estado_ant = _res.serv_estado;
+
   Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
 		                                         swr1, swr3, swr4, &_res, &mem);
-  
+
   char aux[1];
   
   strcat(json, "{");
@@ -233,6 +239,15 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   MHD_create_response_from_buffer (strlen (json), (void *) json, 
 				     MHD_RESPMEM_PERSISTENT);
   ret = MHD_queue_response (connection, MHD_HTTP_OK, response);
+
+  //gera sinal de desligamento do pc
+  if (pc_estado_ant == 1 && _res.serv_estado == 0) {
+	  // gera chamda de desligamento do pc forcado
+	
+  } else if ( _res.serv_estado == 0 ) {
+	  // nos outros casos desliga normalmente
+
+  }
 
   //aqui atualiza estado do modem
   modem_action(_res.modem_estado);
@@ -312,6 +327,7 @@ bcm2835_gpio_set_pud(B_LOW, BCM2835_GPIO_PUD_DOWN);
 bcm2835_gpio_fsel(LED_ERRO, BCM2835_GPIO_FSEL_OUTP);
 bcm2835_gpio_fsel(ATUADOR_MODEM, BCM2835_GPIO_FSEL_OUTP);
 bcm2835_gpio_fsel(ATUADOR_PABX, BCM2835_GPIO_FSEL_OUTP);
+bcm2835_gpio_fsel(ATX_OUT, BCM2835_GPIO_FSEL_OUTP);
 
 return 0;
 }
@@ -363,9 +379,23 @@ void saida_gpio (void) {
     {
       bcm2835_gpio_write(ATUADOR_PABX, LOW);
     }
+
+    /* ATX_OUT */
+    if (atx_count > 0) 
+    {
+      bcm2835_gpio_write(ATX_OUT, HIGH);
+    } 
+    else 
+    {
+      bcm2835_gpio_write(ATX_OUT, LOW);
+    }
+
 }
 
 void cb_tm (int a) {
+	//se o timer expirar enquanto o codigo estava em um trexo critico espera a conclusao do mesmo
+	while (semaforo) {}
+
 	tm = 1;
 	ocupado = 0;
 }
@@ -496,9 +526,22 @@ if (inicia_bcm()) {
     {
       vb = 1;
     }
+  
+  //salva estado do pc no estado anterior
+  pc_estado_ant = _res.serv_estado;
 
   Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
 		                                         swr1, swr3, swr4, &_res, &mem);
+
+  //gera sinal de desligamento do pc
+  if (pc_estado_ant == 1 && _res.serv_estado == 0) {
+	  // gera chamda de desligamento do pc forcado
+	  atx_count = 7;
+	
+  } else if ( _res.serv_estado == 0 ) {
+	  // nos outros casos desliga normalmente
+	  atx_count = 1;
+  }
 
   //aqui atualiza estado do modem
   modem_action(_res.modem_estado);
