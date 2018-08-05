@@ -23,7 +23,7 @@
 #include <signal.h>
 
 #define PORT 8082
-#define n 14
+#define n 5
 
 #define AC_IN RPI_BPLUS_GPIO_J8_29
 #define B_FULL RPI_BPLUS_GPIO_J8_31
@@ -40,6 +40,7 @@ Ups_controlador__contrato_mem mem;
 Ups_controlador__contrato_out _res;
 
 //declaracao previa dos metodos
+void pc_shutdown(void);
 void cb_tm(int a);
 void modem_action(int m);
 void saida_gpio(void);
@@ -113,41 +114,8 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
   int i;
   for(i= 0; i < n; i++)
   {
-   /* as entradas comenmtadas nao se darao pelo webservice */
-
-   /* if (strcmp(dict[i].key, "ac") == 0)
-    {
-      ac = atoi(dict[i].value);
-    } 
-    else if (strcmp(dict[i].key, "cb") == 0)
-    {
-      cb = atoi(dict[i].value);
-    }
-    else if (strcmp(dict[i].key, "l1b") == 0)
-    {
-      l1b = atoi(dict[i].value);
-    }
-    else if (strcmp(dict[i].key, "l2b") == 0)
-    {
-      l2b = atoi(dict[i].value);
-    }
-    else if (strcmp(dict[i].key, "vb") == 0)
-    {
-      vb = atoi(dict[i].value);
-    }
-    else if (strcmp(dict[i].key, "td") == 0)
-    {
-      td = atoi(dict[i].value);
-    }
-    else if (strcmp(dict[i].key, "tm") == 0)
-    {
-      tm = atoi(dict[i].value);
-    }
-    else if (strcmp(dict[i].key, "om") == 0)
-    {
-      om = atoi(dict[i].value);
-    }
-    else */ if (strcmp(dict[i].key, "ts") == 0)
+	  //setando valores recebidos pelo webservice nas variavels globias
+    if (strcmp(dict[i].key, "ts") == 0)
     {
       ts = atoi(dict[i].value);
     }
@@ -173,17 +141,7 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
     }
   }
   
-  for(i= 0; i < n; i++)
-  {
-    printf("%s, %s\n",dict[i].key, dict[i].value);
-  }  
- 
-  //salva estado do pc no estado anterior
-  pc_estado_ant = _res.serv_estado;
-
-  Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
-		                                         swr1, swr3, swr4, &_res, &mem);
-
+  //monta json da resposta com os estados atuais para requisicao feita ao webservice
   char aux[1];
   
   strcat(json, "{");
@@ -240,30 +198,10 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
 				     MHD_RESPMEM_PERSISTENT);
   ret = MHD_queue_response (connection, MHD_HTTP_OK, response);
 
-  //gera sinal de desligamento do pc
-  if (pc_estado_ant == 1 && _res.serv_estado == 0) {
-	  // gera chamda de desligamento do pc forcado
-	
-  } else if ( _res.serv_estado == 0 ) {
-	  // nos outros casos desliga normalmente
-
-  }
-
-  //aqui atualiza estado do modem
-  modem_action(_res.modem_estado);
-
-  /* aqui faz post no webservice do pc*/
-  if  (http_post(_res.serv_estado)) {
-	  printf("Erro na execucao do post com curl!\n");
-  }
-  
-  /* atualiza saidas do gpio apos passo do automato */
-  saida_gpio();
-
-  semaforo = 0;
-
   MHD_destroy_response (response);
 
+  semaforo = 0;
+  // fim da secao critica
   return ret;
 }
 
@@ -271,7 +209,7 @@ int http_post(int rl)
 {
   CURL *curl;
   CURLcode res;
-  int ret = 1;
+  int ret = 0;
      
   /* In windows, this will init the winsock stuff */ 
   curl_global_init(CURL_GLOBAL_ALL);
@@ -294,7 +232,7 @@ int http_post(int rl)
       if(res != CURLE_OK) 
         fprintf(stderr, "curl_easy_perform() failed: %s\n",
 			              curl_easy_strerror(res));
-      else ret = 0;
+      else ret = 1;
 		   
       /* always cleanup */ 
       curl_easy_cleanup(curl);
@@ -306,30 +244,31 @@ int http_post(int rl)
 
 /*setup do bcm2835*/
 int inicia_bcm(void) {
+ printf("Iniciando chipset...\n");
 
  if (!bcm2835_init()) {
 	 return 1;
  }
 
-// seta pinos como input
-bcm2835_gpio_fsel(AC_IN, BCM2835_GPIO_FSEL_INPT);
-bcm2835_gpio_set_pud(AC_IN, BCM2835_GPIO_PUD_DOWN);
-bcm2835_gpio_fsel(B_FULL, BCM2835_GPIO_FSEL_INPT);
-bcm2835_gpio_set_pud(B_FULL, BCM2835_GPIO_PUD_DOWN);
-bcm2835_gpio_fsel(B_V1, BCM2835_GPIO_FSEL_INPT);
-bcm2835_gpio_set_pud(B_V1, BCM2835_GPIO_PUD_DOWN);
-bcm2835_gpio_fsel(B_V2, BCM2835_GPIO_FSEL_INPT);
-bcm2835_gpio_set_pud(B_V2, BCM2835_GPIO_PUD_DOWN);
-bcm2835_gpio_fsel(B_LOW, BCM2835_GPIO_FSEL_INPT);
-bcm2835_gpio_set_pud(B_LOW, BCM2835_GPIO_PUD_DOWN);
+ // seta pinos como input
+ bcm2835_gpio_fsel(AC_IN, BCM2835_GPIO_FSEL_INPT);
+ bcm2835_gpio_set_pud(AC_IN, BCM2835_GPIO_PUD_DOWN);
+ bcm2835_gpio_fsel(B_FULL, BCM2835_GPIO_FSEL_INPT);
+ bcm2835_gpio_set_pud(B_FULL, BCM2835_GPIO_PUD_DOWN);
+ bcm2835_gpio_fsel(B_V1, BCM2835_GPIO_FSEL_INPT);
+ bcm2835_gpio_set_pud(B_V1, BCM2835_GPIO_PUD_DOWN);
+ bcm2835_gpio_fsel(B_V2, BCM2835_GPIO_FSEL_INPT);
+ bcm2835_gpio_set_pud(B_V2, BCM2835_GPIO_PUD_DOWN);
+ bcm2835_gpio_fsel(B_LOW, BCM2835_GPIO_FSEL_INPT);
+ bcm2835_gpio_set_pud(B_LOW, BCM2835_GPIO_PUD_DOWN);
+ 
+ /* seta pinos como output*/
+ bcm2835_gpio_fsel(LED_ERRO, BCM2835_GPIO_FSEL_OUTP);
+ bcm2835_gpio_fsel(ATUADOR_MODEM, BCM2835_GPIO_FSEL_OUTP);
+ bcm2835_gpio_fsel(ATUADOR_PABX, BCM2835_GPIO_FSEL_OUTP);
+ bcm2835_gpio_fsel(ATX_OUT, BCM2835_GPIO_FSEL_OUTP);
 
-/* seta pinos como output*/
-bcm2835_gpio_fsel(LED_ERRO, BCM2835_GPIO_FSEL_OUTP);
-bcm2835_gpio_fsel(ATUADOR_MODEM, BCM2835_GPIO_FSEL_OUTP);
-bcm2835_gpio_fsel(ATUADOR_PABX, BCM2835_GPIO_FSEL_OUTP);
-bcm2835_gpio_fsel(ATX_OUT, BCM2835_GPIO_FSEL_OUTP);
-
-return 0;
+ return 0;
 }
 
 int hora_do_dia(void) {
@@ -351,6 +290,8 @@ int hora_do_dia(void) {
 
 /* escreve saidas gpio */
 void saida_gpio (void) {
+
+    printf("Escrevendos nos gpio...\n");
 
 	/* LED DE ERRO */
     if ( _res.erro == 1)
@@ -383,38 +324,45 @@ void saida_gpio (void) {
     /* ATX_OUT */
     if (atx_count > 0) 
     {
+      atx_count = atx_count - 1;
       bcm2835_gpio_write(ATX_OUT, HIGH);
     } 
     else 
     {
       bcm2835_gpio_write(ATX_OUT, LOW);
     }
-
 }
 
 void cb_tm (int a) {
-	//se o timer expirar enquanto o codigo estava em um trexo critico espera a conclusao do mesmo
+	//se o timer expirar enquanto o codigo estava em uma secao critica espera a conclusao do mesmo
+	printf ("Timer expirou! esperando o semaforo...\n");
 	while (semaforo) {}
-
+	semaforo = 1;
+        //secao critica
+	printf("Gerando tm...!\n");
 	tm = 1;
 	ocupado = 0;
+	//fim da secao critica
+	semaforo = 0;
 }
 
+//testa conectividade com internet
 int ping_call(void){
  int a = system("ping -c1 8.8.8.8 > /dev/null");
  if(a == -1)
-     printf("call failed!");
+     printf("call failed!\n");
  else if (WEXITSTATUS(a) == 127)
-     printf("shell command not found!");
+     printf("shell command not found!\n");
  else
-     printf("system call return succesfull with %d",WEXITSTATUS(a));
+     printf("system call return succesfull with %d\n",WEXITSTATUS(a));
+ //codigo de termino de execucao do ping (zero = sucesso)
  return WEXITSTATUS(a);
 }
 
 //configura o timer que vai gerar o evento de transicao tm
 void modem_action(int m){
 
-        // reseta valor de algumas entradas assim que forem usadas para garantir que um evento apenas foi introduzido
+        // reseta valor de tm assim que for usada para garantir que um evento apenas foi introduzido
         //tm
         if (tm == 1) {
 	        tm = 0;
@@ -424,48 +372,183 @@ void modem_action(int m){
 	case 1: //sleep - espera 15min
 		if (ocupado == 0) {
 		ocupado = 1;
+		printf("programou timer para 15min\n");
 		alarm(900);
 		}
 		break;
 	case 2: //boot - espera 90seg
 		if (ocupado == 0) {
 		ocupado = 1;
+		printf("programou timer para 90seg\n");
 		alarm(90);
 		}
 		break;
 	case 3: //test - ping dnsserver
 		//nesse estado nao precisa de nenhum semaforo pois eh garantido que o automato so passa um passo nesse estado
 		if (ping_call() == 0) {
+			//se o ping foi bem sucedido esta conectado
+			printf("modem conectado!\n");
 			om = 1;
 		} else {
+			//se o ping foi mau sucedido esta offline
+			printf("modem offline!\n");
 			om = 0;
 		}
 		break;
 	case 4: //online - espera 5min
 		if (ocupado == 0) {
 		ocupado = 1;
+		printf("programou o timer para 5min\n");
 		alarm(300);
 		}
 		break;
 	}
 }
 
+void pc_shutdown(void){
+
+  //gera sinal de desligamento do pc
+  if (pc_estado_ant == 1 && _res.serv_estado == 0) {
+	  // gera chamda de desligamento do pc forcado
+	  atx_count = 7;
+	
+  } else if ( _res.serv_estado == 0 ) {
+	  // nos outros casos desliga normalmente
+	  atx_count = 1;
+  }
+
+}
+
+void leitura_gpio(void){
+  
+  printf("Faz pooling dos pinos de entrada...\n");
+
+  /* aqui faz o polling de cada entrada*/
+  //zera variaveis eventos de entrada do pooling
+   ac = 0;
+   cb = 0;
+   l1b = 0;
+   l2b = 0;
+   vb = 0;
+
+    //le sinais dos pinos 
+    if (bcm2835_gpio_lev(AC_IN) == HIGH )
+    {
+      printf("Detectado sinal ac!\n");
+      ac = 1;
+    } 
+    else if (bcm2835_gpio_lev(B_FULL) == HIGH)
+    {
+      printf("Detectado sinal cb!\n");
+      cb = 1;
+    }
+    else if (bcm2835_gpio_lev(B_V1) == HIGH)
+    { 
+      printf("Detectado sinal l1b!\n");
+      l1b = 1;
+    }
+    else if (bcm2835_gpio_lev(B_V2) == HIGH)
+    {
+      printf("Detectado sinal l2b!\n");
+      l2b = 1;
+    }
+    else if (bcm2835_gpio_lev(B_LOW) == HIGH)
+    {
+      printf("Detectado sinal vb!\n");
+      vb = 1;
+    }
+}
+
+void gera_td(void){
+  //aqui gera evento dia/noite
+  td = 0;
+  int hora = hora_do_dia();
+  if (hora > 8 && hora <= 20 && _res.dia == 0) {
+	  printf("Gerando td...\n");
+	  td = 1;
+  } else if (hora > 20 && hora <= 8 && _res.dia == 1) {
+	  printf("Gerando td...\n");
+	  td = 1;
+  }
+}
+
+void debug_output(void){
+    printf("=> ");
+    printf("%d ", _res.erro);
+    printf("=> ");
+    printf("%d ", _res.dia);
+    printf("=> ");
+    printf("%d ", _res.r_dia);
+    printf("=> ");
+    printf("%d ", _res.r_noite);
+    printf("=> ");
+    printf("%d ", _res.pabx_atuador);
+    printf("=> ");
+    printf("%d ", _res.modem_atuador);
+    printf("=> ");
+    printf("%d ", _res.modem_estado);
+    printf("=> ");
+    printf("%d ", _res.serv_estado);
+    printf("=> ");
+    printf("%d ", _res.bat12v_3);
+    printf("=> ");
+    printf("%d ", _res.bat12v_2);
+    printf("=> ");
+    printf("%d ", _res.bat12v_1);
+    puts("");
+    fflush(stdout);
+}
+
+
 int main(int argc, char** argv) {
   
  //inicia bcm2835 logo no inicio do programa
-if (inicia_bcm()) {
-	 printf ("Erro no init do bcm2835!");
+  if (inicia_bcm()) {
+	 printf ("Erro no init do bcm2835!\n");
 	 return 1;
- } 
-
+  }  
   
   //configura callback do alarm
   signal(SIGALRM, cb_tm);
 
   struct MHD_Daemon *daemon;
   
+  //reset do controlador
   Ups_controlador__contrato_reset(&mem);
+
+  //setup da planta e checagens iniciais...
   
+  //sincroniza hora atual com automato do tempo do controlador
+  int hora = hora_do_dia();
+  //se for noite da um passo no controlador com evento de transicao do automado do dia para
+  // que ele passe para noite
+  if (hora > 20 && hora <= 8 && _res.dia == 1) {
+	  printf("Sincronizando controlador para noite...\n");
+          Ups_controlador__contrato_step(0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+		                                         0, 0, 0, &_res, &mem);
+	  debug_output();
+  } else printf ("Não há necessidade de atulizar o automato do tempo no momento...\n");
+
+  //le uma vez os gpio inpus
+  leitura_gpio();
+  //verifica se ha ac ou se ha pelo menos o bit bateria low
+  if (ac == 0 && vb == 0){
+	  //gera erro e sai
+	  printf("Erro! Não é possivel iniciar controlador sem os sensores de bateria e de ac :-(\nVerifique a conexão e tente novamente!\n");
+	  exit(1);
+  }
+
+  //sincroniza pc ja ligado na planta com automato do pc
+  //simula ac para ligar a panta inteira e envia ts para pc ir para rl1 envia tm para modem ir para teste
+  Ups_controlador__contrato_step(1, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+		                                         0, 0, 0, &_res, &mem);
+  debug_output();
+  //envia rl4 e tm para fazer o pc ir para rl4 e om para modem ir para online
+  Ups_controlador__contrato_step(1, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+		                                         0, 0, 1, &_res, &mem);
+  debug_output();
+
+  //zera todas as chave/valor para todas as posicoes de dict
   int i;
   for(i= 0; i < n; i++)
   {
@@ -473,6 +556,7 @@ if (inicia_bcm()) {
     dict[i].value = "";
   }
 
+  //inicia daemon do webservice
   daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY, PORT, NULL, NULL,
                              &answer_to_connection, NULL, MHD_OPTION_END);
   if (NULL == daemon)
@@ -489,74 +573,38 @@ if (inicia_bcm()) {
   semaforo = 1;
 
   //aqui gera evento dia/noite
-  td = 0;
-  int hora = hora_do_dia();
-  if (hora > 8 && _res.dia == 0) {
-	  td = 1;
-  } else if (hora > 20 && _res.dia == 1) {
-	  td = 1;
-  }
+  gera_td();
 
-  /* aqui faz o polling de cada entrada*/
-  //zera variaveis eventos de entrada do pooling
-   ac = 0;
-   cb = 0;
-   l1b = 0;
-   l2b = 0;
-   vb = 0;
+  //faz pooling das entradas de bateria e ac
+  leitura_gpio();
 
-    //le sinais dos pinos 
-    if (bcm2835_gpio_lev(AC_IN) == HIGH )
-    {
-      ac = 1;
-    } 
-    else if (bcm2835_gpio_lev(B_FULL) == HIGH)
-    {
-      cb = 1;
-    }
-    else if (bcm2835_gpio_lev(B_V1) == HIGH)
-    {
-      l1b = 1;
-    }
-    else if (bcm2835_gpio_lev(B_V2) == HIGH)
-    {
-      l2b = 1;
-    }
-    else if (bcm2835_gpio_lev(B_LOW) == HIGH)
-    {
-      vb = 1;
-    }
-  
-  //salva estado do pc no estado anterior
+  //guarda estado anterior do pc
   pc_estado_ant = _res.serv_estado;
 
+  //executa um passo no controlador
   Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
 		                                         swr1, swr3, swr4, &_res, &mem);
 
-  //gera sinal de desligamento do pc
-  if (pc_estado_ant == 1 && _res.serv_estado == 0) {
-	  // gera chamda de desligamento do pc forcado
-	  atx_count = 7;
-	
-  } else if ( _res.serv_estado == 0 ) {
-	  // nos outros casos desliga normalmente
-	  atx_count = 1;
+  debug_output();
+
+  /* checa se o estado do pc mudou e faz post no webservice do pc com o novo estado*/
+  if ( ! pc_estado_ant == _res.serv_estado ) {
+    if  (http_post(_res.serv_estado)) {
+  	  printf("Erro na execucao do post com curl!\n");
+    }
   }
 
-  //aqui atualiza estado do modem
+  //aqui gera sinal de desligamento do pc se necessario
+  pc_shutdown();
+
+  //aqui atualiza estado do modem para os temporizadores e o teste de conexao
   modem_action(_res.modem_estado);
-
-  /* aqui faz post no webservice do pc*/
-  if  (http_post(_res.serv_estado)) {
-	  printf("Erro na execucao do post com curl!\n");
-  }
 
   /* metodo que atualiza as saidas gpio apos um passo do automato */
   saida_gpio();
 
   semaforo = 0;
   //fim secao critica
-
   };
 
   MHD_stop_daemon (daemon);
