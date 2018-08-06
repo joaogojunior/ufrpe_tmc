@@ -40,7 +40,7 @@ Ups_controlador__contrato_mem mem;
 Ups_controlador__contrato_out _res;
 
 //declaracao previa dos metodos
-void pc_shutdown(void);
+void pc_action(void);
 void cb_tm(int a);
 void modem_action(int m);
 void saida_gpio(void);
@@ -117,23 +117,32 @@ answer_to_connection (void *cls, struct MHD_Connection *connection,
 	  //setando valores recebidos pelo webservice nas variavels globias
     if (strcmp(dict[i].key, "ts") == 0)
     {
-      ts = atoi(dict[i].value);
+	    printf("Recebido ts do webservice!\n");
+	    ts = atoi(dict[i].value);
     }
     else if (strcmp(dict[i].key, "swa") == 0)
     {
-      swa = atoi(dict[i].value);
+
+	    printf("Recebido swa do webservice!\n");
+            swa = atoi(dict[i].value);
     }
     else if (strcmp(dict[i].key, "swr1") == 0)
     {
-      swr1 = atoi(dict[i].value);
+
+	    printf("Recebido swr1 do webservice!\n");
+            swr1 = atoi(dict[i].value);
     }
     else if (strcmp(dict[i].key, "swr3") == 0)
     {
-      swr3 = atoi(dict[i].value);
+
+	    printf("Recebido swr3 do webservice!\n");
+            swr3 = atoi(dict[i].value);
     }
     else if (strcmp(dict[i].key, "swr4") == 0)
     {
-      swr4 = atoi(dict[i].value);
+
+	    printf("Recebido swr4 do webservice!\n");
+            swr4 = atoi(dict[i].value);
     }
     else
     {
@@ -303,28 +312,32 @@ void saida_gpio (void) {
       bcm2835_gpio_write(LED_ERRO, LOW);
     }
 	/* ATUADOR DO MODEM */
+        /* rele estado solido ativa em LOW */
     if ( _res.modem_atuador == 1)
     {
-      bcm2835_gpio_write(ATUADOR_MODEM, HIGH);
+      bcm2835_gpio_write(ATUADOR_MODEM, LOW);
     } 
     else 
     {
-      bcm2835_gpio_write(ATUADOR_MODEM, LOW);
+      bcm2835_gpio_write(ATUADOR_MODEM, HIGH);
     }
 	/* ATUADOR DO PABX */
+        /* rele estado solido ativa em LOW */
     if ( _res.pabx_atuador == 1)
     {
-      bcm2835_gpio_write(ATUADOR_PABX, HIGH);
+      bcm2835_gpio_write(ATUADOR_PABX, LOW);
     } 
     else 
     {
-      bcm2835_gpio_write(ATUADOR_PABX, LOW);
+      bcm2835_gpio_write(ATUADOR_PABX, HIGH);
     }
 
     /* ATX_OUT */
     if (atx_count > 0) 
     {
-      atx_count = atx_count - 1;
+      printf("atx_count=%d\n", atx_count);
+      --atx_count;
+      printf("novo valor em atx_count... %d\n", atx_count);
       bcm2835_gpio_write(ATX_OUT, HIGH);
     } 
     else 
@@ -362,11 +375,9 @@ int ping_call(void){
 //configura o timer que vai gerar o evento de transicao tm
 void modem_action(int m){
 
-        // reseta valor de tm assim que for usada para garantir que um evento apenas foi introduzido
-        //tm
-        if (tm == 1) {
-	        tm = 0;
-        }
+        // reseta valor de tm e om assim que for usada para garantir que um evento apenas foi introduzido
+	tm = 0;
+	om = 0;
 
 	switch (m) {
 	case 1: //sleep - espera 15min
@@ -405,16 +416,31 @@ void modem_action(int m){
 	}
 }
 
-void pc_shutdown(void){
+void pc_action(void){
+
+  // reseta eventos provenientes do webservice para garantir q foram gerado apenas uma vez
+	  swr4 = 0;
+	  swr3 = 0;
+	  swr1 = 0;
+          swa = 0;
+          ts = 0;
 
   //gera sinal de desligamento do pc
-  if (pc_estado_ant == 1 && _res.serv_estado == 0) {
+  if (atx_count == 0 && pc_estado_ant == 1 && _res.serv_estado == 0) {
 	  // gera chamda de desligamento do pc forcado
+	  printf("atx_count agora eh 7\n");
 	  atx_count = 7;
 	
-  } else if ( _res.serv_estado == 0 ) {
+  } else if ( atx_count == 0 && ! pc_estado_ant == 0 && _res.serv_estado == 0 ) {
 	  // nos outros casos desliga normalmente
+	  printf("atx_count agora eh 1\n");
 	  atx_count = 1;
+  } else if (pc_estado_ant == 1 && _res.serv_estado == 2) {
+	  // pc recem iniciado muda p runlevel4 (comportamento da planta)
+          //executa um passo no controlador
+	  printf("Boot do pc em rl4...\n");
+          Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
+		                                         swr1, swr3, 1, &_res, &mem);
   }
 
 }
@@ -437,22 +463,22 @@ void leitura_gpio(void){
       printf("Detectado sinal ac!\n");
       ac = 1;
     } 
-    else if (bcm2835_gpio_lev(B_FULL) == HIGH)
+    if (bcm2835_gpio_lev(B_FULL) == HIGH)
     {
       printf("Detectado sinal cb!\n");
       cb = 1;
     }
-    else if (bcm2835_gpio_lev(B_V1) == HIGH)
+    if (bcm2835_gpio_lev(B_V1) == HIGH)
     { 
       printf("Detectado sinal l1b!\n");
       l1b = 1;
     }
-    else if (bcm2835_gpio_lev(B_V2) == HIGH)
+    if (bcm2835_gpio_lev(B_V2) == HIGH)
     {
       printf("Detectado sinal l2b!\n");
       l2b = 1;
     }
-    else if (bcm2835_gpio_lev(B_LOW) == HIGH)
+    if (bcm2835_gpio_lev(B_LOW) == HIGH)
     {
       printf("Detectado sinal vb!\n");
       vb = 1;
@@ -540,10 +566,18 @@ int main(int argc, char** argv) {
 
   //sincroniza pc ja ligado na planta com automato do pc
   //simula ac para ligar a panta inteira e envia ts para pc ir para rl1 envia tm para modem ir para teste
+ 
+  printf("Insere sinal ac...\n");
+  Ups_controlador__contrato_step(1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		                                         0, 0, 0, &_res, &mem);
+ 
+ 
+  printf("Insere sinal tm e ts...\n");
   Ups_controlador__contrato_step(1, 0, 0, 0, 0, 0, 1, 0, 1, 0,
 		                                         0, 0, 0, &_res, &mem);
   debug_output();
-  //envia rl4 e tm para fazer o pc ir para rl4 e om para modem ir para online
+  printf("Insere sinal ac, om e swr4...\n");
+  //envia rl4 para fazer o pc ir para rl4 e om para modem ir para online
   Ups_controlador__contrato_step(1, 0, 0, 0, 0, 0, 0, 1, 0, 0,
 		                                         0, 0, 1, &_res, &mem);
   debug_output();
@@ -566,7 +600,7 @@ int main(int argc, char** argv) {
   while (1) {
  
   /* espera 1 seg */
-  bcm2835_delay(1000);
+  bcm2835_delay(10000);
 
  //secao critica
   while (semaforo) {}
@@ -581,6 +615,8 @@ int main(int argc, char** argv) {
   //guarda estado anterior do pc
   pc_estado_ant = _res.serv_estado;
 
+  printf("Entradas: ac=%d, cb=%d, l1b=%d, l2b=%d, vb=%d, td=%d, tm=%d, om=%d, ts=%d, swa=%d, swr1=%d, swr3=%d, swr4=%d\n", ac, cb, l1b, l2b, vb, td, tm, om, ts, swa, swr1, swr3, swr4 );
+
   //executa um passo no controlador
   Ups_controlador__contrato_step(ac, cb, l1b, l2b, vb, td, tm, om, ts, swa,
 		                                         swr1, swr3, swr4, &_res, &mem);
@@ -589,13 +625,14 @@ int main(int argc, char** argv) {
 
   /* checa se o estado do pc mudou e faz post no webservice do pc com o novo estado*/
   if ( ! pc_estado_ant == _res.serv_estado ) {
+    printf("Enviando post para o pc com novo runlevel %d!\n", _res.serv_estado); 
     if  (http_post(_res.serv_estado)) {
   	  printf("Erro na execucao do post com curl!\n");
     }
   }
 
-  //aqui gera sinal de desligamento do pc se necessario
-  pc_shutdown();
+  //aqui reseta eventos do webservice e gera sinal de desligamento do pc se necessario
+  pc_action();
 
   //aqui atualiza estado do modem para os temporizadores e o teste de conexao
   modem_action(_res.modem_estado);
