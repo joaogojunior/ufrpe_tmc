@@ -16,7 +16,7 @@ r4 = (b4 & s4) or not cr4;
     unless a then Boot
     state Boot do
       estado = 1;
-    unless off_atx then Off
+    unless not off_atx then Off
       | ts then Rlevel1
     state Rlevel1 do
       estado = 2;

@@ -1,4 +1,4 @@
-/* --- Generated the 28/7/2018 at 7:48 --- */
+/* --- Generated the 8/8/2018 at 10:32 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c contrato_controller.ept --- */
 
@@ -22,19 +22,19 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
                                                                 int contrato_swr4,
                                                                 int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
+                                                                int contrato_v_586,
+                                                                int contrato_v_585,
                                                                 int contrato_v_584,
-                                                                int contrato_v_583,
-                                                                int contrato_v_582,
                                                                 int contrato_pnr_3,
+                                                                int contrato_v_533,
+                                                                int contrato_v_532,
                                                                 int contrato_v_531,
-                                                                int contrato_v_530,
-                                                                int contrato_v_529,
                                                                 int contrato_pnr_2,
                                                                 int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
+                                                                int contrato_v_481,
+                                                                int contrato_v_480,
                                                                 int contrato_v_479,
-                                                                int contrato_v_478,
-                                                                int contrato_v_477,
                                                                 int contrato_pnr,
                                                                 int p_contrato_br4,
                                                                 int p_contrato_br3,
@@ -600,17 +600,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   };
   sub_30 = sub_28;
   sub_29 = sub_30;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_160 = false;
   } else {
     v_160 = sub_29;
   };
   if (contrato_co) {
-    v_161 = v_160;
-  } else {
     v_161 = sub_29;
+  } else {
+    v_161 = v_160;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_13 = sub_29;
   } else {
     sub_13 = sub_14;
@@ -631,47 +631,47 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_157 = sub_30;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_32 = v_157;
   } else {
     sub_32 = sub_14;
   };
   sub_31 = sub_32;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_162 = v_161;
   } else {
     v_162 = sub_31;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_11 = v_162;
   } else {
     sub_11 = sub_12;
   };
   sub_10 = sub_11;
   sub_9 = sub_10;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_8 = sub_9;
     sub_33 = false;
   } else {
     sub_8 = false;
     sub_33 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_165 = sub_9;
   } else {
     v_165 = sub_33;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_166 = v_165;
   } else {
     v_166 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_163 = sub_33;
   } else {
     v_163 = sub_8;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_164 = v_163;
   } else {
     v_164 = sub_8;
@@ -713,7 +713,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_44 = sub_53;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_43 = false;
   } else {
     sub_43 = sub_44;
@@ -734,50 +734,50 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_145 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_56 = v_145;
   } else {
     sub_56 = sub_44;
   };
   sub_55 = sub_56;
   sub_57 = sub_53;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_148 = sub_57;
   } else {
     v_148 = false;
   };
   if (contrato_co) {
-    v_149 = v_148;
-  } else {
     v_149 = false;
+  } else {
+    v_149 = v_148;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_150 = v_149;
   } else {
     v_150 = sub_55;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_41 = v_150;
   } else {
     sub_41 = sub_42;
   };
   sub_40 = sub_41;
   sub_39 = sub_40;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_38 = false;
     sub_58 = sub_39;
   } else {
     sub_38 = sub_39;
     sub_58 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_153 = false;
     v_151 = sub_58;
   } else {
     v_153 = sub_58;
     v_151 = sub_38;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_152 = v_151;
   } else {
     v_152 = sub_38;
@@ -788,7 +788,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_62 = sub_41;
   };
   sub_61 = sub_62;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_60 = false;
   } else {
     sub_60 = sub_61;
@@ -798,17 +798,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_63 = sub_40;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_142 = false;
   } else {
     v_142 = sub_63;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_59 = v_142;
   } else {
     sub_59 = sub_60;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_154 = v_153;
   } else {
     v_154 = sub_59;
@@ -821,22 +821,22 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_36 = sub_37;
   sub_35 = sub_36;
   sub_34 = sub_35;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_3 = sub_34;
   } else {
     sub_3 = sub_4;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_171 = sub_3;
   } else {
     v_171 = sub_34;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_172 = v_171;
   } else {
     v_172 = sub_34;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_2 = sub_4;
   } else {
     sub_2 = sub_3;
@@ -957,17 +957,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_106 = sub_107;
   sub_105 = sub_106;
   sub_104 = sub_105;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_133 = sub_102;
   } else {
     v_133 = sub_104;
   };
   if (contrato_co) {
-    v_134 = v_133;
-  } else {
     v_134 = sub_104;
+  } else {
+    v_134 = v_133;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_75 = sub_104;
   } else {
     sub_75 = sub_76;
@@ -994,12 +994,12 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_111 = sub_102;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_110 = sub_104;
   } else {
     sub_110 = sub_111;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_73 = sub_110;
   } else {
     sub_73 = sub_74;
@@ -1064,47 +1064,47 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_116 = sub_102;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_115 = v_123;
   } else {
     sub_115 = sub_116;
   };
   sub_114 = sub_115;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_135 = v_134;
   } else {
     v_135 = sub_114;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_72 = v_135;
   } else {
     sub_72 = sub_73;
   };
   sub_71 = sub_72;
   sub_70 = sub_71;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_69 = sub_70;
     sub_118 = false;
   } else {
     sub_69 = false;
     sub_118 = sub_70;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_138 = sub_70;
   } else {
     v_138 = sub_118;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_139 = v_138;
   } else {
     v_139 = sub_70;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_136 = sub_118;
   } else {
     v_136 = sub_69;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_137 = v_136;
   } else {
     v_137 = sub_69;
@@ -1175,17 +1175,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_137 = sub_138;
   sub_136 = sub_137;
   sub_135 = sub_136;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_106 = sub_57;
   } else {
     v_106 = sub_135;
   };
   if (contrato_co) {
-    v_107 = v_106;
-  } else {
     v_107 = sub_135;
+  } else {
+    v_107 = v_106;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_126 = sub_135;
   } else {
     sub_126 = sub_127;
@@ -1251,47 +1251,47 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_146 = sub_53;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_145 = v_100;
   } else {
     sub_145 = sub_146;
   };
   sub_144 = sub_145;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_108 = v_107;
   } else {
     v_108 = sub_144;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_124 = v_108;
   } else {
     sub_124 = sub_125;
   };
   sub_123 = sub_124;
   sub_122 = sub_123;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_121 = sub_122;
     sub_148 = false;
   } else {
     sub_121 = false;
     sub_148 = sub_122;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_111 = sub_122;
   } else {
     v_111 = sub_148;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_112 = v_111;
   } else {
     v_112 = sub_122;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_109 = sub_148;
   } else {
     v_109 = sub_121;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_110 = v_109;
   } else {
     v_110 = sub_121;
@@ -1318,7 +1318,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     v_167 = sub_119;
     sub_66 = sub_119;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_65 = sub_34;
   } else {
     sub_65 = sub_66;
@@ -1338,7 +1338,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_141 = sub_119;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_64 = v_141;
   } else {
     sub_64 = sub_65;
@@ -1348,7 +1348,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_151 = sub_35;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_150 = sub_34;
   } else {
     sub_150 = sub_151;
@@ -1373,17 +1373,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_152 = v_89;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_168 = v_167;
   } else {
     v_168 = sub_152;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_169 = v_168;
   } else {
     v_169 = sub_150;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_170 = v_169;
   } else {
     v_170 = sub_64;
@@ -1438,17 +1438,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   };
   sub_181 = sub_179;
   sub_180 = sub_181;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_80 = false;
   } else {
     v_80 = sub_180;
   };
   if (contrato_co) {
-    v_81 = v_80;
-  } else {
     v_81 = sub_180;
+  } else {
+    v_81 = v_80;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_164 = sub_180;
   } else {
     sub_164 = sub_165;
@@ -1469,47 +1469,47 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_77 = sub_181;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_183 = v_77;
   } else {
     sub_183 = sub_165;
   };
   sub_182 = sub_183;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_82 = v_81;
   } else {
     v_82 = sub_182;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_162 = v_82;
   } else {
     sub_162 = sub_163;
   };
   sub_161 = sub_162;
   sub_160 = sub_161;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_159 = sub_160;
     sub_184 = false;
   } else {
     sub_159 = false;
     sub_184 = sub_160;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_85 = sub_160;
   } else {
     v_85 = sub_184;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_86 = v_85;
   } else {
     v_86 = sub_160;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_83 = sub_184;
   } else {
     v_83 = sub_159;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_84 = v_83;
   } else {
     v_84 = sub_159;
@@ -1551,7 +1551,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_195 = sub_204;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_194 = false;
   } else {
     sub_194 = sub_195;
@@ -1572,50 +1572,50 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_65 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_207 = v_65;
   } else {
     sub_207 = sub_195;
   };
   sub_206 = sub_207;
   sub_208 = sub_204;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_68 = sub_208;
   } else {
     v_68 = false;
   };
   if (contrato_co) {
-    v_69 = v_68;
-  } else {
     v_69 = false;
+  } else {
+    v_69 = v_68;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_70 = v_69;
   } else {
     v_70 = sub_206;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_192 = v_70;
   } else {
     sub_192 = sub_193;
   };
   sub_191 = sub_192;
   sub_190 = sub_191;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_189 = false;
     sub_209 = sub_190;
   } else {
     sub_189 = sub_190;
     sub_209 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_73 = false;
     v_71 = sub_209;
   } else {
     v_73 = sub_209;
     v_71 = sub_189;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_72 = v_71;
   } else {
     v_72 = sub_189;
@@ -1626,7 +1626,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     sub_213 = sub_192;
   };
   sub_212 = sub_213;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_211 = false;
   } else {
     sub_211 = sub_212;
@@ -1636,17 +1636,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_214 = sub_191;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_62 = false;
   } else {
     v_62 = sub_214;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_210 = v_62;
   } else {
     sub_210 = sub_211;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_74 = v_73;
   } else {
     v_74 = sub_210;
@@ -1659,22 +1659,22 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_187 = sub_188;
   sub_186 = sub_187;
   sub_185 = sub_186;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_154 = sub_185;
   } else {
     sub_154 = sub_155;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_178 = sub_154;
   } else {
     v_178 = sub_185;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_179 = v_178;
   } else {
     v_179 = sub_185;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_153 = sub_155;
   } else {
     sub_153 = sub_154;
@@ -1795,17 +1795,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_257 = sub_258;
   sub_256 = sub_257;
   sub_255 = sub_256;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_53 = sub_253;
   } else {
     v_53 = sub_255;
   };
   if (contrato_co) {
-    v_54 = v_53;
-  } else {
     v_54 = sub_255;
+  } else {
+    v_54 = v_53;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_226 = sub_255;
   } else {
     sub_226 = sub_227;
@@ -1883,12 +1883,12 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_262 = sub_253;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_261 = sub_255;
   } else {
     sub_261 = sub_262;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_224 = sub_261;
   } else {
     sub_224 = sub_225;
@@ -1970,47 +1970,47 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_276 = sub_253;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_275 = v_39;
   } else {
     sub_275 = sub_276;
   };
   sub_274 = sub_275;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_55 = v_54;
   } else {
     v_55 = sub_274;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_223 = v_55;
   } else {
     sub_223 = sub_224;
   };
   sub_222 = sub_223;
   sub_221 = sub_222;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_220 = sub_221;
     sub_280 = false;
   } else {
     sub_220 = false;
     sub_280 = sub_221;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_58 = sub_221;
   } else {
     v_58 = sub_280;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_59 = v_58;
   } else {
     v_59 = sub_221;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_56 = sub_280;
   } else {
     v_56 = sub_220;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_57 = v_56;
   } else {
     v_57 = sub_220;
@@ -2081,17 +2081,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   sub_299 = sub_300;
   sub_298 = sub_299;
   sub_297 = sub_298;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_19 = sub_208;
   } else {
     v_19 = sub_297;
   };
   if (contrato_co) {
-    v_20 = v_19;
-  } else {
     v_20 = sub_297;
+  } else {
+    v_20 = v_19;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_288 = sub_297;
   } else {
     sub_288 = sub_289;
@@ -2165,47 +2165,47 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_308 = sub_204;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_307 = v_13;
   } else {
     sub_307 = sub_308;
   };
   sub_306 = sub_307;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_21 = v_20;
   } else {
     v_21 = sub_306;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_286 = v_21;
   } else {
     sub_286 = sub_287;
   };
   sub_285 = sub_286;
   sub_284 = sub_285;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_283 = sub_284;
     sub_314 = false;
   } else {
     sub_283 = false;
     sub_314 = sub_284;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_24 = sub_284;
   } else {
     v_24 = sub_314;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_25 = v_24;
   } else {
     v_25 = sub_284;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_22 = sub_314;
   } else {
     v_22 = sub_283;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_23 = v_22;
   } else {
     v_23 = sub_283;
@@ -2232,7 +2232,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
     v_174 = sub_281;
     sub_217 = sub_281;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_216 = sub_185;
   } else {
     sub_216 = sub_217;
@@ -2252,7 +2252,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     v_61 = sub_281;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_215 = v_61;
   } else {
     sub_215 = sub_216;
@@ -2262,7 +2262,7 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_317 = sub_186;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_316 = sub_185;
   } else {
     sub_316 = sub_317;
@@ -2287,17 +2287,17 @@ void Contrato_controller__contrato_controller_contrato_br4_step(int contrato_ac,
   } else {
     sub_318 = v_2;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_175 = v_174;
   } else {
     v_175 = sub_318;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_176 = v_175;
   } else {
     v_176 = sub_316;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_177 = v_176;
   } else {
     v_177 = sub_215;
@@ -2335,19 +2335,19 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
                                                                 int contrato_swr4,
                                                                 int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
+                                                                int contrato_v_586,
+                                                                int contrato_v_585,
                                                                 int contrato_v_584,
-                                                                int contrato_v_583,
-                                                                int contrato_v_582,
                                                                 int contrato_pnr_3,
+                                                                int contrato_v_533,
+                                                                int contrato_v_532,
                                                                 int contrato_v_531,
-                                                                int contrato_v_530,
-                                                                int contrato_v_529,
                                                                 int contrato_pnr_2,
                                                                 int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
+                                                                int contrato_v_481,
+                                                                int contrato_v_480,
                                                                 int contrato_v_479,
-                                                                int contrato_v_478,
-                                                                int contrato_v_477,
                                                                 int contrato_pnr,
                                                                 int p_contrato_br4,
                                                                 int p_contrato_br3,
@@ -2863,17 +2863,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   };
   sub_29 = sub_27;
   sub_28 = sub_29;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_323 = false;
   } else {
     v_323 = sub_28;
   };
   if (contrato_co) {
-    v_324 = v_323;
-  } else {
     v_324 = sub_28;
+  } else {
+    v_324 = v_323;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_13 = sub_28;
   } else {
     sub_13 = sub_14;
@@ -2894,47 +2894,47 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_320 = sub_29;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_31 = v_320;
   } else {
     sub_31 = sub_14;
   };
   sub_30 = sub_31;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_325 = v_324;
   } else {
     v_325 = sub_30;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_11 = v_325;
   } else {
     sub_11 = sub_12;
   };
   sub_10 = sub_11;
   sub_9 = sub_10;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_8 = sub_9;
     sub_32 = false;
   } else {
     sub_8 = false;
     sub_32 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_328 = sub_9;
   } else {
     v_328 = sub_32;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_329 = v_328;
   } else {
     v_329 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_326 = sub_32;
   } else {
     v_326 = sub_8;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_327 = v_326;
   } else {
     v_327 = sub_8;
@@ -2975,7 +2975,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_43 = sub_51;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_42 = false;
   } else {
     sub_42 = sub_43;
@@ -2996,50 +2996,50 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_308 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_54 = v_308;
   } else {
     sub_54 = sub_43;
   };
   sub_53 = sub_54;
   sub_55 = sub_51;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_311 = sub_55;
   } else {
     v_311 = false;
   };
   if (contrato_co) {
-    v_312 = v_311;
-  } else {
     v_312 = false;
+  } else {
+    v_312 = v_311;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_313 = v_312;
   } else {
     v_313 = sub_53;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_40 = v_313;
   } else {
     sub_40 = sub_41;
   };
   sub_39 = sub_40;
   sub_38 = sub_39;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_37 = false;
     sub_56 = sub_38;
   } else {
     sub_37 = sub_38;
     sub_56 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_316 = false;
     v_314 = sub_56;
   } else {
     v_316 = sub_56;
     v_314 = sub_37;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_315 = v_314;
   } else {
     v_315 = sub_37;
@@ -3050,7 +3050,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_60 = sub_40;
   };
   sub_59 = sub_60;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_58 = false;
   } else {
     sub_58 = sub_59;
@@ -3060,17 +3060,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_61 = sub_39;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_305 = false;
   } else {
     v_305 = sub_61;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_57 = v_305;
   } else {
     sub_57 = sub_58;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_317 = v_316;
   } else {
     v_317 = sub_57;
@@ -3083,22 +3083,22 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_35 = sub_36;
   sub_34 = sub_35;
   sub_33 = sub_34;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_3 = sub_33;
   } else {
     sub_3 = sub_4;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_334 = sub_3;
   } else {
     v_334 = sub_33;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_335 = v_334;
   } else {
     v_335 = sub_33;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_2 = sub_4;
   } else {
     sub_2 = sub_3;
@@ -3254,17 +3254,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_110 = sub_111;
   sub_109 = sub_110;
   sub_108 = sub_109;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_296 = sub_106;
   } else {
     v_296 = sub_108;
   };
   if (contrato_co) {
-    v_297 = v_296;
-  } else {
     v_297 = sub_108;
+  } else {
+    v_297 = v_296;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_73 = sub_108;
   } else {
     sub_73 = sub_74;
@@ -3291,12 +3291,12 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_114 = sub_106;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_113 = sub_108;
   } else {
     sub_113 = sub_114;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_71 = sub_113;
   } else {
     sub_71 = sub_72;
@@ -3348,47 +3348,47 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_119 = sub_106;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_118 = v_282;
   } else {
     sub_118 = sub_119;
   };
   sub_117 = sub_118;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_298 = v_297;
   } else {
     v_298 = sub_117;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_70 = v_298;
   } else {
     sub_70 = sub_71;
   };
   sub_69 = sub_70;
   sub_68 = sub_69;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_67 = sub_68;
     sub_124 = false;
   } else {
     sub_67 = false;
     sub_124 = sub_68;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_301 = sub_68;
   } else {
     v_301 = sub_124;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_302 = v_301;
   } else {
     v_302 = sub_68;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_299 = sub_124;
   } else {
     v_299 = sub_67;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_300 = v_299;
   } else {
     v_300 = sub_67;
@@ -3457,17 +3457,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_142 = sub_143;
   sub_141 = sub_142;
   sub_140 = sub_141;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_269 = sub_55;
   } else {
     v_269 = sub_140;
   };
   if (contrato_co) {
-    v_270 = v_269;
-  } else {
     v_270 = sub_140;
+  } else {
+    v_270 = v_269;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_132 = sub_140;
   } else {
     sub_132 = sub_133;
@@ -3513,47 +3513,47 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_150 = sub_51;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_149 = v_263;
   } else {
     sub_149 = sub_150;
   };
   sub_148 = sub_149;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_271 = v_270;
   } else {
     v_271 = sub_148;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_130 = v_271;
   } else {
     sub_130 = sub_131;
   };
   sub_129 = sub_130;
   sub_128 = sub_129;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_127 = sub_128;
     sub_152 = false;
   } else {
     sub_127 = false;
     sub_152 = sub_128;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_274 = sub_128;
   } else {
     v_274 = sub_152;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_275 = v_274;
   } else {
     v_275 = sub_128;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_272 = sub_152;
   } else {
     v_272 = sub_127;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_273 = v_272;
   } else {
     v_273 = sub_127;
@@ -3580,7 +3580,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     v_330 = sub_125;
     sub_64 = sub_125;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_63 = sub_33;
   } else {
     sub_63 = sub_64;
@@ -3600,7 +3600,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_304 = sub_125;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_62 = v_304;
   } else {
     sub_62 = sub_63;
@@ -3610,7 +3610,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_155 = sub_34;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_154 = sub_33;
   } else {
     sub_154 = sub_155;
@@ -3635,17 +3635,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_156 = v_256;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_331 = v_330;
   } else {
     v_331 = sub_156;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_332 = v_331;
   } else {
     v_332 = sub_154;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_333 = v_332;
   } else {
     v_333 = sub_62;
@@ -3697,17 +3697,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   };
   sub_182 = sub_180;
   sub_181 = sub_182;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_247 = false;
   } else {
     v_247 = sub_181;
   };
   if (contrato_co) {
-    v_248 = v_247;
-  } else {
     v_248 = sub_181;
+  } else {
+    v_248 = v_247;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_168 = sub_181;
   } else {
     sub_168 = sub_169;
@@ -3728,47 +3728,47 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_244 = sub_182;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_184 = v_244;
   } else {
     sub_184 = sub_169;
   };
   sub_183 = sub_184;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_249 = v_248;
   } else {
     v_249 = sub_183;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_166 = v_249;
   } else {
     sub_166 = sub_167;
   };
   sub_165 = sub_166;
   sub_164 = sub_165;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_163 = sub_164;
     sub_185 = false;
   } else {
     sub_163 = false;
     sub_185 = sub_164;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_252 = sub_164;
   } else {
     v_252 = sub_185;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_253 = v_252;
   } else {
     v_253 = sub_164;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_250 = sub_185;
   } else {
     v_250 = sub_163;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_251 = v_250;
   } else {
     v_251 = sub_163;
@@ -3809,7 +3809,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_196 = sub_204;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_195 = false;
   } else {
     sub_195 = sub_196;
@@ -3830,50 +3830,50 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_232 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_207 = v_232;
   } else {
     sub_207 = sub_196;
   };
   sub_206 = sub_207;
   sub_208 = sub_204;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_235 = sub_208;
   } else {
     v_235 = false;
   };
   if (contrato_co) {
-    v_236 = v_235;
-  } else {
     v_236 = false;
+  } else {
+    v_236 = v_235;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_237 = v_236;
   } else {
     v_237 = sub_206;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_193 = v_237;
   } else {
     sub_193 = sub_194;
   };
   sub_192 = sub_193;
   sub_191 = sub_192;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_190 = false;
     sub_209 = sub_191;
   } else {
     sub_190 = sub_191;
     sub_209 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_240 = false;
     v_238 = sub_209;
   } else {
     v_240 = sub_209;
     v_238 = sub_190;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_239 = v_238;
   } else {
     v_239 = sub_190;
@@ -3884,7 +3884,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     sub_213 = sub_193;
   };
   sub_212 = sub_213;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_211 = false;
   } else {
     sub_211 = sub_212;
@@ -3894,17 +3894,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_214 = sub_192;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_229 = false;
   } else {
     v_229 = sub_214;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_210 = v_229;
   } else {
     sub_210 = sub_211;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_241 = v_240;
   } else {
     v_241 = sub_210;
@@ -3917,22 +3917,22 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_188 = sub_189;
   sub_187 = sub_188;
   sub_186 = sub_187;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_158 = sub_186;
   } else {
     sub_158 = sub_159;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_341 = sub_158;
   } else {
     v_341 = sub_186;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_342 = v_341;
   } else {
     v_342 = sub_186;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_157 = sub_159;
   } else {
     sub_157 = sub_158;
@@ -4014,17 +4014,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_245 = sub_246;
   sub_244 = sub_245;
   sub_243 = sub_244;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_220 = sub_241;
   } else {
     v_220 = sub_243;
   };
   if (contrato_co) {
-    v_221 = v_220;
-  } else {
     v_221 = sub_243;
+  } else {
+    v_221 = v_220;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_226 = sub_243;
   } else {
     sub_226 = sub_227;
@@ -4051,12 +4051,12 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_249 = sub_241;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_248 = sub_243;
   } else {
     sub_248 = sub_249;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_224 = sub_248;
   } else {
     sub_224 = sub_225;
@@ -4101,47 +4101,47 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_254 = sub_241;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_253 = v_210;
   } else {
     sub_253 = sub_254;
   };
   sub_252 = sub_253;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_222 = v_221;
   } else {
     v_222 = sub_252;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_223 = v_222;
   } else {
     sub_223 = sub_224;
   };
   sub_222 = sub_223;
   sub_221 = sub_222;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_220 = sub_221;
     sub_256 = false;
   } else {
     sub_220 = false;
     sub_256 = sub_221;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_225 = sub_221;
   } else {
     v_225 = sub_256;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_226 = v_225;
   } else {
     v_226 = sub_221;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_223 = sub_256;
   } else {
     v_223 = sub_220;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_224 = v_223;
   } else {
     v_224 = sub_220;
@@ -4210,17 +4210,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   sub_274 = sub_275;
   sub_273 = sub_274;
   sub_272 = sub_273;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_197 = sub_208;
   } else {
     v_197 = sub_272;
   };
   if (contrato_co) {
-    v_198 = v_197;
-  } else {
     v_198 = sub_272;
+  } else {
+    v_198 = v_197;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_264 = sub_272;
   } else {
     sub_264 = sub_265;
@@ -4271,47 +4271,47 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_282 = sub_204;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_281 = v_191;
   } else {
     sub_281 = sub_282;
   };
   sub_280 = sub_281;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_199 = v_198;
   } else {
     v_199 = sub_280;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_262 = v_199;
   } else {
     sub_262 = sub_263;
   };
   sub_261 = sub_262;
   sub_260 = sub_261;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_259 = sub_260;
     sub_284 = false;
   } else {
     sub_259 = false;
     sub_284 = sub_260;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_202 = sub_260;
   } else {
     v_202 = sub_284;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_203 = v_202;
   } else {
     v_203 = sub_260;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_200 = sub_284;
   } else {
     v_200 = sub_259;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_201 = v_200;
   } else {
     v_201 = sub_259;
@@ -4338,7 +4338,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
     v_337 = sub_257;
     sub_217 = sub_257;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_216 = sub_186;
   } else {
     sub_216 = sub_217;
@@ -4358,7 +4358,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     v_228 = sub_257;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_215 = v_228;
   } else {
     sub_215 = sub_216;
@@ -4368,7 +4368,7 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_287 = sub_187;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_286 = sub_186;
   } else {
     sub_286 = sub_287;
@@ -4393,17 +4393,17 @@ void Contrato_controller__contrato_controller_contrato_br3_step(int contrato_ac,
   } else {
     sub_288 = v_183;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_338 = v_337;
   } else {
     v_338 = sub_288;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_339 = v_338;
   } else {
     v_339 = sub_286;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_340 = v_339;
   } else {
     v_340 = sub_215;
@@ -4441,19 +4441,19 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
                                                                 int contrato_swr4,
                                                                 int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
+                                                                int contrato_v_586,
+                                                                int contrato_v_585,
                                                                 int contrato_v_584,
-                                                                int contrato_v_583,
-                                                                int contrato_v_582,
                                                                 int contrato_pnr_3,
+                                                                int contrato_v_533,
+                                                                int contrato_v_532,
                                                                 int contrato_v_531,
-                                                                int contrato_v_530,
-                                                                int contrato_v_529,
                                                                 int contrato_pnr_2,
                                                                 int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
+                                                                int contrato_v_481,
+                                                                int contrato_v_480,
                                                                 int contrato_v_479,
-                                                                int contrato_v_478,
-                                                                int contrato_v_477,
                                                                 int contrato_pnr,
                                                                 int p_contrato_br4,
                                                                 int p_contrato_br3,
@@ -4943,17 +4943,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   };
   sub_28 = sub_26;
   sub_27 = sub_28;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_471 = false;
   } else {
     v_471 = sub_27;
   };
   if (contrato_co) {
-    v_472 = v_471;
-  } else {
     v_472 = sub_27;
+  } else {
+    v_472 = v_471;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_13 = sub_27;
   } else {
     sub_13 = sub_14;
@@ -4974,47 +4974,47 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     v_468 = sub_28;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_30 = v_468;
   } else {
     sub_30 = sub_14;
   };
   sub_29 = sub_30;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_473 = v_472;
   } else {
     v_473 = sub_29;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_11 = v_473;
   } else {
     sub_11 = sub_12;
   };
   sub_10 = sub_11;
   sub_9 = sub_10;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_8 = sub_9;
     sub_31 = false;
   } else {
     sub_8 = false;
     sub_31 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_476 = sub_9;
   } else {
     v_476 = sub_31;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_477 = v_476;
   } else {
     v_477 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_474 = sub_31;
   } else {
     v_474 = sub_8;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_475 = v_474;
   } else {
     v_475 = sub_8;
@@ -5054,7 +5054,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_42 = sub_49;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_41 = false;
   } else {
     sub_41 = sub_42;
@@ -5075,50 +5075,50 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     v_456 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_52 = v_456;
   } else {
     sub_52 = sub_42;
   };
   sub_51 = sub_52;
   sub_53 = sub_49;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_459 = sub_53;
   } else {
     v_459 = false;
   };
   if (contrato_co) {
-    v_460 = v_459;
-  } else {
     v_460 = false;
+  } else {
+    v_460 = v_459;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_461 = v_460;
   } else {
     v_461 = sub_51;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_39 = v_461;
   } else {
     sub_39 = sub_40;
   };
   sub_38 = sub_39;
   sub_37 = sub_38;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_36 = false;
     sub_54 = sub_37;
   } else {
     sub_36 = sub_37;
     sub_54 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_464 = false;
     v_462 = sub_54;
   } else {
     v_464 = sub_54;
     v_462 = sub_36;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_463 = v_462;
   } else {
     v_463 = sub_36;
@@ -5129,7 +5129,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_58 = sub_39;
   };
   sub_57 = sub_58;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_56 = false;
   } else {
     sub_56 = sub_57;
@@ -5139,17 +5139,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_59 = sub_38;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_453 = false;
   } else {
     v_453 = sub_59;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_55 = v_453;
   } else {
     sub_55 = sub_56;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_465 = v_464;
   } else {
     v_465 = sub_55;
@@ -5162,22 +5162,22 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_34 = sub_35;
   sub_33 = sub_34;
   sub_32 = sub_33;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_3 = sub_32;
   } else {
     sub_3 = sub_4;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_482 = sub_3;
   } else {
     v_482 = sub_32;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_483 = v_482;
   } else {
     v_483 = sub_32;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_2 = sub_4;
   } else {
     sub_2 = sub_3;
@@ -5300,17 +5300,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_106 = sub_107;
   sub_105 = sub_106;
   sub_104 = sub_105;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_444 = sub_102;
   } else {
     v_444 = sub_104;
   };
   if (contrato_co) {
-    v_445 = v_444;
-  } else {
     v_445 = sub_104;
+  } else {
+    v_445 = v_444;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_71 = sub_104;
   } else {
     sub_71 = sub_72;
@@ -5337,12 +5337,12 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_110 = sub_102;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_109 = sub_104;
   } else {
     sub_109 = sub_110;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_69 = sub_109;
   } else {
     sub_69 = sub_70;
@@ -5392,47 +5392,47 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_115 = sub_102;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_114 = v_437;
   } else {
     sub_114 = sub_115;
   };
   sub_113 = sub_114;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_446 = v_445;
   } else {
     v_446 = sub_113;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_68 = v_446;
   } else {
     sub_68 = sub_69;
   };
   sub_67 = sub_68;
   sub_66 = sub_67;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_65 = sub_66;
     sub_117 = false;
   } else {
     sub_65 = false;
     sub_117 = sub_66;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_449 = sub_66;
   } else {
     v_449 = sub_117;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_450 = v_449;
   } else {
     v_450 = sub_66;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_447 = sub_117;
   } else {
     v_447 = sub_65;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_448 = v_447;
   } else {
     v_448 = sub_65;
@@ -5498,17 +5498,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_137 = sub_138;
   sub_136 = sub_137;
   sub_135 = sub_136;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_423 = sub_53;
   } else {
     v_423 = sub_135;
   };
   if (contrato_co) {
-    v_424 = v_423;
-  } else {
     v_424 = sub_135;
+  } else {
+    v_424 = v_423;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_125 = sub_135;
   } else {
     sub_125 = sub_126;
@@ -5554,47 +5554,47 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_144 = sub_49;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_143 = v_420;
   } else {
     sub_143 = sub_144;
   };
   sub_142 = sub_143;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_425 = v_424;
   } else {
     v_425 = sub_142;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_123 = v_425;
   } else {
     sub_123 = sub_124;
   };
   sub_122 = sub_123;
   sub_121 = sub_122;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_120 = sub_121;
     sub_146 = false;
   } else {
     sub_120 = false;
     sub_146 = sub_121;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_428 = sub_121;
   } else {
     v_428 = sub_146;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_429 = v_428;
   } else {
     v_429 = sub_121;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_426 = sub_146;
   } else {
     v_426 = sub_120;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_427 = v_426;
   } else {
     v_427 = sub_120;
@@ -5621,7 +5621,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     v_478 = sub_118;
     sub_62 = sub_118;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_61 = sub_32;
   } else {
     sub_61 = sub_62;
@@ -5641,7 +5641,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     v_452 = sub_118;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_60 = v_452;
   } else {
     sub_60 = sub_61;
@@ -5651,7 +5651,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_149 = sub_33;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_148 = sub_32;
   } else {
     sub_148 = sub_149;
@@ -5676,17 +5676,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_150 = v_413;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_479 = v_478;
   } else {
     v_479 = sub_150;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_480 = v_479;
   } else {
     v_480 = sub_148;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_481 = v_480;
   } else {
     v_481 = sub_60;
@@ -5737,17 +5737,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   };
   sub_175 = sub_173;
   sub_174 = sub_175;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_404 = false;
   } else {
     v_404 = sub_174;
   };
   if (contrato_co) {
-    v_405 = v_404;
-  } else {
     v_405 = sub_174;
+  } else {
+    v_405 = v_404;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_162 = sub_174;
   } else {
     sub_162 = sub_163;
@@ -5768,47 +5768,47 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     v_401 = sub_175;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_177 = v_401;
   } else {
     sub_177 = sub_163;
   };
   sub_176 = sub_177;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_406 = v_405;
   } else {
     v_406 = sub_176;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_160 = v_406;
   } else {
     sub_160 = sub_161;
   };
   sub_159 = sub_160;
   sub_158 = sub_159;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_157 = sub_158;
     sub_178 = false;
   } else {
     sub_157 = false;
     sub_178 = sub_158;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_409 = sub_158;
   } else {
     v_409 = sub_178;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_410 = v_409;
   } else {
     v_410 = sub_158;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_407 = sub_178;
   } else {
     v_407 = sub_157;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_408 = v_407;
   } else {
     v_408 = sub_157;
@@ -5848,7 +5848,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_189 = sub_196;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_188 = false;
   } else {
     sub_188 = sub_189;
@@ -5869,50 +5869,50 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     v_389 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_199 = v_389;
   } else {
     sub_199 = sub_189;
   };
   sub_198 = sub_199;
   sub_200 = sub_196;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_392 = sub_200;
   } else {
     v_392 = false;
   };
   if (contrato_co) {
-    v_393 = v_392;
-  } else {
     v_393 = false;
+  } else {
+    v_393 = v_392;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_394 = v_393;
   } else {
     v_394 = sub_198;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_186 = v_394;
   } else {
     sub_186 = sub_187;
   };
   sub_185 = sub_186;
   sub_184 = sub_185;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_183 = false;
     sub_201 = sub_184;
   } else {
     sub_183 = sub_184;
     sub_201 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_397 = false;
     v_395 = sub_201;
   } else {
     v_397 = sub_201;
     v_395 = sub_183;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_396 = v_395;
   } else {
     v_396 = sub_183;
@@ -5923,7 +5923,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     sub_205 = sub_186;
   };
   sub_204 = sub_205;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_203 = false;
   } else {
     sub_203 = sub_204;
@@ -5933,17 +5933,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_206 = sub_185;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_386 = false;
   } else {
     v_386 = sub_206;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_202 = v_386;
   } else {
     sub_202 = sub_203;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_398 = v_397;
   } else {
     v_398 = sub_202;
@@ -5956,22 +5956,22 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_181 = sub_182;
   sub_180 = sub_181;
   sub_179 = sub_180;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_152 = sub_179;
   } else {
     sub_152 = sub_153;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_489 = sub_152;
   } else {
     v_489 = sub_179;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_490 = v_489;
   } else {
     v_490 = sub_179;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_151 = sub_153;
   } else {
     sub_151 = sub_152;
@@ -6039,17 +6039,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_238 = sub_239;
   sub_237 = sub_238;
   sub_236 = sub_237;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_377 = sub_234;
   } else {
     v_377 = sub_236;
   };
   if (contrato_co) {
-    v_378 = v_377;
-  } else {
     v_378 = sub_236;
+  } else {
+    v_378 = v_377;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_218 = sub_236;
   } else {
     sub_218 = sub_219;
@@ -6076,12 +6076,12 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_242 = sub_234;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_241 = sub_236;
   } else {
     sub_241 = sub_242;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_216 = sub_241;
   } else {
     sub_216 = sub_217;
@@ -6131,47 +6131,47 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_247 = sub_234;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_246 = v_370;
   } else {
     sub_246 = sub_247;
   };
   sub_245 = sub_246;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_379 = v_378;
   } else {
     v_379 = sub_245;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_215 = v_379;
   } else {
     sub_215 = sub_216;
   };
   sub_214 = sub_215;
   sub_213 = sub_214;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_212 = sub_213;
     sub_249 = false;
   } else {
     sub_212 = false;
     sub_249 = sub_213;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_382 = sub_213;
   } else {
     v_382 = sub_249;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_383 = v_382;
   } else {
     v_383 = sub_213;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_380 = sub_249;
   } else {
     v_380 = sub_212;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_381 = v_380;
   } else {
     v_381 = sub_212;
@@ -6222,17 +6222,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   sub_266 = sub_267;
   sub_265 = sub_266;
   sub_264 = sub_265;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_356 = sub_200;
   } else {
     v_356 = sub_264;
   };
   if (contrato_co) {
-    v_357 = v_356;
-  } else {
     v_357 = sub_264;
+  } else {
+    v_357 = v_356;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_257 = sub_264;
   } else {
     sub_257 = sub_258;
@@ -6278,47 +6278,47 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_273 = sub_196;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_272 = v_353;
   } else {
     sub_272 = sub_273;
   };
   sub_271 = sub_272;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_358 = v_357;
   } else {
     v_358 = sub_271;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_255 = v_358;
   } else {
     sub_255 = sub_256;
   };
   sub_254 = sub_255;
   sub_253 = sub_254;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_252 = sub_253;
     sub_275 = false;
   } else {
     sub_252 = false;
     sub_275 = sub_253;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_361 = sub_253;
   } else {
     v_361 = sub_275;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_362 = v_361;
   } else {
     v_362 = sub_253;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_359 = sub_275;
   } else {
     v_359 = sub_252;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_360 = v_359;
   } else {
     v_360 = sub_252;
@@ -6345,7 +6345,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
     v_485 = sub_250;
     sub_209 = sub_250;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_208 = sub_179;
   } else {
     sub_208 = sub_209;
@@ -6365,7 +6365,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     v_385 = sub_250;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_207 = v_385;
   } else {
     sub_207 = sub_208;
@@ -6375,7 +6375,7 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_278 = sub_180;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_277 = sub_179;
   } else {
     sub_277 = sub_278;
@@ -6400,17 +6400,17 @@ void Contrato_controller__contrato_controller_contrato_br1_step(int contrato_ac,
   } else {
     sub_279 = v_346;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_486 = v_485;
   } else {
     v_486 = sub_279;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_487 = v_486;
   } else {
     v_487 = sub_277;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_488 = v_487;
   } else {
     v_488 = sub_207;
@@ -6448,19 +6448,19 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
                                                                int contrato_swr4,
                                                                int contrato_ck_6_1,
                                                                int contrato_pnr_4,
+                                                               int contrato_v_586,
+                                                               int contrato_v_585,
                                                                int contrato_v_584,
-                                                               int contrato_v_583,
-                                                               int contrato_v_582,
                                                                int contrato_pnr_3,
+                                                               int contrato_v_533,
+                                                               int contrato_v_532,
                                                                int contrato_v_531,
-                                                               int contrato_v_530,
-                                                               int contrato_v_529,
                                                                int contrato_pnr_2,
                                                                int contrato_ck_12_1,
                                                                int contrato_pnr_1,
+                                                               int contrato_v_481,
+                                                               int contrato_v_480,
                                                                int contrato_v_479,
-                                                               int contrato_v_478,
-                                                               int contrato_v_477,
                                                                int contrato_pnr,
                                                                int p_contrato_br4,
                                                                int p_contrato_br3,
@@ -6946,17 +6946,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_14 = false;
   };
   sub_27 = sub_15;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_611 = false;
   } else {
     v_611 = sub_27;
   };
   if (contrato_co) {
-    v_612 = v_611;
-  } else {
     v_612 = sub_27;
+  } else {
+    v_612 = v_611;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_13 = sub_27;
   } else {
     sub_13 = sub_14;
@@ -6992,47 +6992,47 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_610 = sub_15;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_29 = v_610;
   } else {
     sub_29 = sub_14;
   };
   sub_28 = sub_29;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_613 = v_612;
   } else {
     v_613 = sub_28;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_11 = v_613;
   } else {
     sub_11 = sub_12;
   };
   sub_10 = sub_11;
   sub_9 = sub_10;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_8 = sub_9;
     sub_42 = false;
   } else {
     sub_8 = false;
     sub_42 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_616 = sub_9;
   } else {
     v_616 = sub_42;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_617 = v_616;
   } else {
     v_617 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_614 = sub_42;
   } else {
     v_614 = sub_8;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_615 = v_614;
   } else {
     v_615 = sub_8;
@@ -7076,7 +7076,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_53 = sub_61;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_52 = false;
   } else {
     sub_52 = sub_53;
@@ -7087,50 +7087,50 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_602 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_69 = v_602;
   } else {
     sub_69 = sub_53;
   };
   sub_68 = sub_69;
   sub_70 = sub_61;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_603 = sub_70;
   } else {
     v_603 = false;
   };
   if (contrato_co) {
-    v_604 = v_603;
-  } else {
     v_604 = false;
+  } else {
+    v_604 = v_603;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_605 = v_604;
   } else {
     v_605 = sub_68;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_50 = v_605;
   } else {
     sub_50 = sub_51;
   };
   sub_49 = sub_50;
   sub_48 = sub_49;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_47 = false;
     sub_71 = sub_48;
   } else {
     sub_47 = sub_48;
     sub_71 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_608 = false;
     v_606 = sub_71;
   } else {
     v_608 = sub_71;
     v_606 = sub_47;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_607 = v_606;
   } else {
     v_607 = sub_47;
@@ -7141,7 +7141,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_75 = sub_50;
   };
   sub_74 = sub_75;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_73 = false;
   } else {
     sub_73 = sub_74;
@@ -7151,17 +7151,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_76 = sub_49;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_601 = false;
   } else {
     v_601 = sub_76;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_72 = v_601;
   } else {
     sub_72 = sub_73;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_609 = v_608;
   } else {
     v_609 = sub_72;
@@ -7174,22 +7174,22 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   sub_45 = sub_46;
   sub_44 = sub_45;
   sub_43 = sub_44;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_3 = sub_43;
   } else {
     sub_3 = sub_4;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_622 = sub_3;
   } else {
     v_622 = sub_43;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_623 = v_622;
   } else {
     v_623 = sub_43;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_2 = sub_4;
   } else {
     sub_2 = sub_3;
@@ -7338,17 +7338,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   sub_125 = sub_126;
   sub_124 = sub_125;
   sub_123 = sub_124;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_592 = sub_114;
   } else {
     v_592 = sub_123;
   };
   if (contrato_co) {
-    v_593 = v_592;
-  } else {
     v_593 = sub_123;
+  } else {
+    v_593 = v_592;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_88 = sub_123;
   } else {
     sub_88 = sub_89;
@@ -7377,12 +7377,12 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_128 = sub_114;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_127 = sub_123;
   } else {
     sub_127 = sub_128;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_86 = sub_127;
   } else {
     sub_86 = sub_87;
@@ -7461,47 +7461,47 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_581 = sub_124;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_134 = v_581;
   } else {
     sub_134 = sub_135;
   };
   sub_133 = sub_134;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_594 = v_593;
   } else {
     v_594 = sub_133;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_85 = v_594;
   } else {
     sub_85 = sub_86;
   };
   sub_84 = sub_85;
   sub_83 = sub_84;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_82 = sub_83;
     sub_147 = false;
   } else {
     sub_82 = false;
     sub_147 = sub_83;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_597 = sub_83;
   } else {
     v_597 = sub_147;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_598 = v_597;
   } else {
     v_598 = sub_83;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_595 = sub_147;
   } else {
     v_595 = sub_82;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_596 = v_595;
   } else {
     v_596 = sub_82;
@@ -7592,17 +7592,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   sub_173 = sub_174;
   sub_172 = sub_173;
   sub_171 = sub_172;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_565 = sub_70;
   } else {
     v_565 = sub_171;
   };
   if (contrato_co) {
-    v_566 = v_565;
-  } else {
     v_566 = sub_171;
+  } else {
+    v_566 = v_565;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_155 = sub_171;
   } else {
     sub_155 = sub_156;
@@ -7644,47 +7644,47 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_179 = sub_61;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_178 = v_560;
   } else {
     sub_178 = sub_179;
   };
   sub_177 = sub_178;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_567 = v_566;
   } else {
     v_567 = sub_177;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_153 = v_567;
   } else {
     sub_153 = sub_154;
   };
   sub_152 = sub_153;
   sub_151 = sub_152;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_150 = sub_151;
     sub_181 = false;
   } else {
     sub_150 = false;
     sub_181 = sub_151;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_570 = sub_151;
   } else {
     v_570 = sub_181;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_571 = v_570;
   } else {
     v_571 = sub_151;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_568 = sub_181;
   } else {
     v_568 = sub_150;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_569 = v_568;
   } else {
     v_569 = sub_150;
@@ -7711,7 +7711,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_618 = sub_148;
     sub_79 = sub_148;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_78 = sub_43;
   } else {
     sub_78 = sub_79;
@@ -7731,7 +7731,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_600 = sub_148;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_77 = v_600;
   } else {
     sub_77 = sub_78;
@@ -7741,7 +7741,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_184 = sub_44;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_183 = sub_43;
   } else {
     sub_183 = sub_184;
@@ -7766,17 +7766,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_185 = v_553;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_619 = v_618;
   } else {
     v_619 = sub_185;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_620 = v_619;
   } else {
     v_620 = sub_183;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_621 = v_620;
   } else {
     v_621 = sub_77;
@@ -7803,17 +7803,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   };
   sub_200 = sub_31;
   sub_199 = sub_200;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_544 = false;
   } else {
     v_544 = sub_199;
   };
   if (contrato_co) {
-    v_545 = v_544;
-  } else {
     v_545 = sub_199;
+  } else {
+    v_545 = v_544;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_197 = sub_199;
   } else {
     sub_197 = sub_198;
@@ -7824,47 +7824,47 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_542 = sub_200;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_202 = v_542;
   } else {
     sub_202 = sub_198;
   };
   sub_201 = sub_202;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_546 = v_545;
   } else {
     v_546 = sub_201;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_195 = v_546;
   } else {
     sub_195 = sub_196;
   };
   sub_194 = sub_195;
   sub_193 = sub_194;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_192 = sub_193;
     sub_203 = false;
   } else {
     sub_192 = false;
     sub_203 = sub_193;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_549 = sub_193;
   } else {
     v_549 = sub_203;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_550 = v_549;
   } else {
     v_550 = sub_193;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_547 = sub_203;
   } else {
     v_547 = sub_192;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_548 = v_547;
   } else {
     v_548 = sub_192;
@@ -7883,7 +7883,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_214 = sub_215;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_213 = false;
   } else {
     sub_213 = sub_214;
@@ -7899,50 +7899,50 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_534 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_217 = v_534;
   } else {
     sub_217 = sub_214;
   };
   sub_216 = sub_217;
   sub_218 = sub_215;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_535 = sub_218;
   } else {
     v_535 = false;
   };
   if (contrato_co) {
-    v_536 = v_535;
-  } else {
     v_536 = false;
+  } else {
+    v_536 = v_535;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_537 = v_536;
   } else {
     v_537 = sub_216;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_211 = v_537;
   } else {
     sub_211 = sub_212;
   };
   sub_210 = sub_211;
   sub_209 = sub_210;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_208 = false;
     sub_219 = sub_209;
   } else {
     sub_208 = sub_209;
     sub_219 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_540 = false;
     v_538 = sub_219;
   } else {
     v_540 = sub_219;
     v_538 = sub_208;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_539 = v_538;
   } else {
     v_539 = sub_208;
@@ -7953,7 +7953,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     sub_223 = sub_211;
   };
   sub_222 = sub_223;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_221 = false;
   } else {
     sub_221 = sub_222;
@@ -7963,17 +7963,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_224 = sub_210;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_532 = false;
   } else {
     v_532 = sub_224;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_220 = v_532;
   } else {
     sub_220 = sub_221;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_541 = v_540;
   } else {
     v_541 = sub_220;
@@ -7986,22 +7986,22 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   sub_206 = sub_207;
   sub_205 = sub_206;
   sub_204 = sub_205;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_187 = sub_204;
   } else {
     sub_187 = sub_188;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_629 = sub_187;
   } else {
     v_629 = sub_204;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_630 = v_629;
   } else {
     v_630 = sub_204;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_186 = sub_188;
   } else {
     sub_186 = sub_187;
@@ -8059,17 +8059,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   sub_252 = sub_253;
   sub_251 = sub_252;
   sub_250 = sub_251;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_523 = sub_246;
   } else {
     v_523 = sub_250;
   };
   if (contrato_co) {
-    v_524 = v_523;
-  } else {
     v_524 = sub_250;
+  } else {
+    v_524 = v_523;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_236 = sub_250;
   } else {
     sub_236 = sub_237;
@@ -8091,12 +8091,12 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_255 = sub_246;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_254 = sub_250;
   } else {
     sub_254 = sub_255;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_234 = sub_254;
   } else {
     sub_234 = sub_235;
@@ -8136,47 +8136,47 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_259 = sub_246;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_258 = v_517;
   } else {
     sub_258 = sub_259;
   };
   sub_257 = sub_258;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_525 = v_524;
   } else {
     v_525 = sub_257;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_233 = v_525;
   } else {
     sub_233 = sub_234;
   };
   sub_232 = sub_233;
   sub_231 = sub_232;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_230 = sub_231;
     sub_260 = false;
   } else {
     sub_230 = false;
     sub_260 = sub_231;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_528 = sub_231;
   } else {
     v_528 = sub_260;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_529 = v_528;
   } else {
     v_529 = sub_231;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_526 = sub_260;
   } else {
     v_526 = sub_230;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_527 = v_526;
   } else {
     v_527 = sub_230;
@@ -8230,17 +8230,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   sub_277 = sub_278;
   sub_276 = sub_277;
   sub_275 = sub_276;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_504 = sub_218;
   } else {
     v_504 = sub_275;
   };
   if (contrato_co) {
-    v_505 = v_504;
-  } else {
     v_505 = sub_275;
+  } else {
+    v_505 = v_504;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_268 = sub_275;
   } else {
     sub_268 = sub_269;
@@ -8297,47 +8297,47 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_501 = sub_276;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_282 = v_501;
   } else {
     sub_282 = sub_283;
   };
   sub_281 = sub_282;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_506 = v_505;
   } else {
     v_506 = sub_281;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_266 = v_506;
   } else {
     sub_266 = sub_267;
   };
   sub_265 = sub_266;
   sub_264 = sub_265;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_263 = sub_264;
     sub_291 = false;
   } else {
     sub_263 = false;
     sub_291 = sub_264;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_509 = sub_264;
   } else {
     v_509 = sub_291;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_510 = v_509;
   } else {
     v_510 = sub_264;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_507 = sub_291;
   } else {
     v_507 = sub_263;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_508 = v_507;
   } else {
     v_508 = sub_263;
@@ -8364,7 +8364,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
     v_625 = sub_261;
     sub_227 = sub_261;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_226 = sub_204;
   } else {
     sub_226 = sub_227;
@@ -8384,7 +8384,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     v_531 = sub_261;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_225 = v_531;
   } else {
     sub_225 = sub_226;
@@ -8394,7 +8394,7 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_294 = sub_205;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_293 = sub_204;
   } else {
     sub_293 = sub_294;
@@ -8419,17 +8419,17 @@ void Contrato_controller__contrato_controller_contrato_ba_step(int contrato_ac,
   } else {
     sub_295 = v_494;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_626 = v_625;
   } else {
     v_626 = sub_295;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_627 = v_626;
   } else {
     v_627 = sub_293;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_628 = v_627;
   } else {
     v_628 = sub_225;
@@ -8467,19 +8467,19 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
                                                                 int contrato_swr4,
                                                                 int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
+                                                                int contrato_v_586,
+                                                                int contrato_v_585,
                                                                 int contrato_v_584,
-                                                                int contrato_v_583,
-                                                                int contrato_v_582,
                                                                 int contrato_pnr_3,
+                                                                int contrato_v_533,
+                                                                int contrato_v_532,
                                                                 int contrato_v_531,
-                                                                int contrato_v_530,
-                                                                int contrato_v_529,
                                                                 int contrato_pnr_2,
                                                                 int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
+                                                                int contrato_v_481,
+                                                                int contrato_v_480,
                                                                 int contrato_v_479,
-                                                                int contrato_v_478,
-                                                                int contrato_v_477,
                                                                 int contrato_pnr,
                                                                 int p_contrato_br4,
                                                                 int p_contrato_br3,
@@ -8923,17 +8923,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_14 = false;
   };
   sub_26 = sub_15;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_749 = false;
   } else {
     v_749 = sub_26;
   };
   if (contrato_co) {
-    v_750 = v_749;
-  } else {
     v_750 = sub_26;
+  } else {
+    v_750 = v_749;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_13 = sub_26;
   } else {
     sub_13 = sub_14;
@@ -8949,47 +8949,47 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_748 = sub_15;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_28 = v_748;
   } else {
     sub_28 = sub_14;
   };
   sub_27 = sub_28;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_751 = v_750;
   } else {
     v_751 = sub_27;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_11 = v_751;
   } else {
     sub_11 = sub_12;
   };
   sub_10 = sub_11;
   sub_9 = sub_10;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_8 = sub_9;
     sub_29 = false;
   } else {
     sub_8 = false;
     sub_29 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_754 = sub_9;
   } else {
     v_754 = sub_29;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_755 = v_754;
   } else {
     v_755 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_752 = sub_29;
   } else {
     v_752 = sub_8;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_753 = v_752;
   } else {
     v_753 = sub_8;
@@ -9022,7 +9022,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_40 = sub_46;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_39 = false;
   } else {
     sub_39 = sub_40;
@@ -9033,50 +9033,50 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_738 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_48 = v_738;
   } else {
     sub_48 = sub_40;
   };
   sub_47 = sub_48;
   sub_49 = sub_46;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_740 = sub_49;
   } else {
     v_740 = false;
   };
   if (contrato_co) {
-    v_741 = v_740;
-  } else {
     v_741 = false;
+  } else {
+    v_741 = v_740;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_742 = v_741;
   } else {
     v_742 = sub_47;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_37 = v_742;
   } else {
     sub_37 = sub_38;
   };
   sub_36 = sub_37;
   sub_35 = sub_36;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_34 = false;
     sub_50 = sub_35;
   } else {
     sub_34 = sub_35;
     sub_50 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_745 = false;
     v_743 = sub_50;
   } else {
     v_745 = sub_50;
     v_743 = sub_34;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_744 = v_743;
   } else {
     v_744 = sub_34;
@@ -9087,7 +9087,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_54 = sub_37;
   };
   sub_53 = sub_54;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_52 = false;
   } else {
     sub_52 = sub_53;
@@ -9097,17 +9097,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_55 = sub_36;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_737 = false;
   } else {
     v_737 = sub_55;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_51 = v_737;
   } else {
     sub_51 = sub_52;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_746 = v_745;
   } else {
     v_746 = sub_51;
@@ -9120,22 +9120,22 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_32 = sub_33;
   sub_31 = sub_32;
   sub_30 = sub_31;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_3 = sub_30;
   } else {
     sub_3 = sub_4;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_760 = sub_3;
   } else {
     v_760 = sub_30;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_761 = v_760;
   } else {
     v_761 = sub_30;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_2 = sub_4;
   } else {
     sub_2 = sub_3;
@@ -9254,17 +9254,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_93 = sub_85;
   sub_92 = sub_93;
   sub_91 = sub_92;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_728 = sub_86;
   } else {
     v_728 = sub_91;
   };
   if (contrato_co) {
-    v_729 = v_728;
-  } else {
     v_729 = sub_91;
+  } else {
+    v_729 = v_728;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_67 = sub_91;
   } else {
     sub_67 = sub_68;
@@ -9340,12 +9340,12 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_95 = sub_86;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_94 = sub_91;
   } else {
     sub_94 = sub_95;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_65 = sub_94;
   } else {
     sub_65 = sub_66;
@@ -9393,47 +9393,47 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_112 = sub_86;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_111 = v_712;
   } else {
     sub_111 = sub_112;
   };
   sub_110 = sub_111;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_730 = v_729;
   } else {
     v_730 = sub_110;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_64 = v_730;
   } else {
     sub_64 = sub_65;
   };
   sub_63 = sub_64;
   sub_62 = sub_63;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_61 = sub_62;
     sub_116 = false;
   } else {
     sub_61 = false;
     sub_116 = sub_62;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_733 = sub_62;
   } else {
     v_733 = sub_116;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_734 = v_733;
   } else {
     v_734 = sub_62;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_731 = sub_116;
   } else {
     v_731 = sub_61;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_732 = v_731;
   } else {
     v_732 = sub_61;
@@ -9485,17 +9485,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_132 = sub_133;
   sub_131 = sub_132;
   sub_130 = sub_131;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_698 = sub_49;
   } else {
     v_698 = sub_130;
   };
   if (contrato_co) {
-    v_699 = v_698;
-  } else {
     v_699 = sub_130;
+  } else {
+    v_699 = v_698;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_124 = sub_130;
   } else {
     sub_124 = sub_125;
@@ -9529,47 +9529,47 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_137 = sub_46;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_136 = v_695;
   } else {
     sub_136 = sub_137;
   };
   sub_135 = sub_136;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_700 = v_699;
   } else {
     v_700 = sub_135;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_122 = v_700;
   } else {
     sub_122 = sub_123;
   };
   sub_121 = sub_122;
   sub_120 = sub_121;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_119 = sub_120;
     sub_143 = false;
   } else {
     sub_119 = false;
     sub_143 = sub_120;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_703 = sub_120;
   } else {
     v_703 = sub_143;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_704 = v_703;
   } else {
     v_704 = sub_120;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_701 = sub_143;
   } else {
     v_701 = sub_119;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_702 = v_701;
   } else {
     v_702 = sub_119;
@@ -9596,7 +9596,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     v_756 = sub_117;
     sub_58 = sub_117;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_57 = sub_30;
   } else {
     sub_57 = sub_58;
@@ -9616,7 +9616,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_736 = sub_117;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_56 = v_736;
   } else {
     sub_56 = sub_57;
@@ -9626,7 +9626,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_146 = sub_31;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_145 = sub_30;
   } else {
     sub_145 = sub_146;
@@ -9651,17 +9651,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_147 = v_692;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_757 = v_756;
   } else {
     v_757 = sub_147;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_758 = v_757;
   } else {
     v_758 = sub_145;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_759 = v_758;
   } else {
     v_759 = sub_56;
@@ -9700,17 +9700,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_160 = false;
   };
   sub_170 = sub_161;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_683 = false;
   } else {
     v_683 = sub_170;
   };
   if (contrato_co) {
-    v_684 = v_683;
-  } else {
     v_684 = sub_170;
+  } else {
+    v_684 = v_683;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_159 = sub_170;
   } else {
     sub_159 = sub_160;
@@ -9726,47 +9726,47 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_682 = sub_161;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_172 = v_682;
   } else {
     sub_172 = sub_160;
   };
   sub_171 = sub_172;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_685 = v_684;
   } else {
     v_685 = sub_171;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_157 = v_685;
   } else {
     sub_157 = sub_158;
   };
   sub_156 = sub_157;
   sub_155 = sub_156;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_154 = sub_155;
     sub_173 = false;
   } else {
     sub_154 = false;
     sub_173 = sub_155;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_688 = sub_155;
   } else {
     v_688 = sub_173;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_689 = v_688;
   } else {
     v_689 = sub_155;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_686 = sub_173;
   } else {
     v_686 = sub_154;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_687 = v_686;
   } else {
     v_687 = sub_154;
@@ -9799,7 +9799,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_184 = sub_190;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_183 = false;
   } else {
     sub_183 = sub_184;
@@ -9810,50 +9810,50 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_672 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_192 = v_672;
   } else {
     sub_192 = sub_184;
   };
   sub_191 = sub_192;
   sub_193 = sub_190;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_674 = sub_193;
   } else {
     v_674 = false;
   };
   if (contrato_co) {
-    v_675 = v_674;
-  } else {
     v_675 = false;
+  } else {
+    v_675 = v_674;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_676 = v_675;
   } else {
     v_676 = sub_191;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_181 = v_676;
   } else {
     sub_181 = sub_182;
   };
   sub_180 = sub_181;
   sub_179 = sub_180;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_178 = false;
     sub_194 = sub_179;
   } else {
     sub_178 = sub_179;
     sub_194 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_679 = false;
     v_677 = sub_194;
   } else {
     v_679 = sub_194;
     v_677 = sub_178;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_678 = v_677;
   } else {
     v_678 = sub_178;
@@ -9864,7 +9864,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     sub_198 = sub_181;
   };
   sub_197 = sub_198;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_196 = false;
   } else {
     sub_196 = sub_197;
@@ -9874,17 +9874,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_199 = sub_180;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_671 = false;
   } else {
     v_671 = sub_199;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_195 = v_671;
   } else {
     sub_195 = sub_196;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_680 = v_679;
   } else {
     v_680 = sub_195;
@@ -9897,22 +9897,22 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_176 = sub_177;
   sub_175 = sub_176;
   sub_174 = sub_175;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_149 = sub_174;
   } else {
     sub_149 = sub_150;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_767 = sub_149;
   } else {
     v_767 = sub_174;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_768 = v_767;
   } else {
     v_768 = sub_174;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_148 = sub_150;
   } else {
     sub_148 = sub_149;
@@ -10008,17 +10008,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_229 = sub_221;
   sub_228 = sub_229;
   sub_227 = sub_228;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_662 = sub_222;
   } else {
     v_662 = sub_227;
   };
   if (contrato_co) {
-    v_663 = v_662;
-  } else {
     v_663 = sub_227;
+  } else {
+    v_663 = v_662;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_211 = sub_227;
   } else {
     sub_211 = sub_212;
@@ -10035,12 +10035,12 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_231 = sub_222;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_230 = sub_227;
   } else {
     sub_230 = sub_231;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_209 = sub_230;
   } else {
     sub_209 = sub_210;
@@ -10055,47 +10055,47 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_649 = sub_228;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_234 = v_649;
   } else {
     sub_234 = sub_231;
   };
   sub_233 = sub_234;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_664 = v_663;
   } else {
     v_664 = sub_233;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_208 = v_664;
   } else {
     sub_208 = sub_209;
   };
   sub_207 = sub_208;
   sub_206 = sub_207;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_205 = sub_206;
     sub_235 = false;
   } else {
     sub_205 = false;
     sub_235 = sub_206;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_667 = sub_206;
   } else {
     v_667 = sub_235;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_668 = v_667;
   } else {
     v_668 = sub_206;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_665 = sub_235;
   } else {
     v_665 = sub_205;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_666 = v_665;
   } else {
     v_666 = sub_205;
@@ -10139,17 +10139,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   sub_249 = sub_139;
   sub_248 = sub_249;
   sub_247 = sub_248;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_640 = sub_193;
   } else {
     v_640 = sub_247;
   };
   if (contrato_co) {
-    v_641 = v_640;
-  } else {
     v_641 = sub_247;
+  } else {
+    v_641 = v_640;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_243 = sub_247;
   } else {
     sub_243 = sub_244;
@@ -10170,47 +10170,47 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_252 = sub_190;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_251 = v_637;
   } else {
     sub_251 = sub_252;
   };
   sub_250 = sub_251;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_642 = v_641;
   } else {
     v_642 = sub_250;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_241 = v_642;
   } else {
     sub_241 = sub_242;
   };
   sub_240 = sub_241;
   sub_239 = sub_240;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_238 = sub_239;
     sub_253 = false;
   } else {
     sub_238 = false;
     sub_253 = sub_239;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_645 = sub_239;
   } else {
     v_645 = sub_253;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_646 = v_645;
   } else {
     v_646 = sub_239;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_643 = sub_253;
   } else {
     v_643 = sub_238;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_644 = v_643;
   } else {
     v_644 = sub_238;
@@ -10237,7 +10237,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
     v_763 = sub_236;
     sub_202 = sub_236;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_201 = sub_174;
   } else {
     sub_201 = sub_202;
@@ -10257,7 +10257,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     v_670 = sub_236;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_200 = v_670;
   } else {
     sub_200 = sub_201;
@@ -10267,7 +10267,7 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_256 = sub_175;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_255 = sub_174;
   } else {
     sub_255 = sub_256;
@@ -10292,17 +10292,17 @@ void Contrato_controller__contrato_controller_contrato_cr4_step(int contrato_ac,
   } else {
     sub_257 = v_634;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_764 = v_763;
   } else {
     v_764 = sub_257;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_765 = v_764;
   } else {
     v_765 = sub_255;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_766 = v_765;
   } else {
     v_766 = sub_200;
@@ -10340,19 +10340,19 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
                                                                 int contrato_swr4,
                                                                 int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
+                                                                int contrato_v_586,
+                                                                int contrato_v_585,
                                                                 int contrato_v_584,
-                                                                int contrato_v_583,
-                                                                int contrato_v_582,
                                                                 int contrato_pnr_3,
+                                                                int contrato_v_533,
+                                                                int contrato_v_532,
                                                                 int contrato_v_531,
-                                                                int contrato_v_530,
-                                                                int contrato_v_529,
                                                                 int contrato_pnr_2,
                                                                 int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
+                                                                int contrato_v_481,
+                                                                int contrato_v_480,
                                                                 int contrato_v_479,
-                                                                int contrato_v_478,
-                                                                int contrato_v_477,
                                                                 int contrato_pnr,
                                                                 int p_contrato_br4,
                                                                 int p_contrato_br3,
@@ -10753,17 +10753,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_14 = false;
   };
   sub_25 = sub_15;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_870 = false;
   } else {
     v_870 = sub_25;
   };
   if (contrato_co) {
-    v_871 = v_870;
-  } else {
     v_871 = sub_25;
+  } else {
+    v_871 = v_870;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_13 = sub_25;
   } else {
     sub_13 = sub_14;
@@ -10779,47 +10779,47 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_869 = sub_15;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_27 = v_869;
   } else {
     sub_27 = sub_14;
   };
   sub_26 = sub_27;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_872 = v_871;
   } else {
     v_872 = sub_26;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_11 = v_872;
   } else {
     sub_11 = sub_12;
   };
   sub_10 = sub_11;
   sub_9 = sub_10;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_8 = sub_9;
     sub_28 = false;
   } else {
     sub_8 = false;
     sub_28 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_875 = sub_9;
   } else {
     v_875 = sub_28;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_876 = v_875;
   } else {
     v_876 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_873 = sub_28;
   } else {
     v_873 = sub_8;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_874 = v_873;
   } else {
     v_874 = sub_8;
@@ -10851,7 +10851,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_39 = sub_44;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_38 = false;
   } else {
     sub_38 = sub_39;
@@ -10862,50 +10862,50 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_859 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_46 = v_859;
   } else {
     sub_46 = sub_39;
   };
   sub_45 = sub_46;
   sub_47 = sub_44;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_861 = sub_47;
   } else {
     v_861 = false;
   };
   if (contrato_co) {
-    v_862 = v_861;
-  } else {
     v_862 = false;
+  } else {
+    v_862 = v_861;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_863 = v_862;
   } else {
     v_863 = sub_45;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_36 = v_863;
   } else {
     sub_36 = sub_37;
   };
   sub_35 = sub_36;
   sub_34 = sub_35;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_33 = false;
     sub_48 = sub_34;
   } else {
     sub_33 = sub_34;
     sub_48 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_866 = false;
     v_864 = sub_48;
   } else {
     v_866 = sub_48;
     v_864 = sub_33;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_865 = v_864;
   } else {
     v_865 = sub_33;
@@ -10916,7 +10916,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_52 = sub_36;
   };
   sub_51 = sub_52;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_50 = false;
   } else {
     sub_50 = sub_51;
@@ -10926,17 +10926,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_53 = sub_35;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_858 = false;
   } else {
     v_858 = sub_53;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_49 = v_858;
   } else {
     sub_49 = sub_50;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_867 = v_866;
   } else {
     v_867 = sub_49;
@@ -10949,22 +10949,22 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   sub_31 = sub_32;
   sub_30 = sub_31;
   sub_29 = sub_30;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_3 = sub_29;
   } else {
     sub_3 = sub_4;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_881 = sub_3;
   } else {
     v_881 = sub_29;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_882 = v_881;
   } else {
     v_882 = sub_29;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_2 = sub_4;
   } else {
     sub_2 = sub_3;
@@ -11041,17 +11041,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   };
   sub_88 = sub_75;
   sub_87 = sub_88;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_849 = sub_81;
   } else {
     v_849 = sub_87;
   };
   if (contrato_co) {
-    v_850 = v_849;
-  } else {
     v_850 = sub_87;
+  } else {
+    v_850 = v_849;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_64 = sub_87;
   } else {
     sub_64 = sub_65;
@@ -11067,47 +11067,47 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_845 = sub_88;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_90 = v_845;
   } else {
     sub_90 = sub_65;
   };
   sub_89 = sub_90;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_851 = v_850;
   } else {
     v_851 = sub_89;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_62 = v_851;
   } else {
     sub_62 = sub_63;
   };
   sub_61 = sub_62;
   sub_60 = sub_61;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_59 = sub_60;
     sub_91 = false;
   } else {
     sub_59 = false;
     sub_91 = sub_60;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_854 = sub_60;
   } else {
     v_854 = sub_91;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_855 = v_854;
   } else {
     v_855 = sub_60;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_852 = sub_91;
   } else {
     v_852 = sub_59;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_853 = v_852;
   } else {
     v_853 = sub_59;
@@ -11157,17 +11157,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   sub_106 = sub_107;
   sub_105 = sub_106;
   sub_104 = sub_105;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_836 = sub_47;
   } else {
     v_836 = sub_104;
   };
   if (contrato_co) {
-    v_837 = v_836;
-  } else {
     v_837 = sub_104;
+  } else {
+    v_837 = v_836;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_99 = sub_104;
   } else {
     sub_99 = sub_100;
@@ -11217,47 +11217,47 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_110 = sub_44;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_109 = v_833;
   } else {
     sub_109 = sub_110;
   };
   sub_108 = sub_109;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_838 = v_837;
   } else {
     v_838 = sub_108;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_97 = v_838;
   } else {
     sub_97 = sub_98;
   };
   sub_96 = sub_97;
   sub_95 = sub_96;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_94 = sub_95;
     sub_122 = false;
   } else {
     sub_94 = false;
     sub_122 = sub_95;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_841 = sub_95;
   } else {
     v_841 = sub_122;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_842 = v_841;
   } else {
     v_842 = sub_95;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_839 = sub_122;
   } else {
     v_839 = sub_94;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_840 = v_839;
   } else {
     v_840 = sub_94;
@@ -11284,7 +11284,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     v_877 = sub_92;
     sub_56 = sub_92;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_55 = sub_29;
   } else {
     sub_55 = sub_56;
@@ -11304,7 +11304,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_857 = sub_92;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_54 = v_857;
   } else {
     sub_54 = sub_55;
@@ -11314,7 +11314,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_125 = sub_30;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_124 = sub_29;
   } else {
     sub_124 = sub_125;
@@ -11339,17 +11339,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_126 = v_830;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_878 = v_877;
   } else {
     v_878 = sub_126;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_879 = v_878;
   } else {
     v_879 = sub_124;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_880 = v_879;
   } else {
     v_880 = sub_54;
@@ -11387,17 +11387,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_139 = false;
   };
   sub_148 = sub_140;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_821 = false;
   } else {
     v_821 = sub_148;
   };
   if (contrato_co) {
-    v_822 = v_821;
-  } else {
     v_822 = sub_148;
+  } else {
+    v_822 = v_821;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_138 = sub_148;
   } else {
     sub_138 = sub_139;
@@ -11413,47 +11413,47 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_820 = sub_140;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_150 = v_820;
   } else {
     sub_150 = sub_139;
   };
   sub_149 = sub_150;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_823 = v_822;
   } else {
     v_823 = sub_149;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_136 = v_823;
   } else {
     sub_136 = sub_137;
   };
   sub_135 = sub_136;
   sub_134 = sub_135;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_133 = sub_134;
     sub_151 = false;
   } else {
     sub_133 = false;
     sub_151 = sub_134;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_826 = sub_134;
   } else {
     v_826 = sub_151;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_827 = v_826;
   } else {
     v_827 = sub_134;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_824 = sub_151;
   } else {
     v_824 = sub_133;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_825 = v_824;
   } else {
     v_825 = sub_133;
@@ -11485,7 +11485,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_162 = sub_167;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_161 = false;
   } else {
     sub_161 = sub_162;
@@ -11496,50 +11496,50 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_810 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_169 = v_810;
   } else {
     sub_169 = sub_162;
   };
   sub_168 = sub_169;
   sub_170 = sub_167;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_812 = sub_170;
   } else {
     v_812 = false;
   };
   if (contrato_co) {
-    v_813 = v_812;
-  } else {
     v_813 = false;
+  } else {
+    v_813 = v_812;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_814 = v_813;
   } else {
     v_814 = sub_168;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_159 = v_814;
   } else {
     sub_159 = sub_160;
   };
   sub_158 = sub_159;
   sub_157 = sub_158;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_156 = false;
     sub_171 = sub_157;
   } else {
     sub_156 = sub_157;
     sub_171 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_817 = false;
     v_815 = sub_171;
   } else {
     v_817 = sub_171;
     v_815 = sub_156;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_816 = v_815;
   } else {
     v_816 = sub_156;
@@ -11550,7 +11550,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     sub_175 = sub_159;
   };
   sub_174 = sub_175;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_173 = false;
   } else {
     sub_173 = sub_174;
@@ -11560,17 +11560,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_176 = sub_158;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_809 = false;
   } else {
     v_809 = sub_176;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_172 = v_809;
   } else {
     sub_172 = sub_173;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_818 = v_817;
   } else {
     v_818 = sub_172;
@@ -11583,22 +11583,22 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   sub_154 = sub_155;
   sub_153 = sub_154;
   sub_152 = sub_153;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_128 = sub_152;
   } else {
     sub_128 = sub_129;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_888 = sub_128;
   } else {
     v_888 = sub_152;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_889 = v_888;
   } else {
     v_889 = sub_152;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_127 = sub_129;
   } else {
     sub_127 = sub_128;
@@ -11700,17 +11700,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   sub_207 = sub_196;
   sub_206 = sub_207;
   sub_205 = sub_206;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_800 = sub_199;
   } else {
     v_800 = sub_205;
   };
   if (contrato_co) {
-    v_801 = v_800;
-  } else {
     v_801 = sub_205;
+  } else {
+    v_801 = v_800;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_188 = sub_205;
   } else {
     sub_188 = sub_189;
@@ -11727,12 +11727,12 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_209 = sub_199;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_208 = sub_205;
   } else {
     sub_208 = sub_209;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     sub_186 = sub_208;
   } else {
     sub_186 = sub_187;
@@ -11747,47 +11747,47 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_787 = sub_206;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_212 = v_787;
   } else {
     sub_212 = sub_209;
   };
   sub_211 = sub_212;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_802 = v_801;
   } else {
     v_802 = sub_211;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_185 = v_802;
   } else {
     sub_185 = sub_186;
   };
   sub_184 = sub_185;
   sub_183 = sub_184;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_182 = sub_183;
     sub_213 = false;
   } else {
     sub_182 = false;
     sub_213 = sub_183;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_805 = sub_183;
   } else {
     v_805 = sub_213;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_806 = v_805;
   } else {
     v_806 = sub_183;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_803 = sub_213;
   } else {
     v_803 = sub_182;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_804 = v_803;
   } else {
     v_804 = sub_182;
@@ -11829,17 +11829,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   };
   sub_225 = sub_111;
   sub_224 = sub_225;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_778 = sub_170;
   } else {
     v_778 = sub_224;
   };
   if (contrato_co) {
-    v_779 = v_778;
-  } else {
     v_779 = sub_224;
+  } else {
+    v_779 = v_778;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_221 = sub_224;
   } else {
     sub_221 = sub_222;
@@ -11860,47 +11860,47 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_228 = sub_167;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_227 = v_775;
   } else {
     sub_227 = sub_228;
   };
   sub_226 = sub_227;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_780 = v_779;
   } else {
     v_780 = sub_226;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_219 = v_780;
   } else {
     sub_219 = sub_220;
   };
   sub_218 = sub_219;
   sub_217 = sub_218;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_216 = sub_217;
     sub_229 = false;
   } else {
     sub_216 = false;
     sub_229 = sub_217;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_783 = sub_217;
   } else {
     v_783 = sub_229;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_784 = v_783;
   } else {
     v_784 = sub_217;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_781 = sub_229;
   } else {
     v_781 = sub_216;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_782 = v_781;
   } else {
     v_782 = sub_216;
@@ -11927,7 +11927,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
     v_884 = sub_214;
     sub_179 = sub_214;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_178 = sub_152;
   } else {
     sub_178 = sub_179;
@@ -11947,7 +11947,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     v_808 = sub_214;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_177 = v_808;
   } else {
     sub_177 = sub_178;
@@ -11957,7 +11957,7 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_232 = sub_153;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_231 = sub_152;
   } else {
     sub_231 = sub_232;
@@ -11982,17 +11982,17 @@ void Contrato_controller__contrato_controller_contrato_cr3_step(int contrato_ac,
   } else {
     sub_233 = v_772;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_885 = v_884;
   } else {
     v_885 = sub_233;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_886 = v_885;
   } else {
     v_886 = sub_231;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_887 = v_886;
   } else {
     v_887 = sub_177;
@@ -12030,19 +12030,19 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
                                                                 int contrato_swr4,
                                                                 int contrato_ck_6_1,
                                                                 int contrato_pnr_4,
+                                                                int contrato_v_586,
+                                                                int contrato_v_585,
                                                                 int contrato_v_584,
-                                                                int contrato_v_583,
-                                                                int contrato_v_582,
                                                                 int contrato_pnr_3,
+                                                                int contrato_v_533,
+                                                                int contrato_v_532,
                                                                 int contrato_v_531,
-                                                                int contrato_v_530,
-                                                                int contrato_v_529,
                                                                 int contrato_pnr_2,
                                                                 int contrato_ck_12_1,
                                                                 int contrato_pnr_1,
+                                                                int contrato_v_481,
+                                                                int contrato_v_480,
                                                                 int contrato_v_479,
-                                                                int contrato_v_478,
-                                                                int contrato_v_477,
                                                                 int contrato_pnr,
                                                                 int p_contrato_br4,
                                                                 int p_contrato_br3,
@@ -12263,17 +12263,17 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     sub_13 = false;
   };
   sub_25 = sub_14;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_935 = false;
   } else {
     v_935 = sub_25;
   };
   if (contrato_co) {
-    v_936 = v_935;
-  } else {
     v_936 = sub_25;
+  } else {
+    v_936 = v_935;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_12 = sub_25;
   } else {
     sub_12 = sub_13;
@@ -12289,47 +12289,47 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     v_934 = sub_14;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_27 = v_934;
   } else {
     sub_27 = sub_13;
   };
   sub_26 = sub_27;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_937 = v_936;
   } else {
     v_937 = sub_26;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_10 = v_937;
   } else {
     sub_10 = sub_11;
   };
   sub_9 = sub_10;
   sub_8 = sub_9;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_7 = sub_8;
     sub_28 = false;
   } else {
     sub_7 = false;
     sub_28 = sub_8;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_940 = sub_8;
   } else {
     v_940 = sub_28;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_941 = v_940;
   } else {
     v_941 = sub_8;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_938 = sub_28;
   } else {
     v_938 = sub_7;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_939 = v_938;
   } else {
     v_939 = sub_7;
@@ -12360,7 +12360,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     sub_39 = sub_43;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_38 = false;
   } else {
     sub_38 = sub_39;
@@ -12371,50 +12371,50 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     v_924 = false;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_45 = v_924;
   } else {
     sub_45 = sub_39;
   };
   sub_44 = sub_45;
   sub_46 = sub_43;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_926 = sub_46;
   } else {
     v_926 = false;
   };
   if (contrato_co) {
-    v_927 = v_926;
-  } else {
     v_927 = false;
+  } else {
+    v_927 = v_926;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_928 = v_927;
   } else {
     v_928 = sub_44;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_36 = v_928;
   } else {
     sub_36 = sub_37;
   };
   sub_35 = sub_36;
   sub_34 = sub_35;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_33 = false;
     sub_47 = sub_34;
   } else {
     sub_33 = sub_34;
     sub_47 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_931 = false;
     v_929 = sub_47;
   } else {
     v_931 = sub_47;
     v_929 = sub_33;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_930 = v_929;
   } else {
     v_930 = sub_33;
@@ -12425,7 +12425,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     sub_51 = sub_36;
   };
   sub_50 = sub_51;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_49 = false;
   } else {
     sub_49 = sub_50;
@@ -12435,17 +12435,17 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     sub_52 = sub_35;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_923 = false;
   } else {
     v_923 = sub_52;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_48 = v_923;
   } else {
     sub_48 = sub_49;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_932 = v_931;
   } else {
     v_932 = sub_48;
@@ -12458,22 +12458,22 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   sub_31 = sub_32;
   sub_30 = sub_31;
   sub_29 = sub_30;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_2 = sub_29;
   } else {
     sub_2 = sub_3;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_946 = sub_2;
   } else {
     v_946 = sub_29;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_947 = v_946;
   } else {
     v_947 = sub_29;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_1 = sub_3;
   } else {
     sub_1 = sub_2;
@@ -12547,17 +12547,17 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   };
   sub_84 = sub_73;
   sub_83 = sub_84;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_914 = sub_78;
   } else {
     v_914 = sub_83;
   };
   if (contrato_co) {
-    v_915 = v_914;
-  } else {
     v_915 = sub_83;
+  } else {
+    v_915 = v_914;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_63 = sub_83;
   } else {
     sub_63 = sub_64;
@@ -12573,47 +12573,47 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     v_910 = sub_84;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_86 = v_910;
   } else {
     sub_86 = sub_64;
   };
   sub_85 = sub_86;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_916 = v_915;
   } else {
     v_916 = sub_85;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_61 = v_916;
   } else {
     sub_61 = sub_62;
   };
   sub_60 = sub_61;
   sub_59 = sub_60;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_58 = sub_59;
     sub_87 = false;
   } else {
     sub_58 = false;
     sub_87 = sub_59;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_919 = sub_59;
   } else {
     v_919 = sub_87;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_920 = v_919;
   } else {
     v_920 = sub_59;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_917 = sub_87;
   } else {
     v_917 = sub_58;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_918 = v_917;
   } else {
     v_918 = sub_58;
@@ -12681,17 +12681,17 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   sub_104 = sub_105;
   sub_103 = sub_104;
   sub_102 = sub_103;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_901 = sub_46;
   } else {
     v_901 = sub_102;
   };
   if (contrato_co) {
-    v_902 = v_901;
-  } else {
     v_902 = sub_102;
+  } else {
+    v_902 = v_901;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_95 = sub_102;
   } else {
     sub_95 = sub_96;
@@ -12712,47 +12712,47 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     sub_108 = sub_43;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_107 = v_896;
   } else {
     sub_107 = sub_108;
   };
   sub_106 = sub_107;
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_903 = v_902;
   } else {
     v_903 = sub_106;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_93 = v_903;
   } else {
     sub_93 = sub_94;
   };
   sub_92 = sub_93;
   sub_91 = sub_92;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_90 = sub_91;
     sub_109 = false;
   } else {
     sub_90 = false;
     sub_109 = sub_91;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_906 = sub_91;
   } else {
     v_906 = sub_109;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_907 = v_906;
   } else {
     v_907 = sub_91;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_904 = sub_109;
   } else {
     v_904 = sub_90;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_905 = v_904;
   } else {
     v_905 = sub_90;
@@ -12779,7 +12779,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
     v_942 = sub_88;
     sub_55 = sub_88;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_54 = sub_29;
   } else {
     sub_54 = sub_55;
@@ -12799,7 +12799,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     v_922 = sub_88;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_53 = v_922;
   } else {
     sub_53 = sub_54;
@@ -12809,7 +12809,7 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     sub_112 = sub_30;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_111 = sub_29;
   } else {
     sub_111 = sub_112;
@@ -12834,17 +12834,17 @@ void Contrato_controller__contrato_controller_contrato_cr1_step(int contrato_ac,
   } else {
     sub_113 = v_893;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_943 = v_942;
   } else {
     v_943 = sub_113;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_944 = v_943;
   } else {
     v_944 = sub_111;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_945 = v_944;
   } else {
     v_945 = sub_53;
@@ -12877,19 +12877,19 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
                                                                int contrato_swr4,
                                                                int contrato_ck_6_1,
                                                                int contrato_pnr_4,
+                                                               int contrato_v_586,
+                                                               int contrato_v_585,
                                                                int contrato_v_584,
-                                                               int contrato_v_583,
-                                                               int contrato_v_582,
                                                                int contrato_pnr_3,
+                                                               int contrato_v_533,
+                                                               int contrato_v_532,
                                                                int contrato_v_531,
-                                                               int contrato_v_530,
-                                                               int contrato_v_529,
                                                                int contrato_pnr_2,
                                                                int contrato_ck_12_1,
                                                                int contrato_pnr_1,
+                                                               int contrato_v_481,
+                                                               int contrato_v_480,
                                                                int contrato_v_479,
-                                                               int contrato_v_478,
-                                                               int contrato_v_477,
                                                                int contrato_pnr,
                                                                int p_contrato_br4,
                                                                int p_contrato_br3,
@@ -13241,61 +13241,85 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     sub_13 = false;
   };
   sub_23 = sub_14;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_12 = sub_23;
   } else {
     sub_12 = sub_13;
   };
   if (contrato_swa) {
-    v_1027 = sub_15;
+    v_1026 = sub_15;
   } else {
-    v_1027 = false;
+    v_1026 = false;
   };
   if (contrato_ca) {
-    v_1028 = v_1027;
+    v_1027 = v_1026;
   } else {
-    v_1028 = sub_14;
+    v_1027 = sub_14;
   };
-  if (contrato_v_530) {
-    sub_24 = v_1028;
+  if (contrato_v_532) {
+    sub_24 = v_1027;
   } else {
     sub_24 = sub_13;
   };
-  if (contrato_v_531) {
-    v_1029 = sub_23;
+  sub_33 = true;
+  sub_32 = sub_33;
+  sub_31 = sub_32;
+  if (contrato_cp) {
+    sub_30 = false;
+    sub_34 = sub_31;
+  } else {
+    sub_30 = sub_31;
+    sub_34 = false;
+  };
+  if (contrato_ck_6_1) {
+    sub_29 = sub_34;
+  } else {
+    sub_29 = sub_30;
+  };
+  sub_28 = sub_29;
+  sub_27 = sub_28;
+  sub_26 = sub_27;
+  sub_25 = sub_26;
+  if (contrato_v_532) {
+    v_1028 = sub_25;
+  } else {
+    v_1028 = sub_23;
+  };
+  if (contrato_v_533) {
+    v_1029 = v_1028;
   } else {
     v_1029 = sub_24;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_11 = v_1029;
   } else {
     sub_11 = sub_12;
   };
   sub_10 = sub_11;
   sub_9 = sub_10;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_8 = sub_9;
-    sub_25 = false;
+    sub_35 = false;
   } else {
     sub_8 = false;
-    sub_25 = sub_9;
+    sub_35 = sub_9;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1032 = sub_9;
   } else {
-    v_1032 = sub_25;
+    v_1032 = sub_35;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1033 = v_1032;
   } else {
     v_1033 = sub_9;
   };
-  if (contrato_v_584) {
-    v_1030 = sub_25;
+  if (contrato_v_586) {
+    v_1030 = sub_35;
   } else {
     v_1030 = sub_8;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1031 = v_1030;
   } else {
     v_1031 = sub_8;
@@ -13309,523 +13333,475 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   sub_5 = sub_6;
   sub_4 = sub_5;
   if (contrato_ck_6_1) {
-    sub_38 = sub_18;
+    sub_48 = sub_18;
   } else {
-    sub_38 = sub_22;
+    sub_48 = sub_22;
   };
-  sub_37 = sub_38;
-  sub_36 = sub_37;
+  sub_47 = sub_48;
+  sub_46 = sub_47;
   if (contrato_swa) {
-    v_1021 = sub_36;
-  } else {
-    v_1021 = false;
-  };
-  sub_39 = sub_36;
-  if (contrato_ca) {
-    sub_35 = v_1021;
-  } else {
-    sub_35 = sub_39;
-  };
-  if (contrato_v_530) {
-    sub_34 = false;
-  } else {
-    sub_34 = sub_35;
-  };
-  if (contrato_ca) {
-    v_1020 = sub_39;
+    v_1020 = sub_46;
   } else {
     v_1020 = false;
   };
-  if (contrato_v_530) {
-    sub_40 = v_1020;
+  sub_49 = sub_46;
+  if (contrato_ca) {
+    sub_45 = v_1020;
   } else {
-    sub_40 = sub_35;
+    sub_45 = sub_49;
   };
-  sub_50 = true;
-  sub_49 = sub_50;
-  sub_48 = sub_49;
-  if (contrato_cp) {
-    sub_47 = sub_48;
+  if (contrato_v_532) {
+    sub_44 = false;
+  } else {
+    sub_44 = sub_45;
+  };
+  if (contrato_ca) {
+    v_1019 = sub_49;
+  } else {
+    v_1019 = false;
+  };
+  if (contrato_v_532) {
+    sub_50 = v_1019;
+  } else {
+    sub_50 = sub_45;
+  };
+  sub_52 = sub_49;
+  if (contrato_v_532) {
+    sub_51 = sub_52;
+  } else {
     sub_51 = false;
-  } else {
-    sub_47 = false;
-    sub_51 = sub_48;
   };
-  if (contrato_ck_6_1) {
-    sub_46 = sub_51;
+  if (contrato_v_533) {
+    v_1021 = sub_51;
   } else {
-    sub_46 = sub_47;
-  };
-  sub_45 = sub_46;
-  sub_44 = sub_45;
-  sub_43 = sub_44;
-  sub_42 = sub_43;
-  if (contrato_v_530) {
-    sub_41 = sub_42;
-  } else {
-    sub_41 = false;
+    v_1021 = sub_50;
   };
   if (contrato_v_531) {
-    v_1022 = sub_41;
+    sub_43 = v_1021;
   } else {
+    sub_43 = sub_44;
+  };
+  sub_42 = sub_43;
+  sub_41 = sub_42;
+  if (contrato_v_585) {
+    sub_40 = false;
+    sub_53 = sub_41;
+  } else {
+    sub_40 = sub_41;
+    sub_53 = false;
+  };
+  if (contrato_v_586) {
+    v_1024 = false;
+    v_1022 = sub_53;
+  } else {
+    v_1024 = sub_53;
     v_1022 = sub_40;
   };
-  if (contrato_v_529) {
-    sub_33 = v_1022;
-  } else {
-    sub_33 = sub_34;
-  };
-  sub_32 = sub_33;
-  sub_31 = sub_32;
-  if (contrato_v_583) {
-    sub_30 = false;
-    sub_52 = sub_31;
-  } else {
-    sub_30 = sub_31;
-    sub_52 = false;
-  };
   if (contrato_v_584) {
-    v_1025 = false;
-    v_1023 = sub_52;
+    v_1023 = v_1022;
   } else {
-    v_1025 = sub_52;
-    v_1023 = sub_30;
-  };
-  if (contrato_v_582) {
-    v_1024 = v_1023;
-  } else {
-    v_1024 = sub_30;
+    v_1023 = sub_40;
   };
   if (contrato_om) {
-    sub_56 = false;
+    sub_57 = false;
   } else {
-    sub_56 = sub_33;
+    sub_57 = sub_43;
   };
-  sub_55 = sub_56;
-  if (contrato_v_583) {
-    sub_54 = false;
+  sub_56 = sub_57;
+  if (contrato_v_585) {
+    sub_55 = false;
+  } else {
+    sub_55 = sub_56;
+  };
+  if (contrato_tm) {
+    sub_58 = false;
+  } else {
+    sub_58 = sub_42;
+  };
+  if (contrato_v_585) {
+    v_1018 = false;
+  } else {
+    v_1018 = sub_58;
+  };
+  if (contrato_v_586) {
+    sub_54 = v_1018;
   } else {
     sub_54 = sub_55;
   };
-  if (contrato_tm) {
-    sub_57 = false;
-  } else {
-    sub_57 = sub_32;
-  };
-  if (contrato_v_583) {
-    v_1019 = false;
-  } else {
-    v_1019 = sub_57;
-  };
   if (contrato_v_584) {
-    sub_53 = v_1019;
+    v_1025 = v_1024;
   } else {
-    sub_53 = sub_54;
-  };
-  if (contrato_v_582) {
-    v_1026 = v_1025;
-  } else {
-    v_1026 = sub_53;
+    v_1025 = sub_54;
   };
   if (contrato_cm) {
-    sub_29 = v_1024;
+    sub_39 = v_1023;
   } else {
-    sub_29 = v_1026;
+    sub_39 = v_1025;
   };
-  sub_28 = sub_29;
-  sub_27 = sub_28;
-  sub_26 = sub_27;
-  if (contrato_v_479) {
-    sub_3 = sub_26;
+  sub_38 = sub_39;
+  sub_37 = sub_38;
+  sub_36 = sub_37;
+  if (contrato_v_481) {
+    sub_3 = sub_36;
   } else {
     sub_3 = sub_4;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1038 = sub_3;
   } else {
-    v_1038 = sub_26;
+    v_1038 = sub_36;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1039 = v_1038;
   } else {
-    v_1039 = sub_26;
+    v_1039 = sub_36;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_2 = sub_4;
   } else {
     sub_2 = sub_3;
   };
   if (contrato_td) {
-    sub_74 = false;
-    sub_75 = sub_20;
-  } else {
-    sub_74 = sub_20;
     sub_75 = false;
+    sub_76 = sub_20;
+  } else {
+    sub_75 = sub_20;
+    sub_76 = false;
   };
   if (contrato_ck_12_1) {
-    sub_73 = sub_75;
-    sub_76 = sub_74;
+    sub_74 = sub_76;
+    sub_77 = sub_75;
   } else {
+    sub_74 = sub_75;
+    sub_77 = sub_76;
+  };
+  if (contrato_cp) {
+    v_1008 = sub_77;
     sub_73 = sub_74;
-    sub_76 = sub_75;
+  } else {
+    v_1008 = sub_74;
+    sub_73 = sub_77;
   };
-  if (contrato_cp) {
-    v_1009 = sub_76;
+  if (contrato_ck_6_1) {
+    sub_72 = v_1008;
+  } else {
     sub_72 = sub_73;
-  } else {
-    v_1009 = sub_73;
-    sub_72 = sub_76;
   };
-  if (contrato_ck_6_1) {
-    sub_71 = v_1009;
-  } else {
-    sub_71 = sub_72;
-  };
+  sub_71 = sub_72;
   sub_70 = sub_71;
-  sub_69 = sub_70;
   if (contrato_cp) {
-    sub_80 = false;
-    sub_81 = sub_76;
-  } else {
-    sub_80 = sub_76;
     sub_81 = false;
+    sub_82 = sub_77;
+  } else {
+    sub_81 = sub_77;
+    sub_82 = false;
   };
   if (contrato_ck_6_1) {
-    sub_79 = sub_81;
+    sub_80 = sub_82;
   } else {
-    sub_79 = sub_80;
+    sub_80 = sub_81;
   };
+  sub_79 = sub_80;
   sub_78 = sub_79;
-  sub_77 = sub_78;
   if (contrato_swa) {
-    v_1010 = sub_69;
+    v_1009 = sub_70;
   } else {
-    v_1010 = sub_77;
+    v_1009 = sub_78;
   };
   if (contrato_cp) {
-    v_1008 = false;
-    sub_85 = sub_73;
+    v_1007 = false;
+    sub_86 = sub_74;
   } else {
-    v_1008 = sub_73;
-    sub_85 = false;
+    v_1007 = sub_74;
+    sub_86 = false;
   };
   if (contrato_ck_6_1) {
-    sub_84 = v_1008;
+    sub_85 = v_1007;
   } else {
-    sub_84 = sub_85;
+    sub_85 = sub_86;
   };
+  sub_84 = sub_85;
   sub_83 = sub_84;
-  sub_82 = sub_83;
   if (contrato_ca) {
-    sub_68 = v_1010;
+    sub_69 = v_1009;
   } else {
-    sub_68 = sub_82;
+    sub_69 = sub_83;
   };
-  sub_87 = sub_77;
-  sub_86 = sub_87;
-  if (contrato_v_530) {
-    sub_67 = sub_86;
+  sub_88 = sub_78;
+  sub_87 = sub_88;
+  if (contrato_v_532) {
+    sub_68 = sub_87;
   } else {
-    sub_67 = sub_68;
+    sub_68 = sub_69;
   };
   if (contrato_swa) {
-    v_1006 = sub_69;
+    v_1005 = sub_70;
   } else {
-    v_1006 = sub_82;
+    v_1005 = sub_83;
   };
   if (contrato_ca) {
-    v_1007 = v_1006;
+    v_1006 = v_1005;
   } else {
-    v_1007 = sub_87;
+    v_1006 = sub_88;
   };
-  if (contrato_v_530) {
-    sub_88 = v_1007;
+  if (contrato_v_532) {
+    sub_89 = v_1006;
   } else {
-    sub_88 = sub_68;
+    sub_89 = sub_69;
   };
   if (contrato_td) {
-    sub_96 = false;
-    sub_97 = sub_49;
+    sub_97 = sub_32;
+    sub_98 = false;
   } else {
-    sub_96 = sub_49;
     sub_97 = false;
+    sub_98 = sub_32;
   };
   if (contrato_ck_12_1) {
-    sub_95 = sub_97;
+    sub_96 = sub_98;
   } else {
-    sub_95 = sub_96;
+    sub_96 = sub_97;
   };
   if (contrato_cp) {
-    v_1005 = sub_76;
-    sub_94 = sub_95;
+    v_1004 = sub_96;
+    sub_95 = sub_74;
   } else {
-    v_1005 = sub_95;
-    sub_94 = sub_76;
+    v_1004 = sub_74;
+    sub_95 = sub_96;
   };
   if (contrato_ck_6_1) {
-    sub_93 = v_1005;
+    sub_94 = v_1004;
   } else {
-    sub_93 = sub_94;
+    sub_94 = sub_95;
   };
+  sub_93 = sub_94;
   sub_92 = sub_93;
   sub_91 = sub_92;
   sub_90 = sub_91;
-  sub_89 = sub_90;
-  if (contrato_v_530) {
-    v_1011 = sub_89;
+  if (contrato_v_532) {
+    v_1010 = sub_90;
   } else {
-    v_1011 = sub_86;
+    v_1010 = sub_87;
+  };
+  if (contrato_v_533) {
+    v_1011 = v_1010;
+  } else {
+    v_1011 = sub_89;
   };
   if (contrato_v_531) {
-    v_1012 = v_1011;
+    sub_67 = v_1011;
   } else {
-    v_1012 = sub_88;
+    sub_67 = sub_68;
   };
-  if (contrato_v_529) {
-    sub_66 = v_1012;
-  } else {
-    sub_66 = sub_67;
-  };
+  sub_66 = sub_67;
   sub_65 = sub_66;
-  sub_64 = sub_65;
-  if (contrato_v_583) {
-    sub_63 = sub_64;
-    sub_98 = false;
+  if (contrato_v_585) {
+    sub_64 = sub_65;
+    sub_99 = false;
   } else {
-    sub_63 = false;
-    sub_98 = sub_64;
+    sub_64 = false;
+    sub_99 = sub_65;
+  };
+  if (contrato_v_586) {
+    v_1014 = sub_65;
+  } else {
+    v_1014 = sub_99;
   };
   if (contrato_v_584) {
-    v_1015 = sub_64;
+    v_1015 = v_1014;
   } else {
-    v_1015 = sub_98;
+    v_1015 = sub_65;
   };
-  if (contrato_v_582) {
-    v_1016 = v_1015;
+  if (contrato_v_586) {
+    v_1012 = sub_99;
   } else {
-    v_1016 = sub_64;
+    v_1012 = sub_64;
   };
   if (contrato_v_584) {
-    v_1013 = sub_98;
+    v_1013 = v_1012;
   } else {
-    v_1013 = sub_63;
-  };
-  if (contrato_v_582) {
-    v_1014 = v_1013;
-  } else {
-    v_1014 = sub_63;
+    v_1013 = sub_64;
   };
   if (contrato_cm) {
-    sub_62 = v_1014;
+    sub_63 = v_1013;
   } else {
-    sub_62 = v_1016;
+    sub_63 = v_1015;
   };
   if (contrato_l2b) {
-    sub_61 = sub_62;
+    sub_62 = sub_63;
   } else {
-    sub_61 = sub_29;
+    sub_62 = sub_39;
   };
   if (contrato_cb) {
-    v_1017 = sub_28;
+    v_1016 = sub_38;
   } else {
-    v_1017 = sub_61;
+    v_1016 = sub_62;
   };
   if (contrato_ck_6_1) {
-    sub_109 = sub_80;
+    sub_110 = sub_81;
   } else {
-    sub_109 = sub_81;
+    sub_110 = sub_82;
   };
+  sub_109 = sub_110;
   sub_108 = sub_109;
-  sub_107 = sub_108;
   if (contrato_swa) {
-    v_997 = sub_36;
+    v_996 = sub_46;
   } else {
-    v_997 = sub_107;
+    v_996 = sub_108;
   };
   if (contrato_ca) {
-    sub_106 = v_997;
+    sub_107 = v_996;
   } else {
-    sub_106 = sub_39;
+    sub_107 = sub_49;
   };
-  sub_111 = sub_107;
-  sub_110 = sub_111;
-  if (contrato_v_530) {
-    sub_105 = sub_110;
+  sub_112 = sub_108;
+  sub_111 = sub_112;
+  if (contrato_v_532) {
+    v_997 = sub_52;
+    sub_106 = sub_111;
+  } else {
+    v_997 = sub_111;
+    sub_106 = sub_107;
+  };
+  if (contrato_ca) {
+    v_995 = sub_49;
+  } else {
+    v_995 = sub_112;
+  };
+  if (contrato_v_532) {
+    sub_113 = v_995;
+  } else {
+    sub_113 = sub_107;
+  };
+  if (contrato_v_533) {
+    v_998 = v_997;
+  } else {
+    v_998 = sub_113;
+  };
+  if (contrato_v_531) {
+    sub_105 = v_998;
   } else {
     sub_105 = sub_106;
   };
-  if (contrato_ca) {
-    v_996 = sub_39;
-  } else {
-    v_996 = sub_111;
-  };
-  if (contrato_v_530) {
-    sub_112 = v_996;
-  } else {
-    sub_112 = sub_106;
-  };
-  if (contrato_td) {
-    v_994 = sub_49;
-    sub_119 = sub_20;
-  } else {
-    v_994 = sub_20;
-    sub_119 = sub_49;
-  };
-  if (contrato_ck_12_1) {
-    sub_118 = v_994;
-  } else {
-    sub_118 = sub_119;
-  };
-  if (contrato_cp) {
-    v_995 = false;
-    sub_117 = sub_118;
-  } else {
-    v_995 = sub_118;
-    sub_117 = false;
-  };
-  if (contrato_ck_6_1) {
-    sub_116 = v_995;
-  } else {
-    sub_116 = sub_117;
-  };
-  sub_115 = sub_116;
-  sub_114 = sub_115;
-  sub_113 = sub_114;
-  if (contrato_v_530) {
-    v_998 = sub_113;
-  } else {
-    v_998 = sub_110;
-  };
-  if (contrato_v_531) {
-    v_999 = v_998;
-  } else {
-    v_999 = sub_112;
-  };
-  if (contrato_v_529) {
-    sub_104 = v_999;
-  } else {
-    sub_104 = sub_105;
-  };
+  sub_104 = sub_105;
   sub_103 = sub_104;
-  sub_102 = sub_103;
-  if (contrato_v_583) {
-    sub_101 = sub_102;
-    sub_120 = false;
+  if (contrato_v_585) {
+    sub_102 = sub_103;
+    sub_114 = false;
   } else {
-    sub_101 = false;
-    sub_120 = sub_102;
+    sub_102 = false;
+    sub_114 = sub_103;
+  };
+  if (contrato_v_586) {
+    v_1001 = sub_103;
+  } else {
+    v_1001 = sub_114;
   };
   if (contrato_v_584) {
-    v_1002 = sub_102;
+    v_1002 = v_1001;
   } else {
-    v_1002 = sub_120;
+    v_1002 = sub_103;
   };
-  if (contrato_v_582) {
-    v_1003 = v_1002;
+  if (contrato_v_586) {
+    v_999 = sub_114;
   } else {
-    v_1003 = sub_102;
+    v_999 = sub_102;
   };
   if (contrato_v_584) {
-    v_1000 = sub_120;
+    v_1000 = v_999;
   } else {
-    v_1000 = sub_101;
-  };
-  if (contrato_v_582) {
-    v_1001 = v_1000;
-  } else {
-    v_1001 = sub_101;
+    v_1000 = sub_102;
   };
   if (contrato_cm) {
-    v_1004 = v_1001;
+    v_1003 = v_1000;
   } else {
-    v_1004 = v_1003;
+    v_1003 = v_1002;
   };
   if (contrato_l2b) {
-    sub_100 = v_1004;
+    sub_101 = v_1003;
   } else {
-    sub_100 = sub_29;
+    sub_101 = sub_39;
   };
   if (contrato_cb) {
-    sub_99 = sub_28;
+    sub_100 = sub_38;
   } else {
-    sub_99 = sub_100;
+    sub_100 = sub_101;
   };
   if (contrato_l1b) {
-    v_1034 = sub_27;
-    sub_60 = v_1017;
+    v_1034 = sub_37;
+    sub_61 = v_1016;
   } else {
-    v_1034 = sub_99;
-    sub_60 = sub_99;
+    v_1034 = sub_100;
+    sub_61 = sub_100;
   };
-  if (contrato_v_479) {
-    sub_59 = sub_26;
+  if (contrato_v_481) {
+    sub_60 = sub_36;
+  } else {
+    sub_60 = sub_61;
+  };
+  if (contrato_l2b) {
+    v_994 = sub_7;
+  } else {
+    v_994 = sub_39;
+  };
+  if (contrato_cb) {
+    sub_115 = v_994;
+  } else {
+    sub_115 = sub_62;
+  };
+  if (contrato_l1b) {
+    v_1017 = sub_115;
+  } else {
+    v_1017 = sub_100;
+  };
+  if (contrato_v_480) {
+    sub_59 = v_1017;
   } else {
     sub_59 = sub_60;
   };
-  if (contrato_l2b) {
-    v_993 = sub_7;
+  if (contrato_l1b) {
+    sub_117 = sub_115;
   } else {
-    v_993 = sub_29;
+    sub_117 = sub_37;
+  };
+  if (contrato_v_481) {
+    sub_116 = sub_36;
+  } else {
+    sub_116 = sub_117;
   };
   if (contrato_cb) {
-    sub_121 = v_993;
+    v_993 = sub_6;
   } else {
-    sub_121 = sub_61;
+    v_993 = sub_101;
   };
-  if (contrato_l1b) {
-    v_1018 = sub_121;
+  if (contrato_l2b) {
+    v_991 = sub_63;
   } else {
-    v_1018 = sub_99;
-  };
-  if (contrato_v_478) {
-    sub_58 = v_1018;
-  } else {
-    sub_58 = sub_59;
-  };
-  if (contrato_l1b) {
-    sub_123 = sub_121;
-  } else {
-    sub_123 = sub_27;
-  };
-  if (contrato_v_479) {
-    sub_122 = sub_26;
-  } else {
-    sub_122 = sub_123;
+    v_991 = sub_7;
   };
   if (contrato_cb) {
     v_992 = sub_6;
   } else {
-    v_992 = sub_100;
-  };
-  if (contrato_l2b) {
-    v_990 = sub_62;
-  } else {
-    v_990 = sub_7;
-  };
-  if (contrato_cb) {
-    v_991 = sub_6;
-  } else {
-    v_991 = v_990;
+    v_992 = v_991;
   };
   if (contrato_l1b) {
-    sub_124 = v_991;
+    sub_118 = v_992;
   } else {
-    sub_124 = v_992;
+    sub_118 = v_993;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_1035 = v_1034;
   } else {
-    v_1035 = sub_124;
+    v_1035 = sub_118;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1036 = v_1035;
   } else {
-    v_1036 = sub_122;
+    v_1036 = sub_116;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1037 = v_1036;
   } else {
-    v_1037 = sub_58;
+    v_1037 = sub_59;
   };
   if (contrato_vb) {
     v_1040 = v_1037;
@@ -13837,483 +13813,510 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   } else {
     sub_1 = v_1040;
   };
-  if (contrato_ck_6_1) {
-    sub_140 = sub_47;
-  } else {
-    sub_140 = sub_51;
-  };
-  sub_139 = sub_140;
-  sub_138 = sub_139;
-  sub_137 = sub_138;
   if (contrato_ca) {
-    sub_136 = sub_137;
+    sub_130 = sub_26;
   } else {
-    sub_136 = false;
+    sub_130 = false;
   };
-  sub_141 = sub_137;
-  if (contrato_v_530) {
-    v_984 = sub_23;
-    sub_135 = sub_141;
+  if (contrato_v_532) {
+    sub_129 = sub_25;
   } else {
-    v_984 = sub_141;
-    sub_135 = sub_136;
+    sub_129 = sub_130;
   };
   if (contrato_swa) {
-    v_982 = sub_138;
+    v_984 = sub_27;
   } else {
-    v_982 = false;
+    v_984 = false;
   };
   if (contrato_ca) {
-    v_983 = v_982;
-  } else {
-    v_983 = sub_137;
-  };
-  if (contrato_v_530) {
-    sub_142 = v_983;
-  } else {
-    sub_142 = sub_136;
-  };
-  if (contrato_v_531) {
     v_985 = v_984;
   } else {
-    v_985 = sub_142;
+    v_985 = sub_26;
   };
-  if (contrato_v_529) {
-    sub_134 = v_985;
+  if (contrato_v_532) {
+    sub_131 = v_985;
   } else {
-    sub_134 = sub_135;
+    sub_131 = sub_130;
   };
-  sub_133 = sub_134;
-  sub_132 = sub_133;
-  if (contrato_v_583) {
-    sub_131 = sub_132;
-    sub_143 = false;
+  if (contrato_v_533) {
+    v_986 = sub_25;
   } else {
-    sub_131 = false;
-    sub_143 = sub_132;
+    v_986 = sub_131;
   };
-  if (contrato_v_584) {
-    v_988 = sub_132;
+  if (contrato_v_531) {
+    sub_128 = v_986;
   } else {
-    v_988 = sub_143;
+    sub_128 = sub_129;
   };
-  if (contrato_v_582) {
-    v_989 = v_988;
+  sub_127 = sub_128;
+  sub_126 = sub_127;
+  if (contrato_v_585) {
+    sub_125 = sub_126;
+    sub_132 = false;
+  } else {
+    sub_125 = false;
+    sub_132 = sub_126;
+  };
+  if (contrato_v_586) {
+    v_989 = sub_126;
   } else {
     v_989 = sub_132;
   };
   if (contrato_v_584) {
-    v_986 = sub_143;
+    v_990 = v_989;
   } else {
-    v_986 = sub_131;
+    v_990 = sub_126;
   };
-  if (contrato_v_582) {
-    v_987 = v_986;
+  if (contrato_v_586) {
+    v_987 = sub_132;
   } else {
-    v_987 = sub_131;
+    v_987 = sub_125;
+  };
+  if (contrato_v_584) {
+    v_988 = v_987;
+  } else {
+    v_988 = sub_125;
   };
   if (contrato_cm) {
-    sub_130 = v_987;
+    sub_124 = v_988;
   } else {
-    sub_130 = v_989;
+    sub_124 = v_990;
   };
-  sub_129 = sub_130;
-  sub_128 = sub_129;
-  sub_127 = sub_128;
+  sub_123 = sub_124;
+  sub_122 = sub_123;
+  sub_121 = sub_122;
+  if (contrato_ck_6_1) {
+    sub_145 = sub_30;
+  } else {
+    sub_145 = sub_34;
+  };
+  sub_144 = sub_145;
+  sub_143 = sub_144;
   if (contrato_swa) {
-    v_976 = sub_44;
+    v_978 = sub_143;
   } else {
-    v_976 = false;
+    v_978 = false;
+  };
+  sub_146 = sub_143;
+  if (contrato_ca) {
+    sub_142 = v_978;
+  } else {
+    sub_142 = sub_146;
+  };
+  if (contrato_v_532) {
+    sub_141 = false;
+  } else {
+    sub_141 = sub_142;
   };
   if (contrato_ca) {
-    sub_153 = v_976;
+    v_977 = sub_146;
   } else {
-    sub_153 = sub_43;
+    v_977 = false;
   };
-  if (contrato_v_530) {
-    sub_152 = false;
+  if (contrato_v_532) {
+    sub_147 = v_977;
   } else {
-    sub_152 = sub_153;
+    sub_147 = sub_142;
   };
-  if (contrato_ca) {
-    v_975 = sub_43;
+  if (contrato_v_533) {
+    v_979 = sub_51;
   } else {
-    v_975 = false;
-  };
-  if (contrato_v_530) {
-    sub_154 = v_975;
-  } else {
-    sub_154 = sub_153;
+    v_979 = sub_147;
   };
   if (contrato_v_531) {
-    v_977 = sub_41;
+    sub_140 = v_979;
   } else {
-    v_977 = sub_154;
+    sub_140 = sub_141;
   };
-  if (contrato_v_529) {
-    sub_151 = v_977;
+  sub_139 = sub_140;
+  sub_138 = sub_139;
+  if (contrato_v_585) {
+    sub_137 = false;
+    sub_148 = sub_138;
   } else {
-    sub_151 = sub_152;
-  };
-  sub_150 = sub_151;
-  sub_149 = sub_150;
-  if (contrato_v_583) {
+    sub_137 = sub_138;
     sub_148 = false;
-    sub_155 = sub_149;
+  };
+  if (contrato_v_586) {
+    v_982 = false;
+    v_980 = sub_148;
   } else {
-    sub_148 = sub_149;
-    sub_155 = false;
+    v_982 = sub_148;
+    v_980 = sub_137;
   };
   if (contrato_v_584) {
-    v_980 = false;
-    v_978 = sub_155;
-  } else {
-    v_980 = sub_155;
-    v_978 = sub_148;
-  };
-  if (contrato_v_582) {
-    v_979 = v_978;
-  } else {
-    v_979 = sub_148;
-  };
-  if (contrato_om) {
-    sub_159 = false;
-  } else {
-    sub_159 = sub_151;
-  };
-  sub_158 = sub_159;
-  if (contrato_v_583) {
-    sub_157 = false;
-  } else {
-    sub_157 = sub_158;
-  };
-  if (contrato_tm) {
-    sub_160 = false;
-  } else {
-    sub_160 = sub_150;
-  };
-  if (contrato_v_583) {
-    v_974 = false;
-  } else {
-    v_974 = sub_160;
-  };
-  if (contrato_v_584) {
-    sub_156 = v_974;
-  } else {
-    sub_156 = sub_157;
-  };
-  if (contrato_v_582) {
     v_981 = v_980;
   } else {
-    v_981 = sub_156;
+    v_981 = sub_137;
+  };
+  if (contrato_om) {
+    sub_152 = false;
+  } else {
+    sub_152 = sub_140;
+  };
+  sub_151 = sub_152;
+  if (contrato_v_585) {
+    sub_150 = false;
+  } else {
+    sub_150 = sub_151;
+  };
+  if (contrato_tm) {
+    sub_153 = false;
+  } else {
+    sub_153 = sub_139;
+  };
+  if (contrato_v_585) {
+    v_976 = false;
+  } else {
+    v_976 = sub_153;
+  };
+  if (contrato_v_586) {
+    sub_149 = v_976;
+  } else {
+    sub_149 = sub_150;
+  };
+  if (contrato_v_584) {
+    v_983 = v_982;
+  } else {
+    v_983 = sub_149;
   };
   if (contrato_cm) {
-    sub_147 = v_979;
+    sub_136 = v_981;
   } else {
-    sub_147 = v_981;
+    sub_136 = v_983;
   };
-  sub_146 = sub_147;
-  sub_145 = sub_146;
-  sub_144 = sub_145;
+  sub_135 = sub_136;
+  sub_134 = sub_135;
+  sub_133 = sub_134;
+  if (contrato_v_481) {
+    sub_120 = sub_133;
+  } else {
+    sub_120 = sub_121;
+  };
+  if (contrato_v_480) {
+    v_1045 = sub_120;
+  } else {
+    v_1045 = sub_133;
+  };
   if (contrato_v_479) {
-    sub_126 = sub_144;
-  } else {
-    sub_126 = sub_127;
-  };
-  if (contrato_v_478) {
-    v_1045 = sub_126;
-  } else {
-    v_1045 = sub_144;
-  };
-  if (contrato_v_477) {
     v_1046 = v_1045;
   } else {
-    v_1046 = sub_144;
+    v_1046 = sub_133;
   };
-  if (contrato_v_478) {
-    sub_125 = sub_127;
+  if (contrato_v_480) {
+    sub_119 = sub_121;
   } else {
-    sub_125 = sub_126;
+    sub_119 = sub_120;
   };
   if (contrato_ck_12_1) {
-    sub_176 = sub_96;
+    sub_169 = sub_97;
   } else {
-    sub_176 = sub_97;
+    sub_169 = sub_98;
   };
   if (contrato_cp) {
-    v_964 = sub_176;
-    sub_175 = sub_95;
+    v_966 = sub_96;
+    sub_168 = sub_169;
   } else {
-    v_964 = sub_95;
-    sub_175 = sub_176;
+    v_966 = sub_169;
+    sub_168 = sub_96;
   };
   if (contrato_ck_6_1) {
-    sub_174 = v_964;
+    sub_167 = v_966;
   } else {
-    sub_174 = sub_175;
+    sub_167 = sub_168;
   };
-  sub_173 = sub_174;
-  sub_172 = sub_173;
+  sub_166 = sub_167;
+  sub_165 = sub_166;
   if (contrato_cp) {
-    sub_180 = false;
-    sub_181 = sub_176;
+    sub_173 = false;
+    sub_174 = sub_96;
   } else {
-    sub_180 = sub_176;
-    sub_181 = false;
+    sub_173 = sub_96;
+    sub_174 = false;
   };
   if (contrato_ck_6_1) {
-    sub_179 = sub_181;
+    sub_172 = sub_174;
   } else {
-    sub_179 = sub_180;
+    sub_172 = sub_173;
   };
-  sub_178 = sub_179;
-  sub_177 = sub_178;
+  sub_171 = sub_172;
+  sub_170 = sub_171;
   if (contrato_swa) {
-    v_965 = sub_172;
+    v_967 = sub_165;
   } else {
-    v_965 = sub_177;
+    v_967 = sub_170;
   };
   if (contrato_cp) {
-    v_963 = false;
-    sub_185 = sub_95;
+    v_965 = false;
+    sub_178 = sub_169;
   } else {
-    v_963 = sub_95;
-    sub_185 = false;
+    v_965 = sub_169;
+    sub_178 = false;
   };
   if (contrato_ck_6_1) {
-    sub_184 = v_963;
+    sub_177 = v_965;
   } else {
-    sub_184 = sub_185;
+    sub_177 = sub_178;
   };
-  sub_183 = sub_184;
-  sub_182 = sub_183;
+  sub_176 = sub_177;
+  sub_175 = sub_176;
   if (contrato_ca) {
-    sub_171 = v_965;
+    sub_164 = v_967;
   } else {
-    sub_171 = sub_182;
+    sub_164 = sub_175;
   };
-  sub_187 = sub_177;
-  sub_186 = sub_187;
-  if (contrato_v_530) {
-    v_966 = sub_89;
-    sub_170 = sub_186;
+  sub_180 = sub_170;
+  sub_179 = sub_180;
+  if (contrato_v_532) {
+    v_968 = sub_90;
+    sub_163 = sub_179;
   } else {
-    v_966 = sub_186;
-    sub_170 = sub_171;
+    v_968 = sub_179;
+    sub_163 = sub_164;
   };
   if (contrato_swa) {
-    v_961 = sub_172;
+    v_963 = sub_165;
   } else {
-    v_961 = sub_182;
+    v_963 = sub_175;
   };
   if (contrato_ca) {
-    v_962 = v_961;
+    v_964 = v_963;
   } else {
-    v_962 = sub_187;
+    v_964 = sub_180;
   };
-  if (contrato_v_530) {
-    sub_188 = v_962;
+  if (contrato_v_532) {
+    sub_181 = v_964;
   } else {
-    sub_188 = sub_171;
+    sub_181 = sub_164;
   };
-  if (contrato_v_531) {
-    v_967 = v_966;
-  } else {
-    v_967 = sub_188;
-  };
-  if (contrato_v_529) {
-    sub_169 = v_967;
-  } else {
-    sub_169 = sub_170;
-  };
-  sub_168 = sub_169;
-  sub_167 = sub_168;
-  if (contrato_v_583) {
-    sub_166 = sub_167;
-    sub_189 = false;
-  } else {
-    sub_166 = false;
-    sub_189 = sub_167;
-  };
-  if (contrato_v_584) {
-    v_970 = sub_167;
-  } else {
-    v_970 = sub_189;
-  };
-  if (contrato_v_582) {
-    v_971 = v_970;
-  } else {
-    v_971 = sub_167;
-  };
-  if (contrato_v_584) {
-    v_968 = sub_189;
-  } else {
-    v_968 = sub_166;
-  };
-  if (contrato_v_582) {
+  if (contrato_v_533) {
     v_969 = v_968;
   } else {
-    v_969 = sub_166;
-  };
-  if (contrato_cm) {
-    sub_165 = v_969;
-  } else {
-    sub_165 = v_971;
-  };
-  if (contrato_l2b) {
-    sub_164 = sub_165;
-  } else {
-    sub_164 = sub_147;
-  };
-  if (contrato_cb) {
-    v_972 = sub_146;
-  } else {
-    v_972 = sub_164;
-  };
-  if (contrato_ck_6_1) {
-    sub_200 = sub_180;
-  } else {
-    sub_200 = sub_181;
-  };
-  sub_199 = sub_200;
-  sub_198 = sub_199;
-  if (contrato_swa) {
-    v_953 = sub_44;
-  } else {
-    v_953 = sub_198;
-  };
-  if (contrato_ca) {
-    sub_197 = v_953;
-  } else {
-    sub_197 = sub_43;
-  };
-  sub_202 = sub_198;
-  sub_201 = sub_202;
-  if (contrato_v_530) {
-    v_954 = sub_42;
-    sub_196 = sub_201;
-  } else {
-    v_954 = sub_201;
-    sub_196 = sub_197;
-  };
-  if (contrato_ca) {
-    v_952 = sub_43;
-  } else {
-    v_952 = sub_202;
-  };
-  if (contrato_v_530) {
-    sub_203 = v_952;
-  } else {
-    sub_203 = sub_197;
+    v_969 = sub_181;
   };
   if (contrato_v_531) {
-    v_955 = v_954;
-  } else {
-    v_955 = sub_203;
-  };
-  if (contrato_v_529) {
-    sub_195 = v_955;
-  } else {
-    sub_195 = sub_196;
-  };
-  sub_194 = sub_195;
-  sub_193 = sub_194;
-  if (contrato_v_583) {
-    sub_192 = sub_193;
-    sub_204 = false;
-  } else {
-    sub_192 = false;
-    sub_204 = sub_193;
-  };
-  if (contrato_v_584) {
-    v_958 = sub_193;
-  } else {
-    v_958 = sub_204;
-  };
-  if (contrato_v_582) {
-    v_959 = v_958;
-  } else {
-    v_959 = sub_193;
-  };
-  if (contrato_v_584) {
-    v_956 = sub_204;
-  } else {
-    v_956 = sub_192;
-  };
-  if (contrato_v_582) {
-    v_957 = v_956;
-  } else {
-    v_957 = sub_192;
-  };
-  if (contrato_cm) {
-    v_960 = v_957;
-  } else {
-    v_960 = v_959;
-  };
-  if (contrato_l2b) {
-    sub_191 = v_960;
-  } else {
-    sub_191 = sub_147;
-  };
-  if (contrato_cb) {
-    sub_190 = sub_146;
-  } else {
-    sub_190 = sub_191;
-  };
-  if (contrato_l1b) {
-    v_1041 = sub_145;
-    sub_163 = v_972;
-  } else {
-    v_1041 = sub_190;
-    sub_163 = sub_190;
-  };
-  if (contrato_v_479) {
-    sub_162 = sub_144;
+    sub_162 = v_969;
   } else {
     sub_162 = sub_163;
   };
-  if (contrato_l2b) {
-    v_951 = sub_130;
+  sub_161 = sub_162;
+  sub_160 = sub_161;
+  if (contrato_v_585) {
+    sub_159 = sub_160;
+    sub_182 = false;
   } else {
-    v_951 = sub_147;
+    sub_159 = false;
+    sub_182 = sub_160;
+  };
+  if (contrato_v_586) {
+    v_972 = sub_160;
+  } else {
+    v_972 = sub_182;
+  };
+  if (contrato_v_584) {
+    v_973 = v_972;
+  } else {
+    v_973 = sub_160;
+  };
+  if (contrato_v_586) {
+    v_970 = sub_182;
+  } else {
+    v_970 = sub_159;
+  };
+  if (contrato_v_584) {
+    v_971 = v_970;
+  } else {
+    v_971 = sub_159;
+  };
+  if (contrato_cm) {
+    sub_158 = v_971;
+  } else {
+    sub_158 = v_973;
+  };
+  if (contrato_l2b) {
+    sub_157 = sub_158;
+  } else {
+    sub_157 = sub_136;
+  };
+  if (contrato_cb) {
+    v_974 = sub_135;
+  } else {
+    v_974 = sub_157;
+  };
+  if (contrato_ck_6_1) {
+    sub_193 = sub_173;
+  } else {
+    sub_193 = sub_174;
+  };
+  sub_192 = sub_193;
+  sub_191 = sub_192;
+  if (contrato_swa) {
+    v_955 = sub_143;
+  } else {
+    v_955 = sub_191;
+  };
+  if (contrato_ca) {
+    sub_190 = v_955;
+  } else {
+    sub_190 = sub_146;
+  };
+  sub_195 = sub_191;
+  sub_194 = sub_195;
+  if (contrato_v_532) {
+    sub_189 = sub_194;
+  } else {
+    sub_189 = sub_190;
+  };
+  if (contrato_ca) {
+    v_954 = sub_146;
+  } else {
+    v_954 = sub_195;
+  };
+  if (contrato_v_532) {
+    sub_196 = v_954;
+  } else {
+    sub_196 = sub_190;
+  };
+  if (contrato_td) {
+    v_952 = sub_20;
+    sub_203 = sub_32;
+  } else {
+    v_952 = sub_32;
+    sub_203 = sub_20;
+  };
+  if (contrato_ck_12_1) {
+    sub_202 = v_952;
+  } else {
+    sub_202 = sub_203;
+  };
+  if (contrato_cp) {
+    v_953 = false;
+    sub_201 = sub_202;
+  } else {
+    v_953 = sub_202;
+    sub_201 = false;
+  };
+  if (contrato_ck_6_1) {
+    sub_200 = v_953;
+  } else {
+    sub_200 = sub_201;
+  };
+  sub_199 = sub_200;
+  sub_198 = sub_199;
+  sub_197 = sub_198;
+  if (contrato_v_532) {
+    v_956 = sub_197;
+  } else {
+    v_956 = sub_194;
+  };
+  if (contrato_v_533) {
+    v_957 = v_956;
+  } else {
+    v_957 = sub_196;
+  };
+  if (contrato_v_531) {
+    sub_188 = v_957;
+  } else {
+    sub_188 = sub_189;
+  };
+  sub_187 = sub_188;
+  sub_186 = sub_187;
+  if (contrato_v_585) {
+    sub_185 = sub_186;
+    sub_204 = false;
+  } else {
+    sub_185 = false;
+    sub_204 = sub_186;
+  };
+  if (contrato_v_586) {
+    v_960 = sub_186;
+  } else {
+    v_960 = sub_204;
+  };
+  if (contrato_v_584) {
+    v_961 = v_960;
+  } else {
+    v_961 = sub_186;
+  };
+  if (contrato_v_586) {
+    v_958 = sub_204;
+  } else {
+    v_958 = sub_185;
+  };
+  if (contrato_v_584) {
+    v_959 = v_958;
+  } else {
+    v_959 = sub_185;
+  };
+  if (contrato_cm) {
+    v_962 = v_959;
+  } else {
+    v_962 = v_961;
+  };
+  if (contrato_l2b) {
+    sub_184 = v_962;
+  } else {
+    sub_184 = sub_136;
+  };
+  if (contrato_cb) {
+    sub_183 = sub_135;
+  } else {
+    sub_183 = sub_184;
+  };
+  if (contrato_l1b) {
+    v_1041 = sub_134;
+    sub_156 = v_974;
+  } else {
+    v_1041 = sub_183;
+    sub_156 = sub_183;
+  };
+  if (contrato_v_481) {
+    sub_155 = sub_133;
+  } else {
+    sub_155 = sub_156;
+  };
+  if (contrato_l2b) {
+    v_951 = sub_124;
+  } else {
+    v_951 = sub_136;
   };
   if (contrato_cb) {
     sub_205 = v_951;
   } else {
-    sub_205 = sub_164;
+    sub_205 = sub_157;
   };
   if (contrato_l1b) {
-    v_973 = sub_205;
+    v_975 = sub_205;
   } else {
-    v_973 = sub_190;
+    v_975 = sub_183;
   };
-  if (contrato_v_478) {
-    sub_161 = v_973;
+  if (contrato_v_480) {
+    sub_154 = v_975;
   } else {
-    sub_161 = sub_162;
+    sub_154 = sub_155;
   };
   if (contrato_l1b) {
     sub_207 = sub_205;
   } else {
-    sub_207 = sub_145;
+    sub_207 = sub_134;
   };
-  if (contrato_v_479) {
-    sub_206 = sub_144;
+  if (contrato_v_481) {
+    sub_206 = sub_133;
   } else {
     sub_206 = sub_207;
   };
   if (contrato_cb) {
-    v_950 = sub_129;
+    v_950 = sub_123;
   } else {
-    v_950 = sub_191;
+    v_950 = sub_184;
   };
   if (contrato_l2b) {
-    v = sub_165;
+    v = sub_158;
   } else {
-    v = sub_130;
+    v = sub_124;
   };
   if (contrato_cb) {
-    v_949 = sub_129;
+    v_949 = sub_123;
   } else {
     v_949 = v;
   };
@@ -14322,20 +14325,20 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
   } else {
     sub_208 = v_950;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_1042 = v_1041;
   } else {
     v_1042 = sub_208;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1043 = v_1042;
   } else {
     v_1043 = sub_206;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1044 = v_1043;
   } else {
-    v_1044 = sub_161;
+    v_1044 = sub_154;
   };
   if (contrato_vb) {
     v_1047 = v_1044;
@@ -14343,7 +14346,7 @@ void Contrato_controller__contrato_controller_contrato_co_step(int contrato_ac,
     v_1047 = v_1046;
   };
   if (contrato_ac) {
-    v_1048 = sub_125;
+    v_1048 = sub_119;
   } else {
     v_1048 = v_1047;
   };
@@ -14370,19 +14373,19 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
                                                                int contrato_swr4,
                                                                int contrato_ck_6_1,
                                                                int contrato_pnr_4,
+                                                               int contrato_v_586,
+                                                               int contrato_v_585,
                                                                int contrato_v_584,
-                                                               int contrato_v_583,
-                                                               int contrato_v_582,
                                                                int contrato_pnr_3,
+                                                               int contrato_v_533,
+                                                               int contrato_v_532,
                                                                int contrato_v_531,
-                                                               int contrato_v_530,
-                                                               int contrato_v_529,
                                                                int contrato_pnr_2,
                                                                int contrato_ck_12_1,
                                                                int contrato_pnr_1,
+                                                               int contrato_v_481,
+                                                               int contrato_v_480,
                                                                int contrato_v_479,
-                                                               int contrato_v_478,
-                                                               int contrato_v_477,
                                                                int contrato_pnr,
                                                                int p_contrato_br4,
                                                                int p_contrato_br3,
@@ -14627,7 +14630,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   sub_23 = sub_24;
   sub_22 = sub_23;
   sub_21 = sub_22;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_11 = sub_21;
   } else {
     sub_11 = sub_12;
@@ -14653,46 +14656,46 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     v_1084 = sub_32;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_31 = v_1084;
   } else {
     sub_31 = sub_12;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1085 = sub_21;
   } else {
     v_1085 = sub_31;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_10 = v_1085;
   } else {
     sub_10 = sub_11;
   };
   sub_9 = sub_10;
   sub_8 = sub_9;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_7 = sub_8;
     sub_39 = false;
   } else {
     sub_7 = false;
     sub_39 = sub_8;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1088 = sub_8;
   } else {
     v_1088 = sub_39;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1089 = v_1088;
   } else {
     v_1089 = sub_8;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1086 = sub_39;
   } else {
     v_1086 = sub_7;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1087 = v_1086;
   } else {
     v_1087 = sub_7;
@@ -14723,7 +14726,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_49 = sub_53;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_48 = false;
   } else {
     sub_48 = sub_49;
@@ -14735,44 +14738,44 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   };
   sub_57 = sub_58;
   sub_56 = sub_57;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_55 = sub_56;
   } else {
     sub_55 = sub_49;
   };
   sub_59 = sub_50;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1078 = sub_59;
   } else {
     v_1078 = false;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1079 = v_1078;
   } else {
     v_1079 = sub_55;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_47 = v_1079;
   } else {
     sub_47 = sub_48;
   };
   sub_46 = sub_47;
   sub_45 = sub_46;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_44 = false;
     sub_60 = sub_45;
   } else {
     sub_44 = sub_45;
     sub_60 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1082 = false;
     v_1080 = sub_60;
   } else {
     v_1082 = sub_60;
     v_1080 = sub_44;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1081 = v_1080;
   } else {
     v_1081 = sub_44;
@@ -14783,7 +14786,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     sub_64 = sub_47;
   };
   sub_63 = sub_64;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_62 = false;
   } else {
     sub_62 = sub_63;
@@ -14793,17 +14796,17 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_65 = sub_46;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_1077 = false;
   } else {
     v_1077 = sub_65;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_61 = v_1077;
   } else {
     sub_61 = sub_62;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1083 = v_1082;
   } else {
     v_1083 = sub_61;
@@ -14816,22 +14819,22 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   sub_42 = sub_43;
   sub_41 = sub_42;
   sub_40 = sub_41;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_2 = sub_40;
   } else {
     sub_2 = sub_3;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1094 = sub_2;
   } else {
     v_1094 = sub_40;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1095 = v_1094;
   } else {
     v_1095 = sub_40;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_1 = sub_3;
   } else {
     sub_1 = sub_2;
@@ -14923,7 +14926,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   sub_94 = sub_95;
   sub_93 = sub_94;
   sub_92 = sub_93;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_75 = sub_92;
   } else {
     sub_75 = sub_76;
@@ -14969,7 +14972,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     v_1066 = sub_104;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_99 = v_1066;
   } else {
     sub_99 = sub_76;
@@ -14988,46 +14991,46 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   };
   sub_109 = sub_110;
   sub_108 = sub_109;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1069 = sub_108;
   } else {
     v_1069 = sub_92;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1070 = v_1069;
   } else {
     v_1070 = sub_99;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_74 = v_1070;
   } else {
     sub_74 = sub_75;
   };
   sub_73 = sub_74;
   sub_72 = sub_73;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_71 = sub_72;
     sub_112 = false;
   } else {
     sub_71 = false;
     sub_112 = sub_72;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1073 = sub_72;
   } else {
     v_1073 = sub_112;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1074 = v_1073;
   } else {
     v_1074 = sub_72;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1071 = sub_112;
   } else {
     v_1071 = sub_71;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1072 = v_1071;
   } else {
     v_1072 = sub_71;
@@ -15085,7 +15088,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   sub_128 = sub_129;
   sub_127 = sub_128;
   sub_126 = sub_127;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1056 = sub_59;
     sub_119 = sub_126;
   } else {
@@ -15118,46 +15121,46 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   };
   sub_132 = sub_133;
   sub_131 = sub_132;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_130 = sub_131;
   } else {
     sub_130 = sub_120;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1057 = v_1056;
   } else {
     v_1057 = sub_130;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_118 = v_1057;
   } else {
     sub_118 = sub_119;
   };
   sub_117 = sub_118;
   sub_116 = sub_117;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_115 = sub_116;
     sub_137 = false;
   } else {
     sub_115 = false;
     sub_137 = sub_116;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1060 = sub_116;
   } else {
     v_1060 = sub_137;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1061 = v_1060;
   } else {
     v_1061 = sub_116;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1058 = sub_137;
   } else {
     v_1058 = sub_115;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1059 = v_1058;
   } else {
     v_1059 = sub_115;
@@ -15184,7 +15187,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
     v_1090 = sub_113;
     sub_68 = sub_113;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_67 = sub_40;
   } else {
     sub_67 = sub_68;
@@ -15204,7 +15207,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     v_1076 = sub_113;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_66 = v_1076;
   } else {
     sub_66 = sub_67;
@@ -15214,7 +15217,7 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_140 = sub_41;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_139 = sub_40;
   } else {
     sub_139 = sub_140;
@@ -15239,17 +15242,17 @@ void Contrato_controller__contrato_controller_contrato_ca_step(int contrato_ac,
   } else {
     sub_141 = v_1050;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_1091 = v_1090;
   } else {
     v_1091 = sub_141;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1092 = v_1091;
   } else {
     v_1092 = sub_139;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1093 = v_1092;
   } else {
     v_1093 = sub_66;
@@ -15282,19 +15285,19 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
                                                                int contrato_swr4,
                                                                int contrato_ck_6_1,
                                                                int contrato_pnr_4,
+                                                               int contrato_v_586,
+                                                               int contrato_v_585,
                                                                int contrato_v_584,
-                                                               int contrato_v_583,
-                                                               int contrato_v_582,
                                                                int contrato_pnr_3,
+                                                               int contrato_v_533,
+                                                               int contrato_v_532,
                                                                int contrato_v_531,
-                                                               int contrato_v_530,
-                                                               int contrato_v_529,
                                                                int contrato_pnr_2,
                                                                int contrato_ck_12_1,
                                                                int contrato_pnr_1,
+                                                               int contrato_v_481,
+                                                               int contrato_v_480,
                                                                int contrato_v_479,
-                                                               int contrato_v_478,
-                                                               int contrato_v_477,
                                                                int contrato_pnr,
                                                                int p_contrato_br4,
                                                                int p_contrato_br3,
@@ -15562,7 +15565,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_21 = sub_22;
   sub_20 = sub_21;
   sub_19 = sub_20;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_1131 = sub_8;
     sub_7 = sub_19;
   } else {
@@ -15588,17 +15591,17 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_34 = sub_35;
   sub_33 = sub_34;
   sub_32 = sub_33;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_31 = sub_32;
   } else {
     sub_31 = sub_8;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1132 = v_1131;
   } else {
     v_1132 = sub_31;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     sub_6 = v_1132;
   } else {
     sub_6 = sub_7;
@@ -15614,22 +15617,22 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_54 = sub_55;
   sub_53 = sub_54;
   sub_52 = sub_53;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1126 = sub_52;
   } else {
     v_1126 = false;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1127 = v_1126;
   } else {
     v_1127 = sub_52;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_51 = false;
   } else {
     sub_51 = sub_52;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_50 = v_1127;
   } else {
     sub_50 = sub_51;
@@ -15642,22 +15645,22 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_60 = sub_61;
   sub_59 = sub_60;
   sub_58 = sub_59;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1124 = sub_58;
   } else {
     v_1124 = false;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1125 = v_1124;
   } else {
     v_1125 = sub_58;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_57 = false;
   } else {
     sub_57 = sub_58;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_56 = v_1125;
   } else {
     sub_56 = sub_57;
@@ -15668,7 +15671,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     sub_49 = sub_56;
   };
   sub_48 = sub_49;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_47 = false;
   } else {
     sub_47 = sub_48;
@@ -15679,18 +15682,18 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   } else {
     sub_62 = sub_56;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_1128 = false;
   } else {
     v_1128 = sub_62;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     sub_46 = v_1128;
   } else {
     sub_46 = sub_47;
   };
   sub_65 = sub_63;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_1129 = sub_65;
   } else {
     v_1129 = false;
@@ -15703,38 +15706,38 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_71 = sub_72;
   sub_70 = sub_71;
   sub_69 = sub_70;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1122 = sub_69;
   } else {
     v_1122 = false;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1123 = v_1122;
   } else {
     v_1123 = sub_69;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_68 = false;
   } else {
     sub_68 = sub_69;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_67 = v_1123;
   } else {
     sub_67 = sub_68;
   };
   sub_66 = sub_67;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_64 = sub_66;
   } else {
     sub_64 = sub_65;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1130 = v_1129;
   } else {
     v_1130 = sub_64;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     sub_45 = v_1130;
   } else {
     sub_45 = sub_46;
@@ -15742,22 +15745,22 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_44 = sub_45;
   sub_43 = sub_44;
   sub_42 = sub_43;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_2 = sub_42;
   } else {
     sub_2 = sub_3;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1137 = sub_2;
   } else {
     v_1137 = sub_42;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1138 = v_1137;
   } else {
     v_1138 = sub_42;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_1 = sub_3;
   } else {
     sub_1 = sub_2;
@@ -15806,22 +15809,22 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_94 = sub_95;
   sub_93 = sub_94;
   sub_92 = sub_93;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1116 = sub_83;
   } else {
     v_1116 = sub_92;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1117 = v_1116;
   } else {
     v_1117 = sub_83;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_82 = sub_92;
   } else {
     sub_82 = sub_83;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_81 = v_1117;
   } else {
     sub_81 = sub_82;
@@ -15872,29 +15875,29 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_113 = sub_114;
   sub_112 = sub_113;
   sub_111 = sub_112;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1113 = sub_102;
   } else {
     v_1113 = sub_111;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1114 = v_1113;
   } else {
     v_1114 = sub_102;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_101 = sub_111;
   } else {
     sub_101 = sub_102;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_100 = v_1114;
   } else {
     sub_100 = sub_101;
   };
   sub_99 = sub_100;
   sub_98 = sub_99;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_1118 = sub_79;
     sub_78 = sub_98;
   } else {
@@ -15945,38 +15948,38 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_132 = sub_133;
   sub_131 = sub_132;
   sub_130 = sub_131;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1110 = sub_121;
   } else {
     v_1110 = sub_130;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1111 = v_1110;
   } else {
     v_1111 = sub_121;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_120 = sub_130;
   } else {
     sub_120 = sub_121;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_119 = v_1111;
   } else {
     sub_119 = sub_120;
   };
   sub_118 = sub_119;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_117 = sub_118;
   } else {
     sub_117 = sub_79;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1119 = v_1118;
   } else {
     v_1119 = sub_117;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     sub_77 = v_1119;
   } else {
     sub_77 = sub_78;
@@ -15999,22 +16002,22 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_145 = sub_146;
   sub_144 = sub_145;
   sub_143 = sub_144;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1104 = sub_69;
   } else {
     v_1104 = sub_143;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1105 = v_1104;
   } else {
     v_1105 = sub_69;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_142 = sub_143;
   } else {
     sub_142 = sub_69;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_141 = v_1105;
   } else {
     sub_141 = sub_142;
@@ -16029,29 +16032,29 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_153 = sub_154;
   sub_152 = sub_153;
   sub_151 = sub_152;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1102 = sub_58;
   } else {
     v_1102 = sub_151;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1103 = v_1102;
   } else {
     v_1103 = sub_58;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_150 = sub_151;
   } else {
     sub_150 = sub_58;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_149 = v_1103;
   } else {
     sub_149 = sub_150;
   };
   sub_148 = sub_149;
   sub_147 = sub_148;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_1106 = sub_139;
     sub_138 = sub_147;
   } else {
@@ -16066,38 +16069,38 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   sub_161 = sub_162;
   sub_160 = sub_161;
   sub_159 = sub_160;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1100 = sub_52;
   } else {
     v_1100 = sub_159;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1101 = v_1100;
   } else {
     v_1101 = sub_52;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_158 = sub_159;
   } else {
     sub_158 = sub_52;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_157 = v_1101;
   } else {
     sub_157 = sub_158;
   };
   sub_156 = sub_157;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_155 = sub_156;
   } else {
     sub_155 = sub_139;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1107 = v_1106;
   } else {
     v_1107 = sub_155;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     v_1108 = v_1107;
   } else {
     v_1108 = sub_138;
@@ -16119,7 +16122,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
     v_1133 = sub_136;
     sub_75 = sub_136;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_74 = sub_42;
   } else {
     sub_74 = sub_75;
@@ -16139,7 +16142,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   } else {
     v_1121 = sub_136;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_73 = v_1121;
   } else {
     sub_73 = sub_74;
@@ -16149,7 +16152,7 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   } else {
     sub_165 = sub_43;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_164 = sub_42;
   } else {
     sub_164 = sub_165;
@@ -16174,17 +16177,17 @@ void Contrato_controller__contrato_controller_contrato_cm_step(int contrato_ac,
   } else {
     sub_166 = v_1098;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_1134 = v_1133;
   } else {
     v_1134 = sub_166;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1135 = v_1134;
   } else {
     v_1135 = sub_164;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1136 = v_1135;
   } else {
     v_1136 = sub_73;
@@ -16217,19 +16220,19 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
                                                                int contrato_swr4,
                                                                int contrato_ck_6_1,
                                                                int contrato_pnr_4,
+                                                               int contrato_v_586,
+                                                               int contrato_v_585,
                                                                int contrato_v_584,
-                                                               int contrato_v_583,
-                                                               int contrato_v_582,
                                                                int contrato_pnr_3,
+                                                               int contrato_v_533,
+                                                               int contrato_v_532,
                                                                int contrato_v_531,
-                                                               int contrato_v_530,
-                                                               int contrato_v_529,
                                                                int contrato_pnr_2,
                                                                int contrato_ck_12_1,
                                                                int contrato_pnr_1,
+                                                               int contrato_v_481,
+                                                               int contrato_v_480,
                                                                int contrato_v_479,
-                                                               int contrato_v_478,
-                                                               int contrato_v_477,
                                                                int contrato_pnr,
                                                                int p_contrato_br4,
                                                                int p_contrato_br3,
@@ -16362,44 +16365,44 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   sub_29 = sub_30;
   sub_28 = sub_29;
   sub_27 = sub_28;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1152 = sub_27;
   } else {
     v_1152 = false;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1153 = v_1152;
   } else {
     v_1153 = sub_27;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_26 = false;
   } else {
     sub_26 = sub_27;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_25 = v_1153;
   } else {
     sub_25 = sub_26;
   };
   sub_24 = sub_25;
   sub_23 = sub_24;
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     v_1154 = sub_23;
   } else {
     v_1154 = false;
   };
-  if (contrato_v_584) {
+  if (contrato_v_586) {
     v_1155 = v_1154;
   } else {
     v_1155 = sub_23;
   };
-  if (contrato_v_583) {
+  if (contrato_v_585) {
     sub_22 = false;
   } else {
     sub_22 = sub_23;
   };
-  if (contrato_v_582) {
+  if (contrato_v_584) {
     sub_21 = v_1155;
   } else {
     sub_21 = sub_22;
@@ -16407,22 +16410,22 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   sub_20 = sub_21;
   sub_19 = sub_20;
   sub_18 = sub_19;
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_2 = sub_18;
   } else {
     sub_2 = sub_3;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1160 = sub_2;
   } else {
     v_1160 = sub_18;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1161 = v_1160;
   } else {
     v_1161 = sub_18;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_1 = sub_3;
   } else {
     sub_1 = sub_2;
@@ -16481,22 +16484,22 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   sub_48 = sub_49;
   sub_47 = sub_48;
   sub_46 = sub_47;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1148 = sub_39;
   } else {
     v_1148 = sub_46;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1149 = v_1148;
   } else {
     v_1149 = sub_39;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_38 = sub_46;
   } else {
     sub_38 = sub_39;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_37 = v_1149;
   } else {
     sub_37 = sub_38;
@@ -16521,22 +16524,22 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   sub_61 = sub_62;
   sub_60 = sub_61;
   sub_59 = sub_60;
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     v_1143 = sub_27;
   } else {
     v_1143 = sub_59;
   };
-  if (contrato_v_531) {
+  if (contrato_v_533) {
     v_1144 = v_1143;
   } else {
     v_1144 = sub_27;
   };
-  if (contrato_v_530) {
+  if (contrato_v_532) {
     sub_58 = sub_59;
   } else {
     sub_58 = sub_27;
   };
-  if (contrato_v_529) {
+  if (contrato_v_531) {
     sub_57 = v_1144;
   } else {
     sub_57 = sub_58;
@@ -16559,7 +16562,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
     v_1156 = sub_54;
     sub_33 = sub_54;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_32 = sub_18;
   } else {
     sub_32 = sub_33;
@@ -16579,7 +16582,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   } else {
     v_1151 = sub_54;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     sub_31 = v_1151;
   } else {
     sub_31 = sub_32;
@@ -16589,7 +16592,7 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   } else {
     sub_65 = sub_19;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     sub_64 = sub_18;
   } else {
     sub_64 = sub_65;
@@ -16614,17 +16617,17 @@ void Contrato_controller__contrato_controller_contrato_cp_step(int contrato_ac,
   } else {
     sub_66 = v_1141;
   };
-  if (contrato_v_479) {
+  if (contrato_v_481) {
     v_1157 = v_1156;
   } else {
     v_1157 = sub_66;
   };
-  if (contrato_v_478) {
+  if (contrato_v_480) {
     v_1158 = v_1157;
   } else {
     v_1158 = sub_64;
   };
-  if (contrato_v_477) {
+  if (contrato_v_479) {
     v_1159 = v_1158;
   } else {
     v_1159 = sub_31;
@@ -16657,19 +16660,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                    int contrato_swr4,
                                                    int contrato_ck_6_1,
                                                    int contrato_pnr_4,
+                                                   int contrato_v_586,
+                                                   int contrato_v_585,
                                                    int contrato_v_584,
-                                                   int contrato_v_583,
-                                                   int contrato_v_582,
                                                    int contrato_pnr_3,
+                                                   int contrato_v_533,
+                                                   int contrato_v_532,
                                                    int contrato_v_531,
-                                                   int contrato_v_530,
-                                                   int contrato_v_529,
                                                    int contrato_pnr_2,
                                                    int contrato_ck_12_1,
                                                    int contrato_pnr_1,
+                                                   int contrato_v_481,
+                                                   int contrato_v_480,
                                                    int contrato_v_479,
-                                                   int contrato_v_478,
-                                                   int contrato_v_477,
                                                    int contrato_pnr,
                                                    int p_contrato_br4,
                                                    int p_contrato_br3,
@@ -16709,19 +16712,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr4,
                                                             contrato_ck_6_1,
                                                             contrato_pnr_4,
+                                                            contrato_v_586,
+                                                            contrato_v_585,
                                                             contrato_v_584,
-                                                            contrato_v_583,
-                                                            contrato_v_582,
                                                             contrato_pnr_3,
+                                                            contrato_v_533,
+                                                            contrato_v_532,
                                                             contrato_v_531,
-                                                            contrato_v_530,
-                                                            contrato_v_529,
                                                             contrato_pnr_2,
                                                             contrato_ck_12_1,
                                                             contrato_pnr_1,
+                                                            contrato_v_481,
+                                                            contrato_v_480,
                                                             contrato_v_479,
-                                                            contrato_v_478,
-                                                            contrato_v_477,
                                                             contrato_pnr,
                                                             p_contrato_br4,
                                                             p_contrato_br3,
@@ -16751,19 +16754,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr4,
                                                             contrato_ck_6_1,
                                                             contrato_pnr_4,
+                                                            contrato_v_586,
+                                                            contrato_v_585,
                                                             contrato_v_584,
-                                                            contrato_v_583,
-                                                            contrato_v_582,
                                                             contrato_pnr_3,
+                                                            contrato_v_533,
+                                                            contrato_v_532,
                                                             contrato_v_531,
-                                                            contrato_v_530,
-                                                            contrato_v_529,
                                                             contrato_pnr_2,
                                                             contrato_ck_12_1,
                                                             contrato_pnr_1,
+                                                            contrato_v_481,
+                                                            contrato_v_480,
                                                             contrato_v_479,
-                                                            contrato_v_478,
-                                                            contrato_v_477,
                                                             contrato_pnr,
                                                             p_contrato_br4,
                                                             p_contrato_br3,
@@ -16794,19 +16797,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr4,
                                                             contrato_ck_6_1,
                                                             contrato_pnr_4,
+                                                            contrato_v_586,
+                                                            contrato_v_585,
                                                             contrato_v_584,
-                                                            contrato_v_583,
-                                                            contrato_v_582,
                                                             contrato_pnr_3,
+                                                            contrato_v_533,
+                                                            contrato_v_532,
                                                             contrato_v_531,
-                                                            contrato_v_530,
-                                                            contrato_v_529,
                                                             contrato_pnr_2,
                                                             contrato_ck_12_1,
                                                             contrato_pnr_1,
+                                                            contrato_v_481,
+                                                            contrato_v_480,
                                                             contrato_v_479,
-                                                            contrato_v_478,
-                                                            contrato_v_477,
                                                             contrato_pnr,
                                                             p_contrato_br4,
                                                             p_contrato_br3,
@@ -16838,19 +16841,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr4,
                                                             contrato_ck_6_1,
                                                             contrato_pnr_4,
+                                                            contrato_v_586,
+                                                            contrato_v_585,
                                                             contrato_v_584,
-                                                            contrato_v_583,
-                                                            contrato_v_582,
                                                             contrato_pnr_3,
+                                                            contrato_v_533,
+                                                            contrato_v_532,
                                                             contrato_v_531,
-                                                            contrato_v_530,
-                                                            contrato_v_529,
                                                             contrato_pnr_2,
                                                             contrato_ck_12_1,
                                                             contrato_pnr_1,
+                                                            contrato_v_481,
+                                                            contrato_v_480,
                                                             contrato_v_479,
-                                                            contrato_v_478,
-                                                            contrato_v_477,
                                                             contrato_pnr,
                                                             p_contrato_br4,
                                                             p_contrato_br3,
@@ -16883,19 +16886,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr4,
                                                              contrato_ck_6_1,
                                                              contrato_pnr_4,
+                                                             contrato_v_586,
+                                                             contrato_v_585,
                                                              contrato_v_584,
-                                                             contrato_v_583,
-                                                             contrato_v_582,
                                                              contrato_pnr_3,
+                                                             contrato_v_533,
+                                                             contrato_v_532,
                                                              contrato_v_531,
-                                                             contrato_v_530,
-                                                             contrato_v_529,
                                                              contrato_pnr_2,
                                                              contrato_ck_12_1,
                                                              contrato_pnr_1,
+                                                             contrato_v_481,
+                                                             contrato_v_480,
                                                              contrato_v_479,
-                                                             contrato_v_478,
-                                                             contrato_v_477,
                                                              contrato_pnr,
                                                              p_contrato_br4,
                                                              p_contrato_br3,
@@ -16929,19 +16932,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr4,
                                                              contrato_ck_6_1,
                                                              contrato_pnr_4,
+                                                             contrato_v_586,
+                                                             contrato_v_585,
                                                              contrato_v_584,
-                                                             contrato_v_583,
-                                                             contrato_v_582,
                                                              contrato_pnr_3,
+                                                             contrato_v_533,
+                                                             contrato_v_532,
                                                              contrato_v_531,
-                                                             contrato_v_530,
-                                                             contrato_v_529,
                                                              contrato_pnr_2,
                                                              contrato_ck_12_1,
                                                              contrato_pnr_1,
+                                                             contrato_v_481,
+                                                             contrato_v_480,
                                                              contrato_v_479,
-                                                             contrato_v_478,
-                                                             contrato_v_477,
                                                              contrato_pnr,
                                                              p_contrato_br4,
                                                              p_contrato_br3,
@@ -16976,19 +16979,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr4,
                                                              contrato_ck_6_1,
                                                              contrato_pnr_4,
+                                                             contrato_v_586,
+                                                             contrato_v_585,
                                                              contrato_v_584,
-                                                             contrato_v_583,
-                                                             contrato_v_582,
                                                              contrato_pnr_3,
+                                                             contrato_v_533,
+                                                             contrato_v_532,
                                                              contrato_v_531,
-                                                             contrato_v_530,
-                                                             contrato_v_529,
                                                              contrato_pnr_2,
                                                              contrato_ck_12_1,
                                                              contrato_pnr_1,
+                                                             contrato_v_481,
+                                                             contrato_v_480,
                                                              contrato_v_479,
-                                                             contrato_v_478,
-                                                             contrato_v_477,
                                                              contrato_pnr,
                                                              p_contrato_br4,
                                                              p_contrato_br3,
@@ -17024,19 +17027,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                             contrato_swr4,
                                                             contrato_ck_6_1,
                                                             contrato_pnr_4,
+                                                            contrato_v_586,
+                                                            contrato_v_585,
                                                             contrato_v_584,
-                                                            contrato_v_583,
-                                                            contrato_v_582,
                                                             contrato_pnr_3,
+                                                            contrato_v_533,
+                                                            contrato_v_532,
                                                             contrato_v_531,
-                                                            contrato_v_530,
-                                                            contrato_v_529,
                                                             contrato_pnr_2,
                                                             contrato_ck_12_1,
                                                             contrato_pnr_1,
+                                                            contrato_v_481,
+                                                            contrato_v_480,
                                                             contrato_v_479,
-                                                            contrato_v_478,
-                                                            contrato_v_477,
                                                             contrato_pnr,
                                                             p_contrato_br4,
                                                             p_contrato_br3,
@@ -17073,19 +17076,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr4,
                                                              contrato_ck_6_1,
                                                              contrato_pnr_4,
+                                                             contrato_v_586,
+                                                             contrato_v_585,
                                                              contrato_v_584,
-                                                             contrato_v_583,
-                                                             contrato_v_582,
                                                              contrato_pnr_3,
+                                                             contrato_v_533,
+                                                             contrato_v_532,
                                                              contrato_v_531,
-                                                             contrato_v_530,
-                                                             contrato_v_529,
                                                              contrato_pnr_2,
                                                              contrato_ck_12_1,
                                                              contrato_pnr_1,
+                                                             contrato_v_481,
+                                                             contrato_v_480,
                                                              contrato_v_479,
-                                                             contrato_v_478,
-                                                             contrato_v_477,
                                                              contrato_pnr,
                                                              p_contrato_br4,
                                                              p_contrato_br3,
@@ -17123,19 +17126,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr4,
                                                              contrato_ck_6_1,
                                                              contrato_pnr_4,
+                                                             contrato_v_586,
+                                                             contrato_v_585,
                                                              contrato_v_584,
-                                                             contrato_v_583,
-                                                             contrato_v_582,
                                                              contrato_pnr_3,
+                                                             contrato_v_533,
+                                                             contrato_v_532,
                                                              contrato_v_531,
-                                                             contrato_v_530,
-                                                             contrato_v_529,
                                                              contrato_pnr_2,
                                                              contrato_ck_12_1,
                                                              contrato_pnr_1,
+                                                             contrato_v_481,
+                                                             contrato_v_480,
                                                              contrato_v_479,
-                                                             contrato_v_478,
-                                                             contrato_v_477,
                                                              contrato_pnr,
                                                              p_contrato_br4,
                                                              p_contrato_br3,
@@ -17174,19 +17177,19 @@ void Contrato_controller__contrato_controller_step(int contrato_ac,
                                                              contrato_swr4,
                                                              contrato_ck_6_1,
                                                              contrato_pnr_4,
+                                                             contrato_v_586,
+                                                             contrato_v_585,
                                                              contrato_v_584,
-                                                             contrato_v_583,
-                                                             contrato_v_582,
                                                              contrato_pnr_3,
+                                                             contrato_v_533,
+                                                             contrato_v_532,
                                                              contrato_v_531,
-                                                             contrato_v_530,
-                                                             contrato_v_529,
                                                              contrato_pnr_2,
                                                              contrato_ck_12_1,
                                                              contrato_pnr_1,
+                                                             contrato_v_481,
+                                                             contrato_v_480,
                                                              contrato_v_479,
-                                                             contrato_v_478,
-                                                             contrato_v_477,
                                                              contrato_pnr,
                                                              p_contrato_br4,
                                                              p_contrato_br3,
