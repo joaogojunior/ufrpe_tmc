@@ -219,7 +219,7 @@ int http_post(int rl)
 {
   CURL *curl;
   CURLcode res;
-  int ret = 0;
+  int ret = 1;
      
   /* In windows, this will init the winsock stuff */ 
   curl_global_init(CURL_GLOBAL_ALL);
@@ -233,10 +233,19 @@ int http_post(int rl)
       curl_easy_setopt(curl, CURLOPT_URL, "http://nachos.ftp.sh:5060/runlevel");
       //setup curl timeout to 500ms
       curl_easy_setopt(curl, CURLOPT_TIMEOUT_MS, 500L);
+
+      //adiciona os headers para json
+      struct curl_slist *headers = NULL;
+      headers = curl_slist_append(headers, "Accept: application/json");
+      headers = curl_slist_append(headers, "Content-Type: application/json");
+      headers = curl_slist_append(headers, "charsets: utf-8");
        
       /* Now specify the POST data */
-      char buf[20];
-      sprintf(buf, "{\"runlevel\": \"%d\" }", rl);
+      char buf[16];
+      sprintf(buf, "{\"runlevel\":\"%d\"}", rl);
+
+      curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+      curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, 16L);
       curl_easy_setopt(curl, CURLOPT_POSTFIELDS, buf);
    
       /* Perform the request, res will get the return code */ 
@@ -245,7 +254,7 @@ int http_post(int rl)
       if(res != CURLE_OK) 
         fprintf(stderr, "curl_easy_perform() failed: %s\n",
 			              curl_easy_strerror(res));
-      else ret = 1;
+      else ret = 0;
 		   
       /* always cleanup */ 
       curl_easy_cleanup(curl);
@@ -434,10 +443,13 @@ void pc_action(void){
 	  // gera chamda de desligamento do pc forcado
 	  printf("atx_count agora eh 7\n");
 	  atx_count = 7;
-	
-  } else if ( atx_count == 0 && ! pc_estado_ant == 0 && _res.serv_estado == 0 ) {
+  } else if ( atx_count == 0 && pc_estado_ant != 0 && _res.serv_estado == 0 ) {
 	  // nos outros casos desliga normalmente
 	  printf("atx_count agora eh 1\n");
+	  atx_count = 1;
+  } else if ( atx_count == 0 && pc_estado_ant == 0 && _res.serv_estado != 0 ) {
+	  // gera sinal para ligar o pc
+          printf("atx_count agora eh 1\n");
 	  atx_count = 1;
   } else if (pc_estado_ant == 1 && _res.serv_estado == 2) {
 	  // pc recem iniciado muda p runlevel4 (comportamento da planta)
@@ -503,6 +515,7 @@ void gera_td(void){
 }
 
 void debug_output(void){
+    printf("saidas:\n");
     printf("erro => ");
     printf("%d ", _res.erro);
     printf("dia => ");
@@ -546,14 +559,20 @@ int main(int argc, char** argv) {
   
   //sincroniza hora atual com automato do tempo do controlador
   int hora = hora_do_dia();
+  printf("hora -> %d\n",hora);
+
   //se for noite da um passo no controlador com evento de transicao do automado do dia para
   // que ele passe para noite
-  if (hora > 20 && hora <= 8 && _res.dia == 1) {
+  if (hora > 8 && hora <= 20) {
+	  printf ("Não há necessidade de atulizar o automato do tempo no momento...\n");
+  }
+   else
+  {
 	  printf("Sincronizando controlador para noite...\n");
           Ups_controlador__contrato_step(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
 		                                         0, 0, 0, &_res, &mem);
 	  debug_output();
-  } else printf ("Não há necessidade de atulizar o automato do tempo no momento...\n");
+  }
 
   //le uma vez os gpio inpus
   leitura_gpio();
@@ -624,9 +643,16 @@ int main(int argc, char** argv) {
   debug_output();
 
   /* checa se o estado do pc mudou e faz post no webservice do pc com o novo estado*/
-  if ( ! pc_estado_ant == _res.serv_estado && ! _res.serv_estado == 0 ) {
+  if ( pc_estado_ant != _res.serv_estado ) {
     printf("Enviando post para o pc com novo runlevel %d!\n", _res.serv_estado); 
-    if  (http_post(_res.serv_estado)) {
+    int r;
+    if ( _res.serv_estado == 2 ) { 
+	    r = 1;
+    }
+    else {
+	    r = _res.serv_estado;
+    }
+    if  (http_post(r)) {
   	  printf("Erro na execucao do post com curl!\n");
     }
   }
