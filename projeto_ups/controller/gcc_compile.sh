@@ -1,6 +1,6 @@
 TARGETDIR="ups_controlador"
 CONTRACT="contrato"
-HEPTAGON="/usr/local/lib/heptagon/c"
+HEPTAGON="../heptagon/c"
 SUFIXO="rebuilt"
 
 gcc -c  -I $CONTRACT"_controller_c" -I $HEPTAGON -pipe  -I $TARGETDIR"_c" $TARGETDIR"_c"/_main.c -o $TARGETDIR"_c"/_main.o
